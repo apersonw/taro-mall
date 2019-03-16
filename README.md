@@ -3,4 +3,4 @@
 
 ###1、首页展示
 
-![首页图片](./readmeImg/index.png =200*)
+<img src="./readmeImg/index.png" width="375px"/>
