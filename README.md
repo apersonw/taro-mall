@@ -5,7 +5,7 @@
 
 - 数据库为MonogoDb，Redis，Elasticsearch
 
-- 项目部署采用Docker，项目扩展后上kubernetes
+- 项目部署采用Docker
 
 - 负载均衡采用nginx
 
