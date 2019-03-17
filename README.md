@@ -1,13 +1,33 @@
 # Taro-JD
-仿京东商城前端-基于Taro+Dva
+仿京东商城
+
+设计说明：
+
+- 采用Sketch设计并发布切图
+
+数据来源说明：
+
+- 采用Python Scrapy 爬取相关数据，不共享
+
+前端说明：
+
+- 客户端-基于Taro+Dva
+
+- 管理端-基于Umi
+
+后端说明：
 
 - 后端基于Spring Boot2，Spring WebFlux
 
 - 数据库为MonogoDb，Redis，Elasticsearch
 
-- 项目部署采用Docker
-
 - 负载均衡采用nginx
+
+- 支付仅对接支付宝和微信支付
+
+部署说明：
+
+- 项目部署采用Docker，服务增多后采用k8s集群部署，具体部署方式可在对应文件夹查看相关说明
 
 ```
 ├── LICENSE
