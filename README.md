@@ -3,8 +3,8 @@
 
 设计说明：
 
-- 采用Sketch设计并发布切图
-+ photoshop2009
+* 采用Sketch设计并发布切图
+* photoshop2009
 
 数据来源说明：
 
