@@ -52,4 +52,4 @@
 
 **1、首页展示**
 
-<img src="./readmeImg/index.png" width="375px"/>
+<img src="./readmeImg/index.webp" width="375px"/>
