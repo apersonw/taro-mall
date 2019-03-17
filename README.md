@@ -4,6 +4,7 @@
 设计说明：
 
 - 采用Sketch设计并发布切图
+- photoshop2009
 
 数据来源说明：
 
@@ -11,23 +12,19 @@
 
 前端说明：
 
-- 客户端-基于Taro+Dva
-
-- 管理端-基于Umi
+- 客户端-基于<a href="https://taro.aotu.io/">Taro</a>+<a href="https://dvajs.com/">Dva</a>
+- 管理端-基于<a href="https://umijs.org/">Umi</a>
 
 后端说明：
 
-- 后端基于Spring Boot2，Spring WebFlux
-
+- 项目框架基于<a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux">Spring Boot2，Spring WebFlux</a>
 - 数据库为MonogoDb，Redis，Elasticsearch
-
 - 负载均衡采用nginx
-
 - 支付仅对接支付宝和微信支付
 
 部署说明：
 
-- 项目部署采用Docker，服务增多后采用 k8s 集群部署，具体部署方式可在对应文件夹查看相关说明
+- 项目前期部署采用<a href="https://docker.io/">Docker</a>，服务增多后采用集群部署
 
 ```
 ├── LICENSE
