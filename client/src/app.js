@@ -22,7 +22,6 @@ const app = dva.createApp({
 });
 
 const store = app.getStore();
-console.log(app);
 
 class App extends Component {
 
