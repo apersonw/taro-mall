@@ -14,10 +14,11 @@ import java.util.function.Consumer;
 public class RxMallMain {
     public static void main(String... args) {
         try {
-            Path path = Paths.get("lib");
+//            Path path = Paths.get("lib");
             Path basePath = Paths.get("base-lib");
             URLClassLoader cl = (URLClassLoader) ClassLoader.getSystemClassLoader();
-            if (Files.isDirectory(path) && Files.isDirectory(basePath)) {
+//            if (Files.isDirectory(path) && Files.isDirectory(basePath)) {
+            if (Files.isDirectory(basePath)) {
                 Method addURL = URLClassLoader.class.getDeclaredMethod("addURL", URL.class);
                 addURL.setAccessible(true);
                 Consumer<Path> pathConsumer = p -> {
@@ -27,7 +28,7 @@ public class RxMallMain {
                         e.printStackTrace();
                     }
                 };
-                Files.newDirectoryStream(path).forEach(pathConsumer);
+//                Files.newDirectoryStream(path).forEach(pathConsumer);
                 Files.newDirectoryStream(basePath).forEach(pathConsumer);
             }
         } catch (Exception e) {
