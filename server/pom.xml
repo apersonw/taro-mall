@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.rxjava</groupId>
     <artifactId>server</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <properties>
 
@@ -155,7 +155,7 @@
         </dependencies>
     </dependencyManagement>
     <build>
-        <finalName>services-docker</finalName>
+        <finalName>docker</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -224,6 +224,18 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
     <repositories>
         <repository>
             <id>spring-snapshots</id>

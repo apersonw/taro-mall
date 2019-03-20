@@ -5,7 +5,7 @@ RUN mkdir /myapp
 WORKDIR /myapp
 
 COPY base-lib base-lib
-COPY lib lib
+#COPY lib lib
 COPY classes classes
 COPY startup.sh startup.sh
 
