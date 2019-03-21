@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: server
+  data:
+    mongodb:
+      database: server
+      uri: mongodb://${DB_HOST}
