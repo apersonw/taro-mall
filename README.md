@@ -16,7 +16,7 @@ $ ./run.sh
 
 ```
 .
-├── client                    #客户端
+├── client                    #客户端,访问地址：0.0.0.0:81
 │   ├── Dockerfile
 │   ├── docker
 │   │   └── nginx.conf        #nginx配置文件
@@ -28,7 +28,7 @@ $ ./run.sh
 │   ├── links
 │   └── preview
 ├── docker-compose.yml        #项目docker-compose
-├── manager                   #管理端
+├── manager                   #管理端,访问地址：0.0.0.0:82
 │   ├── Dockerfile
 │   ├── docker
 │   │   └── nginx.conf        #nginx配置文件
@@ -42,6 +42,8 @@ $ ./run.sh
 └── server                    #restful接口服务
     ├── pom.xml
     └── src
+
+注：数据库访问地址：0.0.0.0:27018
 ```
 
 ### 三、架构说明
