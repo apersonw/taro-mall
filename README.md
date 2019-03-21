@@ -1,5 +1,9 @@
+# 快速运行：运行项目下的run.sh文件即可，前提是你装有docker
+
 # taro-jd
+
 仿京东商城
+
 **1、首页展示** 
 
 <img src="./readmeImg/index.jpg" width="375px"/>
