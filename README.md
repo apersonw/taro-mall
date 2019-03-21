@@ -1,4 +1,4 @@
-## 快速运行：运行项目下的<a href="./run.sh">run.sh</a>文件即可，前提是你装有docker
+### 快速运行：运行项目下的<a href="./run.sh">run.sh</a>文件即可，前提是你装有docker,yarn,maven
 
 # taro-jd
 
