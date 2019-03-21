@@ -1,12 +1,7 @@
-FROM circleci/node:latest-browsers
+FROM nginx:mainline
 
-WORKDIR /usr/src/app/
-USER root
-COPY package.json ./
-RUN yarn
+RUN echo "Asia/Shanghai" > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
 
-COPY ./ ./
-
-RUN npm run test:all
-
-CMD ["npm", "run", "build"]
+COPY dist /usr/share/nginx/html
+COPY docker/nginx.conf /etc/nginx/nginx.conf

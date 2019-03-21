@@ -7,6 +7,12 @@ yarn
 yarn build:h5
 cd ..
 
+#构建manager
+cd manager
+yarn
+yarn build
+cd ..
+
 #构建server
 cd server
 mvn clean package -Prelease
