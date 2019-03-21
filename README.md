@@ -62,13 +62,13 @@ $ ./run.sh
 4. #### 后端说明：
 
 - 项目框架基于<a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux">Spring Cloud，Spring Boot2，Spring WebFlux</a>
-- 数据库为MonogoDb，Redis，Elasticsearch
-- 负载均衡采用nginx
-- 支付仅对接支付宝和微信支付
+- 数据库：MonogoDb，Redis，Elasticsearch
+- 消息队列：RabbitMq
+- 支付平台：支付宝和微信支付
 
 5. #### 部署说明：
 
-- 项目前期部署采用<a href="https://docker.io/">Docker</a>，服务增多后采用集群部署
+- 所有模块部署均采用<a href="https://docker.io/">Docker</a>
 
 
 ### 四、页面展示
