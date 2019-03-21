@@ -24,7 +24,7 @@
 
 后端说明：
 
-- 项目框架基于<a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux">Spring Boot2，Spring WebFlux</a>
+- 项目框架基于<a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux">Spring Cloud，Spring Boot2，Spring WebFlux</a>
 - 数据库为MonogoDb，Redis，Elasticsearch
 - 负载均衡采用nginx
 - 支付仅对接支付宝和微信支付
