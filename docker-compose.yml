@@ -5,9 +5,7 @@ services:
     build: ./client/
     container_name: "client"
     depends_on:
-      - server
-    environment:
-      API_HOST: server:8080
+      - spring_server
     ports:
       - 81:80
     restart: always
@@ -15,15 +13,19 @@ services:
     build: ./manager/
     container_name: "manager"
     depends_on:
-      - server
+      - spring_server
     environment:
       API_HOST: server:8080
     ports:
       - 82:80
     restart: always
-  server:
+  spring_server:
     build: ./server/target/docker-bin/
-    container_name: "server"
+    container_name: "spring_server"
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
     depends_on:
       - mongodb
     environment:
