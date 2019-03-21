@@ -29,12 +29,14 @@
             <outputDirectory>classes</outputDirectory>
             <excludes>
                 <exclude>bootstrap.yml</exclude>
+                <exclude>application.yml</exclude>
             </excludes>
         </fileSet>
         <fileSet>
             <directory>src/assembly/config/release</directory>
             <includes>
                 <include>bootstrap.yml</include>
+                <include>application.yml</include>
             </includes>
             <filtered>true</filtered>
             <outputDirectory>classes</outputDirectory>

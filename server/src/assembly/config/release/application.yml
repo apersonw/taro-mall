@@ -4,4 +4,4 @@ spring:
   data:
     mongodb:
       database: server
-      uri: mongodb://127.0.0.1:27017
+      uri: mongodb://${DB_HOST}
