@@ -11,7 +11,7 @@ import javax.validation.constraints.Min;
 @Data
 class PageForm {
     @Min(value = 0, message = "页码必须大于等于0")
-    private int page;
+    private int page = 0;
     @Max(value = 200, message = "页大小必须大于等于200")
-    private int pageSize;
+    private int pageSize = 10;
 }
