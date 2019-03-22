@@ -1,5 +1,4 @@
 import Taro from '@tarojs/taro'
-import action from '../../utils/action'
 
 function toast(msg) {
   Taro.showToast({

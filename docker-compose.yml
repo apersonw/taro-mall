@@ -26,6 +26,7 @@ services:
       - 8080
     depends_on:
       - mongodb
+      - redis
     environment:
       DB_HOST: mongodb:27017
   mongodb:
@@ -33,4 +34,10 @@ services:
     container_name: "mongodb"
     ports:
       - 27018:27017
+    restart: always
+  redis:
+    image: 'registry.cn-beijing.aliyuncs.com/rxjava/redis:4.0.4-alpine'
+    container_name: "redis"
+    ports:
+      - 6380:6379
     restart: always
