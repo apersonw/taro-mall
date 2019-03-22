@@ -17,6 +17,7 @@ import static org.springframework.data.mongodb.core.index.IndexDirection.DESCEND
 
 /**
  * @author happy 2019-03-17 23:22
+ * 商品
  */
 @Data
 @Document
@@ -24,41 +25,49 @@ public class Goods {
     @Id
     private String id;
     /**
-     * 商品名称
+     * 标题
      */
     @Indexed
-    private String name;
+    private String title;
     /**
-     * 商品状态
+     * 卖点
      */
-    @Indexed
-    private String status = GoodsStatus.INIT.name();
+    private String sellingPoint;
     /**
-     * 商品简介
+     * 缩略图
+     */
+    private Image thumb;
+    /**
+     * 分享描述
      */
     private String desc;
+    /**
+     * 类目Id
+     */
+    private String categoryId;
+    /**
+     * 品牌Id
+     */
+    private String brandId;
     /**
      * 默认为虚拟商品
      */
     @Indexed
     private String type = GoodsType.VIRTUAL.name();
     /**
-     * 商品标签
+     * 商品状态
      */
     @Indexed
-    private List<String> labels;
+    private String status = GoodsStatus.INIT.name();
     /**
-     * 缩略图
+     * 优先级
      */
-    private Image thumb;
+    private int priority;
     /**
-     * 标价,单位分
+     * 标签
      */
-    private int markedPrice;
-    /**
-     * 商品售价,单位分
-     */
-    private int sellingPrice;
+    @Indexed
+    private List<String> tags;
     /**
      * 超售，默认不允许
      */

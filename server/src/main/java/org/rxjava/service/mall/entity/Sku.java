@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * @author happy 2019-03-21 22:46
+ * 商品Sku
  */
 @Data
 @Document

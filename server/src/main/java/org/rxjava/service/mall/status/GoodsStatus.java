@@ -12,7 +12,6 @@ public enum GoodsStatus {
      * 审核通过
      */
     CHECKED,
-
     /**
      * 正常
      */
