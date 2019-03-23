@@ -9,7 +9,6 @@
   .scrollArea { //滚动条出现的区域，此处为全屏(淘宝京东这些滚动条都是全屏)
     position: relative;
     width: 100%;
-    height: 100%;
 
     .fixedHeader { //头部固定
       position: fixed;
@@ -19,10 +18,12 @@
       width: 100%;
       height: 90px;
       background-color: #ffa270;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
     }
 
     .content { //内容区域，即实际滚动区域
-      min-height: 100%;
       background-color: white;
     }
 
