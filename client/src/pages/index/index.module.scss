@@ -1,5 +1,30 @@
 .container {
-  font-size: 70px;
+  //font-size: 70px;
+
+  .categoryBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .categoryItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 20%;
+      margin-top: 30px;
+
+      font-family: PingFangSC-Regular, serif;
+      font-size: 24px;
+      color: #666666;
+
+      .categoryItemText {
+        margin-top: 18px;
+      }
+    }
+  }
 
   .swiper {
     width: 100%;
@@ -12,46 +37,52 @@
 
   .fixedHeader {
     background-color: transparent;
+    transition: .4s;
+  }
 
-    .searchBox {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-left: 30px;
-      background: #FFFFFF;
-      border-radius: 30px;
-      width: 544px;
-      height: 60px;
+  .fixedScrollHeader {
+    background-color: #e43130;
+    transition: .4s;
+  }
 
-      .iconImg {
-        margin-left: 28px;
-      }
+  .searchBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 30px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    width: 544px;
+    height: 60px;
 
-      .vLine {
-        margin-left: 12px;
-        background: #DCDCDC;
-        border: 1px solid #DCDCDC;
-        height: 30px;
-      }
-
-      .searchInput {
-        margin-left: 12px;
-        font-family: PingFangSC-Regular, serif;
-        font-size: 24px;
-        color: #747474;
-        margin-right: 28px;
-      }
-
-      .searchIcon {
-        margin-left: 12px;
-      }
+    .iconImg {
+      margin-left: 28px;
     }
 
-    .loginBtn {
-      margin-left: 20px;
+    .vLine {
+      margin-left: 12px;
+      background: #DCDCDC;
+      border: 1px solid #DCDCDC;
+      height: 30px;
+    }
+
+    .searchInput {
+      margin-left: 12px;
       font-family: PingFangSC-Regular, serif;
-      font-size: 30px;
-      color: #FFFFFF;
+      font-size: 24px;
+      color: #747474;
+      margin-right: 28px;
     }
+
+    .searchIcon {
+      margin-left: 12px;
+    }
+  }
+
+  .loginBtn {
+    margin-left: 20px;
+    font-family: PingFangSC-Regular, serif;
+    font-size: 30px;
+    color: #FFFFFF;
   }
 }
