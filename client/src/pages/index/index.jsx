@@ -70,7 +70,7 @@ class Index extends Component {
       interval={2000}
       circular
       indicatorDots
-      // autoplay
+      autoplay
     >
       {swiperImgs.map(img => (
         <SwiperItem style="width:100% !importment;" >
