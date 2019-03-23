@@ -1,5 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
-import { View, Button, Text } from '@tarojs/components';
+import { Component } from '@tarojs/taro';
+import { Swiper, SwiperItem, View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import styles from './index.module.scss';
 import action from '../../utils/action';
@@ -17,10 +17,6 @@ import banner7 from '../../assets/banner/7.jpg';
 @connect()
 class Index extends Component {
 
-  state = {
-    translateX: 0,
-  };
-
   config = {
     navigationBarTitleText: '首页',
   };
@@ -28,37 +24,29 @@ class Index extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(action('user/fetch'));
-
-    this.timerID = setInterval(
-      this.onTranslateX,
-      2000,
-    );
-  }
-
-  onTranslateX = () => {
-    let { translateX } = this.state;
-    this.setState({ translateX: translateX <= 500 ? translateX + 100 : 0 });
-  };
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
   }
 
   render() {
     const { translateX } = this.state;
+    const swiperImgs = [banner1, banner2, banner3, banner4, banner5, banner6, banner7];
     return (
       <View className={styles.container} >
         <View className='fixedHeader' >导航栏</View >
         <View className='content' >
-          <View className={styles.slideList} style={`transform: translateX(-${translateX}%);`} >
-            <CustomImage className={styles.slideImg} style="left:0%;" src={banner1} />
-            <CustomImage className={styles.slideImg} style="left:100%;" src={banner2} />
-            <CustomImage className={styles.slideImg} style="left:200%;" src={banner3} />
-            <CustomImage className={styles.slideImg} style="left:300%;" src={banner4} />
-            <CustomImage className={styles.slideImg} style="left:400%;" src={banner5} />
-            <CustomImage className={styles.slideImg} style="left:500%;" src={banner6} />
-            <CustomImage className={styles.slideImg} style="left:600%;" src={banner7} />
-          </View >
+          <Swiper
+            indicatorColor='#999'
+            indicatorActiveColor='#333'
+            interval={2000}
+            circular
+            indicatorDots
+            autoplay
+          >
+            {swiperImgs.map(img => (
+              <SwiperItem >
+                <CustomImage width={750} src={img} />
+              </SwiperItem >
+            ))}
+          </Swiper >
         </View >
         <View className='toolBar' >底部tabBar</View >
       </View >
