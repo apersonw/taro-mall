@@ -1,6 +1,75 @@
 .container {
   //font-size: 70px;
 
+  .spikeBox {
+    margin-top: 25px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+
+    .spikeFirstRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .spikeRowLeft {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        .spikeJd {
+          font-family: PingFangSC-Semibold, serif;
+          font-size: 32px;
+          color: #CF2E2E;
+          letter-spacing: 0;
+        }
+
+        .spikeClock {
+          margin-left: 14px;
+          font-family: PingFangSC-Semibold, serif;
+          font-size: 24px;
+          color: #27272A;
+          letter-spacing: 0;
+        }
+
+        .spikeCountDown{
+          margin-left: 5px;
+          display: flex;
+          flex-direction: row;
+          font-family: PingFangSC-Semibold, serif;
+          font-size: 24px;
+          color: #27272A;
+          .spikeCountDownText{
+            border: 1px solid #eeeeee;
+            letter-spacing: 3px;
+            margin: 0 5px;
+          }
+        }
+      }
+    }
+
+    .spikeSecendRow{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .spikeRowLeft{
+        font-family: PingFangSC-Semibold, serif;
+        font-size: 24px;
+        color: #D13333;
+        letter-spacing: 0;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .newUserOwnBox {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: space-evenly;
+  }
+
   .categoryBox {
     display: flex;
     flex-direction: row;

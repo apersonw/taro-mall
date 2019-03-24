@@ -25,6 +25,10 @@ import moneyImg from '../../assets/index/category/money@2x.png';
 import couponImg from '../../assets/index/category/coupon@2x.png';
 import timeImg from '../../assets/index/category/time@2x.png';
 import buyImg from '../../assets/index/category/buy@2x.png';
+import packageImg from '../../assets/index/newuser/package@2x.png';
+import channelImg from '../../assets/index/newuser/channel@2x.png';
+import exclusiveImg from '../../assets/index/newuser/exclusive@2x.png';
+import moreImg from '../../assets/index/spike/more@2x.png';
 
 @pageWrapper
 @connect()
@@ -100,6 +104,33 @@ class Index extends Component {
         </View >
       ))}
     </View >;
+
+    const newUserOwn = <View className={styles.newUserOwnBox} >
+      <CustomImage width={343} height={214} src={packageImg} />
+      <CustomImage width={162} height={214} src={channelImg} />
+      <CustomImage width={162} height={214} src={exclusiveImg} />
+    </View >;
+
+    const spike = <View className={styles.spikeBox} >
+      <View className={styles.spikeFirstRow} >
+        <View className={styles.spikeRowLeft} >
+          <View className={styles.spikeJd} >京东秒杀</View >
+          <View className={styles.spikeClock} >22点场</View >
+          <View className={styles.spikeCountDown} >
+            <View className={styles.spikeCountDownText} >01</View >
+            <View >:</View >
+            <View className={styles.spikeCountDownText} >11</View >
+            <View >:</View >
+            <View className={styles.spikeCountDownText} >03</View >
+          </View >
+        </View >
+        <View className={styles.spikeSecendRow}>
+          <View className={styles.spikeRowLeft}>更多秒杀</View >
+          <CustomImage width={22} height={22} src={moreImg} />
+        </View >
+      </View >
+      <View >商品列</View >
+    </View >;
     return (
       <View className={styles.container} >
         <View className={['fixedHeader', fixedHeaderStyle]} >
@@ -115,6 +146,8 @@ class Index extends Component {
         <View className='content' >
           {swiper}
           {category}
+          {newUserOwn}
+          {spike}
           <View >测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子</View >
         </View >
         <View className='toolBar' >底部tabBar</View >
