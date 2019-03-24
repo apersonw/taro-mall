@@ -44,6 +44,68 @@ export default [
           },
         ],
       },
+      //用户管理
+      {
+        path: '/muser',
+        name: 'muser',
+        icon: 'table',
+        routes: [
+          {
+            path: '/muser/userList',
+            name: 'userList',
+            component: './Muser/TableList',
+          },
+        ],
+      },
+      //资源管理
+      {
+        path: '/resource',
+        name: 'resource',
+        icon: 'table',
+        routes: [
+          {
+            path: '/resource/resourceList',
+            name: 'resourceList',
+            component: './Resource/TableList',
+          },
+        ],
+      },
+      //商品管理
+      {
+        path: '/goods',
+        name: 'goods',
+        icon: 'table',
+        routes: [
+          {
+            path: '/goods/goodsList',
+            name: 'goodsList',
+            component: './Goods/TableList',
+          },
+          {
+            path: '/goods/categoryList',
+            name: 'categoryList',
+            component: './Goods/CategoryTableList',
+          },
+          {
+            path: '/goods/brandList',
+            name: 'brandList',
+            component: './Goods/BrandTableList',
+          },
+        ],
+      },
+      //订单管理
+      {
+        path: '/order',
+        name: 'order',
+        icon: 'table',
+        routes: [
+          {
+            path: '/order/orderList',
+            name: 'orderList',
+            component: './Order/TableList',
+          },
+        ],
+      },
       // forms
       {
         path: '/form',
