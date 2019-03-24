@@ -33,14 +33,15 @@
           letter-spacing: 0;
         }
 
-        .spikeCountDown{
+        .spikeCountDown {
           margin-left: 5px;
           display: flex;
           flex-direction: row;
           font-family: PingFangSC-Semibold, serif;
           font-size: 24px;
           color: #27272A;
-          .spikeCountDownText{
+
+          .spikeCountDownText {
             border: 1px solid #eeeeee;
             letter-spacing: 3px;
             margin: 0 5px;
@@ -49,11 +50,12 @@
       }
     }
 
-    .spikeSecendRow{
+    .spikeSecendRow {
       display: flex;
       flex-direction: row;
       align-items: center;
-      .spikeRowLeft{
+
+      .spikeRowLeft {
         font-family: PingFangSC-Semibold, serif;
         font-size: 24px;
         color: #D13333;
@@ -153,5 +155,14 @@
     font-family: PingFangSC-Regular, serif;
     font-size: 30px;
     color: #FFFFFF;
+  }
+
+  .tabBar {
+    justify-content: space-around;
+    padding: 10px 0;
+
+    .tabBarImgBox {
+      background: transparent;
+    }
   }
 }

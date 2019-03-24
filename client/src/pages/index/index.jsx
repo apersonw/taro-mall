@@ -1,5 +1,5 @@
 import { Component } from '@tarojs/taro';
-import { Input, Swiper, SwiperItem, View } from '@tarojs/components';
+import { Input, Swiper, SwiperItem, Text, View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import styles from './index.module.scss';
 import action from '../../utils/action';
@@ -29,6 +29,11 @@ import packageImg from '../../assets/index/newuser/package@2x.png';
 import channelImg from '../../assets/index/newuser/channel@2x.png';
 import exclusiveImg from '../../assets/index/newuser/exclusive@2x.png';
 import moreImg from '../../assets/index/spike/more@2x.png';
+//tabbar
+import indexSelectImg from '../../assets/tabbar/indexSelect@2x.png';
+import categoryUnSelectImg from '../../assets/tabbar/categoryUnSelect@2x.png';
+import shopcardUnSelectImg from '../../assets/tabbar/shopcardUnSelect@2x.png';
+import mineUnSelectImg from '../../assets/tabbar/mineUnSelect@2x.png';
 
 @pageWrapper
 @connect()
@@ -124,8 +129,8 @@ class Index extends Component {
             <View className={styles.spikeCountDownText} >03</View >
           </View >
         </View >
-        <View className={styles.spikeSecendRow}>
-          <View className={styles.spikeRowLeft}>更多秒杀</View >
+        <View className={styles.spikeSecendRow} >
+          <View className={styles.spikeRowLeft} >更多秒杀</View >
           <CustomImage width={22} height={22} src={moreImg} />
         </View >
       </View >
@@ -150,7 +155,13 @@ class Index extends Component {
           {spike}
           <View >测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子</View >
         </View >
-        <View className='toolBar' >底部tabBar</View >
+        <View className={['toolBar', styles.tabBar]} >
+          <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={indexSelectImg} />
+          <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={categoryUnSelectImg} />
+          <CustomImage className={styles.tabBarImgBox} width={72} height={75} src={shopcardUnSelectImg} />
+          <Text className="iconfont" >&#xe608;</Text >
+          <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={mineUnSelectImg} />
+        </View >
       </View >
     );
   }
