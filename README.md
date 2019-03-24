@@ -6,13 +6,33 @@
 
 ```bash
 # clone
-$ git clone https://github.com/apersonw/taro-jd.git
+$ git clone https://github.com/apersonw/taro-mall.git
 
 # run
-$ ./run.sh
+$ cd taro-mall | ./run.sh
 ```
 
-### 三、目录说明
+### 三、本地开发
+
+1. 客户端
+```bash
+# run
+$ cd client | yarn dev:h5
+```
+
+2. 管理端
+```bash
+# run
+$ cd manager | yarn start
+```
+
+3. 后端接口服务
+```bash
+# run 需要本地启动mongo和redis
+$ cd server | 启动java项目
+```
+
+### 四、目录说明
 
 ```
 .
@@ -46,7 +66,7 @@ $ ./run.sh
 注：数据库访问地址：0.0.0.0:27018
 ```
 
-### 三、架构说明
+### 五、架构说明
 
 1. #### 设计说明：
 
@@ -73,7 +93,7 @@ $ ./run.sh
 - 所有模块部署均采用<a href="https://docker.io/">Docker</a>
 
 
-### 四、页面展示
+### 六、页面展示
 
 **1、首页展示** 
 
