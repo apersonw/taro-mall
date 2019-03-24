@@ -70,6 +70,29 @@ export default [
           },
         ],
       },
+      //会员卡管理
+      {
+        path: '/vipCard',
+        name: 'vipCard',
+        icon: 'table',
+        routes: [
+          {
+            path: '/vipCard/vipCardList',
+            name: 'vipCardList',
+            component: './VipCard/TableList',
+          },
+          {
+            path: '/vipCard/interestList',
+            name: 'interestList',
+            component: './VipCard/InterestTableList',
+          },
+          {
+            path: '/vipCard/couponList',
+            name: 'couponList',
+            component: './VipCard/CouponTableList',
+          },
+        ],
+      },
       //商品管理
       {
         path: '/goods',
