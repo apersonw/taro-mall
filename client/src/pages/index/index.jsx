@@ -159,7 +159,6 @@ class Index extends Component {
           <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={indexSelectImg} />
           <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={categoryUnSelectImg} />
           <CustomImage className={styles.tabBarImgBox} width={72} height={75} src={shopcardUnSelectImg} />
-          <Text className="iconfont" >&#xe608;</Text >
           <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={mineUnSelectImg} />
         </View >
       </View >
