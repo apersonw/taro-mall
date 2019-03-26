@@ -2,6 +2,7 @@ package org.rxjava.service.mall.entity;
 
 import io.lettuce.core.KeyValue;
 import lombok.Data;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -22,7 +23,7 @@ public class Sku {
     /**
      * 商品ID
      */
-    private String goodsId;
+    private ObjectId goodsId;
     /**
      * 销售价
      */

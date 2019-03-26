@@ -1,6 +1,7 @@
 package org.rxjava.service.mall.entity;
 
 import lombok.Data;
+import org.bson.types.ObjectId;
 import org.rxjava.service.mall.status.GoodsStatus;
 import org.rxjava.service.mall.type.ExcessType;
 import org.rxjava.service.mall.type.GoodsType;
@@ -44,11 +45,11 @@ public class Goods {
     /**
      * 类目Id
      */
-    private String categoryId;
+    private ObjectId categoryId;
     /**
      * 品牌Id
      */
-    private String brandId;
+    private ObjectId brandId;
     /**
      * 默认为虚拟商品
      */
