@@ -1,7 +1,6 @@
 package org.rxjava.service.goods.entity;
 
 import lombok.Data;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -20,7 +19,7 @@ import static org.springframework.data.mongodb.core.index.IndexDirection.DESCEND
 @Document
 public class Shop {
     @Id
-    private ObjectId id;
+    private String id;
     /**
      * 商铺名称
      */

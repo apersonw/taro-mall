@@ -12,7 +12,5 @@ public class Content {
      */
     private String type;
     private Image image;
-    private String text;
-    private String video;
-    private String file;
+    private String value;
 }

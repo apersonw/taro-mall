@@ -8,7 +8,7 @@ import java.util.List;
  * @author happy 2019-03-23 00:21
  */
 @Data
-public class GoodsQueryForm extends PageForm{
+public class GoodsQueryForm {
     /**
      * 模糊搜索
      */

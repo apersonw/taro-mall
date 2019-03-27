@@ -1,7 +1,6 @@
 package org.rxjava.service.goods.entity;
 
 import lombok.Data;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 @Data
 public class Detail {
     @Id
-    private ObjectId id;
+    private String id;
     private List<Image> carouselImgs;
     private List<Content> contents;
 }

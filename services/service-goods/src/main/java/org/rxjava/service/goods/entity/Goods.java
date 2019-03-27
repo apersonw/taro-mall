@@ -1,10 +1,8 @@
 package org.rxjava.service.goods.entity;
 
 import lombok.Data;
-import org.bson.types.ObjectId;
 import org.rxjava.service.goods.status.GoodsStatus;
 import org.rxjava.service.goods.type.ExcessType;
-import org.rxjava.service.goods.type.GoodsType;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -24,7 +22,7 @@ import static org.springframework.data.mongodb.core.index.IndexDirection.DESCEND
 @Document
 public class Goods {
     @Id
-    private ObjectId id;
+    private String id;
     /**
      * 商品名称
      */
@@ -41,11 +39,11 @@ public class Goods {
     /**
      * 类目Id
      */
-    private ObjectId categoryId;
+    private String categoryId;
     /**
      * 品牌Id
      */
-    private ObjectId brandId;
+    private String brandId;
     /**
      * 默认为虚拟商品
      */
