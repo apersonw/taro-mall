@@ -59,9 +59,13 @@ $ cd server | 启动java项目
 │   ├── category.jpg
 │   └── index.jpg
 ├── run.sh                    #启动项目运行脚本
-└── server                    #restful接口服务
-    ├── pom.xml
-    └── src
+└── services                  #微服务项目组
+    ├── service-goods         #商品微服务
+    │   ├── pom.xml
+    │   └── src
+    └── service-user          #用户微服务
+        ├── pom.xml
+        └── src
 
 注：数据库访问地址：0.0.0.0:27018
 ```
