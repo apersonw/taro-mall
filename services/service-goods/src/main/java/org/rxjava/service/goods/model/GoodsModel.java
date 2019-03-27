@@ -1,7 +1,10 @@
 package org.rxjava.service.goods.model;
 
 import lombok.Data;
+import org.rxjava.service.goods.entity.CarouselImg;
+import org.rxjava.service.goods.entity.Content;
 import org.rxjava.service.goods.entity.Image;
+import org.rxjava.service.goods.entity.Sku;
 import org.rxjava.service.goods.status.GoodsStatus;
 import org.rxjava.service.goods.type.ExcessType;
 import org.rxjava.service.goods.type.GoodsType;
@@ -67,4 +70,16 @@ public class GoodsModel {
      * 更新日期
      */
     private LocalDateTime updateDate;
+    /**
+     * 轮播图列表
+     */
+    private List<CarouselImg> carouselImgs;
+    /**
+     * 内容列表
+     */
+    private List<Content> contents;
+    /**
+     * Sku列表
+     */
+    private List<Sku> skus;
 }

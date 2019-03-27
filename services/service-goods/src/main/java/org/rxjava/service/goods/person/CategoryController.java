@@ -1,6 +1,6 @@
 package org.rxjava.service.goods.person;
 
-import org.rxjava.service.goods.form.CategoryQueryForm;
+import org.rxjava.service.goods.form.CategoryListForm;
 import org.rxjava.service.goods.model.CategoryModel;
 import org.rxjava.service.goods.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class CategoryController {
 
     @GetMapping("categories")
     public Flux<CategoryModel> getList(
-        @Valid CategoryQueryForm form
+        @Valid CategoryListForm form
     ) {
         return categoryService
                 .getList(form);

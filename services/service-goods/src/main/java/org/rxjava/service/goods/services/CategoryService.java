@@ -2,7 +2,7 @@ package org.rxjava.service.goods.services;
 
 import org.rxjava.service.goods.entity.Category;
 import org.rxjava.service.goods.form.CategoryPageQueryForm;
-import org.rxjava.service.goods.form.CategoryQueryForm;
+import org.rxjava.service.goods.form.CategoryListForm;
 import org.rxjava.service.goods.model.CategoryModel;
 import org.rxjava.service.goods.repository.CategoryRepository;
 import org.springframework.beans.BeanUtils;
@@ -26,13 +26,10 @@ public class CategoryService {
         return model;
     }
 
-    public Flux<CategoryModel> getList(CategoryQueryForm form) {
+    public Flux<CategoryModel> getList(CategoryListForm form) {
         return categoryRepository
                 .getList(form)
                 .map(this::transform);
     }
 
-    public Mono<Page<Category>> getPage(CategoryPageQueryForm form) {
-        return null;
-    }
 }

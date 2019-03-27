@@ -1,7 +1,7 @@
 package org.rxjava.service.goods.person;
 
 import org.rxjava.service.goods.annotation.Account;
-import org.rxjava.service.goods.form.GoodsQueryForm;
+import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.model.GoodsModel;
 import org.rxjava.service.goods.services.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class GoodsController {
     @Account(false)
     @GetMapping("goodsList")
     public Flux<GoodsModel> getList(
-            @Valid GoodsQueryForm form
+            @Valid GoodsListForm form
     ) {
         return goodsService
                 .getList(form);

@@ -8,11 +8,7 @@ import java.util.List;
  * @author happy 2019-03-23 00:21
  */
 @Data
-public class GoodsQueryForm {
-    /**
-     * 模糊搜索
-     */
-    private String search;
+public class GoodsListForm {
     /**
      * 类目Id
      */
@@ -21,8 +17,4 @@ public class GoodsQueryForm {
      * 品牌Id
      */
     private String brandId;
-    /**
-     * 标签
-     */
-    private List<String> tags;
 }

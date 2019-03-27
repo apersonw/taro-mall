@@ -1,7 +1,7 @@
 package org.rxjava.service.goods.repository;
 
 import org.rxjava.service.goods.entity.Category;
-import org.rxjava.service.goods.form.CategoryQueryForm;
+import org.rxjava.service.goods.form.CategoryListForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.repository.reactive.ReactiveSortingRepository;
@@ -17,7 +17,7 @@ public interface CategoryRepository extends ReactiveSortingRepository<Category, 
 }
 
 interface SpecialCategoryRepository {
-    Flux<Category> getList(CategoryQueryForm form);
+    Flux<Category> getList(CategoryListForm form);
 }
 
 class SpecialCategoryRepositoryImpl implements SpecialCategoryRepository {
@@ -25,7 +25,7 @@ class SpecialCategoryRepositoryImpl implements SpecialCategoryRepository {
     private ReactiveMongoTemplate reactiveMongoTemplate;
 
     @Override
-    public Flux<Category> getList(CategoryQueryForm form) {
+    public Flux<Category> getList(CategoryListForm form) {
         return null;
     }
 }

@@ -1,8 +1,11 @@
 package org.rxjava.service.goods.repository;
 
 import org.apache.commons.lang3.StringUtils;
+import org.rxjava.service.goods.entity.CarouselImg;
+import org.rxjava.service.goods.entity.Content;
 import org.rxjava.service.goods.entity.Goods;
-import org.rxjava.service.goods.form.GoodsQueryForm;
+import org.rxjava.service.goods.entity.Sku;
+import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.status.GoodsStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
@@ -22,9 +25,15 @@ public interface GoodsRepository extends ReactiveSortingRepository<Goods, String
 
 interface SpecialGoodsRepository {
 
-    Flux<Goods> getList(GoodsQueryForm form);
+    Flux<Goods> getList(GoodsListForm form);
 
     Mono<Goods> getByGoodsId(String goodsId);
+
+    Flux<Content> getContentList(String goodsId);
+
+    Flux<Sku> getSkuList(String goodsId);
+
+    Flux<CarouselImg> getCarouselImgList(String goodsId);
 }
 
 class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
@@ -32,7 +41,7 @@ class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
     private ReactiveMongoTemplate reactiveMongoTemplate;
 
     @Override
-    public Flux<Goods> getList(GoodsQueryForm form) {
+    public Flux<Goods> getList(GoodsListForm form) {
         Criteria criteria = new Criteria();
         if (StringUtils.isNotEmpty(form.getBrandId())) {
             criteria.and("brandId").is(form.getBrandId());
@@ -40,7 +49,6 @@ class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
         if (StringUtils.isNotEmpty(form.getCategoryId())) {
             criteria.and("categoryId").is(form.getCategoryId());
         }
-        //// TODO: 2019-03-23 剩余的两个条件使用到的时候写
         Query query = Query.query(criteria);
         return reactiveMongoTemplate
                 .find(query, Goods.class);
@@ -54,5 +62,23 @@ class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
         Query query = Query.query(criteria);
         return reactiveMongoTemplate
                 .findOne(query, Goods.class);
+    }
+
+    @Override
+    public Flux<Content> getContentList(String goodsId) {
+        return reactiveMongoTemplate
+                .find(Query.query(Criteria.where("goodsId").is(goodsId)), Content.class);
+    }
+
+    @Override
+    public Flux<Sku> getSkuList(String goodsId) {
+        return reactiveMongoTemplate
+                .find(Query.query(Criteria.where("goodsId").is(goodsId)), Sku.class);
+    }
+
+    @Override
+    public Flux<CarouselImg> getCarouselImgList(String goodsId) {
+        return reactiveMongoTemplate
+                .find(Query.query(Criteria.where("goodsId").is(goodsId)), CarouselImg.class);
     }
 }
