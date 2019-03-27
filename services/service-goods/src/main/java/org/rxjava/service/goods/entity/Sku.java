@@ -19,7 +19,7 @@ public class Sku {
      * ID
      */
     @Id
-    private String id;
+    private ObjectId id;
     /**
      * 商品ID
      */

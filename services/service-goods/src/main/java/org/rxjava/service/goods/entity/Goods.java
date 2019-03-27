@@ -24,22 +24,18 @@ import static org.springframework.data.mongodb.core.index.IndexDirection.DESCEND
 @Document
 public class Goods {
     @Id
-    private String id;
+    private ObjectId id;
     /**
-     * 标题
+     * 商品名称
      */
     @Indexed
-    private String title;
-    /**
-     * 卖点
-     */
-    private String sellingPoint;
+    private String name;
     /**
      * 缩略图
      */
     private Image thumb;
     /**
-     * 分享描述
+     * 商品描述
      */
     private String desc;
     /**
@@ -54,7 +50,7 @@ public class Goods {
      * 默认为虚拟商品
      */
     @Indexed
-    private String type = GoodsType.VIRTUAL.name();
+    private String type;
     /**
      * 商品状态
      */

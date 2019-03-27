@@ -1,6 +1,7 @@
 package org.rxjava.service.goods.entity;
 
 import lombok.Data;
+import org.bson.types.ObjectId;
 import org.rxjava.service.goods.status.CategoryStatus;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -23,7 +24,7 @@ public class Category {
      * ID
      */
     @Id
-    private String id;
+    private ObjectId id;
     /**
      * 名称
      */
@@ -36,7 +37,6 @@ public class Category {
     /**
      * 分类状态
      */
-    @Indexed
     private String status = CategoryStatus.NORMAL.name();
     /**
      * 缩略图
