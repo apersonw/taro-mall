@@ -1,7 +1,7 @@
 spring:
   application:
-    name: server
+    name: service-goods
   data:
     mongodb:
-      database: server
+      database: service-goods
       uri: mongodb://127.0.0.1:27017

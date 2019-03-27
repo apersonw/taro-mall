@@ -1,11 +1,16 @@
 package org.rxjava.service.goods.manager;
 
+import org.rxjava.service.goods.annotation.Account;
 import org.rxjava.service.goods.entity.Category;
+import org.rxjava.service.goods.entity.Goods;
 import org.rxjava.service.goods.form.CategoryPageQueryForm;
+import org.rxjava.service.goods.form.GoodsCreateForm;
 import org.rxjava.service.goods.services.CategoryService;
+import org.rxjava.service.goods.services.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
@@ -17,16 +22,18 @@ import javax.validation.Valid;
  */
 @RestController
 @RequestMapping("admin")
-public class AdminCategoryController {
+public class AdminGoodsController {
 
     @Autowired
-    private CategoryService categoryService;
+    private GoodsService goodsService;
 
-    @GetMapping("categories")
-    public Mono<Page<Category>> getPage(
-            @Valid CategoryPageQueryForm form
-    ) {
-        return categoryService
-                .getPage(form);
+    /**
+     * 创建商品
+     */
+    @Account(false)
+    @PostMapping("goods")
+    public Mono<Goods> create(GoodsCreateForm form) {
+        return goodsService
+                .create(form);
     }
 }

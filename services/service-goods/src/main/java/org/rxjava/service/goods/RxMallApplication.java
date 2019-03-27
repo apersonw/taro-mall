@@ -4,6 +4,7 @@ import org.rxjava.service.goods.annotation.Account;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
@@ -13,6 +14,7 @@ import reactor.core.publisher.Mono;
  */
 @SpringBootApplication
 @RestController
+@EnableMongoAuditing
 public class RxMallApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(RxMallApplication.class).web(WebApplicationType.REACTIVE).run(args);

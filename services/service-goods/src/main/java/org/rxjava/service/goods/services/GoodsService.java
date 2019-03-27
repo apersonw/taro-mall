@@ -1,6 +1,7 @@
 package org.rxjava.service.goods.services;
 
 import org.rxjava.service.goods.entity.Goods;
+import org.rxjava.service.goods.form.GoodsCreateForm;
 import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.model.GoodsModel;
 import org.rxjava.service.goods.repository.GoodsRepository;
@@ -47,5 +48,12 @@ public class GoodsService {
         GoodsModel model = new GoodsModel();
         BeanUtils.copyProperties(goods, model);
         return model;
+    }
+
+    public Mono<Goods> create(GoodsCreateForm form) {
+        Goods goods = new Goods();
+        BeanUtils.copyProperties(form, goods);
+        return goodsRepository
+                .save(goods);
     }
 }

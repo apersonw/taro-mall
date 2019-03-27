@@ -5,7 +5,7 @@ services:
     build: ./client/
     container_name: "client"
     depends_on:
-      - spring-server
+      - service-goods
     ports:
       - 81:80
     restart: always
@@ -13,15 +13,15 @@ services:
     build: ./manager/
     container_name: "manager"
     depends_on:
-      - spring-server
+      - service-goods
     environment:
       API_HOST: server:8080
     ports:
       - 82:80
     restart: always
-  spring-server:
-    build: ./server/target/docker-bin/
-    container_name: "spring-server"
+  service-goods:
+    build: ./services/service-goods/target/docker-bin/
+    container_name: "service-goods"
     expose:
       - 8080
     depends_on:
