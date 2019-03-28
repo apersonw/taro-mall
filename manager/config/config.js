@@ -82,7 +82,7 @@ export default {
     //   pathRewrite: { '^/server': '' },
     // },
     '/api/admin/': {
-      target: 'http://localhost:8080/',
+      target: 'http://localhost:8082/',
       changeOrigin: true,
       pathRewrite: { '^/api/': '' },
     },

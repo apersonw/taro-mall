@@ -5,3 +5,5 @@ spring:
     mongodb:
       database: service-goods
       uri: mongodb://127.0.0.1:27017
+server:
+  port: 8082

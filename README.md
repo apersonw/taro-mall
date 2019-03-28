@@ -96,8 +96,10 @@ $ cd server | 启动java项目
 
 - 所有模块部署均采用<a href="https://docker.io/">Docker</a>
 
+### 六、交易流程图
+<img src="./readmeImg/trade.png" width="375px"/>
 
-### 六、页面展示
+### 七、页面展示
 
 **1、首页展示** 
 
