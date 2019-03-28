@@ -3,10 +3,12 @@ package org.rxjava.service.goods.services;
 import org.rxjava.service.goods.entity.Goods;
 import org.rxjava.service.goods.form.GoodsCreateForm;
 import org.rxjava.service.goods.form.GoodsListForm;
+import org.rxjava.service.goods.form.GoodsPageForm;
 import org.rxjava.service.goods.model.GoodsModel;
 import org.rxjava.service.goods.repository.GoodsRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -21,10 +23,15 @@ public class GoodsService {
     @Autowired
     private GoodsRepository goodsRepository;
 
-    public Flux<GoodsModel> getList(GoodsListForm form) {
+    public Flux<GoodsModel> getListModel(GoodsListForm form) {
         return goodsRepository
                 .getList(form)
                 .map(this::transform);
+    }
+
+    public Mono<Page<Goods>> getPage(GoodsPageForm form) {
+        return goodsRepository
+                .getPage(form);
     }
 
     public Mono<GoodsModel> getByGoodsId(String goodsId) {

@@ -6,15 +6,22 @@ import org.rxjava.service.goods.entity.Content;
 import org.rxjava.service.goods.entity.Goods;
 import org.rxjava.service.goods.entity.Sku;
 import org.rxjava.service.goods.form.GoodsListForm;
+import org.rxjava.service.goods.form.GoodsPageForm;
 import org.rxjava.service.goods.status.GoodsStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.TypedAggregation;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.repository.reactive.ReactiveSortingRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 /**
  * @author happy 2019-03-23 00:17
@@ -34,6 +41,8 @@ interface SpecialGoodsRepository {
     Flux<Sku> getSkuList(String goodsId);
 
     Flux<CarouselImg> getCarouselImgList(String goodsId);
+
+    Mono<Page<Goods>> getPage(GoodsPageForm form);
 }
 
 class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
@@ -80,5 +89,20 @@ class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
     public Flux<CarouselImg> getCarouselImgList(String goodsId) {
         return reactiveMongoTemplate
                 .find(Query.query(Criteria.where("goodsId").is(goodsId)), CarouselImg.class);
+    }
+
+    @Override
+    public Mono<Page<Goods>> getPage(GoodsPageForm form) {
+        Query query = new Query();
+        return Mono
+                .zip(
+                        reactiveMongoTemplate.find(query, Goods.class).collectList(),
+                        reactiveMongoTemplate.count(query, Goods.class)
+                )
+                .map(z -> {
+                    List<Goods> goodsList = z.getT1();
+                    Long num = z.getT2();
+                    return new PageImpl<>(goodsList, PageRequest.of(form.getPage(), form.getPageSize()), num);
+                });
     }
 }

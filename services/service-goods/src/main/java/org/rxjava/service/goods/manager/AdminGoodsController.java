@@ -1,11 +1,9 @@
 package org.rxjava.service.goods.manager;
 
 import org.rxjava.service.goods.annotation.Account;
-import org.rxjava.service.goods.entity.Category;
 import org.rxjava.service.goods.entity.Goods;
-import org.rxjava.service.goods.form.CategoryPageQueryForm;
 import org.rxjava.service.goods.form.GoodsCreateForm;
-import org.rxjava.service.goods.services.CategoryService;
+import org.rxjava.service.goods.form.GoodsPageForm;
 import org.rxjava.service.goods.services.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -35,5 +33,17 @@ public class AdminGoodsController {
     public Mono<Goods> create(GoodsCreateForm form) {
         return goodsService
                 .create(form);
+    }
+
+    /**
+     * 商品列表
+     */
+    @Account(false)
+    @GetMapping("goodsList")
+    public Mono<Page<Goods>> getList(
+            @Valid GoodsPageForm form
+    ) {
+        return goodsService
+                .getPage(form);
     }
 }

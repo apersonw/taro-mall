@@ -30,7 +30,7 @@ public class GoodsController {
             @Valid GoodsListForm form
     ) {
         return goodsService
-                .getList(form);
+                .getListModel(form);
     }
 
     /**
