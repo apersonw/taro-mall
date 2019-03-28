@@ -1,10 +1,8 @@
-package org.rxjava.service.goods;
+package org.rxjava.gateway.client;
 
-import org.rxjava.service.goods.annotation.Account;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
@@ -14,15 +12,13 @@ import reactor.core.publisher.Mono;
  */
 @SpringBootApplication
 @RestController
-@EnableMongoAuditing
-public class RxMallApplication {
+public class RxClientApplication {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(RxMallApplication.class).web(WebApplicationType.REACTIVE).run(args);
+        new SpringApplicationBuilder(RxClientApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
 
-    @Account(false)
     @GetMapping("/")
     public Mono<String> system() {
-        return Mono.just("商城服务正常");
+        return Mono.just("客户端网关正常");
     }
 }

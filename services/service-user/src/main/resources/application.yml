@@ -1,11 +1,11 @@
 spring:
   application:
-    name: service-goods
+    name: service-user
   data:
     mongodb:
-      database: service-goods
+      database: service-user
       uri: mongodb://127.0.0.1:27017
   redis:
-    database: 1
+    database: 0
 server:
-  port: 8082
+  port: 8081

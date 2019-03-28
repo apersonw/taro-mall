@@ -22,8 +22,14 @@ services:
   service-goods:
     build: ./services/service-goods/target/docker-bin/
     container_name: "service-goods"
-    expose:
-      - 8080
+    depends_on:
+      - mongodb
+      - redis
+    environment:
+      DB_HOST: mongodb:27017
+  service-user:
+    build: ./services/service-user/target/docker-bin/
+    container_name: "service-user"
     depends_on:
       - mongodb
       - redis
