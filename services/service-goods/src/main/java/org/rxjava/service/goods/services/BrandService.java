@@ -1,7 +1,7 @@
 package org.rxjava.service.goods.services;
 
 import org.rxjava.service.goods.entity.Brand;
-import org.rxjava.service.goods.form.BrandQueryForm;
+import org.rxjava.service.goods.form.BrandListForm;
 import org.rxjava.service.goods.model.BrandModel;
 import org.rxjava.service.goods.repository.BrandRepository;
 import org.springframework.beans.BeanUtils;
@@ -17,7 +17,7 @@ public class BrandService {
     @Autowired
     private BrandRepository brandRepository;
 
-    public Flux<BrandModel> getList(BrandQueryForm form) {
+    public Flux<BrandModel> getList(BrandListForm form) {
         return brandRepository
                 .getList(form)
                 .map(this::transform);

@@ -1,7 +1,7 @@
 package org.rxjava.service.goods.person;
 
 import org.rxjava.service.goods.model.BrandModel;
-import org.rxjava.service.goods.form.BrandQueryForm;
+import org.rxjava.service.goods.form.BrandListForm;
 import org.rxjava.service.goods.services.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ public class BrandController {
 
     @GetMapping("brands")
     public Flux<BrandModel> getList(
-            @Valid BrandQueryForm form
+            @Valid BrandListForm form
     ) {
         return brandService
                 .getList(form);

@@ -2,9 +2,14 @@ package org.rxjava.service.goods.entity;
 
 import io.lettuce.core.KeyValue;
 import lombok.Data;
+import org.rxjava.service.entity.Image;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.IndexDirection;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -39,4 +44,10 @@ public class Sku {
      * SKU属性列表
      */
     private List<KeyValue<String, String>> params;
+    /**
+     * 创建日期
+     */
+    @CreatedDate
+    @Indexed(direction = IndexDirection.DESCENDING)
+    private LocalDateTime createDate;
 }

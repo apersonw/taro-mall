@@ -6,10 +6,10 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
 /**
- * @author happy 2019-03-27 21:09
+ * @author happy 2019-03-25 23:05
  */
 @Data
-public class ShopListForm {
+public class BrandListForm {
     @Min(value = 0, message = "页码从0开始，表示第一页")
     private int page = 0;
     @Max(value = 200, message = "页大小，最大为200")

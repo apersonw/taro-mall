@@ -46,14 +46,14 @@ export default [
       },
       //用户管理
       {
-        path: '/muser',
-        name: 'muser',
+        path: '/member',
+        name: 'member',
         icon: 'table',
         routes: [
           {
-            path: '/muser/userList',
+            path: '/member/userList',
             name: 'userList',
-            component: './Muser/TableList',
+            component: './Member/TableList',
           },
         ],
       },
