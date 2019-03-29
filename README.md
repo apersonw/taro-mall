@@ -29,7 +29,7 @@ $ cd manager | yarn start
 3. 后端接口服务
 ```bash
 # run 需要本地启动mongo和redis
-$ cd server | 启动java项目
+$ cd services/xxx | 启动java项目
 ```
 
 ### 四、目录说明
