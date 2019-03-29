@@ -1,0 +1,49 @@
+.goods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &::-webkit-scrollbar {
+    display: none
+  }
+
+  .firstRow {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+
+    .symble {
+      font-family: PingFangSC-Semibold, serif;
+      font-size: 24px;
+      color: #D13333;
+      line-height: 33px;
+    }
+
+    .price {
+      font-family: PingFangSC-Semibold, serif;
+      font-size: 32px;
+      color: #D13333;
+      line-height: 33px;
+    }
+  }
+
+  .secendRow {
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+
+    .symble {
+      font-family: PingFangSC-Semibold, serif;
+      font-size: 24px;
+      color: #001515;
+      line-height: 33px;
+    }
+
+    .price {
+      font-family: PingFangSC-Semibold, serif;
+      font-size: 24px;
+      color: #001515;
+      line-height: 33px;
+    }
+  }
+}

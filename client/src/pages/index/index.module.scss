@@ -63,6 +63,32 @@
         margin-right: 10px;
       }
     }
+
+    .spikeScroll {
+      overflow: hidden;
+
+      .goodsList {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: row;
+        flex-flow: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        list-style: none;
+        -webkit-overflow-scrolling: touch;
+        height: 100%;
+        /*纵向超出部分将会隐藏，即滚动条部分被挤出可视区域*/
+        padding-bottom: 25px;
+        margin-bottom: -15px;
+      }
+    }
+  }
+
+  .courtyard{
+    margin-top: 39px;
+    .titleImg{
+      height: 90px;
+    }
   }
 
   .newUserOwnBox {

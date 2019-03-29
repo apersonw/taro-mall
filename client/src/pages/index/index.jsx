@@ -34,6 +34,8 @@ import indexSelectImg from '../../assets/tabbar/indexSelect@2x.png';
 import categoryUnSelectImg from '../../assets/tabbar/categoryUnSelect@2x.png';
 import shopcardUnSelectImg from '../../assets/tabbar/shopcardUnSelect@2x.png';
 import mineUnSelectImg from '../../assets/tabbar/mineUnSelect@2x.png';
+import courtyardTitleImg from '../../assets/index/courtyard/title@2x.png';
+import Goods from '../../components/Goods';
 
 @pageWrapper
 @connect()
@@ -134,7 +136,23 @@ class Index extends Component {
           <CustomImage width={22} height={22} src={moreImg} />
         </View >
       </View >
-      <View >商品列</View >
+      <View className={styles.spikeScroll} >
+        <View className={styles.goodsList} >
+          <Goods />
+          <Goods />
+          <Goods />
+          <Goods />
+          <Goods />
+          <Goods />
+          <Goods />
+          <Goods />
+          <Goods />
+        </View >
+      </View >
+    </View >;
+
+    const courtyard = <View className={styles.courtyard}>
+      <CustomImage height={90} src={courtyardTitleImg} />
     </View >;
     return (
       <View className={styles.container} >
@@ -153,6 +171,7 @@ class Index extends Component {
           {category}
           {newUserOwn}
           {spike}
+          {courtyard}
           <View >测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子</View >
         </View >
         <View className={['toolBar', styles.tabBar]} >
