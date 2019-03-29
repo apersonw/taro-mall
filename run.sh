@@ -13,15 +13,8 @@ yarn
 yarn build
 cd ..
 
-#构建service-goods
-cd services/service-goods
+#构建services
 mvn clean package -Prelease
-cd ../..
-
-#构建service-user
-cd services/service-user
-mvn clean package -Prelease
-cd ../..
 
 pwd
 ##运行docker-compose
