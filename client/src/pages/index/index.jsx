@@ -35,11 +35,11 @@ import categoryUnSelectImg from '../../assets/tabbar/categoryUnSelect@2x.png';
 import shopcardUnSelectImg from '../../assets/tabbar/shopcardUnSelect@2x.png';
 import mineUnSelectImg from '../../assets/tabbar/mineUnSelect@2x.png';
 import courtyardTitleImg from '../../assets/index/courtyard/title@2x.png';
-import Goods from '../../components/GoodsSpike';
+import GoodsSpike from '../../components/GoodsSpike';
 import goodsList from './mock.json';
 
 @pageWrapper
-@connect()
+@connect(() => ({}))
 class Index extends Component {
 
   state = {
@@ -54,20 +54,21 @@ class Index extends Component {
     const { dispatch } = this.props;
     dispatch(action('user/fetch'));
 
-    window.onscroll = () => {
-      //为了保证兼容性，这里取两个值，哪个有值取哪一个
-      //scrollTop就是触发滚轮事件时滚轮的高度
-      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-      if (scrollTop > 0) {
-        this.setState({
-          fixedHeaderStyle: styles.fixedScrollHeader,
-        });
-      } else {
-        this.setState({
-          fixedHeaderStyle: styles.fixedHeader,
-        });
-      }
-    };
+    console.log(window);
+    // window.onscroll = () => {
+    //   //为了保证兼容性，这里取两个值，哪个有值取哪一个
+    //   //scrollTop就是触发滚轮事件时滚轮的高度
+    //   const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    //   if (scrollTop > 0) {
+    //     this.setState({
+    //       fixedHeaderStyle: styles.fixedScrollHeader,
+    //     });
+    //   } else {
+    //     this.setState({
+    //       fixedHeaderStyle: styles.fixedHeader,
+    //     });
+    //   }
+    // };
   }
 
   render() {
@@ -140,7 +141,7 @@ class Index extends Component {
       <View className={styles.spikeScroll} >
         <View className={styles.goodsList} >
           {(goodsList || []).map(goods => (
-            <Goods key={goods.id} data={goods} />
+            <GoodsSpike key={goods.id} data={goods} />
           ))}
         </View >
       </View >

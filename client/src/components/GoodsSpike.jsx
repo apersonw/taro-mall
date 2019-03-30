@@ -8,11 +8,10 @@ class GoodsSpike extends Component {
     const { data = {} } = this.props;
     const { thumb = {}, coverPrice = 0 } = data;
     const { url } = thumb;
-
     const showCoverPrice = coverPrice / 100;
     return (
       <View className={styles.goods} >
-        <CustomImage width={140} src={url} />
+        <CustomImage width={140} height={140} src={url} />
         <View className={styles.firstRow} >
           <View className={styles.symble} >¥</View >
           <View className={styles.price} >{showCoverPrice}</View >

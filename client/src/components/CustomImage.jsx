@@ -6,6 +6,7 @@ class CustomImage extends Component {
     let { src, width = 0, height = 0, className, mode = 'scaleToFill', onClick, style = '' } = this.props;
     width = width && Taro.pxTransform(width);
     height = height && Taro.pxTransform(height);
+    console.log(src);
     return (
       <Image
         onClick={onClick}
