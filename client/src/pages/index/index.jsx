@@ -35,7 +35,8 @@ import categoryUnSelectImg from '../../assets/tabbar/categoryUnSelect@2x.png';
 import shopcardUnSelectImg from '../../assets/tabbar/shopcardUnSelect@2x.png';
 import mineUnSelectImg from '../../assets/tabbar/mineUnSelect@2x.png';
 import courtyardTitleImg from '../../assets/index/courtyard/title@2x.png';
-import Goods from '../../components/Goods';
+import Goods from '../../components/GoodsSpike';
+import goodsList from './mock.json';
 
 @pageWrapper
 @connect()
@@ -138,20 +139,14 @@ class Index extends Component {
       </View >
       <View className={styles.spikeScroll} >
         <View className={styles.goodsList} >
-          <Goods />
-          <Goods />
-          <Goods />
-          <Goods />
-          <Goods />
-          <Goods />
-          <Goods />
-          <Goods />
-          <Goods />
+          {(goodsList || []).map(goods => (
+            <Goods key={goods.id} data={goods} />
+          ))}
         </View >
       </View >
     </View >;
 
-    const courtyard = <View className={styles.courtyard}>
+    const courtyard = <View className={styles.courtyard} >
       <CustomImage height={90} src={courtyardTitleImg} />
     </View >;
     return (

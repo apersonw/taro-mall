@@ -46,6 +46,10 @@ public class Goods {
      */
     private String brandId;
     /**
+     * 售价
+     */
+    private int coverPrice;
+    /**
      * 默认为虚拟商品
      */
     @Indexed
