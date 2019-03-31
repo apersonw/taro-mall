@@ -1,0 +1,24 @@
+.categoryBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .categoryItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin-top: 30px;
+
+    font-family: PingFangSC-Regular, serif;
+    font-size: 24px;
+    color: #666666;
+
+    .categoryItemText {
+      margin-top: 18px;
+    }
+  }
+}
