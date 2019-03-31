@@ -3,10 +3,13 @@ import { Image } from '@tarojs/components';
 
 class CustomImage extends Component {
   render() {
-    let { src, width = 0, height = 0, className, mode = 'scaleToFill', onClick, style = '' } = this.props;
+    let { src, width = 0, height = 0, className, mode = 'scaleToFill', onClick, style } = this.props;
     width = width && Taro.pxTransform(width);
     height = height && Taro.pxTransform(height);
-    console.log(src);
+
+    if (style == null || typeof style === 'undefined') {
+      style = '';
+    }
     return (
       <Image
         onClick={onClick}

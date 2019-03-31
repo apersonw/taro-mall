@@ -1,4 +1,4 @@
-import { Component } from '@tarojs/taro';
+import Taro, { Component } from '@tarojs/taro';
 import { Input, Swiper, SwiperItem, Text, View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import styles from './index.module.scss';
@@ -54,21 +54,37 @@ class Index extends Component {
     const { dispatch } = this.props;
     dispatch(action('user/fetch'));
 
-    console.log(window);
-    // window.onscroll = () => {
-    //   //为了保证兼容性，这里取两个值，哪个有值取哪一个
-    //   //scrollTop就是触发滚轮事件时滚轮的高度
-    //   const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    //   if (scrollTop > 0) {
-    //     this.setState({
-    //       fixedHeaderStyle: styles.fixedScrollHeader,
-    //     });
-    //   } else {
-    //     this.setState({
-    //       fixedHeaderStyle: styles.fixedHeader,
-    //     });
-    //   }
-    // };
+    //window仅在h5下可用，小程序使用的onPageScroll
+    if (window) {
+      window.onscroll = () => {
+        //为了保证兼容性，这里取两个值，哪个有值取哪一个
+        //scrollTop就是触发滚轮事件时滚轮的高度
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > 0) {
+          this.setState({
+            fixedHeaderStyle: styles.fixedScrollHeader,
+          });
+        } else {
+          this.setState({
+            fixedHeaderStyle: styles.fixedHeader,
+          });
+        }
+      };
+    }
+  }
+
+  onPageScroll({ scrollTop }) {
+    if (scrollTop > 0) {
+      if (this.state.fixedHeaderStyle !== styles.fixedScrollHeader) {
+        this.setState({
+          fixedHeaderStyle: styles.fixedScrollHeader,
+        });
+      }
+    } else {
+      this.setState({
+        fixedHeaderStyle: styles.fixedHeader,
+      });
+    }
   }
 
   render() {
@@ -85,8 +101,8 @@ class Index extends Component {
       indicatorDots
       autoplay
     >
-      {swiperImgs.map(img => (
-        <SwiperItem style="width:100% !importment;" >
+      {swiperImgs.map((img, index) => (
+        <SwiperItem style="width:100% !importment;" key={index} >
           <CustomImage height={366} src={img} />
         </SwiperItem >
       ))}
@@ -106,8 +122,8 @@ class Index extends Component {
     ];
     //分类
     const category = <View className={styles.categoryBox} >
-      {categoryItems.map(item => (
-        <View className={styles.categoryItem} >
+      {categoryItems.map((item, index) => (
+        <View className={styles.categoryItem} key={index} >
           <CustomImage width={80} height={80} src={item.img} />
           <View className={styles.categoryItemText} >{item.text}</View >
         </View >
@@ -152,7 +168,7 @@ class Index extends Component {
     </View >;
     return (
       <View className={styles.container} >
-        <View className={['fixedHeader', fixedHeaderStyle]} >
+        <View className={[styles.fixedHeader, fixedHeaderStyle]} >
           <CustomImage width={40} height={32} src={categoryIcon} />
           <View className={styles.searchBox} >
             <CustomImage className={styles.iconImg} width={50} height={30} src={icon} />
@@ -170,7 +186,7 @@ class Index extends Component {
           {courtyard}
           <View >测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子</View >
         </View >
-        <View className={['toolBar', styles.tabBar]} >
+        <View className={[styles.toolBar, styles.tabBar]} >
           <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={indexSelectImg} />
           <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={categoryUnSelectImg} />
           <CustomImage className={styles.tabBarImgBox} width={72} height={75} src={shopcardUnSelectImg} />

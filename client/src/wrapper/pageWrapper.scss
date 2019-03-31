@@ -10,6 +10,7 @@
 
     .fixedHeader { //头部固定
       position: fixed;
+      display: flex;
       left: 0;
       top: 0;
       z-index: 1000;
@@ -17,7 +18,6 @@
       height: 90px;
       //background-color: #ffa270;
       padding: 0 30px;
-      display: flex;
       align-items: center;
     }
 
