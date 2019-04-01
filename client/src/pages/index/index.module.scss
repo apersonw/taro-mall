@@ -84,18 +84,32 @@
     }
   }
 
-  .courtyard{
-    margin-top: 39px;
-    .titleImg{
-      height: 90px;
-    }
-  }
-
   .newUserOwnBox {
     display: flex;
     flex-direction: row;
     margin-top: 30px;
     justify-content: space-evenly;
+  }
+
+  .courtyardBox {
+    display: flex;
+    flex-direction: column;
+
+    .row {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .everydayBox {
+    display: flex;
+    flex-direction: column;
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
 
   .toolBar { //底部工具条，也即tabBar
@@ -111,6 +125,12 @@
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #f8f8f8;
     align-items: center;
+  }
+
+  .content { //内容区域，即实际滚动区域
+    //padding-top: 90px;
+    padding-bottom: 90px;
+    background-color: white;
   }
 
   .tabBar {

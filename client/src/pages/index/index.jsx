@@ -3,7 +3,7 @@ import { Input, Swiper, SwiperItem, Text, View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import styles from './index.module.scss';
 import action from '../../utils/action';
-import pageWrapper from '../../wrapper/pageWrapper';
+import h5PageWrapper from '../../wrapper/h5PageWrapper';
 import CustomImage from '../../components/CustomImage';
 import categoryIcon from '../../assets/index/category@2x.png';
 import icon from '../../assets/index/icon.png';
@@ -34,14 +34,22 @@ import indexSelectImg from '../../assets/tabbar/indexSelect@2x.png';
 import categoryUnSelectImg from '../../assets/tabbar/categoryUnSelect@2x.png';
 import shopcardUnSelectImg from '../../assets/tabbar/shopcardUnSelect@2x.png';
 import mineUnSelectImg from '../../assets/tabbar/mineUnSelect@2x.png';
-import courtyardTitleImg from '../../assets/index/courtyard/title@2x.png';
-import GoodsSpike from '../../components/GoodsSpike';
+
+//data
 import goodsList from './mock.json';
+import courtyardList from './courtyard.json';
+import everydayList from './everyday.json';
+//components
+import GoodsSpike from '../../components/GoodsSpike';
 import BannerSwiper from '../../components/BannerSwiper';
 import Category from '../../components/Category';
 import FixedHeader from '../../components/FixedHeader';
+import TwoGrid from '../../components/expo/TwoGrid';
+import courtyardTitleImg from '../../assets/index/courtyard/title@2x.png';
+import everydayTitleImg from '../../assets/index/everyday/title@2x.png';
+import OneGrid from '../../components/expo/OneGrid';
 
-@pageWrapper
+@h5PageWrapper
 @connect(() => ({}))
 class Index extends Component {
 
@@ -145,20 +153,36 @@ class Index extends Component {
       </View >
     </View >;
 
-    const courtyard = <View className={styles.courtyard} >
-      <CustomImage height={90} src={courtyardTitleImg} />
-    </View >;
-
     return (
       <View className={styles.container} >
         <FixedHeader fixedScroll={fixedHeaderStyle} />
-        <View className='content' >
+        <View className={styles.content} >
           <BannerSwiper imgs={swiperImgs} />
           <Category items={categoryItems} />
           {newUserOwn}
           {spike}
-          {courtyard}
-          <View >测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子测试潮流电子</View >
+          <CustomImage height={90} src={courtyardTitleImg} />
+          <View className={styles.courtyardBox} >
+            <View className={styles.row} >
+              {(courtyardList || []).slice(0, 2).map((item, index) => (
+                <TwoGrid item={item} key={index} />
+              ))}
+            </View >
+            <View className={styles.row} >
+              {(courtyardList || []).slice(2, 6).map((item, index) => (
+                <OneGrid item={item} key={index} />
+              ))}
+            </View >
+          </View >
+          {/*每日逛*/}
+          <CustomImage height={90} src={everydayTitleImg} />
+          <View className={styles.everydayBox} >
+            <View className={styles.row} >
+              {(everydayList || []).map((item, index) => (
+                <OneGrid item={item} key={index} />
+              ))}
+            </View >
+          </View >
         </View >
         <View className={[styles.toolBar, styles.tabBar]} >
           <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={indexSelectImg} />

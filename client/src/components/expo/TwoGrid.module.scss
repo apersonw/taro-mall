@@ -1,0 +1,52 @@
+.twoGrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 375px;
+  height: 240px;
+
+  .imgBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .titleBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+      font-family: PingFangSC-Regular, serif;
+      font-size: 32px;
+      color: #010101;
+
+      &::before {
+        display: inline-block;
+        width: 48px;
+        height: 1px;
+        content: '';
+        position: relative;
+        background: #000;
+        top: -12px;
+        left: -6px;
+      }
+
+      &::after {
+        display: inline-block;
+        width: 48px;
+        height: 1px;
+        content: '';
+        position: relative;
+        background: #000;
+        top: -12px;
+        left: 6px;
+      }
+    }
+
+    .subTitle {
+      font-family: PingFangSC-Regular, serif;
+      font-size: 24px;
+      color: #728DFC;
+    }
+  }
+}

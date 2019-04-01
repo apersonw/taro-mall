@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { SwiperItem } from '@tarojs/components';
+import { Swiper, SwiperItem } from '@tarojs/components';
 import CustomImage from './CustomImage';
 import styles from './BannerSwiper.module.scss';
 

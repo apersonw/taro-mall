@@ -1,0 +1,30 @@
+.oneGrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 187px;
+  height: 240px;
+
+  .imgBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .titleBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+      font-family: PingFangSC-Regular, serif;
+      font-size: 32px;
+      color: #010101;
+    }
+
+    .subTitle {
+      font-family: PingFangSC-Regular, serif;
+      font-size: 24px;
+      color: #728DFC;
+    }
+  }
+}
