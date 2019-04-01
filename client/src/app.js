@@ -17,7 +17,7 @@ const app = dva.createApp({
   initialState: {},
   models: models,
   onError(e, dispatch) {
-    dispatch(action("sys/error", e));
+    dispatch(action("net/error", e));
   }
 });
 

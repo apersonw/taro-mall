@@ -14,8 +14,8 @@ class CustomImage extends Component {
       <Image
         onClick={onClick}
         mode={mode}
-        className={className}
-        style={'display: block;width:' + (width || '100%') + ';height:' + (height || '100%') + ';line-height:' + height + ';' + style}
+        // className={className}
+        // style={'display: block;width:' + (width || '100%') + ';height:' + (height || '100%') + ';line-height:' + height + ';' + style}
         src={src}
       />
     );

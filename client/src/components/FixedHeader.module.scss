@@ -1,5 +1,5 @@
 .fixedHeader { //头部固定
-  position: fixed;
+  //position: fixed;
   display: flex;
   left: 0;
   top: 0;
@@ -11,12 +11,12 @@
   align-items: center;
 
   background-color: transparent;
-  transition: .4s;
+  //transition: .4s;
 }
 
 .fixedScrollHeader {
   background-color: #e43130;
-  transition: .4s;
+  //transition: .4s;
 }
 
 .searchBox {

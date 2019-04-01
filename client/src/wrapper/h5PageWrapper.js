@@ -1,4 +1,4 @@
-import { View } from '@tarojs/components';
+import Taro,{ View } from '@tarojs/components';
 import './h5PageWrapper.scss';
 
 // h5页面装饰器

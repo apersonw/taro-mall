@@ -1,4 +1,4 @@
-import { Component } from '@tarojs/taro';
+import Taro,{ Component } from '@tarojs/taro';
 import CustomImage from './CustomImage';
 import styles from './GoodsSpike.module.scss';
 import { View } from '@tarojs/components';

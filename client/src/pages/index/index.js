@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 import action from '../../utils/action';
 import h5PageWrapper from '../../wrapper/h5PageWrapper';
 import CustomImage from '../../components/CustomImage';
-import categoryIcon from '../../assets/index/category@2x.png';
+import categoryIcon from '../../assets/index/category.png';
 import icon from '../../assets/index/icon.png';
 import searchIcon from '../../assets/index/searchIcon.png';
 import banner1 from '../../assets/banner/1.jpg';
@@ -15,25 +15,25 @@ import banner4 from '../../assets/banner/4.jpg';
 import banner5 from '../../assets/banner/5.jpg';
 import banner6 from '../../assets/banner/6.jpg';
 import banner7 from '../../assets/banner/7.jpg';
-import shopImg from '../../assets/index/category/shop@2x.png';
-import worldImg from '../../assets/index/category/world@2x.png';
-import clothesImg from '../../assets/index/category/clothes@2x.png';
-import freshImg from '../../assets/index/category/fresh@2x.png';
-import rechargeImg from '../../assets/index/category/recharge@2x.png';
-import allImg from '../../assets/index/category/all@2x.png';
-import moneyImg from '../../assets/index/category/money@2x.png';
-import couponImg from '../../assets/index/category/coupon@2x.png';
-import timeImg from '../../assets/index/category/time@2x.png';
-import buyImg from '../../assets/index/category/buy@2x.png';
-import packageImg from '../../assets/index/newuser/package@2x.png';
-import channelImg from '../../assets/index/newuser/channel@2x.png';
-import exclusiveImg from '../../assets/index/newuser/exclusive@2x.png';
-import moreImg from '../../assets/index/spike/more@2x.png';
+import shopImg from '../../assets/index/category/shop.png';
+import worldImg from '../../assets/index/category/world.png';
+import clothesImg from '../../assets/index/category/clothes.png';
+import freshImg from '../../assets/index/category/fresh.png';
+import rechargeImg from '../../assets/index/category/recharge.png';
+import allImg from '../../assets/index/category/all.png';
+import moneyImg from '../../assets/index/category/money.png';
+import couponImg from '../../assets/index/category/coupon.png';
+import timeImg from '../../assets/index/category/time.png';
+import buyImg from '../../assets/index/category/buy.png';
+import packageImg from '../../assets/index/newuser/package.png';
+import channelImg from '../../assets/index/newuser/channel.png';
+import exclusiveImg from '../../assets/index/newuser/exclusive.png';
+import moreImg from '../../assets/index/spike/more.png';
 //tabbar
-import indexSelectImg from '../../assets/tabbar/indexSelect@2x.png';
-import categoryUnSelectImg from '../../assets/tabbar/categoryUnSelect@2x.png';
-import shopcardUnSelectImg from '../../assets/tabbar/shopcardUnSelect@2x.png';
-import mineUnSelectImg from '../../assets/tabbar/mineUnSelect@2x.png';
+import indexSelectImg from '../../assets/tabbar/indexSelect.png';
+import categoryUnSelectImg from '../../assets/tabbar/categoryUnSelect.png';
+import shopcardUnSelectImg from '../../assets/tabbar/shopcardUnSelect.png';
+import mineUnSelectImg from '../../assets/tabbar/mineUnSelect.png';
 
 //data
 import goodsList from './mock.json';
@@ -45,11 +45,11 @@ import BannerSwiper from '../../components/BannerSwiper';
 import Category from '../../components/Category';
 import FixedHeader from '../../components/FixedHeader';
 import TwoGrid from '../../components/expo/TwoGrid';
-import courtyardTitleImg from '../../assets/index/courtyard/title@2x.png';
-import everydayTitleImg from '../../assets/index/everyday/title@2x.png';
+import courtyardTitleImg from '../../assets/index/courtyard/title.png';
+import everydayTitleImg from '../../assets/index/everyday/title.png';
 import OneGrid from '../../components/expo/OneGrid';
 
-@h5PageWrapper
+// @h5PageWrapper
 @connect(() => ({}))
 class Index extends Component {
 
@@ -146,8 +146,8 @@ class Index extends Component {
       </View >
       <View className={styles.spikeScroll} >
         <View className={styles.goodsList} >
-          {(goodsList || []).map(goods => (
-            <GoodsSpike key={goods.id} data={goods} />
+          {(goodsList || []).map((goods,index) => (
+            <GoodsSpike key={index} data={goods} />
           ))}
         </View >
       </View >

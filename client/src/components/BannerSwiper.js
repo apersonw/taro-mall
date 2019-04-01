@@ -8,16 +8,16 @@ class BannerSwiper extends Component {
     const { imgs = [] } = this.props;
     return (
       <Swiper
-        className={styles.swiper}
-        indicatorColor='#999'
-        indicatorActiveColor='#333'
-        interval={2000}
-        circular
-        indicatorDots
-        autoplay
+        // className={styles.swiper}
+        // indicatorColor='#999'
+        // indicatorActiveColor='#333'
+        // interval={2000}
+        // circular
+        // indicatorDots
+        // autoplay
       >
         {imgs.map((img, index) => (
-          <SwiperItem style="width:100% !importment;" key={index} >
+          <SwiperItem key={index} >
             <CustomImage height={366} src={img} />
           </SwiperItem >
         ))}

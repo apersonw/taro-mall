@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro';
 import { Input, View } from '@tarojs/components';
 import styles from './FixedHeader.module.scss';
 import CustomImage from './CustomImage';
-import categoryIcon from '../assets/index/category@2x.png';
+import categoryIcon from '../assets/index/category.png';
 import icon from '../assets/index/icon.png';
 import searchIcon from '../assets/index/searchIcon.png';
 
