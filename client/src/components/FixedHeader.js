@@ -1,16 +1,18 @@
 import Taro, { Component } from '@tarojs/taro';
-import { Input, View, Image } from '@tarojs/components';
+import { View, Image } from '@tarojs/components';
 import styles from './FixedHeader.module.scss';
 import categoryIcon from '../assets/index/category.png';
-import icon from '../assets/index/icon.png';
-import searchIcon from '../assets/index/searchIcon.png';
+import getCls from '../utils/cls';
 
 class FixedHeader extends Component {
+
   render() {
     const { fixedScroll = false } = this.props;
+
+    const rnStyles = styles;
     return (
-      <View className={[styles.fixedHeader, fixedScroll ? styles.fixedScrollHeader : '']} >
-        <Image className={styles.iconImg} src={categoryIcon} />
+      <View className={styles} >
+        <Image className={getCls('iconImg', rnStyles)} src={categoryIcon} />
         {/*<View className={styles.searchBox} >*/}
         {/*  <CustomImage className={styles.iconImg} width={50} height={30} src={icon} />*/}
         {/*  <View className={styles.vLine} />*/}
