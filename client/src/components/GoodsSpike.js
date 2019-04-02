@@ -1,5 +1,4 @@
 import Taro,{ Component } from '@tarojs/taro';
-import CustomImage from './CustomImage';
 import styles from './GoodsSpike.module.scss';
 import { View } from '@tarojs/components';
 
@@ -11,7 +10,6 @@ class GoodsSpike extends Component {
     const showCoverPrice = coverPrice / 100;
     return (
       <View className={styles.goods} >
-        <CustomImage width={140} height={140} src={url} />
         <View className={styles.firstRow} >
           <View className={styles.firstSymble} >¥</View >
           <View className={styles.firstPrice} >{showCoverPrice}</View >

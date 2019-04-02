@@ -1,5 +1,5 @@
 .flexContainer { //FLEX容器，最高容器
-  width: 100%;
+  width: 750px;
   display: flex;
   background-color: white; //此颜色一般跟content中的背景色一致
   font-size: 26px;
@@ -7,16 +7,14 @@
 
 .scrollArea { //滚动条出现的区域，此处为全屏(淘宝京东这些滚动条都是全屏)
   position: relative;
-  width: 100%;
+  width: 750px;
 }
 
 .fixedHeader { //头部固定
-  position: fixed;
   display: flex;
   left: 0;
   top: 0;
-  z-index: 1000;
-  width: 100%;
+  width: 750px;
   height: 90px;
   //background-color: #ffa270;
   padding: 0 30px;
@@ -33,7 +31,7 @@
   display: flex;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 750px;
   height: 90px;
   z-index: 1001;
   background: #FFFFFF;

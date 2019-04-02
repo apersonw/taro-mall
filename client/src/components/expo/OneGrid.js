@@ -1,7 +1,6 @@
 import Taro,{ Component } from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import styles from './OneGrid.module.scss';
-import CustomImage from '../CustomImage';
 
 class OneGrid extends Component {
   render() {
@@ -16,7 +15,6 @@ class OneGrid extends Component {
           <View className={styles.subTitle} >{item.subTitle}</View >
         </View >
         <View className={styles.imgBox} >
-          <CustomImage width={130} height={130} src={thumbUrl} />
         </View >
       </View >
     );

@@ -4,25 +4,26 @@
   justify-content: center;
   width: 187px;
   height: 240px;
+}
 
-  .imgBox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
+.imgBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
-  .titleBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .title {
-      font-size: 32px;
-      color: #010101;
-    }
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .subTitle {
-      font-size: 24px;
-      color: #728DFC;
-    }
-  }
+.title {
+  font-size: 32px;
+  color: #010101;
+}
+
+.subTitle {
+  font-size: 24px;
+  color: #728DFC;
 }

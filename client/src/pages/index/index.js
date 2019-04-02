@@ -3,7 +3,6 @@ import { Input, Swiper, SwiperItem, Text, View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import styles from './index.module.scss';
 import action from '../../utils/action';
-import CustomImage from '../../components/CustomImage';
 import categoryIcon from '../../assets/index/category.png';
 import icon from '../../assets/index/icon.png';
 import searchIcon from '../../assets/index/searchIcon.png';
@@ -119,9 +118,6 @@ class Index extends Component {
     ];
 
     const newUserOwn = <View className={styles.newUserOwnBox} >
-      <CustomImage width={343} height={214} src={packageImg} />
-      <CustomImage width={162} height={214} src={channelImg} />
-      <CustomImage width={162} height={214} src={exclusiveImg} />
     </View >;
 
     const spike = <View className={styles.spikeBox} >
@@ -139,7 +135,6 @@ class Index extends Component {
         </View >
         <View className={styles.spikeSecendRow} >
           <View className={styles.spikeRowLeft} >更多秒杀</View >
-          <CustomImage width={22} height={22} src={moreImg} />
         </View >
       </View >
       <View className={styles.spikeScroll} >
@@ -156,40 +151,40 @@ class Index extends Component {
         <View className={styles.scrollArea} >
           <View className={styles.container} >
             <FixedHeader fixedScroll={fixedHeaderStyle} />
-            <View className={styles.content} >
-              <BannerSwiper imgs={swiperImgs} />
-              <Category items={categoryItems} />
-              {newUserOwn}
-              {spike}
-              <CustomImage height={90} src={courtyardTitleImg} />
-              <View className={styles.courtyardBox} >
-                <View className={styles.courtyardBoxRow} >
-                  {(courtyardList || []).slice(0, 2).map((item, index) => (
-                    <TwoGrid item={item} key={index} />
-                  ))}
-                </View >
-                <View className={styles.courtyardBoxRow} >
-                  {(courtyardList || []).slice(2, 6).map((item, index) => (
-                    <OneGrid item={item} key={index} />
-                  ))}
-                </View >
-              </View >
-              {/*每日逛*/}
-              <CustomImage height={90} src={everydayTitleImg} />
-              <View className={styles.everydayBox} >
-                <View className={styles.everydayBoxRow} >
-                  {(everydayList || []).map((item, index) => (
-                    <OneGrid item={item} key={index} />
-                  ))}
-                </View >
-              </View >
-            </View >
-            <View className={[styles.toolBar, styles.tabBar]} >
-              <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={indexSelectImg} />
-              <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={categoryUnSelectImg} />
-              <CustomImage className={styles.tabBarImgBox} width={72} height={75} src={shopcardUnSelectImg} />
-              <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={mineUnSelectImg} />
-            </View >
+            {/*<View className={styles.content} >*/}
+            {/*  <BannerSwiper imgs={swiperImgs} />*/}
+            {/*  <Category items={categoryItems} />*/}
+            {/*  {newUserOwn}*/}
+            {/*  {spike}*/}
+            {/*  <CustomImage height={90} src={courtyardTitleImg} />*/}
+            {/*  <View className={styles.courtyardBox} >*/}
+            {/*    <View className={styles.courtyardBoxRow} >*/}
+            {/*      {(courtyardList || []).slice(0, 2).map((item, index) => (*/}
+            {/*        <TwoGrid item={item} key={index} />*/}
+            {/*      ))}*/}
+            {/*    </View >*/}
+            {/*    <View className={styles.courtyardBoxRow} >*/}
+            {/*      {(courtyardList || []).slice(2, 6).map((item, index) => (*/}
+            {/*        <OneGrid item={item} key={index} />*/}
+            {/*      ))}*/}
+            {/*    </View >*/}
+            {/*  </View >*/}
+            {/*  /!*每日逛*!/*/}
+            {/*  <CustomImage height={90} src={everydayTitleImg} />*/}
+            {/*  <View className={styles.everydayBox} >*/}
+            {/*    <View className={styles.everydayBoxRow} >*/}
+            {/*      {(everydayList || []).map((item, index) => (*/}
+            {/*        <OneGrid item={item} key={index} />*/}
+            {/*      ))}*/}
+            {/*    </View >*/}
+            {/*  </View >*/}
+            {/*</View >*/}
+            {/*<View className={[styles.toolBar, styles.tabBar]} >*/}
+            {/*  <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={indexSelectImg} />*/}
+            {/*  <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={categoryUnSelectImg} />*/}
+            {/*  <CustomImage className={styles.tabBarImgBox} width={72} height={75} src={shopcardUnSelectImg} />*/}
+            {/*  <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={mineUnSelectImg} />*/}
+            {/*</View >*/}
           </View >
         </View >
       </View >
