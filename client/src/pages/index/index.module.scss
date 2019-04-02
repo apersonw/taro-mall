@@ -1,144 +1,142 @@
+@import "../../wrapper/pageWrapper";
+
 .container {
-  //font-size: 70px;
 
-  .spikeBox {
-    margin-top: 25px;
-    padding: 0 10px;
-    display: flex;
-    flex-direction: column;
+}
 
-    .spikeFirstRow {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+.spikeBox {
+  margin-top: 25px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
 
-      .spikeRowLeft {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
+.spikeFirstRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-        .spikeJd {
-          font-family: PingFangSC-Semibold, serif;
-          font-size: 32px;
-          color: #CF2E2E;
-          letter-spacing: 0;
-        }
+.spikeRowLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-        .spikeClock {
-          margin-left: 14px;
-          font-family: PingFangSC-Semibold, serif;
-          font-size: 24px;
-          color: #27272A;
-          letter-spacing: 0;
-        }
+.spikeJd {
+  font-size: 32px;
+  color: #CF2E2E;
+  letter-spacing: 0;
+}
 
-        .spikeCountDown {
-          margin-left: 5px;
-          display: flex;
-          flex-direction: row;
-          font-family: PingFangSC-Semibold, serif;
-          font-size: 24px;
-          color: #27272A;
+.spikeClock {
+  margin-left: 14px;
+  font-size: 24px;
+  color: #27272A;
+  letter-spacing: 0;
+}
 
-          .spikeCountDownText {
-            border: 1px solid #eeeeee;
-            letter-spacing: 3px;
-            margin: 0 5px;
-          }
-        }
-      }
-    }
+.spikeCountDown {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+  font-size: 24px;
+  color: #27272A;
+}
 
-    .spikeSecendRow {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+.spikeCountDownText {
+  border: 1px solid #eeeeee;
+  letter-spacing: 3px;
+  margin: 0 5px;
+}
 
-      .spikeRowLeft {
-        font-family: PingFangSC-Semibold, serif;
-        font-size: 24px;
-        color: #D13333;
-        letter-spacing: 0;
-        margin-right: 10px;
-      }
-    }
+.spikeSecendRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
-    .spikeScroll {
-      overflow: hidden;
+.spikeRowLeft {
+  font-size: 24px;
+  color: #D13333;
+  letter-spacing: 0;
+  margin-right: 10px;
+}
 
-      .goodsList {
-        margin-top: 24px;
-        display: flex;
-        flex-direction: row;
-        flex-flow: nowrap;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        list-style: none;
-        -webkit-overflow-scrolling: touch;
-        height: 100%;
-        /*纵向超出部分将会隐藏，即滚动条部分被挤出可视区域*/
-        padding-bottom: 25px;
-        margin-bottom: -15px;
-      }
-    }
-  }
+.spikeScroll {
+  overflow: hidden;
+}
 
-  .newUserOwnBox {
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
-    justify-content: space-evenly;
-  }
+.goodsList {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  flex-flow: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  list-style: none;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  /*纵向超出部分将会隐藏，即滚动条部分被挤出可视区域*/
+  padding-bottom: 25px;
+  margin-bottom: -15px;
+}
 
-  .courtyardBox {
-    display: flex;
-    flex-direction: column;
+.newUserOwnBox {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: space-evenly;
+}
 
-    .row {
-      display: flex;
-      flex-direction: row;
-    }
-  }
+.courtyardBox {
+  display: flex;
+  flex-direction: column;
+}
 
-  .everydayBox {
-    display: flex;
-    flex-direction: column;
+.courtyardBoxRow {
+  display: flex;
+  flex-direction: row;
+}
 
-    .row {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  }
+.everydayBox {
+  display: flex;
+  flex-direction: column;
+}
 
-  .toolBar { //底部工具条，也即tabBar
-    box-sizing: border-box;
-    display: flex;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 90px;
-    z-index: 1001;
-    background: #FFFFFF;
-    border-top: 1px solid #e7e7e7;
-    border-bottom: 1px solid #f8f8f8;
-    align-items: center;
-  }
+.everydayBoxRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
-  .content { //内容区域，即实际滚动区域
-    //padding-top: 90px;
-    padding-bottom: 90px;
-    background-color: white;
-  }
+.toolBar { //底部工具条，也即tabBar
+  box-sizing: border-box;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1001;
+  background: #FFFFFF;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #f8f8f8;
+  align-items: center;
+}
 
-  .tabBar {
-    justify-content: space-around;
-    padding: 10px 0;
+.content { //内容区域，即实际滚动区域
+  //padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: white;
+}
 
-    .tabBarImgBox {
-      background: transparent;
-    }
-  }
+.tabBar {
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.tabBarImgBox {
+  background: transparent;
 }

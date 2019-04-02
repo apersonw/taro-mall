@@ -2,48 +2,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
-  &::-webkit-scrollbar {
-    display: none
-  }
+.firstRow {
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
+}
 
-  .firstRow {
-    display: flex;
-    flex-direction: row;
-    margin-top: 24px;
+.firstSymble {
+  font-size: 24px;
+  color: #D13333;
+  line-height: 33px;
+}
 
-    .symble {
-      font-family: PingFangSC-Semibold, serif;
-      font-size: 24px;
-      color: #D13333;
-      line-height: 33px;
-    }
+.firstPrice {
+  font-size: 32px;
+  color: #D13333;
+  line-height: 33px;
+}
 
-    .price {
-      font-family: PingFangSC-Semibold, serif;
-      font-size: 32px;
-      color: #D13333;
-      line-height: 33px;
-    }
-  }
+.secendRow {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+}
 
-  .secendRow {
-    display: flex;
-    flex-direction: row;
-    margin-top: 12px;
+.secendSymble {
+  font-size: 24px;
+  color: #001515;
+  line-height: 33px;
+}
 
-    .symble {
-      font-family: PingFangSC-Semibold, serif;
-      font-size: 24px;
-      color: #001515;
-      line-height: 33px;
-    }
-
-    .price {
-      font-family: PingFangSC-Semibold, serif;
-      font-size: 24px;
-      color: #001515;
-      line-height: 33px;
-    }
-  }
+.secendPrice {
+  font-size: 24px;
+  color: #001515;
+  line-height: 33px;
 }

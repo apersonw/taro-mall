@@ -13,12 +13,12 @@ class GoodsSpike extends Component {
       <View className={styles.goods} >
         <CustomImage width={140} height={140} src={url} />
         <View className={styles.firstRow} >
-          <View className={styles.symble} >¥</View >
-          <View className={styles.price} >{showCoverPrice}</View >
+          <View className={styles.firstSymble} >¥</View >
+          <View className={styles.firstPrice} >{showCoverPrice}</View >
         </View >
         <View className={styles.secendRow} >
-          <View className={styles.symble} >¥</View >
-          <View className={styles.price} >{showCoverPrice * 2}</View >
+          <View className={styles.secendSymble} >¥</View >
+          <View className={styles.secendPrice} >{showCoverPrice * 2}</View >
         </View >
       </View >
     );

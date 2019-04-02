@@ -1,9 +1,9 @@
 import Taro,{ View } from '@tarojs/components';
-import './h5PageWrapper.scss';
+import './pageWrapper.scss';
 
 // h5页面装饰器
 // eslint-disable-next-line taro/no-stateless-component
-export default function h5PageWrapper(C) {
+export default function pageWrapper(C) {
   return class Page extends C {
     render() {
       const childRender = super.render();
