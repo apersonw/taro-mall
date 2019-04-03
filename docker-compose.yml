@@ -4,46 +4,6 @@ services:
   client:
     build: ./client/
     container_name: "client"
-    depends_on:
-      - service-goods
     ports:
       - 81:80
-    restart: always
-  manager:
-    build: ./manager/
-    container_name: "manager"
-    depends_on:
-      - service-goods
-    environment:
-      API_HOST: server:8080
-    ports:
-      - 82:80
-    restart: always
-  service-goods:
-    build: ./services/service-goods/target/docker-bin/
-    container_name: "service-goods"
-    depends_on:
-      - mongodb
-      - redis
-    environment:
-      DB_HOST: mongodb:27017
-  service-user:
-    build: ./services/service-user/target/docker-bin/
-    container_name: "service-user"
-    depends_on:
-      - mongodb
-      - redis
-    environment:
-      DB_HOST: mongodb:27017
-  mongodb:
-    image: 'registry.cn-beijing.aliyuncs.com/rxjava/mongo:3.7.3-jessie'
-    container_name: "mongodb"
-    ports:
-      - 27018:27017
-    restart: always
-  redis:
-    image: 'registry.cn-beijing.aliyuncs.com/rxjava/redis:4.0.4-alpine'
-    container_name: "redis"
-    ports:
-      - 6380:6379
     restart: always
