@@ -39,6 +39,7 @@ import mineUnSelectImg from '../../assets/tabbar/mineUnSelect@2x.png';
 import goodsList from './mock.json';
 import courtyardList from './courtyard.json';
 import everydayList from './everyday.json';
+import recommendGoodsList from './goodsMock.json';
 //components
 import GoodsSpike from '../../components/GoodsSpike';
 import BannerSwiper from '../../components/BannerSwiper';
@@ -48,6 +49,7 @@ import TwoGrid from '../../components/expo/TwoGrid';
 import courtyardTitleImg from '../../assets/index/courtyard/title@2x.png';
 import everydayTitleImg from '../../assets/index/everyday/title@2x.png';
 import OneGrid from '../../components/expo/OneGrid';
+import GoodsItem from '../../components/goods/GoodsItem';
 
 @h5PageWrapper
 @connect(() => ({}))
@@ -161,6 +163,7 @@ class Index extends Component {
           <Category items={categoryItems} />
           {newUserOwn}
           {spike}
+          {/*东家小院*/}
           <CustomImage height={90} src={courtyardTitleImg} />
           <View className={styles.courtyardBox} >
             <View className={styles.row} >
@@ -182,6 +185,10 @@ class Index extends Component {
                 <OneGrid item={item} key={index} />
               ))}
             </View >
+          </View >
+          {/*  推荐列表*/}
+          <View className={styles.recommendGoodsList}>
+            {(recommendGoodsList || []).map((item) => (<GoodsItem key={item.id} item={item} />))}
           </View >
         </View >
         <View className={[styles.toolBar, styles.tabBar]} >

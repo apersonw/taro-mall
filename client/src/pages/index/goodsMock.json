@@ -1,0 +1,902 @@
+[
+  {
+    "id": "5ca45bf256ab24c4f97c9479",
+    "name": "Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G 双卡双待",
+    "coverPrice": 604900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/3405/18/3537/69901/5b997c0aE5dc8ed9f/a2c208410ae84d1f.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf256ab24c4f97c947a",
+    "name": "荣耀10青春版 幻彩渐变 2400万AI自拍 全网通版4GB+64GB 渐变蓝 移动联通电信4G全面屏 双卡双待",
+    "coverPrice": 129900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t30184/230/476184793/260944/53cc2bbc/5bf4b25dN3b673c83.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf256ab24c4f97c947b",
+    "name": "荣耀V20 胡歌同款 麒麟980芯片 魅眼全视屏 4800万深感相机 6GB+128GB 幻夜黑 移动联通电信4G全面屏",
+    "coverPrice": 299800,
+    "thumb": {
+      "url": "https://img13.360buyimg.com/n7/jfs/t1/27653/36/12572/346766/5c99ef63E81a8de14/5a38e39b2975e837.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf256ab24c4f97c947c",
+    "name": "荣耀8X 千元屏霸 91%屏占比 2000万AI双摄 4GB+64GB 幻夜黑 移动联通电信4G全面屏 双卡双待",
+    "coverPrice": 129900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/21333/14/5246/180334/5c3ad7b6Ef7d727c0/c16e93d0bf77a31f.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf256ab24c4f97c947d",
+    "name": "vivo U1 水滴全面屏 AI智慧拍照 3GB+32GB 极光色 移动联通电信全网通4G",
+    "coverPrice": 79900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/24899/9/7247/75638/5c678ac7E1afd301b/cd650c965469dce8.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf356ab24c4f97c947e",
+    "name": "Apple iPhone XS Max (A2104) 256GB 金色 移动联通电信4G 双卡双待",
+    "coverPrice": 999900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/4528/10/3590/153299/5b997bf5E4a513949/45ab3dd6c35d981b.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf356ab24c4f97c947f",
+    "name": "小米 红米6 4GB+64GB 流沙金 全网通4G 双卡双待",
+    "coverPrice": 79900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t23653/202/1047354722/252149/77642e5a/5b4ee1a1Nb44ade36.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf356ab24c4f97c9480",
+    "name": "小米8屏幕指纹版 8GB+128GB 透明版 全网通4G 双卡双待 全面屏拍照游戏智能",
+    "coverPrice": 269900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/5212/17/6131/296533/5ba1ee39E18d4f475/3ec982e47f5256f1.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf356ab24c4f97c9481",
+    "name": "vivo X27 8GB+256GB大内存 雀羽蓝 4800万AI三摄全面屏拍照 移动联通电信全网通4G",
+    "coverPrice": 359800,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t1/15071/22/11624/311461/5c90e849E5f6acaf7/f9aae3fc20b73778.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf356ab24c4f97c9482",
+    "name": "荣耀畅玩8C两天一充 莱茵护眼 刘海屏 全网通版4GB+32GB 铂光金 移动联通电信4G全面屏 双卡双待",
+    "coverPrice": 89900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t25144/341/2595705214/107989/25e23b3f/5beaa50cN4b523767.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf356ab24c4f97c9483",
+    "name": "小米 红米Redmi Note7 AI双摄 4GB+64GB 亮黑色 全网通4G 双卡双待 水滴全面屏拍照游戏智能",
+    "coverPrice": 119900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/14081/40/4987/124705/5c371b20E53786645/c1f49cd69e6c7e6a.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf356ab24c4f97c9484",
+    "name": "小米 8SE 全面屏智能游戏拍照  6GB+128GB 灰色 骁龙710处理器 全网通4G 双卡双待",
+    "coverPrice": 169900,
+    "thumb": {
+      "url": "https://img13.360buyimg.com/n7/jfs/t25654/160/647607027/188708/3dbe80f8/5b76bab9N13246041.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf356ab24c4f97c9485",
+    "name": "Apple iPhone X (A1865) 64GB 深空灰色 移动联通电信4G",
+    "coverPrice": 634900,
+    "thumb": {
+      "url": "https://img13.360buyimg.com/n7/jfs/t10675/253/1344769770/66891/92d54ca4/59df2e7fN86c99a27.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf456ab24c4f97c9486",
+    "name": "Apple iPhone 8 (A1863) 64GB 深空灰色 移动联通电信4G",
+    "coverPrice": 389900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t7582/66/3048380492/71753/acde79b5/59b85824N836bb714.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf456ab24c4f97c9487",
+    "name": "Apple iPhone 8 Plus (A1864) 64GB 深空灰色 移动联通电信4G",
+    "coverPrice": 479900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t8107/37/1359438185/72159/a6129e26/59b857f8N977f476c.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf456ab24c4f97c9488",
+    "name": "黑鲨游戏2 8GB+128GB 暗影黑 骁龙855 Magic Press立体操控 塔式全域液冷 全面屏 全网通4G 双卡双待",
+    "coverPrice": 349900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/24240/19/11491/91443/5c8f86f7E74a45afc/5e93dbb87a8c354d.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf456ab24c4f97c9489",
+    "name": "华为 HUAWEI Mate 20 麒麟980AI智能芯片全面屏超微距影像超大广角徕卡三摄6GB+128GB亮黑色全网通版双4G",
+    "coverPrice": 399900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t25954/134/1930444050/488286/31587d0d/5bbf1fc9N3ced3749.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf456ab24c4f97c948a",
+    "name": "三星 Galaxy S10 8GB+128GB皓玉白（SM-G9730）超感官全视屏骁龙855双卡双待全网通4G游戏",
+    "coverPrice": 599900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/32472/22/3371/192059/5c74b147Ee2eaefb4/8a9eaa0ea1365ed0.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf456ab24c4f97c948b",
+    "name": "小米8青春版 镜面渐变AI双摄 6GB+64GB 梦幻蓝 骁龙 全网通4G 双卡双待 全面屏拍照游戏智能",
+    "coverPrice": 149900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/2617/6/6143/237736/5ba1f42aE71124526/e242e3e39ec95d66.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf456ab24c4f97c948c",
+    "name": "vivo Z3 6GB+64GB 极光蓝 性能实力派 全面屏游戏 移动联通电信全网通4G",
+    "coverPrice": 159800,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t27616/251/1425719819/224805/20c2401e/5bc831fdN61f8d9d2.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf456ab24c4f97c948d",
+    "name": "荣耀畅玩8A 6.09英寸珍珠全面屏 震撼大音量 3GB+32GB 幻夜黑 移动联通电信4G全面屏 双卡双待",
+    "coverPrice": 79900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t1/17791/2/4053/104184/5c2ec928Efb2c4215/054fbc574b007149.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf456ab24c4f97c948e",
+    "name": "OPPO K1  光感屏幕指纹 水滴屏拍照  6G+64G 梵星蓝 全网通 移动联通电信4G 双卡双待",
+    "coverPrice": 159900,
+    "thumb": {
+      "url": "https://img13.360buyimg.com/n7/jfs/t27112/273/1423275096/265013/d92b3181/5be3cb5bN334c8048.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf556ab24c4f97c948f",
+    "name": "荣耀10 GT游戏加速 AIS手持夜景 6GB+64GB 幻影蓝全网通 移动联通电信4G 双卡双待 游戏",
+    "coverPrice": 219900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t18157/222/1822300674/231514/6c179af8/5ad87390N086a3c91.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf556ab24c4f97c9490",
+    "name": "华为 HUAWEI Mate 20 Pro (UD)屏内指纹版麒麟980芯片全面屏超大广角徕卡三摄8GB+128GB亮黑色全网通双4G",
+    "coverPrice": 549900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t25288/359/1939640863/406912/ff77e158/5bbf17f0N428d505a.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf556ab24c4f97c9491",
+    "name": "【KPL官方比赛用机】vivo iQOO 44W超快闪充 8GB+128GB电光蓝 全面屏拍照 骁龙855电竞游戏 全网通4G",
+    "coverPrice": 329800,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/31199/14/3993/287777/5c791bb5Ebaa929af/044c52520956ebfb.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf556ab24c4f97c9492",
+    "name": "荣耀Play 全网通版 6GB+64GB 幻夜黑 移动联通电信4G全面屏游戏 双卡双待",
+    "coverPrice": 189900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t1/16823/10/11810/109990/5c920641E30b0de78/176944bd1f3d019e.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf556ab24c4f97c9493",
+    "name": "魅族 Note9 全面屏游戏拍照 4GB+64GB 幻黑 全网通移动联通电信4G 双卡双待",
+    "coverPrice": 139800,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/22075/38/10301/185219/5c85fb6eE1fe323fe/a2ca6bcfc22e4546.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf556ab24c4f97c9494",
+    "name": "华为 HUAWEI nova 4e 3200万立体美颜AI超广角三摄珍珠屏4GB+128GB幻夜黑全网通版双4G",
+    "coverPrice": 198900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/24174/32/9592/201557/5c8080eeEa33bc44e/708865ec89b0336c.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf556ab24c4f97c9495",
+    "name": "诺基亚 NOKIA X6 6GB+64GB 星空黑 全网通 双卡双待 移动联通电信4G",
+    "coverPrice": 109900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t19759/338/2338072914/190731/65ba22/5af0647bNca23c27c.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf656ab24c4f97c9496",
+    "name": "小米 红米6A AI美颜 3GB+32GB 流沙金 全网通4G 双卡双待",
+    "coverPrice": 64900,
+    "thumb": {
+      "url": "https://img13.360buyimg.com/n7/jfs/t22099/97/2250481418/237159/c4a1502d/5b4edfdcN5a7d6faf.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf856ab24c4f97c9497",
+    "name": "华为 HUAWEI 畅享MAX 4GB+64GB 幻夜黑 全网通版 珍珠屏杜比全景声大电池 移动联通电信4G 双卡双待",
+    "coverPrice": 148900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t25012/345/1827676978/130853/65940865/5bbc6efaNeb227f0b.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf856ab24c4f97c9498",
+    "name": "vivo【新品上市】X27 4800万广角夜景三摄 零界全面屏拍照 移动联通电信全网通4G 雀羽蓝 8GB+256GB",
+    "coverPrice": 359800,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/21613/25/11578/186094/5c90e928Ea9a75df8/01948c84350e2f33.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf856ab24c4f97c9499",
+    "name": "Apple iPhone 6s Plus (A1699) 128G 玫瑰金色 移动联通电信4G",
+    "coverPrice": 309900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t2302/16/135479564/94882/c76da045/55f0e877N3c24faa3.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf856ab24c4f97c949a",
+    "name": "OPPO【预约购机赠1年碎屏险】Reno全面屏拍照",
+    "coverPrice": 9999900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/30957/11/8863/95203/5ca17c79Ea684d7d5/acf751e60c6e5728.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf856ab24c4f97c949b",
+    "name": "酷派（Coolpad）酷玩8 Lite 6\"高清全面屏 1300万双摄 私密双系统 梦幻紫 3GB+32GB  双卡双待全网通",
+    "coverPrice": 59900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t1/27788/33/7284/123647/5c6b4f11Eba9831fa/f763fc339aba8891.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf956ab24c4f97c949c",
+    "name": "魅族 Note8 全面屏 4GB+64GB 曜黑 全网通移动联通电信4G 双卡双待",
+    "coverPrice": 99900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/2481/15/12216/274259/5bd1af8bE2de8c15f/c56a6788061f4d46.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf956ab24c4f97c949d",
+    "name": "魅族 15 全面屏 全网通公开版 4GB+64GB 砚黑 移动联通电信4G 双卡双待",
+    "coverPrice": 119800,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t16669/6/1882132405/219974/26d54059/5adc785fNa6b4c81e.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf956ab24c4f97c949e",
+    "name": "小米9 SE 4800万超广角三摄 骁龙712 水滴全面屏 游戏智能拍照 6GB+64GB 深空灰 全网通4G 双卡双待",
+    "coverPrice": 199900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/15782/2/7566/63413/5c6d01d3Ed97718f2/7b04cfb0a8cab0dd.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf956ab24c4f97c949f",
+    "name": "荣耀8X Max 7.12英寸90%屏占比珍珠屏  4GB+64GB 幻夜黑 移动联通电信4G全面屏 双卡双待",
+    "coverPrice": 149900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/25427/35/7657/407568/5c6e4e10Ea6c469f3/8219f89af12229c1.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf956ab24c4f97c94a0",
+    "name": "小米8 全面屏游戏智能 8GB+128GB 蓝色 全网通4G 双卡双待",
+    "coverPrice": 289900,
+    "thumb": {
+      "url": "https://img13.360buyimg.com/n7/jfs/t23716/155/1868177677/338336/409b289f/5b6bb06cN8d96e3f9.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf956ab24c4f97c94a1",
+    "name": "联想Z5 6GB+128GB 极光蓝 6.2英寸全面屏双摄 全网通4G 双卡双待",
+    "coverPrice": 114800,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/28102/15/6995/171472/5c650f7dE628f4408/ad90ba53fb6d1684.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bf956ab24c4f97c94a2",
+    "name": "小米9 xiaomi三摄 8GB+128GB全息幻彩蓝 骁龙855 全网通4G 双卡双待 水滴全面屏拍照游戏智能",
+    "coverPrice": 329900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/30858/32/2918/209997/5c6fcc52Ed2f6e122/d05ed0ce052a5a0c.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfa56ab24c4f97c94a3",
+    "name": "三星 Galaxy S10e 6GB+128GB 炭晶黑（SM-G9700）超感官全视屏  骁龙855 双卡双待 全网通4G",
+    "coverPrice": 499900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/22525/27/8133/202683/5c74b0d1E4c299d28/059cc31114254820.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfa56ab24c4f97c94a4",
+    "name": "荣耀Magic2魔法 麒麟980AI智能芯片 超广角AI三摄 6GB+128GB 渐变黑 移动联通电信4G 双卡双待",
+    "coverPrice": 349900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/1156/8/14017/123589/5bd9a4e8E7dbd4a15/70fbbccdf8811111.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfa56ab24c4f97c94a5",
+    "name": "vivo iQOO 水滴全面屏 超广角AI三摄拍照 高通骁龙855 4G全网通 电竞游戏 智能 熔岩橙 8GB  128GB",
+    "coverPrice": 329800,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/19295/39/8911/97825/5c791f24Eac74859a/9ea73e9153842c9f.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfa56ab24c4f97c94a6",
+    "name": "华为 HUAWEI 畅享8e青春 2GB+32GB全面屏 黑色 全网通版 移动联通电信4G 双卡双待",
+    "coverPrice": 64900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t19822/21/667428507/40291/1aba7a/5b05180aN7bcc1127.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfa56ab24c4f97c94a7",
+    "name": "魅族 16th 全面屏游戏 6GB+64GB 静夜黑 全网通移动联通电信4G 双卡双待",
+    "coverPrice": 229800,
+    "thumb": {
+      "url": "https://img13.360buyimg.com/n7/jfs/t23086/64/1842595555/326783/b2d00c8f/5b6a8f8fN0505a6c1.png",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfa56ab24c4f97c94a8",
+    "name": "OPPO A5 全面屏拍照 3GB+64GB 幻镜蓝 全网通 移动联通电信4G 双卡双待",
+    "coverPrice": 99900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t26086/100/1165873052/97669/1f0e1800/5b8ca749Na5b8092a.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfa56ab24c4f97c94a9",
+    "name": "魅族 16 X 全面屏游戏 6GB+64GB 砚墨黑 全网通移动联通电信4G 双卡双待",
+    "coverPrice": 169800,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t27451/100/1417160314/232905/6c2284e9/5bc82835N4f37a40e.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfa56ab24c4f97c94aa",
+    "name": "vivo【上市】U1全面屏 AI智慧拍照  双卡双待 4G全网通 大电量智能y93 y97 极光色 3GB 32GB",
+    "coverPrice": 79900,
+    "thumb": {
+      "url": "https://img13.360buyimg.com/n7/jfs/t1/7950/29/14708/59146/5c67aa11Ebb9aebf5/e9f63088645d6aa0.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfa56ab24c4f97c94ab",
+    "name": "诺基亚（NOKIA）新105 黑色 直板按键 移动联通2G 老人 学生备用功能机",
+    "coverPrice": 14900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t7183/165/1486289850/149007/7ed24019/598bd77eNa366c08c.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfb56ab24c4f97c94ac",
+    "name": "飞利浦 PHILIPS E258S 宝石蓝 直板按键 移动/联通2G 老人 老年功能",
+    "coverPrice": 17800,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/6082/37/6871/308394/5be17bc2E5d949cd5/db8b350a9e01a7c2.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfb56ab24c4f97c94ad",
+    "name": "魅族 V8 全面屏 3GB+32GB 磨砂黑 全网通移动联通电信4G 双卡双待",
+    "coverPrice": 64900,
+    "thumb": {
+      "url": "https://img13.360buyimg.com/n7/jfs/t1/4432/28/6579/305554/5ba31d78E431e8cd8/c12001745eb6a119.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfb56ab24c4f97c94ae",
+    "name": "小米 红米5 Plus 全面屏拍照 4GB+64GB 玫瑰金 移动联通电信4G 双卡双待",
+    "coverPrice": 99900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t14173/365/1779524313/324587/3b5a727/5a28b6eaN3c80b8c1.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfb56ab24c4f97c94af",
+    "name": "小米Play 流光渐变AI双摄 4GB+64GB 黑色 全网通4G 双卡双待 小水滴全面屏拍照游戏智能",
+    "coverPrice": 109900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/32251/26/438/89633/5c3c055bE61414b4d/5691c8e1a9f05df9.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfb56ab24c4f97c94b0",
+    "name": "小辣椒 红辣椒7R 6.0英寸 全面屏 3GB+32GB 渐变黑 全网通 移动联通电信4G 双卡双待",
+    "coverPrice": 59900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/31430/26/163/186564/5c38509aE4275399f/fe0bef073c1c8f13.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfb56ab24c4f97c94b1",
+    "name": "360 N7 全网通 6GB+64GB 石墨黑 移动联通电信4G 双卡双待 全面屏 游戏",
+    "coverPrice": 129900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t16615/249/1989188906/176465/f82f1b6e/5ae42bfbN27b3d130.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfb56ab24c4f97c94b2",
+    "name": "三星 Galaxy S8 4GB+64GB 谜夜黑（SM-G9500）全视曲面屏 虹膜识别  全网通4G 双卡双待",
+    "coverPrice": 288900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t22399/256/428796627/286211/4107e0de/5b0d4f5cN32701716.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfb56ab24c4f97c94b3",
+    "name": "飞利浦（PHILIPS）E171L 曜石黑 直板按键 移动联通 老人 老年功能机",
+    "coverPrice": 19800,
+    "thumb": {
+      "url": "https://img13.360buyimg.com/n7/jfs/t19522/52/2348839159/195202/71a0900c/5af43bd3N291f2b28.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfc56ab24c4f97c94b4",
+    "name": "小米Mix3  6GB+128GB黑色  骁龙845 全网通4G 双卡双待 全面屏拍照游戏智能",
+    "coverPrice": 329900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/1867/31/11716/401006/5bd072f8E6db292ab/f3610e2e816ade0f.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfe56ab24c4f97c94b5",
+    "name": "诺基亚（NOKIA）105 直板按键 移动联通2G 老人 学生备用功能机 黑色 移动版",
+    "coverPrice": 14900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/29647/19/11015/55733/5c8c99e9Eeaf1418c/ad867d12bbf3762b.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfe56ab24c4f97c94b6",
+    "name": "小米Max3 大屏游戏智能 6GB+128GB 黑色 骁龙处理器 全网通4G 双卡双待",
+    "coverPrice": 189900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t23878/276/1124936525/98611/21ef4c32/5b503be1Nc9134fc8.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfe56ab24c4f97c94b7",
+    "name": "三星S10e 移动全网通 炭晶黑 6+128GB（12期免息+三重好礼）",
+    "coverPrice": 499900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t1/30515/19/3758/67828/5c779d13E0401b6bf/c648f5fdc21413a3.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfe56ab24c4f97c94b8",
+    "name": "魅族 X8 准旗舰游戏拍照 4GB+64GB 亮黑 全网通移动联通电信4G 双卡双待",
+    "coverPrice": 124800,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t27679/48/1385172122/89585/1e948fb9/5bc82dacN609d9294.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfe56ab24c4f97c94b9",
+    "name": "飞利浦（PHILIPS） E106 石墨黑 环保材质 防尘 直板按键 移动联通 双卡双待 老人 学生备用老年功能",
+    "coverPrice": 9900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/9317/39/13364/152019/5c418ba8Eda1898ba/434f4e02b14e6abe.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfe56ab24c4f97c94ba",
+    "name": "vivo【新品上市】U1全面屏 AI智慧拍照  双卡双待 4G全网通 大电量智能y93 y97 极光红 3GB 32GB",
+    "coverPrice": 79900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t1/29667/34/7036/61450/5c67aa2cE2407f4c4/dbb99051083ad894.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bfe56ab24c4f97c94bb",
+    "name": "飞利浦（PHILIPS） E289 星空灰 全网通 智能老人 移动联通电信4G 超长待机 直板按键 学生备用老年",
+    "coverPrice": 39900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/17196/11/5754/265200/5c41996eE5419b96c/21be15a2e9397dfe.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bff56ab24c4f97c94bc",
+    "name": "CONQUEST 征服 S12 户外智能三防 超长待机 双卡双待双通 人脸识别 黑色（4+64GB）",
+    "coverPrice": 299800,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t1/17471/1/13086/173896/5c9de84aE02cf81ef/0fc82c89cac3dc02.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bff56ab24c4f97c94bd",
+    "name": "OPPO【下单立减50+3期免息】K1 首款千元屏下指纹水滴屏 4G+64G版 梵星蓝",
+    "coverPrice": 139900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t25468/90/1862724202/251453/18c13d7/5bbead1dN46606f08.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bff56ab24c4f97c94be",
+    "name": "小米9 骁龙855 游戏 深空灰 全网通6GB+128GB",
+    "coverPrice": 319900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/16167/10/7888/268047/5c6f57e4E08858cda/9c9b6a7ef38764db.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bff56ab24c4f97c94bf",
+    "name": "锤子（smartisan ) 坚果 Pro 2S 6G+64GB 炫光蓝 全面屏双摄 全网通4G 双卡双待 游戏",
+    "coverPrice": 159800,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t23359/128/2369309375/207652/6973579a/5b7d05feN6f190d9a.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bff56ab24c4f97c94c0",
+    "name": "OPPO OPPO A7x 全面屏拍照 4GB+128GB 星空紫 全网通 移动联通电信4G 双卡双待",
+    "coverPrice": 159900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t1/232/35/2468/110752/5b9613a5E5348ee6d/70db14139612b658.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bff56ab24c4f97c94c1",
+    "name": "华为（HUAWEI） 荣耀 畅玩7 全网通 移动联通电信4G 全面屏智能老人 双卡双待 金色 (2G RAM+16G ROM)",
+    "coverPrice": 53800,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t1/22906/25/4703/80644/5c34734dE2a184f21/cf96399cc6ecbb81.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bff56ab24c4f97c94c2",
+    "name": "OPPO 【限时直降200+6期免息】R17 雾光金 幻色渐变机身屏下指纹解锁 6.4英寸 雾光金（8+128GB）",
+    "coverPrice": 279900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/1196/11/11536/184066/5bcf4b7aEec4dacf2/769329f1fc045f58.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bff56ab24c4f97c94c3",
+    "name": "三星 Galaxy A9 Star 4GB+64GB 极夜黑（SM-G8850）全面屏 AI美拍 前后2400万像素  全网通4G 双卡双待",
+    "coverPrice": 199900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t20182/193/1179473099/99281/331cfee4/5b21f467N4f4ed4d1.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bff56ab24c4f97c94c4",
+    "name": "小米8青春版 镜面渐变AI双摄 6GB+64GB 梦幻蓝 骁龙 全网通4G 双卡双待 全面屏拍照游戏智能",
+    "coverPrice": 149900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t1/2617/6/6143/237736/5ba1f42aE71124526/e242e3e39ec95d66.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45bff56ab24c4f97c94c5",
+    "name": "飞利浦 PHILIPS E256S 陨石黑 双屏翻盖 大屏大字 长待机 移动联通2G 双卡双待 老人 学生备用功能机",
+    "coverPrice": 29900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/3112/1/4156/169324/5b9b69f7E5a039092/19d347c34c37a5ed.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0056ab24c4f97c94c6",
+    "name": "小辣椒 红辣椒7X 4+64GB 学生智能 美颜双摄 微Q多开 人脸识别 移动联通电信4G全网通 蓝色",
+    "coverPrice": 68400,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t18382/213/2441139714/253183/7e959870/5af52788Nbf297aaf.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0056ab24c4f97c94c7",
+    "name": "天语（K-TOUCH） Q31  超长待机 直板按键 三防老人 双卡双待 移动/联通2G   黑色",
+    "coverPrice": 13800,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t1/16349/15/8534/256757/5c779e5aE97cf0c2d/945af423ca52f870.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0056ab24c4f97c94c8",
+    "name": "vivo Z1极光特别版 新一代全面屏AI双摄 6GB+64GB  移动联通电信全网通4G",
+    "coverPrice": 159800,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/403/34/6057/382950/5ba0b196E007478eb/c2f4c192b441ec6e.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0056ab24c4f97c94c9",
+    "name": "守护宝（上海中兴）F888  直板 按键 超长待机 三防老人 双卡双待 黑色 2G移动/联通版",
+    "coverPrice": 17800,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t15322/55/543629422/103321/6c18c33f/5a30c603Nb1f7da22.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0056ab24c4f97c94ca",
+    "name": "天语（K-TOUCH）T2 金色 移动联通2G 老人 直板按键 双卡双待 老年",
+    "coverPrice": 8900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t1/27722/24/10811/295901/5c8a069bEea7edd5f/2dd55d59b81ddad1.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0056ab24c4f97c94cb",
+    "name": "【移动版特惠】三星 Galaxy Note8（SM-N9508）6G+64G 谜夜黑 移动4G+智 游戏 双卡双待",
+    "coverPrice": 389900,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t20911/108/1211337963/95522/5c405ebc/5b21db17Naab99ef9.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0056ab24c4f97c94cc",
+    "name": "OPPO A5 面部识别 【直降300】 双卡双待 游戏 A5幻镜蓝 3G+64G 全网通",
+    "coverPrice": 99900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t22327/71/2478574974/181694/604ce8d3/5b57e93fN93f183b9.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0056ab24c4f97c94cd",
+    "name": "华为（HUAWEI） 荣耀 畅玩7 金色 全网通(2GB+16GB)",
+    "coverPrice": 50800,
+    "thumb": {
+      "url": "https://img10.360buyimg.com/n7/jfs/t26986/108/1415442647/152650/d5860339/5bc830fbNb0af1edf.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0056ab24c4f97c94ce",
+    "name": "vivo Z1 新一代全面屏AI双摄 4GB+64GB 炫慕红 移动联通电信全网通4G",
+    "coverPrice": 139800,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t19825/44/1113941920/211619/de74e679/5b1600a7Ne23b3abe.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0056ab24c4f97c94cf",
+    "name": "华为（HUAWEI） 荣耀 畅玩7 智能老人 金色 全网通(2G+16G)",
+    "coverPrice": 50800,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t1/32370/1/1107/262395/5c45a7a4E149f6758/9e4c4c4f13027d2b.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0156ab24c4f97c94d0",
+    "name": "努比亚 nubia Z18 全面屏3.0 极夜黑 8GB+128GB 全网通 移动联通电信4G 双卡双待",
+    "coverPrice": 269900,
+    "thumb": {
+      "url": "https://img14.360buyimg.com/n7/jfs/t24985/157/1291480957/93984/ebe58af/5b8e38f0Nef74774e.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0156ab24c4f97c94d1",
+    "name": "OPPO【3期免息】K1 首款千元屏下指纹解锁 6.4英寸水滴屏 梵星蓝（6+64G）",
+    "coverPrice": 159900,
+    "thumb": {
+      "url": "https://img12.360buyimg.com/n7/jfs/t25468/90/1862724202/251453/18c13d7/5bbead1dN46606f08.jpg",
+      "width": 220,
+      "height": 220
+    }
+  },
+  {
+    "id": "5ca45c0156ab24c4f97c94d2",
+    "name": "OPPO A7 全面屏拍照 4GB+64GB 清新粉 全网通 移动联通电信4G 双卡双待",
+    "coverPrice": 149900,
+    "thumb": {
+      "url": "https://img11.360buyimg.com/n7/jfs/t25564/327/2615611632/135559/d3c69840/5bebd32eN3bf6f987.jpg",
+      "width": 220,
+      "height": 220
+    }
+  }
+]

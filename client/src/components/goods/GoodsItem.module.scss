@@ -1,0 +1,19 @@
+.goods {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  .thumb {
+    width: 100%;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: row;
+
+    .left{
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

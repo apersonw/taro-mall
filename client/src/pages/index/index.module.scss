@@ -112,6 +112,12 @@
     }
   }
 
+  .recommendGoodsList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   .toolBar { //底部工具条，也即tabBar
     box-sizing: border-box;
     display: flex;
