@@ -8,6 +8,7 @@ import CustomImage from '../../components/CustomImage';
 import categoryIcon from '../../assets/index/category@2x.png';
 import icon from '../../assets/index/icon.png';
 import searchIcon from '../../assets/index/searchIcon.png';
+import upImg from '../../assets/index/up.png';
 import banner1 from '../../assets/banner/1.jpg';
 import banner2 from '../../assets/banner/2.jpg';
 import banner3 from '../../assets/banner/3.jpg';
@@ -187,7 +188,13 @@ class Index extends Component {
             </View >
           </View >
           {/*  推荐列表*/}
-          <View className={styles.recommendGoodsList}>
+          <View className={styles.recommendTitle} >
+            <View className={styles.recommendLineLeft}/>
+            <CustomImage width={26} height={26} src={upImg} />
+            <View className={styles.rightText}>为您推荐</View>
+            <View className={styles.recommendLineRight}/>
+          </View >
+          <View className={styles.recommendGoodsList} >
             {(recommendGoodsList || []).map((item) => (<GoodsItem key={item.id} item={item} />))}
           </View >
         </View >

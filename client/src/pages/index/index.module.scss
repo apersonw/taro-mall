@@ -112,7 +112,34 @@
     }
   }
 
-  .recommendGoodsList{
+  .recommendTitle {
+    padding: 28px 10px;
+    color: #848689;
+    font-size: 28px;
+    background-color: #F0F1F4;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    .recommendLineLeft{
+      border: 1px solid #848689;
+      width: 250px;
+      margin-right: 10px;
+    }
+
+    .recommendLineRight{
+      border: 1px solid #848689;
+      width: 250px;
+      margin-left: 10px;
+    }
+
+    .rightText{
+      margin-left: 13px;
+    }
+  }
+
+  .recommendGoodsList {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
