@@ -14,8 +14,10 @@ yarn build
 cd ..
 
 #构建services
-mvn clean package -Prelease
+cd services
+mvn clean package -U -Prelease
+cd ..
 
 pwd
-##运行docker-compose
+###运行docker-compose
 docker-compose up --build
