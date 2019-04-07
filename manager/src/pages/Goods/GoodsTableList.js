@@ -1,11 +1,13 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'dva';
-import { Badge, Card, Divider, Form } from 'antd';
+import router from 'umi/router';
+import { Avatar, Badge, Button, Card, Divider, Form, List, Progress } from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import StandardTable from '@/components/StandardTable';
 
-import styles from './TableList.less';
+import styles from './GoodsTableList.less';
 import moment from 'moment';
+import { findDOMNode } from 'react-dom';
 
 const statusMap = ['default', 'processing', 'success', 'error'];
 
@@ -15,7 +17,7 @@ const statusMap = ['default', 'processing', 'success', 'error'];
   loading: loading.models.goods,
 }))
 @Form.create()
-class TableList extends PureComponent {
+class GoodsTableList extends PureComponent {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch({
@@ -120,23 +122,79 @@ class TableList extends PureComponent {
   render() {
     const { selectedRows } = this.state;
     const { data, loading } = this.props;
+    const ListContent = ({ data: { owner, createdAt, percent, status } }) => (
+      <div className={styles.listContent}>
+        <div className={styles.listContentItem}>
+          <span>Owner</span>
+          <p>{owner}</p>
+        </div>
+        <div className={styles.listContentItem}>
+          <span>开始时间</span>
+          <p>{moment(createdAt).format('YYYY-MM-DD HH:mm')}</p>
+        </div>
+        <div className={styles.listContentItem}>
+          <Progress percent={percent} status={status} strokeWidth={6} style={{ width: 180 }} />
+        </div>
+      </div>
+    );
     return (
       <PageHeaderWrapper title="商品列表">
         <Card bordered={false}>
-          <StandardTable
-            selectedRows={selectedRows}
+          <Button
+            type="dashed"
+            style={{ width: '100%', marginBottom: 8 }}
+            icon="plus"
+            onClick={() => router.push('/goods/goodsSaveForm')}
+          >
+            添加
+          </Button>
+          {/*<StandardTable*/}
+          {/*  selectedRows={selectedRows}*/}
+          {/*  loading={loading}*/}
+          {/*  data={{*/}
+          {/*    list: data.content,*/}
+          {/*    pagination: {*/}
+          {/*      total: data.totalElements,*/}
+          {/*      currentPage: data.number + 1,*/}
+          {/*      pageSize: data.size,*/}
+          {/*    },*/}
+          {/*  }}*/}
+          {/*  columns={this.columns}*/}
+          {/*  onSelectRow={this.handleSelectRows}*/}
+          {/*  onChange={this.handleStandardTableChange}*/}
+          {/*/>*/}
+          <List
+            size="large"
+            rowKey="id"
             loading={loading}
-            data={{
-              list: data.content,
-              pagination: {
-                total: data.totalElements,
-                currentPage: data.number + 1,
-                pageSize: data.size,
-              },
+            pagination={{
+              total: data.totalElements,
+              currentPage: data.number + 1,
+              pageSize: data.size,
             }}
-            columns={this.columns}
-            onSelectRow={this.handleSelectRows}
-            onChange={this.handleStandardTableChange}
+            dataSource={data.content}
+            renderItem={item => (
+              <List.Item
+                actions={[
+                  <a
+                    onClick={e => {
+                      e.preventDefault();
+                      this.showEditModal(item);
+                    }}
+                  >
+                    编辑
+                  </a>,
+                  <MoreBtn current={item} />,
+                ]}
+              >
+                <List.Item.Meta
+                  avatar={<Avatar src={item.logo} shape="square" size="large" />}
+                  title={<a href={item.href}>{item.title}</a>}
+                  description={item.subDescription}
+                />
+                <ListContent data={item} />
+              </List.Item>
+            )}
           />
         </Card>
       </PageHeaderWrapper>
@@ -144,4 +202,4 @@ class TableList extends PureComponent {
   }
 }
 
-export default TableList;
+export default GoodsTableList;

@@ -102,7 +102,13 @@ export default [
           {
             path: '/goods/goodsList',
             name: 'goodsList',
-            component: './Goods/TableList',
+            component: './Goods/GoodsTableList',
+          },
+          {
+            path: '/goods/goodsSaveForm',
+            name: 'goodsSaveForm',
+            component: './Goods/Forms/GoodsSaveForm',
+            hideInMenu: true,
           },
           {
             path: '/goods/categoryList',

@@ -23,6 +23,6 @@ public class RxGoodsApplication {
     @Account(false)
     @GetMapping("/")
     public Mono<String> system() {
-        return Mono.just("商城服务正常");
+        return Mono.just("商品服务正常");
     }
 }

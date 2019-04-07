@@ -17,6 +17,7 @@ export default {
   'menu.vipCard.couponList': '券码列表',
   'menu.goods': '商品管理',
   'menu.goods.goodsList': '商品列表',
+  'menu.goods.goodsSaveForm': '商品修改',
   'menu.goods.categoryList': '分类列表',
   'menu.goods.brandList': '品牌列表',
   'menu.order': '订单管理',
