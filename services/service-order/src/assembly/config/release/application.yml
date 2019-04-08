@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: service-order
+  data:
+    mongodb:
+      database: service-order
+      uri: mongodb://${DB_HOST}
+  redis:
+    database: 4

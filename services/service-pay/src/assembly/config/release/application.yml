@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: service-pay
+  data:
+    mongodb:
+      database: service-pay
+      uri: mongodb://${DB_HOST}
+  redis:
+    database: 3

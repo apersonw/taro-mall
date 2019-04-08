@@ -66,7 +66,7 @@ class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
     public Mono<Goods> getByGoodsId(String goodsId) {
         Criteria criteria = Criteria
                 .where("id").is(goodsId)
-                .and("status").is(GoodsStatus.NORMAL.name());
+                .and("org/rxjava/service/goods/status").is(GoodsStatus.NORMAL.name());
         Query query = Query.query(criteria);
         return reactiveMongoTemplate
                 .findOne(query, Goods.class);

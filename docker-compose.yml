@@ -5,7 +5,7 @@ services:
     build: ./client/
     container_name: "client"
     depends_on:
-      - service-goods
+      - gateway-client
     ports:
       - 81:80
     restart: always
@@ -13,18 +13,27 @@ services:
     build: ./manager/
     container_name: "manager"
     depends_on:
-      - service-goods
-    environment:
-      API_HOST: server:8080
+      - gateway-manager
     ports:
       - 82:80
     restart: always
+  gateway-client:
+    build: ./services/gateway-client/target/docker-bin/
+    container_name: "gateway-client"
+    depends_on:
+      - center
+  gateway-manager:
+    build: ./services/gateway-manager/target/docker-bin/
+    container_name: "gateway-manager"
+    depends_on:
+      - center
   service-goods:
     build: ./services/service-goods/target/docker-bin/
     container_name: "service-goods"
     depends_on:
       - mongodb
       - redis
+      - center
     environment:
       DB_HOST: mongodb:27017
   service-user:
@@ -33,8 +42,12 @@ services:
     depends_on:
       - mongodb
       - redis
+      - center
     environment:
       DB_HOST: mongodb:27017
+  center:
+    build: ./services/center/target/docker-bin/
+    container_name: "center"
   mongodb:
     image: 'registry.cn-beijing.aliyuncs.com/rxjava/mongo:3.7.3-jessie'
     container_name: "mongodb"

@@ -15,7 +15,7 @@ cd ..
 
 #构建services
 cd services
-mvn clean package -U -Prelease
+mvn clean package -Prelease
 cd ..
 
 pwd

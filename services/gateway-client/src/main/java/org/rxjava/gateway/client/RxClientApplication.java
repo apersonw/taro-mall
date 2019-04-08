@@ -3,6 +3,7 @@ package org.rxjava.gateway.client;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +16,7 @@ import reactor.core.publisher.Mono;
  */
 @RestController
 @SpringBootApplication
+@EnableDiscoveryClient
 public class RxClientApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(RxClientApplication.class).web(WebApplicationType.REACTIVE).run(args);
@@ -27,11 +29,6 @@ public class RxClientApplication {
 
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
-        return builder.routes()
-                .route(r -> r.path("/user/**")
-                        .uri("http://localhost:8081")
-                        .id("user_service")
-                )
-                .build();
+        return builder.routes().build();
     }
 }
