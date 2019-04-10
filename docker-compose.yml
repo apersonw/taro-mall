@@ -22,20 +22,25 @@ services:
     container_name: "gateway-client"
     depends_on:
       - center
+    environment:
+      CENTER_HOST: center:8761
   gateway-manager:
     build: ./services/gateway-manager/target/docker-bin/
     container_name: "gateway-manager"
     depends_on:
       - center
+    environment:
+      CENTER_HOST: center:8761
   service-goods:
     build: ./services/service-goods/target/docker-bin/
     container_name: "service-goods"
     depends_on:
+      - center
       - mongodb
       - redis
-      - center
     environment:
       DB_HOST: mongodb:27017
+      CENTER_HOST: center:8761
   service-user:
     build: ./services/service-user/target/docker-bin/
     container_name: "service-user"
@@ -45,9 +50,14 @@ services:
       - center
     environment:
       DB_HOST: mongodb:27017
+      CENTER_HOST: center:8761
   center:
     build: ./services/center/target/docker-bin/
     container_name: "center"
+    expose:
+      - 8761
+    ports:
+      - 8761:8761
   mongodb:
     image: 'registry.cn-beijing.aliyuncs.com/rxjava/mongo:3.7.3-jessie'
     container_name: "mongodb"

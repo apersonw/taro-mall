@@ -7,3 +7,7 @@ spring:
       uri: mongodb://${DB_HOST}
   redis:
     database: 1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@${CENTER_HOST}/eureka/

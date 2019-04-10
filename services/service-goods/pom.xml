@@ -32,6 +32,13 @@
                     </plugin>
                 </plugins>
             </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.rxjava</groupId>
+                    <artifactId>rxjava-service-starter</artifactId>
+                    <version>1.0.0-SNAPSHOT</version>
+                </dependency>
+            </dependencies>
         </profile>
     </profiles>
 </project>

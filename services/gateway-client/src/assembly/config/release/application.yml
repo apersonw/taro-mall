@@ -3,3 +3,7 @@ spring:
     name: gateway-client
 server:
   port: 8080
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@${CENTER_HOST}/eureka/

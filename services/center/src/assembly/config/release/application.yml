@@ -1,6 +1,10 @@
 spring:
   application:
     name: center
+  security:
+    user:
+      name: admin
+      password: admin
 eureka:
   instance:
     hostname: localhost
