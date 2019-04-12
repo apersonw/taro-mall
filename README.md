@@ -14,7 +14,7 @@ $ cd taro-mall | ./run.sh
 
 ### 二、单独模块启动说明
 
-1. 客户端模块（React Native单独拉去rn分支）
+1. 客户端模块（React Native单独拉取rn分支）
 ```bash
 # run
 # H5启动(yarn dev:weapp为小程序启动)
