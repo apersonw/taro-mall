@@ -1,8 +1,8 @@
 #### 如果你觉得还行，请给个star，感谢你的支持🙏
 ## QQ交流群：828300414，加群答案：taro-jd
-### 一、安装要求: Docker, Yarn, Maven (React Native单独拉取rn分支)
 
-### 二、启动说明
+### 一、整体启动说明（启动要求：Docker, Yarn, Maven）
+####（项目启动后会自动编译并打包docker启动整个完整项目，包括前端H5，管理后台H5，微服务RestFul接口模块）
 
 ```bash
 # clone
@@ -12,27 +12,28 @@ $ git clone https://github.com/apersonw/taro-mall.git
 $ cd taro-mall | ./run.sh
 ```
 
-### 三、本地开发
+### 二、单独模块启动说明
 
-1. 客户端
+1. 客户端模块（React Native单独拉去rn分支）
 ```bash
 # run
+# H5启动(yarn dev:weapp为小程序启动)
 $ cd client | yarn dev:h5
 ```
 
-2. 管理端
+2. 管理后台模块
 ```bash
 # run
 $ cd manager | yarn start
 ```
 
-3. 后端接口服务
+3. 微服务RestFul接口模块
 ```bash
 # run 需要本地启动mongo和redis
 $ cd services/xxx | 启动java项目
 ```
 
-### 四、目录说明
+### 三、目录说明
 
 ```
 .
@@ -67,27 +68,27 @@ $ cd services/xxx | 启动java项目
         ├── pom.xml
         └── src
 
-注：
+注：（整体启动后）
 1.数据库访问地址：0.0.0.0:27018
 2.注册中心访问地址：0.0.0.0:8761   账号密码均为：admin
 ```
 
-### 五、架构说明
+### 四、项目架构说明
 
 1. #### 设计说明：
 
-* 采用Sketch设计并发布切图
+* 采用Sketch设计并发布切图，设计切图位于design文件夹
 
 2. #### 数据来源说明：
 
-- 采用Python爬虫爬取相关数据
+- 采用Python Scrapy爬虫爬取相关数据，加群可分享
 
 3. #### 前端说明：
 
-- 客户端-基于<a href="https://taro.aotu.io/">Taro</a>+<a href="https://dvajs.com/">Dva</a>
-- 管理端-基于<a href="https://umijs.org/">Umi</a>
+- 客户端模块-基于<a href="https://taro.aotu.io/">Taro</a>+<a href="https://dvajs.com/">Dva</a>
+- 管理后台模块-基于<a href="https://umijs.org/">Umi</a>
 
-4. #### 后端说明：
+4. #### 微服务RestFul接口模块说明：
 
 - 项目框架基于<a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux">Spring Cloud，Spring Boot2，Spring WebFlux</a>
 - 数据库：MonogoDb，Redis，Elasticsearch
@@ -98,10 +99,10 @@ $ cd services/xxx | 启动java项目
 
 - 所有模块部署均采用<a href="https://docker.io/">Docker</a>
 
-### 六、交易流程图
+### 五、交易流程图
 <img src="./readmeImg/trade.png" width="375px"/>
 
-### 七、页面展示
+### 六、页面展示
 
 **1、首页展示** 
 
@@ -110,7 +111,3 @@ $ cd services/xxx | 启动java项目
 **2、分类展示**
 
 <img src="./readmeImg/category.jpg" width="375px"/>
-
-### 八、注意事项
-
-**1、样式说明
