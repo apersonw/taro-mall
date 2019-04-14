@@ -17,7 +17,7 @@ import reactor.core.publisher.Mono;
  */
 @RestController
 @SpringBootApplication
-@EnableEurekaClient
+@EnableDiscoveryClient
 public class RxClientApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(RxClientApplication.class).web(WebApplicationType.REACTIVE).run(args);

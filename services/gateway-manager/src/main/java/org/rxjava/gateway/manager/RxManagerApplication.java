@@ -3,6 +3,7 @@ package org.rxjava.gateway.manager;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -16,7 +17,7 @@ import reactor.core.publisher.Mono;
  */
 @SpringBootApplication
 @RestController
-@EnableEurekaClient
+@EnableDiscoveryClient
 public class RxManagerApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(RxManagerApplication.class).web(WebApplicationType.REACTIVE).run(args);

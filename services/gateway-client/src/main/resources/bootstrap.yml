@@ -1,6 +1,6 @@
 spring:
   application:
-    name: service-goods
+    name: gateway-client
   cloud:
     config:
       #      label: master #指明远程仓库的分支
