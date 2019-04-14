@@ -9,16 +9,14 @@
     <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>center</module>
-        <module>entity</module>
         <module>gateway-client</module>
         <module>gateway-manager</module>
-        <module>rxjava-service-starter</module>
-        <module>service-goods</module>
-        <module>service-order</module>
-        <module>service-pay</module>
-        <module>service-user</module>
+        <module>rxjava-service-parent</module>
+        <module>rxjava-service</module>
     </modules>
     <properties>
+        <!--通用配置名-->
+        <cloud.config.name>http://config:8888/</cloud.config.name>
 
         <!--项目编译版本-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
