@@ -9,6 +9,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>center</module>
+        <module>config</module>
         <module>gateway-client</module>
         <module>gateway-manager</module>
         <module>rxjava-service-parent</module>

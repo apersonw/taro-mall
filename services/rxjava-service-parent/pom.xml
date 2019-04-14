@@ -14,7 +14,6 @@
         <module>rxjava-service-boot</module>
         <module>rxjava-service-entity</module>
         <module>rxjava-service-starter</module>
-        <module>rxjava-service-starter-mock</module>
     </modules>
     <dependencies>
         <dependency>
@@ -28,6 +27,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
 </project>
