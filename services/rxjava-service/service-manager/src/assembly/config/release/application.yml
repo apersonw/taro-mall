@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: service-user
+  data:
+    mongodb:
+      database: service-user
+      uri: mongodb://${DB_HOST}
+  redis:
+    database: 0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@${CENTER_HOST}/eureka/
