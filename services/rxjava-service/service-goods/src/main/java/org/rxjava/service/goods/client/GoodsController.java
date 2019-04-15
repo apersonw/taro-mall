@@ -1,4 +1,4 @@
-package org.rxjava.service.goods.person;
+package org.rxjava.service.goods.client;
 
 import org.rxjava.service.goods.annotation.Account;
 import org.rxjava.service.goods.form.GoodsListForm;

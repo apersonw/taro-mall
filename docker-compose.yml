@@ -22,6 +22,7 @@ services:
     container_name: "gateway-client"
     depends_on:
       - center
+      - config
     environment:
       CENTER_HOST: center:8761
   gateway-manager:
@@ -29,6 +30,7 @@ services:
     container_name: "gateway-manager"
     depends_on:
       - center
+      - config
     environment:
       CENTER_HOST: center:8761
   service-goods:

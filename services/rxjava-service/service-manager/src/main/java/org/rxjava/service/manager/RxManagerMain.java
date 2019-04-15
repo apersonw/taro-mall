@@ -18,7 +18,6 @@ public class RxManagerMain {
             Path basePath = Paths.get("base-lib");
             URLClassLoader cl = (URLClassLoader) ClassLoader.getSystemClassLoader();
             if (Files.isDirectory(path) && Files.isDirectory(basePath)) {
-//            if (Files.isDirectory(basePath)) {
                 Method addURL = URLClassLoader.class.getDeclaredMethod("addURL", URL.class);
                 addURL.setAccessible(true);
                 Consumer<Path> pathConsumer = p -> {

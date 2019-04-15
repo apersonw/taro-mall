@@ -10,4 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>service-pay</artifactId>
     <packaging>jar</packaging>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

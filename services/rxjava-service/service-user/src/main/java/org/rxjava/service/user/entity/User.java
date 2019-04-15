@@ -19,9 +19,11 @@ import static org.springframework.data.mongodb.core.index.IndexDirection.DESCEND
 public class User {
     @Id
     private String id;
-    private String username;
+    /**
+     * 用户手机，号码唯一
+     */
+    @Indexed(unique = true)
     private String phone;
-    private String password;
     /**
      * 创建日期
      */

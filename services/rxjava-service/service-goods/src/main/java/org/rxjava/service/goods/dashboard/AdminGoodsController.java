@@ -1,4 +1,4 @@
-package org.rxjava.service.goods.manager;
+package org.rxjava.service.goods.dashboard;
 
 import org.rxjava.service.goods.annotation.Account;
 import org.rxjava.service.goods.entity.Goods;

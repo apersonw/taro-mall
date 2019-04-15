@@ -1,12 +1,12 @@
 spring:
   application:
-    name: service-user
+    name: service-manager
   data:
     mongodb:
-      database: service-user
+      database: service-manager
       uri: mongodb://${DB_HOST}
   redis:
-    database: 0
+    database: 5
 eureka:
   client:
     service-url:

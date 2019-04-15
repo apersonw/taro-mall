@@ -10,4 +10,16 @@
     </parent>
     <artifactId>service-goods</artifactId>
     <packaging>jar</packaging>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

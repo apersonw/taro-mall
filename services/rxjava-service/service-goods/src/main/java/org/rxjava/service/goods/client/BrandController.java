@@ -1,4 +1,4 @@
-package org.rxjava.service.goods.person;
+package org.rxjava.service.goods.client;
 
 import org.rxjava.service.goods.model.BrandModel;
 import org.rxjava.service.goods.form.BrandListForm;

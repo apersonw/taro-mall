@@ -1,30 +1,33 @@
-package org.rxjava.service.order.entity;
+package org.rxjava.service.goods.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
 /**
- * @author happy 2019-03-29 13:45
+ * @author happy 2019-04-15 23:41
+ * 评价
  */
 @Data
-@Document
-public class Order {
+public class Evaluation {
     @Id
     private String id;
+    /**
+     * 商品Id
+     */
+    private String goodsId;
     /**
      * 用户Id
      */
     private String userId;
     /**
-     * 商品Id
+     * 订单Id
      */
-    private String goodsId;
+    private String orderId;
     /**
      * 创建日期
      */
