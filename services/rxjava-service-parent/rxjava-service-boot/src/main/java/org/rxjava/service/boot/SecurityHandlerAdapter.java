@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 public class SecurityHandlerAdapter extends RequestMappingHandlerAdapter {
     private static final String TOKEN_HEADER_NAME = "Authorization";
 
-    public SecurityHandlerAdapter() {
+    SecurityHandlerAdapter() {
         super();
     }
 
