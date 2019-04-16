@@ -31,6 +31,7 @@ $ cd manager | yarn start
 3. 微服务RestFul接口模块
 ```bash
 # run 需要本地启动mongo和redis
+# 模块启动顺序 （配置中心）config->(注册中心)center->其他模块
 $ cd services/xxx | 启动java项目
 ```
 
