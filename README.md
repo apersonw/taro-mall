@@ -96,7 +96,7 @@ $ cd services/xxx | 启动java项目
 - 数据库：MonogoDb，Redis，Elasticsearch
 - 消息队列：RabbitMq
 - 支付平台：支付宝和微信支付
-系统图：<img src="./readMeImg/system.jpg" width="750px"/>
+系统图：<img src="./readmeImg/system.jpg" width="750px"/>
 
 5. #### 部署说明：
 
