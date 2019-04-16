@@ -97,7 +97,7 @@ $ cd services/xxx | 启动java项目
 - 消息队列：RabbitMq
 - 支付平台：支付宝和微信支付
 
-<img src="./readmeImg/system.jpg" width="750px"/>
+<img src="./readmeImg/system.png" width="750px"/>
 
 5. #### 部署说明：
 
