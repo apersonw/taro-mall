@@ -1,6 +1,7 @@
 package org.rxjava.service.user.client;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.rxjava.service.boot.annotation.Login;
 import org.rxjava.service.user.LoginByPhoneSmsForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
@@ -21,10 +22,11 @@ public class UserController {
     /**
      * 手机验证码登陆
      */
+    @Login(false)
     @PostMapping("loginByPhoneSms")
     public Mono<String> loginByPhoneSms(
             @Valid LoginByPhoneSmsForm form
     ) {
-        return Mono.just(RandomStringUtils.random(32));
+        return Mono.just("赵六");
     }
 }

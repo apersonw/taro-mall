@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 /**
  * @author happy 2019-04-11 01:53
+ * 注册中心关闭https，因为都是在docker里面，所以不需要https
  */
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
