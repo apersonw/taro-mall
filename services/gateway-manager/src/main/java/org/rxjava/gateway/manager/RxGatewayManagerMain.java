@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 /**
  * @author happy 2019-03-17 22:23
  */
-public class RxManagerMain {
+public class RxGatewayManagerMain {
     public static void main(String... args) {
         try {
 //            Path path = Paths.get("lib");
@@ -34,6 +34,6 @@ public class RxManagerMain {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        RxManagerApplication.main(args);
+        RxGatewayManagerApplication.main(args);
     }
 }

@@ -6,7 +6,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,9 +17,9 @@ import reactor.core.publisher.Mono;
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient
-public class RxManagerApplication {
+public class RxGatewayManagerApplication {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(RxManagerApplication.class).web(WebApplicationType.REACTIVE).run(args);
+        new SpringApplicationBuilder(RxGatewayManagerApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
 
     @GetMapping("/")
