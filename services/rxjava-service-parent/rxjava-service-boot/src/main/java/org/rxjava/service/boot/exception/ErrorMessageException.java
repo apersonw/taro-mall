@@ -11,6 +11,7 @@ import java.util.stream.Stream;
  * 错误消息异常(可预知错误均抛出此异常)
  */
 public class ErrorMessageException extends RuntimeException {
+    private ErrorMessage errorMessage;
     private ErrorMessageException(String[] codes, Object[] arguments, String defaultMessage, Throwable cause) {
         super(MessageFormat.format(
                 "codes:{0},args:{1}, defaultMessage:{2}",
@@ -18,6 +19,7 @@ public class ErrorMessageException extends RuntimeException {
                 ArrayUtils.toString(arguments),
                 defaultMessage
         ), cause);
+        this.errorMessage = new ErrorMessage(codes, arguments, defaultMessage);
     }
 
     /**
@@ -41,5 +43,9 @@ public class ErrorMessageException extends RuntimeException {
 
     public static ErrorMessageException of(String code) {
         return new ErrorMessageException(new String[]{code}, null, null, null);
+    }
+
+    public ErrorMessage getErrorMessage() {
+        return errorMessage;
     }
 }

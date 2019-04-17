@@ -1,5 +1,6 @@
 package org.rxjava.service.user;
 
+import org.rxjava.service.boot.annotation.Login;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -19,6 +20,7 @@ public class RxUserApplication {
         new SpringApplicationBuilder(RxUserApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
 
+    @Login(false)
     @GetMapping("/")
     public Mono<String> system() {
         return Mono.just("用户服务正常");
