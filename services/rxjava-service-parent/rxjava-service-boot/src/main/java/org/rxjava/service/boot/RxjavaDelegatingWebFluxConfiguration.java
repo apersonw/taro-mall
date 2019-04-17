@@ -5,8 +5,6 @@ import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.codec.ServerCodecConfigurer;
@@ -19,11 +17,10 @@ import java.util.List;
 
 /**
  * @author happy 2019-04-16 23:04
- * 权限处理适配器配置
+ * 导入Spring默认配置
  */
-@Configuration
-@AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE + 12)
-public class SecurityDelegatingWebFluxConfiguration extends DelegatingWebFluxConfiguration {
+@AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
+public class RxjavaDelegatingWebFluxConfiguration extends DelegatingWebFluxConfiguration {
 
     @Override
     @Bean
