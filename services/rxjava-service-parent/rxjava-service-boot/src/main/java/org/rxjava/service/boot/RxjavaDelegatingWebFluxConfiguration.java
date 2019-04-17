@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * @author happy 2019-04-16 23:04
- * 导入Spring默认配置
+ * 重构SpringWebFlux默认配置
  */
 @AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
 public class RxjavaDelegatingWebFluxConfiguration extends DelegatingWebFluxConfiguration {
@@ -33,7 +33,7 @@ public class RxjavaDelegatingWebFluxConfiguration extends DelegatingWebFluxConfi
      * 注入json响应状态异常处理器
      */
     @Bean
-    @Order(Ordered.HIGHEST_PRECEDENCE)//最高优先级创建
+    @Order(Ordered.HIGHEST_PRECEDENCE)
     public ErrorWebExceptionHandler responseStatusExceptionHandler(
             ObjectProvider<List<ViewResolver>> viewResolversProvider,
             ServerCodecConfigurer serverCodecConfigurer
