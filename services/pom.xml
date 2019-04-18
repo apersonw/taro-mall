@@ -10,10 +10,9 @@
     <modules>
         <module>center</module>
         <module>config</module>
-        <module>gateway-client</module>
-        <module>gateway-manager</module>
-        <module>rxjava-service-parent</module>
         <module>rxjava-service</module>
+        <module>rxjava-gateway</module>
+        <module>rxjava-common-parent</module>
     </modules>
     <properties>
         <!--通用配置名-->

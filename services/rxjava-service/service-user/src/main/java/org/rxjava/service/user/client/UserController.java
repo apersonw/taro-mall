@@ -2,8 +2,8 @@ package org.rxjava.service.user.client;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.rxjava.service.boot.LoginInfo;
-import org.rxjava.service.boot.annotation.Login;
+import org.rxjava.service.core.annotation.Login;
+import org.rxjava.service.starter.boot.LoginInfo;
 import org.rxjava.service.user.form.LoginByPhoneSmsForm;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
