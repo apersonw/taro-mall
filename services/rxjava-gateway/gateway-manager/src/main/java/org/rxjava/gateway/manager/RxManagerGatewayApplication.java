@@ -17,9 +17,9 @@ import reactor.core.publisher.Mono;
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient
-public class RxGatewayManagerApplication {
+public class RxManagerGatewayApplication {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(RxGatewayManagerApplication.class).web(WebApplicationType.REACTIVE).run(args);
+        new SpringApplicationBuilder(RxManagerGatewayApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
 
     @GetMapping("/")

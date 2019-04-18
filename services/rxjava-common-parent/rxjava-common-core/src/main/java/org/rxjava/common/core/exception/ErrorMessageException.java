@@ -1,4 +1,4 @@
-package org.rxjava.service.core.exception;
+package org.rxjava.common.core.exception;
 
 import org.apache.commons.lang3.ArrayUtils;
 import reactor.core.publisher.Mono;

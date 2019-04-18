@@ -1,7 +1,7 @@
 package org.rxjava.service.starter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.rxjava.service.core.utils.JsonUtils;
+import org.rxjava.common.core.utils.JsonUtils;
 import org.rxjava.service.starter.boot.RxjavaDelegatingWebFluxConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;

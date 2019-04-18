@@ -1,4 +1,4 @@
-package org.rxjava.service.core.utils;
+package org.rxjava.common.core.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

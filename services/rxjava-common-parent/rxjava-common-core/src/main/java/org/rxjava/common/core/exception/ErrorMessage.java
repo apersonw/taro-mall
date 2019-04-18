@@ -1,4 +1,4 @@
-package org.rxjava.service.core.exception;
+package org.rxjava.common.core.exception;
 
 import lombok.Data;
 import org.springframework.context.MessageSourceResolvable;

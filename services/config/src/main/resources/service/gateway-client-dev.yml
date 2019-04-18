@@ -1,16 +1,2 @@
 server:
   port: 8080
-spring:
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-          filters:
-          - name: RewritePath
-            args[regexp]: "'/' + serviceId + '/(?<remaining>.*)'"
-            args[replacement]: "'/${remaining}'"
-          predicates:
-          - name: Path
-            args[pattern]: "'/'+serviceId+'/**'"

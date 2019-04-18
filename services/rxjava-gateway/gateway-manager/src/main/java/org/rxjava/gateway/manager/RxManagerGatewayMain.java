@@ -1,4 +1,4 @@
-package org.rxjava.gateway.client;
+package org.rxjava.gateway.manager;
 
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 /**
  * @author happy 2019-03-17 22:23
  */
-public class RxClientMain {
+public class RxManagerGatewayMain {
     public static void main(String... args) {
         try {
 //            Path path = Paths.get("lib");
@@ -34,6 +34,6 @@ public class RxClientMain {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        RxClientApplication.main(args);
+        RxManagerGatewayApplication.main(args);
     }
 }

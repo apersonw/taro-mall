@@ -1,6 +1,6 @@
 package org.rxjava.service.goods;
 
-import org.rxjava.service.goods.annotation.Account;
+import org.rxjava.common.core.annotation.Login;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -20,7 +20,7 @@ public class RxGoodsApplication {
         new SpringApplicationBuilder(RxGoodsApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
 
-    @Account(false)
+    @Login(false)
     @GetMapping("/")
     public Mono<String> system() {
         return Mono.just("商品服务正常");

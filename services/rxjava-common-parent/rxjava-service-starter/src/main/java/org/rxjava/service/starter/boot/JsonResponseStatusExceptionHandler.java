@@ -2,10 +2,10 @@ package org.rxjava.service.starter.boot;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.rxjava.service.core.exception.ErrorMessage;
-import org.rxjava.service.core.exception.ErrorMessageException;
-import org.rxjava.service.core.exception.LoginRuntimeException;
-import org.rxjava.service.core.utils.ErrorMessageUtils;
+import org.rxjava.common.core.exception.ErrorMessage;
+import org.rxjava.common.core.exception.ErrorMessageException;
+import org.rxjava.common.core.exception.LoginRuntimeException;
+import org.rxjava.common.core.utils.ErrorMessageUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.context.MessageSource;

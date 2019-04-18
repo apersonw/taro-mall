@@ -1,7 +1,7 @@
 package org.rxjava.service.goods.entity;
 
 import lombok.Data;
-import org.rxjava.service.entity.Image;
+import org.rxjava.common.core.entity.Image;
 import org.rxjava.service.goods.status.GoodsStatus;
 import org.rxjava.service.goods.type.ExcessType;
 import org.springframework.data.annotation.CreatedDate;

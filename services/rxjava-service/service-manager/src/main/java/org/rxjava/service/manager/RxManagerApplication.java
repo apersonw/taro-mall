@@ -21,6 +21,6 @@ public class RxManagerApplication {
 
     @GetMapping("/")
     public Mono<String> system() {
-        return Mono.just("用户服务正常");
+        return Mono.just("管理服务正常");
     }
 }

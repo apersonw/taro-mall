@@ -1,4 +1,4 @@
-package org.rxjava.service.core.exception;
+package org.rxjava.common.core.exception;
 
 /**
  * @author happy 2019-04-18 01:22

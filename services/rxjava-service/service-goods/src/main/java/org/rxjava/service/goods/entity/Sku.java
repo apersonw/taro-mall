@@ -2,7 +2,7 @@ package org.rxjava.service.goods.entity;
 
 import io.lettuce.core.KeyValue;
 import lombok.Data;
-import org.rxjava.service.entity.Image;
+import org.rxjava.common.core.entity.Image;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;

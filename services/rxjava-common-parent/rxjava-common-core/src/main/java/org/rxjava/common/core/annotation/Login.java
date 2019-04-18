@@ -1,4 +1,4 @@
-package org.rxjava.service.core.annotation;
+package org.rxjava.common.core.annotation;
 
 import java.lang.annotation.*;
 

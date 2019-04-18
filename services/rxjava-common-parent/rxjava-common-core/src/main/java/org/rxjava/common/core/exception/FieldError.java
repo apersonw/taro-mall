@@ -1,4 +1,4 @@
-package org.rxjava.service.core.exception;
+package org.rxjava.common.core.exception;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.context.MessageSourceResolvable;

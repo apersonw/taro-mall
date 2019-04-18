@@ -9,3 +9,6 @@ spring:
       failFast: true #如果没有找到配置文件的话，希望启动服务失败
       retry:
         maxAttempts: 999999
+    gateway:
+      routes:
+        route:

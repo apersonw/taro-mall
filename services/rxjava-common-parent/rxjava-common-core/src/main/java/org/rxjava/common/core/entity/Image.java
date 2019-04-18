@@ -1,4 +1,4 @@
-package org.rxjava.service.core.entity;
+package org.rxjava.common.core.entity;
 
 import lombok.Data;
 

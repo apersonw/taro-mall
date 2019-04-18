@@ -1,6 +1,6 @@
-package org.rxjava.service.core.utils;
+package org.rxjava.common.core.utils;
 
-import org.rxjava.service.core.exception.ErrorMessage;
+import org.rxjava.common.core.exception.ErrorMessage;
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.util.CollectionUtils;
 

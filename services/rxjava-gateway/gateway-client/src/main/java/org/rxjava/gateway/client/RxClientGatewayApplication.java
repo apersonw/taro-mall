@@ -9,6 +9,7 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.mongodb.core.aggregation.MatchOperation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
@@ -19,9 +20,9 @@ import reactor.core.publisher.Mono;
 @RestController
 @SpringBootApplication
 @EnableDiscoveryClient
-public class RxClientApplication {
+public class RxClientGatewayApplication {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(RxClientApplication.class).web(WebApplicationType.REACTIVE).run(args);
+        new SpringApplicationBuilder(RxClientGatewayApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
 
     @GetMapping("/")
@@ -33,6 +34,10 @@ public class RxClientApplication {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder
                 .routes()
+                .route(r -> r.path("/user/**").filters(p -> p.stripPrefix(1)).uri("lb://service-user"))
+                .route(r -> r.path("/goods/**").filters(p -> p.stripPrefix(1)).uri("lb://service-goods"))
+                .route(r -> r.path("/order/**").filters(p -> p.stripPrefix(1)).uri("lb://service-order"))
+                .route(r -> r.path("/pay/**").filters(p -> p.stripPrefix(1)).uri("lb://service-pay"))
                 .build();
     }
 }
