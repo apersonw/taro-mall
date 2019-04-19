@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
         - name: mongo
-          registry.cn-shanghai.aliyuncs.com/taro-mall/center
           image: registry.cn-shanghai.aliyuncs.com/taro-mall/mongo:3.7.3-jessie
           imagePullPolicy: IfNotPresent
           resources:
