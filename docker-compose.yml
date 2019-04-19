@@ -72,13 +72,13 @@ services:
     ports:
       - 8888:8888
   mongodb:
-    image: 'registry.cn-beijing.aliyuncs.com/rxjava/mongo:3.7.3-jessie'
+    image: 'registry.cn-shanghai.aliyuncs.com/taro-mall/mongo:3.7.3-jessie'
     container_name: "mongodb"
     ports:
       - 27018:27017
     restart: always
   redis:
-    image: 'registry.cn-beijing.aliyuncs.com/rxjava/redis:4.0.4-alpine'
+    image: 'registry.cn-shanghai.aliyuncs.com/taro-mall/redis:4.0.4-alpine'
     container_name: "redis"
     ports:
       - 6380:6379

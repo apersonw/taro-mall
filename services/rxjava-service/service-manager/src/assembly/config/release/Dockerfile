@@ -1,4 +1,4 @@
-FROM registry.cn-beijing.aliyuncs.com/rxjava/java:8_server-jre
+FROM registry.cn-shanghai.aliyuncs.com/taro-mall/java:8_server-jre
 
 RUN mkdir /myapp
 WORKDIR /myapp

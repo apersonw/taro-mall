@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo
+  labels:
+    app: mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: mongo
+      labels:
+        app: mongo
+    spec:
+      containers:
+        - name: mongo
+          registry.cn-shanghai.aliyuncs.com/taro-mall/center
+          image: registry.cn-shanghai.aliyuncs.com/taro-mall/mongo:3.7.3-jessie
+          imagePullPolicy: IfNotPresent
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: mongo
