@@ -17,6 +17,7 @@ $ cd taro-mall | ./run.sh
 
 1. 客户端模块（React Native单独拉取rn分支）
 [演示地址](http://106.12.12.148/)
+[设计演示地址](http://106.12.12.148:82/)
 
 ```bash
 # run
