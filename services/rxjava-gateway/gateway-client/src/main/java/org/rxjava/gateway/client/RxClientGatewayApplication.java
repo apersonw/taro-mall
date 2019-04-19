@@ -19,7 +19,6 @@ import reactor.core.publisher.Mono;
  */
 @RestController
 @SpringBootApplication
-@EnableDiscoveryClient
 public class RxClientGatewayApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(RxClientGatewayApplication.class).web(WebApplicationType.REACTIVE).run(args);

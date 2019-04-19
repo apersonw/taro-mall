@@ -18,7 +18,7 @@ services:
       - 82:80
     restart: always
   gateway-client:
-    build: ./services/gateway-client/target/docker-bin/
+    build: ./services/rxjava-gateway/gateway-client/target/docker-bin/
     container_name: "gateway-client"
     depends_on:
       - center
@@ -26,7 +26,7 @@ services:
     environment:
       CENTER_HOST: center:8761
   gateway-manager:
-    build: ./services/gateway-manager/target/docker-bin/
+    build: ./services/rxjava-gateway/gateway-manager/target/docker-bin/
     container_name: "gateway-manager"
     depends_on:
       - center
