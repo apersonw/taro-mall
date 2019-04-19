@@ -25,6 +25,8 @@ $ cd client | yarn dev:h5
 ```
 
 2. 管理后台模块
+[演示地址](http://106.12.12.148:81/)
+
 ```bash
 # run
 $ cd manager | yarn start
