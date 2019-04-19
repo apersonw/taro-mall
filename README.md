@@ -16,7 +16,6 @@ $ cd taro-mall | ./run.sh
 ### 二、单独模块启动说明
 
 1. 客户端模块（React Native单独拉取rn分支）
-<a href="http://106.12.12.148/" target="view_window" >演示地址</a>
 [演示地址](http://106.12.12.148/)
 
 ```bash
