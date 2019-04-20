@@ -39,7 +39,7 @@ public class AdminGoodsController {
      * 商品列表
      */
     @Account(false)
-    @GetMapping("goodsList")
+    @GetMapping("goodsPage")
     public Mono<Page<Goods>> getList(
             @Valid GoodsPageForm form
     ) {
