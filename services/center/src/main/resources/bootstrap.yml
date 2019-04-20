@@ -4,7 +4,7 @@ spring:
   cloud:
     config:
       #      label: master #指明远程仓库的分支
-      uri: http://${CONFIG_HOST} #配置服务中心的地址
+      uri: http://localhost:8888 #配置服务中心的地址
       profile: dev #对应{application.name}-后面的dev、pro、test等
       failFast: true #如果没有找到配置文件的话，希望启动服务失败
       retry:

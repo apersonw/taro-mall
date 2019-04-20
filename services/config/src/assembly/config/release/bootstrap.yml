@@ -7,6 +7,6 @@ spring:
     config:
       server:
         native:
-          searchLocations: classpath:/service
+          searchLocations: classpath:/release
 server:
   port: 8888

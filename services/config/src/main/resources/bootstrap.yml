@@ -9,4 +9,4 @@ spring:
     config:
       server:
         native:
-          searchLocations: classpath:/service
+          searchLocations: classpath:/dev

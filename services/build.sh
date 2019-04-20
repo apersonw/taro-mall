@@ -34,6 +34,6 @@ center_tag=registry.cn-shanghai.aliyuncs.com/taro-mall/center
 docker build ./center/target/docker-bin/ -t ${center_tag}
 docker push ${center_tag}
 
-config_tag=registry.cn-shanghai.aliyuncs.com/taro-mall/connfig
+config_tag=registry.cn-shanghai.aliyuncs.com/taro-mall/config
 docker build ./config/target/docker-bin/ -t ${config_tag}
 docker push ${config_tag}

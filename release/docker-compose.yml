@@ -1,0 +1,81 @@
+version: "3.7"
+
+services:
+  client:
+    image: registry.cn-shanghai.aliyuncs.com/taro-mall/client
+    container_name: "client-release"
+    depends_on:
+      - gateway-client
+    ports:
+      - 80:80
+    restart: always
+  manager:
+    image: registry.cn-shanghai.aliyuncs.com/taro-mall/manager
+    container_name: "manager-release"
+    ports:
+      - 81:80
+    restart: always
+  gateway-client:
+#    build: ../services/rxjava-gateway/gateway-client/target/docker-bin
+    image: registry.cn-shanghai.aliyuncs.com/taro-mall/gateway-client
+    container_name: "gateway-client-release"
+    depends_on:
+      - center
+      - config
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    environment:
+      DB_HOST: mongodb:27017
+      CENTER_HOST: center:8761
+      CONFIG_HOST: config:8888
+  service-goods:
+#    build: ../services/rxjava-service/service-goods/target/docker-bin
+    image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-goods
+    container_name: "service-goods-release"
+    depends_on:
+      - config
+      - center
+      - mongodb
+      - redis
+    environment:
+      DB_HOST: mongodb:27017
+      CENTER_HOST: center:8761
+      CONFIG_HOST: config:8888
+  center:
+#    build: ../services/center/target/docker-bin
+    image: registry.cn-shanghai.aliyuncs.com/taro-mall/center
+    container_name: "center-release"
+    depends_on:
+      - config
+    environment:
+      CONFIG_HOST: config:8888
+    expose:
+      - 8761
+    ports:
+      - 8761:8761
+  config:
+#    build: ../services/config/target/docker-bin
+    image: registry.cn-shanghai.aliyuncs.com/taro-mall/config
+    container_name: "config-release"
+    expose:
+      - 8888
+    ports:
+      - 8888:8888
+  mongodb:
+    image: 'registry.cn-shanghai.aliyuncs.com/taro-mall/mongo:3.7.3-jessie'
+    container_name: "mongodb-release"
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    restart: always
+  redis:
+    image: 'registry.cn-shanghai.aliyuncs.com/taro-mall/redis:4.0.4-alpine'
+    container_name: "redis-release"
+    expose:
+      - 6379
+    ports:
+      - 6379:6379
+    restart: always

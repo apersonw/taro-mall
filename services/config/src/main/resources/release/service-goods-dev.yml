@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: service-goods
+  redis:
+    database: 1

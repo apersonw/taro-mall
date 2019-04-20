@@ -1,5 +1,6 @@
 package org.rxjava.service.goods.client;
 
+import org.rxjava.common.core.annotation.Login;
 import org.rxjava.service.goods.annotation.Account;
 import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.model.GoodsModel;
@@ -24,8 +25,8 @@ public class GoodsController {
     /**
      * 商品列表
      */
-    @Account(false)
-    @GetMapping("goodsList")
+    @Login(false)
+    @GetMapping("goodsList/{page}-{pageSize}")
     public Flux<GoodsModel> getList(
             @Valid GoodsListForm form
     ) {
@@ -36,7 +37,7 @@ public class GoodsController {
     /**
      * 查询商品
      */
-    @Account(false)
+    @Login(false)
     @GetMapping("goods/{goodsId}")
     public Mono<GoodsModel> getByGoodsId(
             @PathVariable String goodsId

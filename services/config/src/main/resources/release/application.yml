@@ -1,0 +1,12 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@${CENTER_HOST}/eureka/
+spring:
+  data:
+    mongodb:
+      uri: mongodb://${DB_HOST}
+      user:
+        autoConnectRetry: true
+        socketKeepAlive: true
+        socketTimeout: 1500
