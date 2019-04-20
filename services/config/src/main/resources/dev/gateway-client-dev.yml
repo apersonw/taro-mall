@@ -1,2 +1,4 @@
-server:
-  port: 8080
+spring:
+  data:
+    mongodb:
+      database: gateway-client

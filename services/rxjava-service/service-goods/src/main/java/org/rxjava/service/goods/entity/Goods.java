@@ -34,10 +34,6 @@ public class Goods {
      */
     private Image thumb;
     /**
-     * 商品描述
-     */
-    private String desc;
-    /**
      * 类目Id
      */
     private String categoryId;

@@ -6,6 +6,7 @@ import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.model.GoodsModel;
 import org.rxjava.service.goods.services.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,10 +29,12 @@ public class GoodsController {
     @Login(false)
     @GetMapping("goodsList/{page}-{pageSize}")
     public Flux<GoodsModel> getList(
+            @PathVariable int page,
+            @PathVariable int pageSize,
             @Valid GoodsListForm form
     ) {
         return goodsService
-                .getListModel(form);
+                .getListModel(PageRequest.of(page, pageSize), form);
     }
 
     /**
@@ -42,7 +45,6 @@ public class GoodsController {
     public Mono<GoodsModel> getByGoodsId(
             @PathVariable String goodsId
     ) {
-        return goodsService
-                .getByGoodsId(goodsId);
+        return Mono.empty();
     }
 }

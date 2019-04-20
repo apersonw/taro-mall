@@ -2,15 +2,17 @@ package org.rxjava.service.goods.model;
 
 import lombok.Data;
 import org.rxjava.common.core.entity.Image;
-import org.rxjava.service.goods.entity.CarouselImg;
-import org.rxjava.service.goods.entity.Content;
-import org.rxjava.service.goods.entity.Sku;
 import org.rxjava.service.goods.status.GoodsStatus;
 import org.rxjava.service.goods.type.ExcessType;
-import org.rxjava.service.goods.type.GoodsType;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import static org.springframework.data.mongodb.core.index.IndexDirection.DESCENDING;
 
 /**
  * @author happy 2019-03-23 00:19
@@ -19,67 +21,23 @@ import java.util.List;
 public class GoodsModel {
     private String id;
     /**
-     * 标题
+     * 商品名称
      */
-    private String title;
-    /**
-     * 卖点
-     */
-    private String sellingPoint;
+    private String name;
     /**
      * 缩略图
      */
     private Image thumb;
     /**
-     * 分享描述
+     * 售价
      */
-    private String desc;
-    /**
-     * 类目Id
-     */
-    private String categoryId;
-    /**
-     * 品牌Id
-     */
-    private String brandId;
+    private int coverPrice;
     /**
      * 默认为虚拟商品
      */
-    private String type = GoodsType.VIRTUAL.name();
-    /**
-     * 商品状态
-     */
-    private String status = GoodsStatus.INIT.name();
-    /**
-     * 优先级
-     */
-    private int priority;
+    private String type;
     /**
      * 标签
      */
     private List<String> tags;
-    /**
-     * 超售，默认不允许
-     */
-    private String excess = ExcessType.NOTALLOWED.name();
-    /**
-     * 创建日期
-     */
-    private LocalDateTime createDate;
-    /**
-     * 更新日期
-     */
-    private LocalDateTime updateDate;
-    /**
-     * 轮播图列表
-     */
-    private List<CarouselImg> carouselImgs;
-    /**
-     * 内容列表
-     */
-    private List<Content> contents;
-    /**
-     * Sku列表
-     */
-    private List<Sku> skus;
 }

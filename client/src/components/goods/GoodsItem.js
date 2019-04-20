@@ -8,7 +8,7 @@ class GoodsItem extends Component {
     const { item = {} } = this.props;
     return (
       <View className={styles.goods} >
-        <CustomImage className={styles.thumb} width={372} height={372} src={item.thumb && item.thumb.url} />
+        <CustomImage className={styles.thumb} width={372} height={372} src={item.thumb && item.thumb.key} />
         <View className={styles.name}>{item.name}</View >
         <View className={styles.bottom} >
           <View className={styles.left}>

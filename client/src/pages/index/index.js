@@ -1,13 +1,10 @@
-import Taro, { Component } from '@tarojs/taro';
-import { Input, Swiper, SwiperItem, Text, View } from '@tarojs/components';
+import { Component } from '@tarojs/taro';
+import { ScrollView, View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import styles from './index.module.scss';
 import action from '../../utils/action';
 import h5PageWrapper from '../../wrapper/h5PageWrapper';
 import CustomImage from '../../components/CustomImage';
-import categoryIcon from '../../assets/index/category@2x.png';
-import icon from '../../assets/index/icon.png';
-import searchIcon from '../../assets/index/searchIcon.png';
 import upImg from '../../assets/index/up.png';
 import banner1 from '../../assets/banner/1.jpg';
 import banner2 from '../../assets/banner/2.jpg';
@@ -35,12 +32,10 @@ import indexSelectImg from '../../assets/tabbar/indexSelect@2x.png';
 import categoryUnSelectImg from '../../assets/tabbar/categoryUnSelect@2x.png';
 import shopcardUnSelectImg from '../../assets/tabbar/shopcardUnSelect@2x.png';
 import mineUnSelectImg from '../../assets/tabbar/mineUnSelect@2x.png';
-
 //data
-import goodsList from './mock.json';
+import spikeGoodsList from './mock.json';
 import courtyardList from './courtyard.json';
 import everydayList from './everyday.json';
-import recommendGoodsList from './goodsMock.json';
 //components
 import GoodsSpike from '../../components/GoodsSpike';
 import BannerSwiper from '../../components/BannerSwiper';
@@ -53,7 +48,10 @@ import OneGrid from '../../components/expo/OneGrid';
 import GoodsItem from '../../components/goods/GoodsItem';
 
 @h5PageWrapper
-@connect(() => ({}))
+@connect(({ goods }) => ({
+  goodsList: goods.goodsList,
+  params: goods.params,
+}))
 class Index extends Component {
 
   state = {
@@ -66,30 +64,19 @@ class Index extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(action('user/fetch'));
-
-    //window仅在h5下可用，小程序使用的onPageScroll
-    if (window) {
-      window.onscroll = () => {
-        //为了保证兼容性，这里取两个值，哪个有值取哪一个
-        //scrollTop就是触发滚轮事件时滚轮的高度
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        if (scrollTop > 0) {
-          if (!this.state.fixedHeaderStyle) {
-            this.setState({
-              fixedHeaderStyle: true,
-            });
-          }
-        } else {
-          this.setState({
-            fixedHeaderStyle: false,
-          });
-        }
-      };
-    }
+    dispatch(action('goods/fetchList', { page: 0, pageSize: 10 }));
   }
 
-  onPageScroll({ scrollTop }) {
+  onLoadMore = () => {
+    const { dispatch, params } = this.props;
+    const { page = 0, hasMore } = params;
+    if (hasMore) {
+      dispatch(action('goods/fetchList', { page }));
+    }
+  };
+
+  onScroll = ({ detail }) => {
+    const { scrollTop } = detail;
     if (scrollTop > 0) {
       if (!this.state.fixedHeaderStyle) {
         this.setState({
@@ -101,9 +88,10 @@ class Index extends Component {
         fixedHeaderStyle: false,
       });
     }
-  }
+  };
 
   render() {
+    const { goodsList = [] } = this.props;
     const { fixedHeaderStyle } = this.state;
 
     //幻灯片
@@ -149,7 +137,7 @@ class Index extends Component {
       </View >
       <View className={styles.spikeScroll} >
         <View className={styles.goodsList} >
-          {(goodsList || []).map(goods => (
+          {(spikeGoodsList || []).map(goods => (
             <GoodsSpike key={goods.id} data={goods} />
           ))}
         </View >
@@ -159,45 +147,53 @@ class Index extends Component {
     return (
       <View className={styles.container} >
         <FixedHeader fixedScroll={fixedHeaderStyle} />
-        <View className={styles.content} >
-          <BannerSwiper imgs={swiperImgs} />
-          <Category items={categoryItems} />
-          {newUserOwn}
-          {spike}
-          {/*东家小院*/}
-          <CustomImage height={90} src={courtyardTitleImg} />
-          <View className={styles.courtyardBox} >
-            <View className={styles.row} >
-              {(courtyardList || []).slice(0, 2).map((item, index) => (
-                <TwoGrid item={item} key={index} />
-              ))}
+        <ScrollView
+          style='height: 100vh;'
+          onScrollToLower={this.onLoadMore}
+          lowerThreshold={300}
+          scrollY
+          onScroll={this.onScroll}
+        >
+          <View className={styles.content} >
+            <BannerSwiper id="indexBanner" imgs={swiperImgs} />
+            <Category items={categoryItems} />
+            {newUserOwn}
+            {spike}
+            {/*东家小院*/}
+            <CustomImage height={90} src={courtyardTitleImg} />
+            <View className={styles.courtyardBox} >
+              <View className={styles.row} >
+                {(courtyardList || []).slice(0, 2).map((item, index) => (
+                  <TwoGrid item={item} key={index} />
+                ))}
+              </View >
+              <View className={styles.row} >
+                {(courtyardList || []).slice(2, 6).map((item, index) => (
+                  <OneGrid item={item} key={index} />
+                ))}
+              </View >
             </View >
-            <View className={styles.row} >
-              {(courtyardList || []).slice(2, 6).map((item, index) => (
-                <OneGrid item={item} key={index} />
-              ))}
+            {/*每日逛*/}
+            <CustomImage height={90} src={everydayTitleImg} />
+            <View className={styles.everydayBox} >
+              <View className={styles.row} >
+                {(everydayList || []).map((item, index) => (
+                  <OneGrid item={item} key={index} />
+                ))}
+              </View >
+            </View >
+            {/*  推荐列表*/}
+            <View className={styles.recommendTitle} >
+              <View className={styles.recommendLineLeft} />
+              <CustomImage width={26} height={26} src={upImg} />
+              <View className={styles.rightText} >为您推荐</View >
+              <View className={styles.recommendLineRight} />
+            </View >
+            <View className={styles.recommendGoodsList} >
+              {(goodsList || []).map((item) => (<GoodsItem key={item.id} item={item} />))}
             </View >
           </View >
-          {/*每日逛*/}
-          <CustomImage height={90} src={everydayTitleImg} />
-          <View className={styles.everydayBox} >
-            <View className={styles.row} >
-              {(everydayList || []).map((item, index) => (
-                <OneGrid item={item} key={index} />
-              ))}
-            </View >
-          </View >
-          {/*  推荐列表*/}
-          <View className={styles.recommendTitle} >
-            <View className={styles.recommendLineLeft}/>
-            <CustomImage width={26} height={26} src={upImg} />
-            <View className={styles.rightText}>为您推荐</View>
-            <View className={styles.recommendLineRight}/>
-          </View >
-          <View className={styles.recommendGoodsList} >
-            {(recommendGoodsList || []).map((item) => (<GoodsItem key={item.id} item={item} />))}
-          </View >
-        </View >
+        </ScrollView >
         <View className={[styles.toolBar, styles.tabBar]} >
           <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={indexSelectImg} />
           <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={categoryUnSelectImg} />
