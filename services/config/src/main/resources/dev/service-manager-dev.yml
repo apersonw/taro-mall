@@ -1,8 +1,8 @@
 server:
-  port: 8085
+  port: 8086
 spring:
   data:
     mongodb:
       database: service-manager
   redis:
-    database: 5
+    database: 6

@@ -44,7 +44,7 @@ interface SpecialGoodsRepository {
 
     Flux<CarouselImg> getCarouselImgList(String goodsId);
 
-    Mono<Page<Goods>> getPage(GoodsPageForm form);
+    Mono<Page<Goods>> getPage(Pageable pageable, GoodsPageForm form);
 }
 
 class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
@@ -97,8 +97,9 @@ class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
     }
 
     @Override
-    public Mono<Page<Goods>> getPage(GoodsPageForm form) {
+    public Mono<Page<Goods>> getPage(Pageable pageable, GoodsPageForm form) {
         Query query = new Query();
+        query.with(pageable);
         return Mono
                 .zip(
                         reactiveMongoTemplate.find(query, Goods.class).collectList(),
@@ -107,7 +108,7 @@ class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
                 .map(z -> {
                     List<Goods> goodsList = z.getT1();
                     Long num = z.getT2();
-                    return new PageImpl<>(goodsList, PageRequest.of(form.getPage(), form.getPageSize()), num);
+                    return new PageImpl<>(goodsList, PageRequest.of(pageable.getPageNumber(), pageable.getPageSize()), num);
                 });
     }
 }

@@ -1,5 +1,6 @@
 package org.rxjava.service.goods.dashboard;
 
+import org.rxjava.common.core.annotation.Login;
 import org.rxjava.service.goods.annotation.Account;
 import org.rxjava.service.goods.entity.Goods;
 import org.rxjava.service.goods.form.GoodsCreateForm;
@@ -7,10 +8,8 @@ import org.rxjava.service.goods.form.GoodsPageForm;
 import org.rxjava.service.goods.services.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 import javax.validation.Valid;
@@ -28,7 +27,7 @@ public class AdminGoodsController {
     /**
      * 创建商品
      */
-    @Account(false)
+    @Login(false)
     @PostMapping("goods")
     public Mono<Goods> create(GoodsCreateForm form) {
         return goodsService
@@ -36,14 +35,16 @@ public class AdminGoodsController {
     }
 
     /**
-     * 商品列表
+     * 商品分页
      */
-    @Account(false)
-    @GetMapping("goodsPage")
+    @Login(false)
+    @GetMapping("goodsPage/{page}-{pageSize}")
     public Mono<Page<Goods>> getList(
+            @PathVariable int page,
+            @PathVariable int pageSize,
             @Valid GoodsPageForm form
     ) {
         return goodsService
-                .getPage(form);
+                .getPage(PageRequest.of(page, pageSize), form);
     }
 }

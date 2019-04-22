@@ -1,2 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: gateway-manager
 server:
   port: 9090

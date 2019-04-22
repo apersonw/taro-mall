@@ -2,6 +2,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://admin:admin@localhost:8761/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 3 #生产环境应该使用默认值30秒
 spring:
   data:
     mongodb:

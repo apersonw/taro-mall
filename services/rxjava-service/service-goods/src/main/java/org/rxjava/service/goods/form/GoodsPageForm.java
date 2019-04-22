@@ -7,6 +7,4 @@ import lombok.Data;
  */
 @Data
 public class GoodsPageForm {
-    private int page = 0;
-    private int pageSize = 10;
 }

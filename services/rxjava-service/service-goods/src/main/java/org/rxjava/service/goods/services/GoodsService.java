@@ -30,9 +30,9 @@ public class GoodsService {
                 .map(this::transform);
     }
 
-    public Mono<Page<Goods>> getPage(GoodsPageForm form) {
+    public Mono<Page<Goods>> getPage(Pageable pageable, GoodsPageForm form) {
         return goodsRepository
-                .getPage(form);
+                .getPage(pageable, form);
     }
 
     public Mono<GoodsModel> getByGoodsId(String goodsId) {

@@ -27,7 +27,6 @@ public class Goods {
     /**
      * 商品名称
      */
-    @Indexed
     private String name;
     /**
      * 缩略图
@@ -41,6 +40,10 @@ public class Goods {
      * 品牌Id
      */
     private String brandId;
+    /**
+     * 商铺Id
+     */
+    private String shopId;
     /**
      * 售价
      */

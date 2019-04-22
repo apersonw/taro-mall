@@ -23,7 +23,6 @@ public class Brand {
     /**
      * 品牌名称
      */
-    @TextIndexed
     private String name;
     /**
      * 创建日期

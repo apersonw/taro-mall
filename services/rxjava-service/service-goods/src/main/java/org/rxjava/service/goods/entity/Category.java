@@ -28,7 +28,6 @@ public class Category {
     /**
      * 名称
      */
-    @TextIndexed
     private String name;
     /**
      * 描述
