@@ -81,8 +81,8 @@ export default {
     //   changeOrigin: true,
     //   pathRewrite: { '^/server': '' },
     // },
-    '/api/admin/': {
-      target: 'http://localhost:8082/',
+    '/api/': {
+      target: 'http://localhost:9090/',
       changeOrigin: true,
       pathRewrite: { '^/api/': '' },
     },
