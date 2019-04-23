@@ -1,10 +1,12 @@
 package org.rxjava.service.goods.client;
 
+import org.rxjava.common.core.annotation.Login;
 import org.rxjava.service.goods.form.CategoryListForm;
 import org.rxjava.service.goods.model.CategoryModel;
 import org.rxjava.service.goods.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
@@ -18,11 +20,12 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
+    @Login(false)
     @GetMapping("categories")
     public Flux<CategoryModel> getList(
-        @Valid CategoryListForm form
+            @Valid CategoryListForm form
     ) {
         return categoryService
-                .getList(form);
+                .getList(form.getParentId());
     }
 }

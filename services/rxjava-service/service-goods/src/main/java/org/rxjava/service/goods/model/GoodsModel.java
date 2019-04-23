@@ -32,12 +32,4 @@ public class GoodsModel {
      * 售价
      */
     private int coverPrice;
-    /**
-     * 默认为虚拟商品
-     */
-    private String type;
-    /**
-     * 标签
-     */
-    private List<String> tags;
 }

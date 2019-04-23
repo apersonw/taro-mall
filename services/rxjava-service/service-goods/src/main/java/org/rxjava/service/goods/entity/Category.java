@@ -7,7 +7,6 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -26,13 +25,13 @@ public class Category {
     @Id
     private String id;
     /**
+     * 上级Id
+     */
+    private String parentId;
+    /**
      * 名称
      */
     private String name;
-    /**
-     * 描述
-     */
-    private String desc;
     /**
      * 分类状态
      */

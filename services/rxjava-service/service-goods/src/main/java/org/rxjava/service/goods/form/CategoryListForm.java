@@ -7,4 +7,8 @@ import lombok.Data;
  */
 @Data
 public class CategoryListForm {
+    /**
+     * 上级Id
+     */
+    private String parentId;
 }

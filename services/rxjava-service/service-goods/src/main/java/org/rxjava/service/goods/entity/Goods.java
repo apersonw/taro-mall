@@ -41,7 +41,7 @@ public class Goods {
      */
     private String shopId;
     /**
-     * 售价
+     * 封面价
      */
     private int coverPrice;
     /**
@@ -58,11 +58,6 @@ public class Goods {
      * 优先级
      */
     private int priority;
-    /**
-     * 标签
-     */
-    @Indexed
-    private List<String> tags;
     /**
      * 超售，默认不允许
      */

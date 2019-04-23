@@ -1,7 +1,6 @@
 package org.rxjava.service.goods.services;
 
 import org.rxjava.service.goods.entity.Category;
-import org.rxjava.service.goods.form.CategoryListForm;
 import org.rxjava.service.goods.model.CategoryModel;
 import org.rxjava.service.goods.repository.CategoryRepository;
 import org.springframework.beans.BeanUtils;
@@ -17,16 +16,16 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    public Flux<CategoryModel> getList(String parentId) {
+        return categoryRepository
+                .getList(parentId)
+                .map(this::transform);
+    }
+
     private CategoryModel transform(Category entity) {
         CategoryModel model = new CategoryModel();
         BeanUtils.copyProperties(entity, model);
         return model;
-    }
-
-    public Flux<CategoryModel> getList(CategoryListForm form) {
-        return categoryRepository
-                .getList(form)
-                .map(this::transform);
     }
 
 }
