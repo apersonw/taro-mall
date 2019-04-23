@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.Ordered;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.redis.connection.ReactiveRedisConnectionFactory;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
@@ -25,6 +26,7 @@ import org.springframework.web.reactive.config.WebFluxConfigurer;
 @Configuration
 @Import({RxjavaDelegatingWebFluxConfiguration.class})
 @EnableDiscoveryClient
+@EnableMongoAuditing
 @AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
 public class RxJavaServiceAutoConfiguration implements WebFluxConfigurer {
     @Bean

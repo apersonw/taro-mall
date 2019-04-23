@@ -16,6 +16,9 @@
         <module>service-pay</module>
         <module>service-order</module>
         <module>service-goods</module>
+        <module>service-integral</module>
+        <module>service-coupon</module>
+        <module>service-appraisal</module>
     </modules>
     <dependencies>
         <dependency>

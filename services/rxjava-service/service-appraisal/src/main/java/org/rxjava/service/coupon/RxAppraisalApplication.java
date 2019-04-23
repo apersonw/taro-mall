@@ -1,5 +1,6 @@
-package org.rxjava.service.order;
+package org.rxjava.service.coupon;
 
+import org.rxjava.common.core.annotation.Login;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -13,13 +14,14 @@ import reactor.core.publisher.Mono;
  */
 @SpringBootApplication
 @RestController
-public class RxOrderApplication {
+public class RxAppraisalApplication {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(RxOrderApplication.class).web(WebApplicationType.REACTIVE).run(args);
+        new SpringApplicationBuilder(RxAppraisalApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
 
+    @Login(false)
     @GetMapping("/")
     public Mono<String> system() {
-        return Mono.just("用户服务正常");
+        return Mono.just("商品服务正常");
     }
 }

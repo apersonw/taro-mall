@@ -1,34 +1,35 @@
-package org.rxjava.service.user.entity;
+package org.rxjava.service.coupon.entity;
 
 import lombok.Data;
-import org.rxjava.common.core.entity.Image;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
 import static org.springframework.data.mongodb.core.index.IndexDirection.DESCENDING;
 
 /**
- * @author happy 2019-03-29 13:44
- * 用户基础信息表
+ * @author happy 2019-04-23 02:38
+ * 券码批次信息
  */
 @Data
-@Document
-public class User {
+public class CouponBatch {
     @Id
     private String id;
     /**
-     * 昵称
+     * 描述
      */
-    private String nickname;
+    private String desc;
     /**
-     * 头像
+     * 券码Id
      */
-    private Image avatar;
+    private String couponId;
+    /**
+     * 状态
+     */
+    private String status;
     /**
      * 创建日期
      */

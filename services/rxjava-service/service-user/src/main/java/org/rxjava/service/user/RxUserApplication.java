@@ -14,7 +14,6 @@ import reactor.core.publisher.Mono;
  */
 @SpringBootApplication
 @RestController
-@EnableMongoAuditing
 public class RxUserApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(RxUserApplication.class).web(WebApplicationType.REACTIVE).run(args);

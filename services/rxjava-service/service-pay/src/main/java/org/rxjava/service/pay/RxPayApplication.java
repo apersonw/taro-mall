@@ -13,7 +13,6 @@ import reactor.core.publisher.Mono;
  */
 @SpringBootApplication
 @RestController
-@EnableMongoAuditing
 public class RxPayApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(RxPayApplication.class).web(WebApplicationType.REACTIVE).run(args);

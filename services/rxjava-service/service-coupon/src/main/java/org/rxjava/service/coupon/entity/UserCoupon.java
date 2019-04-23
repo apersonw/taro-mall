@@ -1,37 +1,64 @@
-package org.rxjava.service.order.entity;
+package org.rxjava.service.coupon.entity;
 
 import lombok.Data;
+import org.rxjava.service.coupon.status.UserCouponStatus;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
 import static org.springframework.data.mongodb.core.index.IndexDirection.DESCENDING;
 
 /**
- * @author happy 2019-03-29 13:45
+ * @author happy 2019-04-23 02:05
+ * 用户优惠券码
  */
 @Data
-@Document
-public class Order {
+public class UserCoupon {
     @Id
     private String id;
+    /**
+     * 券码Id
+     */
+    private String couponId;
+    /**
+     * 券码批次Id
+     */
+    private String couponBatchId;
     /**
      * 用户Id
      */
     private String userId;
     /**
-     * 商铺Id
+     * 订单Id
+     */
+    private String orderId;
+    /**
+     * 店铺Id
      */
     private String shopId;
     /**
      * 商品Id
      */
     private String goodsId;
+    /**
+     * 分类Id
+     */
+    private String categoryId;
+    /**
+     * 类型：直减/折扣
+     */
+    private String type;
+    /**
+     * 直减，则单位为分，折扣，则
+     */
+    private int value;
+    /**
+     * 状态
+     */
+    private String status = UserCouponStatus.INIT.name();
     /**
      * 创建日期
      */

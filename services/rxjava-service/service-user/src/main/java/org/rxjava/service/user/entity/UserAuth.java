@@ -1,34 +1,39 @@
 package org.rxjava.service.user.entity;
 
 import lombok.Data;
-import org.rxjava.common.core.entity.Image;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
 import static org.springframework.data.mongodb.core.index.IndexDirection.DESCENDING;
 
 /**
- * @author happy 2019-03-29 13:44
- * 用户基础信息表
+ * @author happy 2019-04-22 20:11
+ * 用户授权信息表
  */
 @Data
-@Document
-public class User {
+public class UserAuth {
     @Id
     private String id;
     /**
-     * 昵称
+     * 用户Id
      */
-    private String nickname;
+    private String userId;
     /**
-     * 头像
+     * 登录类型（手机号,邮箱,用户名）或第三方应用名称（微信 微博等）
      */
-    private Image avatar;
+    private String identityType;
+    /**
+     * 标识（手机号,邮箱,用户名或第三方应用的唯一标识）
+     */
+    private String identifier;
+    /**
+     * 密码凭证（站内的保存密码，站外的不保存或保存token）
+     */
+    private String credential;
     /**
      * 创建日期
      */

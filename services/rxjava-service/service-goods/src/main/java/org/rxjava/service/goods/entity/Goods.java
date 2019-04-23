@@ -33,10 +33,6 @@ public class Goods {
      */
     private Image thumb;
     /**
-     * 类目Id
-     */
-    private String categoryId;
-    /**
      * 品牌Id
      */
     private String brandId;
