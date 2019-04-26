@@ -1,7 +1,7 @@
 package org.rxjava.service.goods.client;
 
-import org.rxjava.service.goods.model.BrandModel;
 import org.rxjava.service.goods.form.BrandListForm;
+import org.rxjava.service.goods.model.BrandModel;
 import org.rxjava.service.goods.services.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

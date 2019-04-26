@@ -1,0 +1,23 @@
+.toolBar { //底部工具条，也即tabBar
+  box-sizing: border-box;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1001;
+  background: #FFFFFF;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #f8f8f8;
+  align-items: center;
+}
+
+.tabBar {
+  justify-content: space-around;
+  padding: 10px 0;
+
+  .tabBarImgBox {
+    background: transparent;
+  }
+}

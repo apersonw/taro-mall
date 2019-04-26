@@ -1,6 +1,6 @@
 package org.rxjava.service.manager.dashboard;
 
-import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.rxjava.common.core.annotation.Login;
 import org.rxjava.common.core.exception.ErrorMessageException;
 import org.rxjava.common.core.utils.KeyUtils;
@@ -15,6 +15,7 @@ import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 import javax.validation.Valid;
@@ -23,6 +24,7 @@ import javax.validation.Valid;
  * @author happy 2019-04-27 00:03
  */
 @RequestMapping("admin")
+@RestController
 public class ManagerController {
     @Autowired
     private ManagerRepository managerRepository;
@@ -65,6 +67,6 @@ public class ManagerController {
     }
 
     private String newToken() {
-        return RandomStringUtils.random(32);
+        return RandomStringUtils.randomAlphabetic(32);
     }
 }

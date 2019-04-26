@@ -1,7 +1,6 @@
 package org.rxjava.service.goods.client;
 
 import org.rxjava.common.core.annotation.Login;
-import org.rxjava.service.goods.annotation.Account;
 import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.model.GoodsModel;
 import org.rxjava.service.goods.services.GoodsService;

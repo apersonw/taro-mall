@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+}
+
+.firstCategory {
+  width: 174px;
+  background-color: #F8F8F8;
+  height: 100vh;
+  padding-bottom: 90px;
+
+  .categoryBox {
+    height: 94px;
+    line-height: 94px;
+    text-align: center;
+  }
+}

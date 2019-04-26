@@ -12,8 +12,8 @@ import reactor.core.publisher.Mono;
 /**
  * @author happy 2019-03-17 22:10
  */
-@SpringBootApplication
 @RestController
+@SpringBootApplication
 public class RxManagerApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(RxManagerApplication.class).web(WebApplicationType.REACTIVE).run(args);

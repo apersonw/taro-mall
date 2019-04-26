@@ -30,7 +30,9 @@ public class RxManagerGatewayApplication {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/goods/**").filters(p -> p.stripPrefix(1)).uri("lb://service-goods/"))
+                .route(r -> r.path("/goods/admin/**").filters(p -> p.stripPrefix(1)).uri("lb://service-goods/"))
+                .route(r -> r.path("/manager/admin/**").filters(p -> p.stripPrefix(1)).uri("lb://service-manager/"))
+                .route(r -> r.path("/user/admin/**").filters(p -> p.stripPrefix(1)).uri("lb://service-user/"))
                 .build();
     }
 }

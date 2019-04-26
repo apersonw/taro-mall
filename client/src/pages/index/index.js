@@ -27,11 +27,6 @@ import packageImg from '../../assets/index/newuser/package@2x.png';
 import channelImg from '../../assets/index/newuser/channel@2x.png';
 import exclusiveImg from '../../assets/index/newuser/exclusive@2x.png';
 import moreImg from '../../assets/index/spike/more@2x.png';
-//tabbar
-import indexSelectImg from '../../assets/tabbar/indexSelect@2x.png';
-import categoryUnSelectImg from '../../assets/tabbar/categoryUnSelect@2x.png';
-import shopcardUnSelectImg from '../../assets/tabbar/shopcardUnSelect@2x.png';
-import mineUnSelectImg from '../../assets/tabbar/mineUnSelect@2x.png';
 //data
 import spikeGoodsList from './mock.json';
 import courtyardList from './courtyard.json';
@@ -46,6 +41,8 @@ import courtyardTitleImg from '../../assets/index/courtyard/title@2x.png';
 import everydayTitleImg from '../../assets/index/everyday/title@2x.png';
 import OneGrid from '../../components/expo/OneGrid';
 import GoodsItem from '../../components/goods/GoodsItem';
+import { Tab } from '../../../../../../interest/interest-admin/src/components/Login';
+import TabBar from '../../components/TabBar';
 
 @h5PageWrapper
 @connect(({ goods }) => ({
@@ -194,12 +191,7 @@ class Index extends Component {
             </View >
           </View >
         </ScrollView >
-        <View className={[styles.toolBar, styles.tabBar]} >
-          <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/index/index' })} className={styles.tabBarImgBox} width={48} height={75} src={indexSelectImg} />
-          <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/category/index' })} className={styles.tabBarImgBox} width={48} height={75} src={categoryUnSelectImg} />
-          <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/shopcart/index' })} className={styles.tabBarImgBox} width={72} height={75} src={shopcardUnSelectImg} />
-          <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/account/index' })} className={styles.tabBarImgBox} width={48} height={75} src={mineUnSelectImg} />
-        </View >
+        <TabBar />
       </View >
     );
   }

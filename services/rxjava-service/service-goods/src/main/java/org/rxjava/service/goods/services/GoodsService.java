@@ -18,6 +18,7 @@ import java.util.Optional;
 
 /**
  * @author happy 2019-03-23 00:16
+ * 商品服务
  */
 @Service
 public class GoodsService {
