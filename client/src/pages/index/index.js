@@ -1,4 +1,4 @@
-import { Component } from '@tarojs/taro';
+import Taro, { Component } from '@tarojs/taro';
 import { ScrollView, View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import styles from './index.module.scss';
@@ -195,10 +195,10 @@ class Index extends Component {
           </View >
         </ScrollView >
         <View className={[styles.toolBar, styles.tabBar]} >
-          <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={indexSelectImg} />
-          <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={categoryUnSelectImg} />
-          <CustomImage className={styles.tabBarImgBox} width={72} height={75} src={shopcardUnSelectImg} />
-          <CustomImage className={styles.tabBarImgBox} width={48} height={75} src={mineUnSelectImg} />
+          <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/index/index' })} className={styles.tabBarImgBox} width={48} height={75} src={indexSelectImg} />
+          <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/category/index' })} className={styles.tabBarImgBox} width={48} height={75} src={categoryUnSelectImg} />
+          <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/shopcart/index' })} className={styles.tabBarImgBox} width={72} height={75} src={shopcardUnSelectImg} />
+          <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/account/index' })} className={styles.tabBarImgBox} width={48} height={75} src={mineUnSelectImg} />
         </View >
       </View >
     );
