@@ -51,6 +51,7 @@ public class SecurityRequestMappingHandlerAdapter extends RequestMappingHandlerA
             if (loginInfo == null) {
                 throw LoginRuntimeException.of("未登录:" + request.getPath());
             }
+            //请求参数注入登陆信息对象
             exchange.getAttributes().put(ACCOUNT_REQUEST_ATTRIBUTE, loginInfo);
             //todo:其他的一些诸如权限检查
         }

@@ -1,7 +1,6 @@
 package org.rxjava.service.goods.dashboard;
 
 import org.rxjava.common.core.annotation.Login;
-import org.rxjava.service.goods.annotation.Account;
 import org.rxjava.service.goods.entity.Goods;
 import org.rxjava.service.goods.form.GoodsCreateForm;
 import org.rxjava.service.goods.form.GoodsPageForm;
