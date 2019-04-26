@@ -59,14 +59,14 @@ export default [
       },
       //资源管理
       {
-        path: '/resource',
-        name: 'resource',
+        path: '/link',
+        name: 'link',
         icon: 'table',
         routes: [
           {
-            path: '/resource/resourceList',
-            name: 'resourceList',
-            component: './Resource/TableList',
+            path: '/link/linkList',
+            name: 'linkList',
+            component: './Link/TableList',
           },
         ],
       },
@@ -135,11 +135,64 @@ export default [
           },
         ],
       },
+      //店铺管理
+      {
+        path: '/shop',
+        name: 'shop',
+        icon: 'table',
+        routes: [
+          {
+            path: '/shop/shopList',
+            name: 'shopList',
+            component: './Shop/TableList',
+          },
+        ],
+      },
+      //主题管理
+      {
+        path: '/theme',
+        name: 'theme',
+        icon: 'table',
+        routes: [
+          {
+            path: '/theme/themeList',
+            name: 'themeList',
+            component: './Theme/TableList',
+          },
+        ],
+      },
+      //秒杀管理
+      {
+        path: '/spike',
+        name: 'spike',
+        icon: 'table',
+        routes: [
+          {
+            path: '/spike/spikeList',
+            name: 'spikeList',
+            component: './Spike/TableList',
+          },
+        ],
+      },
+      //推荐管理
+      {
+        path: '/recommend',
+        name: 'recommend',
+        icon: 'table',
+        routes: [
+          {
+            path: '/recommend/recommendList',
+            name: 'recommendList',
+            component: './Recommend/TableList',
+          },
+        ],
+      },
       // forms
       {
         path: '/form',
         icon: 'form',
         name: 'form',
+        hideInMenu: true,
         routes: [
           {
             path: '/form/basic-form',
@@ -186,6 +239,7 @@ export default [
         path: '/list',
         icon: 'table',
         name: 'list',
+        hideInMenu: true,
         routes: [
           {
             path: '/list/table-list',
@@ -234,6 +288,7 @@ export default [
         path: '/profile',
         name: 'profile',
         icon: 'profile',
+        hideInMenu: true,
         routes: [
           // profile
           {
@@ -259,6 +314,7 @@ export default [
         name: 'result',
         icon: 'check-circle-o',
         path: '/result',
+        hideInMenu: true,
         routes: [
           // result
           {
@@ -273,6 +329,7 @@ export default [
         name: 'exception',
         icon: 'warning',
         path: '/exception',
+        hideInMenu: true,
         routes: [
           // exception
           {
@@ -302,6 +359,7 @@ export default [
         name: 'account',
         icon: 'user',
         path: '/account',
+        hideInMenu: true,
         routes: [
           {
             path: '/account/center',

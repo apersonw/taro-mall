@@ -13,9 +13,9 @@ import styles from './TableList.less';
 class TableList extends PureComponent {
   render() {
     return (
-      <PageHeaderWrapper title="资源列表">
+      <PageHeaderWrapper title="推荐列表">
         <Card bordered={false}>
-          <div className={styles.tableList}>资源列表</div>
+          <div className={styles.tableList}>推荐列表</div>
         </Card>
       </PageHeaderWrapper>
     );
