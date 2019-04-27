@@ -44,6 +44,17 @@ services:
     environment:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
+  service-link:
+    build: ./services/rxjava-service/service-link/target/docker-bin/
+    container_name: "service-link"
+    depends_on:
+      - config
+      - center
+      - mongodb
+      - redis
+    environment:
+      DB_HOST: mongodb:27017
+      CENTER_HOST: center:8761
   service-user:
     build: ./services/rxjava-service/service-user/target/docker-bin/
     container_name: "service-user"

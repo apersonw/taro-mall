@@ -60,6 +60,19 @@ services:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
       CONFIG_HOST: config:8888
+  service-link:
+#    build: ../services/rxjava-service/service-goods/target/docker-bin
+    image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-link
+    container_name: "service-link-release"
+    depends_on:
+      - config
+      - center
+      - mongodb
+      - redis
+    environment:
+      DB_HOST: mongodb:27017
+      CENTER_HOST: center:8761
+      CONFIG_HOST: config:8888
   center:
 #    build: ../services/center/target/docker-bin
     image: registry.cn-shanghai.aliyuncs.com/taro-mall/center
