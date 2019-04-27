@@ -1,16 +1,11 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'dva';
 import router from 'umi/router';
-import { Avatar, Badge, Button, Card, Divider, Dropdown, Form, Icon, List, Menu, Progress } from 'antd';
+import { Avatar, Button, Card, Divider, Dropdown, Form, Icon, List, Menu } from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
-import StandardTable from '@/components/StandardTable';
-
 import styles from './GoodsTableList.less';
 import moment from 'moment';
-import { findDOMNode } from 'react-dom';
 import fetchPage from '../../utils/fetchPage';
-
-const statusMap = ['default', 'processing', 'success', 'error'];
 
 /* eslint react/no-multi-comp:0 */
 @connect(({ pages, pagination, loading }) => ({
@@ -21,7 +16,7 @@ const statusMap = ['default', 'processing', 'success', 'error'];
 @Form.create()
 class GoodsTableList extends PureComponent {
   componentDidMount() {
-    fetchPage('goods', { page: 0 });
+    fetchPage('goods', { page: 1 });
   }
 
   state = {
@@ -72,68 +67,33 @@ class GoodsTableList extends PureComponent {
     {
       title: '创建日期',
       dataIndex: 'createDate',
-      render: val => <span >{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span >,
+      render: val => <span>{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span>,
     },
     {
       title: '操作',
       render: (text, record) => (
-        <Fragment >
-          <a onClick={() => this.handleUpdateModalVisible(true, record)} >编辑</a >
+        <Fragment>
+          <a onClick={() => this.handleUpdateModalVisible(true, record)}>编辑</a>
           <Divider type="vertical" />
-          <a href="" >删除</a >
-        </Fragment >
+          <a href="">删除</a>
+        </Fragment>
       ),
     },
   ];
 
-  handleSelectRows = rows => {
-    this.setState({
-      selectedRows: rows,
-    });
-  };
-
-  handleStandardTableChange = (pagination, filtersArg, sorter) => {
-    const { dispatch } = this.props;
-    const { formValues } = this.state;
-
-    const filters = Object.keys(filtersArg).reduce((obj, key) => {
-      const newObj = { ...obj };
-      newObj[key] = getValue(filtersArg[key]);
-      return newObj;
-    }, {});
-
-    const params = {
-      currentPage: pagination.current,
-      pageSize: pagination.pageSize,
-      ...formValues,
-      ...filters,
-    };
-    if (sorter.field) {
-      params.sorter = `${sorter.field}_${sorter.order}`;
-    }
-
-    dispatch({
-      type: 'goods/fetch',
-      payload: params,
-    });
-  };
-
   render() {
     const { goodsList, loading, pagination } = this.props;
-    const ListContent = ({ data: { owner, createdAt, percent, status } }) => (
-      <div className={styles.listContent} >
-        <div className={styles.listContentItem} >
-          <span >Owner</span >
-          <p >{owner}</p >
-        </div >
-        <div className={styles.listContentItem} >
-          <span >开始时间</span >
-          <p >{moment(createdAt).format('YYYY-MM-DD HH:mm')}</p >
-        </div >
-        <div className={styles.listContentItem} >
-          <Progress percent={percent} status={status} strokeWidth={6} style={{ width: 180 }} />
-        </div >
-      </div >
+    const ListContent = ({ data: { coverPrice, createdAt, percent, status } }) => (
+      <div className={styles.listContent}>
+        <div className={styles.listContentItem}>
+          <span>封面价</span>
+          <p>¥{(coverPrice / 100).toFixed(2)}</p>
+        </div>
+        <div className={styles.listContentItem}>
+          <span>创建日期</span>
+          <p>{moment(createdAt).format('YYYY-MM-DD HH:mm')}</p>
+        </div>
+      </div>
     );
     const MoreBtn = props => (
       <Dropdown
@@ -150,8 +110,8 @@ class GoodsTableList extends PureComponent {
       </Dropdown>
     );
     return (
-      <PageHeaderWrapper title="商品列表" >
-        <Card bordered={false} >
+      <PageHeaderWrapper title="商品列表">
+        <Card bordered={false}>
           <Button
             type="dashed"
             style={{ width: '100%', marginBottom: 8 }}
@@ -159,12 +119,15 @@ class GoodsTableList extends PureComponent {
             onClick={() => router.push('/goods/goodsSaveForm')}
           >
             添加
-          </Button >
+          </Button>
           <List
             size="large"
             rowKey="id"
             loading={loading}
-            pagination={pagination}
+            pagination={{
+              ...pagination,
+              onChange: (page, pageSize) => fetchPage('goods', { page, pageSize }),
+            }}
             dataSource={goodsList}
             renderItem={item => (
               <List.Item
@@ -176,21 +139,20 @@ class GoodsTableList extends PureComponent {
                     }}
                   >
                     编辑
-                  </a >,
+                  </a>,
                   <MoreBtn current={item} />,
                 ]}
               >
                 <List.Item.Meta
-                  avatar={<Avatar src={item.logo} shape="square" size="large" />}
-                  title={<a href={item.href} >{item.title}</a >}
-                  description={item.subDescription}
+                  avatar={<img className={styles.thumb} src={item.thumb.key} />}
+                  title={item.name}
                 />
                 <ListContent data={item} />
-              </List.Item >
+              </List.Item>
             )}
           />
-        </Card >
-      </PageHeaderWrapper >
+        </Card>
+      </PageHeaderWrapper>
     );
   }
 }

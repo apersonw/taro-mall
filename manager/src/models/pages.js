@@ -1,11 +1,6 @@
 export default {
   namespace: 'pages',
-
-  state: {
-    locations: [],
-    links: [],
-  },
-
+  state: {},
   reducers: {
     save(state, action) {
       return {
