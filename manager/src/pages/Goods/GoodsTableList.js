@@ -1,28 +1,27 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'dva';
 import router from 'umi/router';
-import { Avatar, Badge, Button, Card, Divider, Form, List, Progress } from 'antd';
+import { Avatar, Badge, Button, Card, Divider, Dropdown, Form, Icon, List, Menu, Progress } from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import StandardTable from '@/components/StandardTable';
 
 import styles from './GoodsTableList.less';
 import moment from 'moment';
 import { findDOMNode } from 'react-dom';
+import fetchPage from '../../utils/fetchPage';
 
 const statusMap = ['default', 'processing', 'success', 'error'];
 
 /* eslint react/no-multi-comp:0 */
-@connect(({ goods, loading }) => ({
-  ...goods,
-  loading: loading.models.goods,
+@connect(({ pages, pagination, loading }) => ({
+  goodsList: pages['goodsList'],
+  pagination: pagination['goodsList'],
+  loading: loading.models.pages,
 }))
 @Form.create()
 class GoodsTableList extends PureComponent {
   componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch({
-      type: 'goods/fetch',
-    });
+    fetchPage('goods', { page: 0 });
   }
 
   state = {
@@ -73,16 +72,16 @@ class GoodsTableList extends PureComponent {
     {
       title: '创建日期',
       dataIndex: 'createDate',
-      render: val => <span>{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span>,
+      render: val => <span >{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span >,
     },
     {
       title: '操作',
       render: (text, record) => (
-        <Fragment>
-          <a onClick={() => this.handleUpdateModalVisible(true, record)}>编辑</a>
+        <Fragment >
+          <a onClick={() => this.handleUpdateModalVisible(true, record)} >编辑</a >
           <Divider type="vertical" />
-          <a href="">删除</a>
-        </Fragment>
+          <a href="" >删除</a >
+        </Fragment >
       ),
     },
   ];
@@ -120,26 +119,39 @@ class GoodsTableList extends PureComponent {
   };
 
   render() {
-    const { selectedRows } = this.state;
-    const { data, loading } = this.props;
+    const { goodsList, loading, pagination } = this.props;
     const ListContent = ({ data: { owner, createdAt, percent, status } }) => (
-      <div className={styles.listContent}>
-        <div className={styles.listContentItem}>
-          <span>Owner</span>
-          <p>{owner}</p>
-        </div>
-        <div className={styles.listContentItem}>
-          <span>开始时间</span>
-          <p>{moment(createdAt).format('YYYY-MM-DD HH:mm')}</p>
-        </div>
-        <div className={styles.listContentItem}>
+      <div className={styles.listContent} >
+        <div className={styles.listContentItem} >
+          <span >Owner</span >
+          <p >{owner}</p >
+        </div >
+        <div className={styles.listContentItem} >
+          <span >开始时间</span >
+          <p >{moment(createdAt).format('YYYY-MM-DD HH:mm')}</p >
+        </div >
+        <div className={styles.listContentItem} >
           <Progress percent={percent} status={status} strokeWidth={6} style={{ width: 180 }} />
-        </div>
-      </div>
+        </div >
+      </div >
+    );
+    const MoreBtn = props => (
+      <Dropdown
+        overlay={
+          <Menu onClick={({ key }) => editAndDelete(key, props.current)}>
+            <Menu.Item key="edit">编辑</Menu.Item>
+            <Menu.Item key="delete">删除</Menu.Item>
+          </Menu>
+        }
+      >
+        <a>
+          更多 <Icon type="down" />
+        </a>
+      </Dropdown>
     );
     return (
-      <PageHeaderWrapper title="商品列表">
-        <Card bordered={false}>
+      <PageHeaderWrapper title="商品列表" >
+        <Card bordered={false} >
           <Button
             type="dashed"
             style={{ width: '100%', marginBottom: 8 }}
@@ -147,32 +159,13 @@ class GoodsTableList extends PureComponent {
             onClick={() => router.push('/goods/goodsSaveForm')}
           >
             添加
-          </Button>
-          {/*<StandardTable*/}
-          {/*  selectedRows={selectedRows}*/}
-          {/*  loading={loading}*/}
-          {/*  data={{*/}
-          {/*    list: data.content,*/}
-          {/*    pagination: {*/}
-          {/*      total: data.totalElements,*/}
-          {/*      currentPage: data.number + 1,*/}
-          {/*      pageSize: data.size,*/}
-          {/*    },*/}
-          {/*  }}*/}
-          {/*  columns={this.columns}*/}
-          {/*  onSelectRow={this.handleSelectRows}*/}
-          {/*  onChange={this.handleStandardTableChange}*/}
-          {/*/>*/}
+          </Button >
           <List
             size="large"
             rowKey="id"
             loading={loading}
-            pagination={{
-              total: data.totalElements,
-              currentPage: data.number + 1,
-              pageSize: data.size,
-            }}
-            dataSource={data.content}
+            pagination={pagination}
+            dataSource={goodsList}
             renderItem={item => (
               <List.Item
                 actions={[
@@ -183,21 +176,21 @@ class GoodsTableList extends PureComponent {
                     }}
                   >
                     编辑
-                  </a>,
+                  </a >,
                   <MoreBtn current={item} />,
                 ]}
               >
                 <List.Item.Meta
                   avatar={<Avatar src={item.logo} shape="square" size="large" />}
-                  title={<a href={item.href}>{item.title}</a>}
+                  title={<a href={item.href} >{item.title}</a >}
                   description={item.subDescription}
                 />
                 <ListContent data={item} />
-              </List.Item>
+              </List.Item >
             )}
           />
-        </Card>
-      </PageHeaderWrapper>
+        </Card >
+      </PageHeaderWrapper >
     );
   }
 }

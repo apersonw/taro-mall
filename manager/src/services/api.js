@@ -10,7 +10,7 @@ export async function queryActivities() {
 }
 
 export async function queryGoods(params) {
-  return request(`/api/goodsPage/${params.page}-${params.pageSize}`);
+  return request(`/api/goods/admin/goodsPage/${params.page}-${params.pageSize}`);
 }
 
 export async function queryRule(params) {

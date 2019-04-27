@@ -1,8 +1,10 @@
 import action from './action';
-import { queryLocations } from '../services/link';
+import { queryLocations } from '@/services/link';
+import { queryGoods } from '@/services/api';
 
 const names = {
   linkLocation: { queryCall: queryLocations, saveObj: 'linkLocations' },
+  goods: { queryCall: queryGoods, saveObj: 'goodsList' },
 };
 const fetchPage = (name, params = {}) => {
   if (name && names.hasOwnProperty([name])) {
