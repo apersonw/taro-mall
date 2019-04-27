@@ -30,6 +30,21 @@ services:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
       CONFIG_HOST: config:8888
+  gateway-manager:
+#    build: ../services/rxjava-gateway/gateway-client/target/docker-bin
+    image: registry.cn-shanghai.aliyuncs.com/taro-mall/gateway-manager
+    container_name: "gateway-manager-release"
+    depends_on:
+      - center
+      - config
+    expose:
+      - 9090
+    ports:
+      - 9090:8080
+    environment:
+      DB_HOST: mongodb:27017
+      CENTER_HOST: center:8761
+      CONFIG_HOST: config:8888
   service-goods:
 #    build: ../services/rxjava-service/service-goods/target/docker-bin
     image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-goods

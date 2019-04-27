@@ -14,6 +14,10 @@ service_goods_tag=registry.cn-shanghai.aliyuncs.com/taro-mall/service-goods
 docker build ./rxjava-service/service-goods/target/docker-bin/ -t ${service_goods_tag}
 docker push ${service_goods_tag}
 
+service_link_tag=registry.cn-shanghai.aliyuncs.com/taro-mall/service-link
+docker build ./rxjava-service/service-link/target/docker-bin/ -t ${service_link_tag}
+docker push ${service_link_tag}
+
 service_order_tag=registry.cn-shanghai.aliyuncs.com/taro-mall/service-order
 docker build ./rxjava-service/service-goods/target/docker-bin/ -t ${service_order_tag}
 docker push ${service_order_tag}
