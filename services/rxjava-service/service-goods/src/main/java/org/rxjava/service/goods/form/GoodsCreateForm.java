@@ -1,7 +1,7 @@
 package org.rxjava.service.goods.form;
 
 import lombok.Data;
-import org.rxjava.common.core.entity.Image;
+import org.rxjava.common.core.entity.Resource;
 import org.rxjava.service.goods.status.GoodsStatus;
 import org.rxjava.service.goods.type.ExcessType;
 import org.rxjava.service.goods.type.GoodsType;
@@ -22,7 +22,7 @@ public class GoodsCreateForm {
     /**
      * 缩略图
      */
-    private Image thumb;
+    private Resource thumb;
     /**
      * 商品描述
      */

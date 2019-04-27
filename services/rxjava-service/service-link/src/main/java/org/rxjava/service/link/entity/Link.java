@@ -1,65 +1,51 @@
-package org.rxjava.service.coupon.entity;
+package org.rxjava.service.link.entity;
 
 import lombok.Data;
 import org.rxjava.common.core.entity.Resource;
+import org.rxjava.common.core.status.Status;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import static org.springframework.data.mongodb.core.index.IndexDirection.DESCENDING;
 
 /**
- * @author happy 2019-04-22 15:44
- * 评价
+ * @author happy 2019-04-27 10:12
+ * 链接
  */
 @Data
-public class Appraisal {
+@Document
+public class Link {
     @Id
     private String id;
     /**
-     * 商品评价Id
+     * 链接位置Id
      */
-    private String goodsAppraisalId;
+    private String linkLocationId;
     /**
-     * 商铺Id
+     * 链接名称
      */
-    private String shopId;
+    private String name;
     /**
-     * 商品Id
+     * 链接图片
      */
-    private String goodsId;
+    private Resource image;
     /**
-     * 订单商品Id
+     * 链接地址
      */
-    private String orderGoodsId;
+    private String url;
     /**
-     * 用户Id
+     * 资源类型
      */
-    private String userId;
+    private String type;
     /**
-     * 订单Id
+     * 链接状态
      */
-    private String orderId;
-    /**
-     * 评价内容
-     */
-    private String text;
-    /**
-     * 图片列表
-     */
-    private List<Resource> images;
-    /**
-     * 视频列表
-     */
-    private List<Resource> videos;
-    /**
-     * 评分
-     */
-    private int score = 500;
+    private String status = Status.NORMAL.name();
     /**
      * 创建日期
      */

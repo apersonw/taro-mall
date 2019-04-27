@@ -1,7 +1,7 @@
 package org.rxjava.service.goods.entity;
 
 import lombok.Data;
-import org.rxjava.common.core.entity.Image;
+import org.rxjava.common.core.entity.Resource;
 import org.rxjava.service.goods.status.GoodsStatus;
 import org.rxjava.service.goods.type.ExcessType;
 import org.springframework.data.annotation.CreatedDate;
@@ -11,7 +11,6 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import static org.springframework.data.mongodb.core.index.IndexDirection.DESCENDING;
 
@@ -31,7 +30,7 @@ public class Goods {
     /**
      * 缩略图
      */
-    private Image thumb;
+    private Resource thumb;
     /**
      * 品牌Id
      */

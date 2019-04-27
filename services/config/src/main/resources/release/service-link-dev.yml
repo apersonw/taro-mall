@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: service-link
+  redis:
+    database: 7

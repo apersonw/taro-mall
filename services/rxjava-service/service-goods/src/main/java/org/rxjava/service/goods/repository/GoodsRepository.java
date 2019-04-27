@@ -9,6 +9,7 @@ import org.rxjava.service.goods.entity.Sku;
 import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.form.GoodsPageForm;
 import org.rxjava.service.goods.status.GoodsStatus;
+import org.rxjava.service.starter.mongo.PageAgent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -23,6 +24,7 @@ import org.springframework.util.CollectionUtils;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
@@ -44,12 +46,19 @@ interface SpecialGoodsRepository {
 
     Flux<CarouselImg> getCarouselImgList(String goodsId);
 
-    Mono<Page<Goods>> getPage(Pageable pageable, GoodsPageForm form);
+    Mono<Page<Goods>> findPage(Pageable pageable, GoodsPageForm form);
 }
 
 class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
     @Autowired
     private ReactiveMongoTemplate reactiveMongoTemplate;
+
+    private PageAgent<Goods> pageAgent;
+
+    @PostConstruct
+    private void init() {
+        pageAgent = new PageAgent<>(reactiveMongoTemplate, Goods.class);
+    }
 
     @Override
     public Flux<Goods> getList(Pageable pageable, GoodsListForm form) {
@@ -97,18 +106,9 @@ class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
     }
 
     @Override
-    public Mono<Page<Goods>> getPage(Pageable pageable, GoodsPageForm form) {
+    public Mono<Page<Goods>> findPage(Pageable pageable, GoodsPageForm form) {
         Query query = new Query();
         query.with(pageable);
-        return Mono
-                .zip(
-                        reactiveMongoTemplate.find(query, Goods.class).collectList(),
-                        reactiveMongoTemplate.count(query, Goods.class)
-                )
-                .map(z -> {
-                    List<Goods> goodsList = z.getT1();
-                    Long num = z.getT2();
-                    return new PageImpl<>(goodsList, PageRequest.of(pageable.getPageNumber(), pageable.getPageSize()), num);
-                });
+        return pageAgent.findPage(query, pageable);
     }
 }

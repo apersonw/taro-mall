@@ -1,18 +1,7 @@
 package org.rxjava.service.goods.model;
 
 import lombok.Data;
-import org.rxjava.common.core.entity.Image;
-import org.rxjava.service.goods.status.GoodsStatus;
-import org.rxjava.service.goods.type.ExcessType;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.mongodb.core.index.Indexed;
-
-import java.time.LocalDateTime;
-import java.util.List;
-
-import static org.springframework.data.mongodb.core.index.IndexDirection.DESCENDING;
+import org.rxjava.common.core.entity.Resource;
 
 /**
  * @author happy 2019-03-23 00:19
@@ -27,7 +16,7 @@ public class GoodsModel {
     /**
      * 缩略图
      */
-    private Image thumb;
+    private Resource thumb;
     /**
      * 售价
      */

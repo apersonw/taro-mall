@@ -1,7 +1,7 @@
 package org.rxjava.service.goods.model;
 
 import lombok.Data;
-import org.rxjava.common.core.entity.Image;
+import org.rxjava.common.core.entity.Resource;
 import org.rxjava.service.goods.entity.Sku;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class GoodsDetailModel {
     /**
      * 缩略图
      */
-    private Image thumb;
+    private Resource thumb;
     /**
      * 售价
      */

@@ -1,7 +1,7 @@
-package org.rxjava.service.goods.entity;
+package org.rxjava.service.link.entity;
 
 import lombok.Data;
-import org.rxjava.common.core.entity.Resource;
+import org.rxjava.common.core.status.Status;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -13,27 +13,26 @@ import java.time.LocalDateTime;
 import static org.springframework.data.mongodb.core.index.IndexDirection.DESCENDING;
 
 /**
- * @author happy 2019-03-27 21:17
+ * @author happy 2019-04-27 10:29
+ * 链接位置
  */
 @Data
 @Document
-public class Content {
+public class LinkLocation {
     @Id
     private String id;
     /**
-     * 商品Id
+     * 位置名称
      */
-    private String goodsId;
+    private String name;
     /**
-     * 优先级
+     * 备注
      */
-    private int priority;
+    private String remark;
     /**
-     * 类型：IMG,TEXT,VIDEO,FILE
+     * 位置状态
      */
-    private String type;
-    private Resource image;
-    private String value;
+    private String status = Status.NORMAL.name();
     /**
      * 创建日期
      */

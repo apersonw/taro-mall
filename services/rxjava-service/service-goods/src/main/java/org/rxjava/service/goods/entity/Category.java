@@ -1,7 +1,7 @@
 package org.rxjava.service.goods.entity;
 
 import lombok.Data;
-import org.rxjava.common.core.entity.Image;
+import org.rxjava.common.core.entity.Resource;
 import org.rxjava.service.goods.status.CategoryStatus;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -39,7 +39,7 @@ public class Category {
     /**
      * 缩略图
      */
-    private Image thumb;
+    private Resource thumb;
     /**
      * 创建日期
      */

@@ -14,8 +14,6 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.Optional;
-
 /**
  * @author happy 2019-03-23 00:16
  * 商品服务
@@ -33,7 +31,7 @@ public class GoodsService {
 
     public Mono<Page<Goods>> getPage(Pageable pageable, GoodsPageForm form) {
         return goodsRepository
-                .getPage(pageable, form);
+                .findPage(pageable, form);
     }
 
     public Mono<GoodsModel> getByGoodsId(String goodsId) {
