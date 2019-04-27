@@ -63,7 +63,8 @@ public class RxJavaServiceAutoConfiguration implements WebFluxConfigurer {
     public ObjectMapper objectMapper() {
         ObjectMapper objectMapper = JsonUtils.create();
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        objectMapper.registerModule(new ParameterNamesModule())
+        objectMapper
+                .registerModule(new ParameterNamesModule())
                 .registerModule(new Jdk8Module());
 
         DateTimeFormatter dataTimeFormatter = DateTimeFormatter.ofPattern(DATE_TIME_FORMAT).withZone(ZoneId.systemDefault());
