@@ -1,9 +1,9 @@
 import request from '@/utils/request';
 
 export async function queryProvince() {
-  return request('/api/geographic/province');
+  return request('/server/aliapi/geographic/province');
 }
 
 export async function queryCity(province) {
-  return request(`/api/geographic/city/${province}`);
+  return request(`/server/aliapi/geographic/city/${province}`);
 }

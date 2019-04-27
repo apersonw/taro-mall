@@ -30,7 +30,7 @@ export function patchRoutes(routes) {
 }
 
 export function render(oldRender) {
-  fetch('/api/auth_routes')
+  fetch('/server/aliapi/auth_routes')
     .then(res => res.json())
     .then(
       ret => {

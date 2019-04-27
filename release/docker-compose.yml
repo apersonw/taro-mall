@@ -12,6 +12,8 @@ services:
   manager:
     image: registry.cn-shanghai.aliyuncs.com/taro-mall/manager
     container_name: "manager-release"
+    depends_on:
+      - gateway-manager
     ports:
       - 81:80
     restart: always

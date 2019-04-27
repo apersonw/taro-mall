@@ -76,10 +76,10 @@ export default {
     'primary-color': primaryColor,
   },
   proxy: {
-    '/server/api/': {
+    '/server/aliapi/': {
       target: 'https://preview.pro.ant.design/',
       changeOrigin: true,
-      pathRewrite: { '^/server': '' },
+      pathRewrite: { '^/server/aliapi': '/api' },
     },
     '/api/': {
       target: 'http://localhost:9090/',

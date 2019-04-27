@@ -2,11 +2,11 @@ import { stringify } from 'qs';
 import request from '@/utils/request';
 
 export async function queryProjectNotice() {
-  return request('/api/project/notice');
+  return request('/server/aliapi/project/notice');
 }
 
 export async function queryActivities() {
-  return request('/api/activities');
+  return request('/server/aliapi/activities');
 }
 
 export async function queryGoods(params) {
@@ -14,11 +14,11 @@ export async function queryGoods(params) {
 }
 
 export async function queryRule(params) {
-  return request(`/api/rule?${stringify(params)}`);
+  return request(`/server/aliapi/rule?${stringify(params)}`);
 }
 
 export async function removeRule(params) {
-  return request('/api/rule', {
+  return request('/server/aliapi/rule', {
     method: 'POST',
     body: {
       ...params,
@@ -28,7 +28,7 @@ export async function removeRule(params) {
 }
 
 export async function addRule(params) {
-  return request('/api/rule', {
+  return request('/server/aliapi/rule', {
     method: 'POST',
     body: {
       ...params,
@@ -38,7 +38,7 @@ export async function addRule(params) {
 }
 
 export async function updateRule(params = {}) {
-  return request(`/api/rule?${stringify(params.query)}`, {
+  return request(`/server/aliapi/rule?${stringify(params.query)}`, {
     method: 'POST',
     body: {
       ...params.body,
@@ -48,35 +48,35 @@ export async function updateRule(params = {}) {
 }
 
 export async function fakeSubmitForm(params) {
-  return request('/api/forms', {
+  return request('/server/aliapi/forms', {
     method: 'POST',
     body: params,
   });
 }
 
 export async function fakeChartData() {
-  return request('/api/fake_chart_data');
+  return request('/server/aliapi/fake_chart_data');
 }
 
 export async function queryTags() {
-  return request('/api/tags');
+  return request('/server/aliapi/tags');
 }
 
 export async function queryBasicProfile(id) {
-  return request(`/api/profile/basic?id=${id}`);
+  return request(`/server/aliapi/profile/basic?id=${id}`);
 }
 
 export async function queryAdvancedProfile() {
-  return request('/api/profile/advanced');
+  return request('/server/aliapi/profile/advanced');
 }
 
 export async function queryFakeList(params) {
-  return request(`/api/fake_list?${stringify(params)}`);
+  return request(`/server/aliapi/fake_list?${stringify(params)}`);
 }
 
 export async function removeFakeList(params) {
   const { count = 5, ...restParams } = params;
-  return request(`/api/fake_list?count=${count}`, {
+  return request(`/server/aliapi/fake_list?count=${count}`, {
     method: 'POST',
     body: {
       ...restParams,
@@ -87,7 +87,7 @@ export async function removeFakeList(params) {
 
 export async function addFakeList(params) {
   const { count = 5, ...restParams } = params;
-  return request(`/api/fake_list?count=${count}`, {
+  return request(`/server/aliapi/fake_list?count=${count}`, {
     method: 'POST',
     body: {
       ...restParams,
@@ -98,7 +98,7 @@ export async function addFakeList(params) {
 
 export async function updateFakeList(params) {
   const { count = 5, ...restParams } = params;
-  return request(`/api/fake_list?count=${count}`, {
+  return request(`/server/aliapi/fake_list?count=${count}`, {
     method: 'POST',
     body: {
       ...restParams,
@@ -108,23 +108,23 @@ export async function updateFakeList(params) {
 }
 
 export async function fakeAccountLogin(params) {
-  return request('/api/login/account', {
+  return request('/server/aliapi/login/account', {
     method: 'POST',
     body: params,
   });
 }
 
 export async function fakeRegister(params) {
-  return request('/api/register', {
+  return request('/server/aliapi/register', {
     method: 'POST',
     body: params,
   });
 }
 
 export async function queryNotices(params = {}) {
-  return request(`/api/notices?${stringify(params)}`);
+  return request(`/server/aliapi/notices?${stringify(params)}`);
 }
 
 export async function getFakeCaptcha(mobile) {
-  return request(`/api/captcha?mobile=${mobile}`);
+  return request(`/server/aliapi/captcha?mobile=${mobile}`);
 }
