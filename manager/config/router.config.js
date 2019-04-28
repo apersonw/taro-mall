@@ -66,7 +66,7 @@ export default [
           {
             path: '/link/linkList',
             name: 'linkList',
-            component: './Link/TableList',
+            component: './Link/LinkTableList',
           },
         ],
       },

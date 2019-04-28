@@ -9,8 +9,16 @@ export async function queryActivities() {
   return request('/server/aliapi/activities');
 }
 
+export async function queryBrand(params) {
+  return request(`/api/goods/admin/brandPage?${stringify(params)}`);
+}
+
+export async function queryCategory(params) {
+  return request(`/api/goods/admin/categoryPage?${stringify(params)}`);
+}
+
 export async function queryGoods(params) {
-  return request(`/api/goods/admin/goodsPage/${params.page}-${params.pageSize}`);
+  return request(`/api/goods/admin/goodsPage?${stringify(params)}`);
 }
 
 export async function queryRule(params) {

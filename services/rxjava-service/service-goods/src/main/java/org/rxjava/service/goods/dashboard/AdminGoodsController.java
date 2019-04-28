@@ -8,7 +8,10 @@ import org.rxjava.service.goods.services.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 import javax.validation.Valid;
@@ -37,13 +40,11 @@ public class AdminGoodsController {
      * 商品分页
      */
     @Login(false)
-    @GetMapping("goodsPage/{page}-{pageSize}")
-    public Mono<Page<Goods>> getList(
-            @PathVariable int page,
-            @PathVariable int pageSize,
+    @GetMapping("goodsPage")
+    public Mono<Page<Goods>> getPage(
             @Valid GoodsPageForm form
     ) {
         return goodsService
-                .getPage(PageRequest.of(page, pageSize), form);
+                .getPage(PageRequest.of(form.getPage(), form.getPageSize()), form);
     }
 }

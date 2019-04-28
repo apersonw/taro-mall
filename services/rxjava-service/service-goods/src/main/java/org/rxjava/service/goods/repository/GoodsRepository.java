@@ -1,14 +1,10 @@
 package org.rxjava.service.goods.repository;
 
 import org.apache.commons.lang3.StringUtils;
-import org.rxjava.service.goods.entity.CarouselImg;
-import org.rxjava.service.goods.entity.Content;
+import org.rxjava.common.core.mongo.PageAgent;
 import org.rxjava.service.goods.entity.Goods;
-import org.rxjava.service.goods.entity.Sku;
 import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.form.GoodsPageForm;
-import org.rxjava.service.goods.status.GoodsStatus;
-import org.rxjava.common.core.mongo.PageAgent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,14 +29,6 @@ public interface GoodsRepository extends ReactiveSortingRepository<Goods, String
 interface SpecialGoodsRepository {
 
     Flux<Goods> getList(Pageable pageable, GoodsListForm form);
-
-    Mono<Goods> getByGoodsId(String goodsId);
-
-    Flux<Content> getContentList(String goodsId);
-
-    Flux<Sku> getSkuList(String goodsId);
-
-    Flux<CarouselImg> getCarouselImgList(String goodsId);
 
     Mono<Page<Goods>> findPage(Pageable pageable, GoodsPageForm form);
 }
@@ -71,34 +59,6 @@ class SpecialGoodsRepositoryImpl implements SpecialGoodsRepository {
         Query query = Query.query(criteria).with(pageable);
         return reactiveMongoTemplate
                 .find(query, Goods.class);
-    }
-
-    @Override
-    public Mono<Goods> getByGoodsId(String goodsId) {
-        Criteria criteria = Criteria
-                .where("id").is(goodsId)
-                .and("org/rxjava/service/goods/status").is(GoodsStatus.NORMAL.name());
-        Query query = Query.query(criteria);
-        return reactiveMongoTemplate
-                .findOne(query, Goods.class);
-    }
-
-    @Override
-    public Flux<Content> getContentList(String goodsId) {
-        return reactiveMongoTemplate
-                .find(Query.query(Criteria.where("goodsId").is(goodsId)), Content.class);
-    }
-
-    @Override
-    public Flux<Sku> getSkuList(String goodsId) {
-        return reactiveMongoTemplate
-                .find(Query.query(Criteria.where("goodsId").is(goodsId)), Sku.class);
-    }
-
-    @Override
-    public Flux<CarouselImg> getCarouselImgList(String goodsId) {
-        return reactiveMongoTemplate
-                .find(Query.query(Criteria.where("goodsId").is(goodsId)), CarouselImg.class);
     }
 
     @Override

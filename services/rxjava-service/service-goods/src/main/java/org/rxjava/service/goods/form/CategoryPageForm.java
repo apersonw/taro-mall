@@ -1,6 +1,7 @@
 package org.rxjava.service.goods.form;
 
 import lombok.Data;
+import org.rxjava.common.core.form.PageForm;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -9,9 +10,5 @@ import javax.validation.constraints.Min;
  * @author happy 2019-03-27 02:32
  */
 @Data
-public class CategoryPageForm {
-    @Min(value = 0, message = "页码从0开始，表示第一页")
-    private int page = 0;
-    @Max(value = 200, message = "页大小，最大为200")
-    private int pageSize = 10;
+public class CategoryPageForm extends PageForm {
 }

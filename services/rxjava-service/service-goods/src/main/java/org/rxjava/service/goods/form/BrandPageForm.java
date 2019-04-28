@@ -4,8 +4,8 @@ import lombok.Data;
 import org.rxjava.common.core.form.PageForm;
 
 /**
- * @author happy 2019-03-28 21:32
+ * @author happy 2019-04-28 22:46
  */
 @Data
-public class GoodsPageForm extends PageForm {
+public class BrandPageForm extends PageForm {
 }

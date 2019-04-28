@@ -19,68 +19,6 @@ class GoodsTableList extends PureComponent {
     fetchPage('goods', { page: 1 });
   }
 
-  state = {
-    selectedRows: [],
-  };
-
-  columns = [
-    {
-      title: 'ID',
-      dataIndex: 'id',
-    },
-    {
-      title: '名称',
-      dataIndex: 'name',
-    },
-    {
-      title: '缩略图',
-      dataIndex: 'thumb.url',
-    },
-    {
-      title: '描述',
-      dataIndex: 'desc',
-    },
-    {
-      title: '类目Id',
-      dataIndex: 'categoryId',
-    },
-    {
-      title: '品牌Id',
-      dataIndex: 'brandId',
-    },
-    {
-      title: '类型', //虚拟和实物
-      dataIndex: 'type',
-    },
-    {
-      title: '状态',
-      dataIndex: 'status',
-    },
-    {
-      title: '超售',
-      dataIndex: 'excess',
-    },
-    {
-      title: '优先级',
-      dataIndex: 'priority',
-    },
-    {
-      title: '创建日期',
-      dataIndex: 'createDate',
-      render: val => <span>{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span>,
-    },
-    {
-      title: '操作',
-      render: (text, record) => (
-        <Fragment>
-          <a onClick={() => this.handleUpdateModalVisible(true, record)}>编辑</a>
-          <Divider type="vertical" />
-          <a href="">删除</a>
-        </Fragment>
-      ),
-    },
-  ];
-
   render() {
     const { goodsList, loading, pagination } = this.props;
     const ListContent = ({ data: { coverPrice, createdAt, percent, status } }) => (
