@@ -1,6 +1,5 @@
-package org.rxjava.service.starter.mongo;
+package org.rxjava.common.core.mongo;
 
-import lombok.Setter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;

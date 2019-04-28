@@ -1,6 +1,5 @@
 package org.rxjava.service.goods.repository;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.rxjava.service.goods.entity.CarouselImg;
 import org.rxjava.service.goods.entity.Content;
@@ -9,11 +8,9 @@ import org.rxjava.service.goods.entity.Sku;
 import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.form.GoodsPageForm;
 import org.rxjava.service.goods.status.GoodsStatus;
-import org.rxjava.service.starter.mongo.PageAgent;
+import org.rxjava.common.core.mongo.PageAgent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -25,7 +22,6 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import javax.annotation.PostConstruct;
-import java.util.List;
 
 /**
  * @author happy 2019-03-23 00:17

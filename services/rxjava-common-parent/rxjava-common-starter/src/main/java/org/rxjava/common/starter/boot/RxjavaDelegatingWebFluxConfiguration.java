@@ -1,4 +1,4 @@
-package org.rxjava.service.starter.boot;
+package org.rxjava.common.starter.boot;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;

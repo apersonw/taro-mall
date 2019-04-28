@@ -1,4 +1,4 @@
-package form;
+package org.rxjava.common.core.form;
 
 import lombok.Data;
 

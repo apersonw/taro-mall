@@ -2,7 +2,7 @@ package org.rxjava.service.link.repository;
 
 import org.rxjava.service.link.entity.LinkLocation;
 import org.rxjava.service.link.form.LinkLocationPageForm;
-import org.rxjava.service.starter.mongo.PageAgent;
+import org.rxjava.common.core.mongo.PageAgent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

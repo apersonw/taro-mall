@@ -1,4 +1,4 @@
-package org.rxjava.service.starter;
+package org.rxjava.common.starter;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -14,7 +14,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import org.rxjava.common.core.utils.JsonUtils;
-import org.rxjava.service.starter.boot.RxjavaDelegatingWebFluxConfiguration;
+import org.rxjava.common.starter.boot.RxjavaDelegatingWebFluxConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
@@ -38,14 +38,14 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * @author happy 2019-04-09 01:32
- * 响应式服务自动配置starter
+ * 通用自动配置starter
  */
 @Configuration
 @Import({RxjavaDelegatingWebFluxConfiguration.class})
 @EnableDiscoveryClient
 @EnableMongoAuditing
 @AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
-public class RxJavaServiceAutoConfiguration implements WebFluxConfigurer {
+public class RxJavaCommonAutoConfiguration implements WebFluxConfigurer {
     private static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
     private static final String DATE_FORMAT = "yyyy-MM-dd";
     private static final String TIME_FORMAT = "HH:mm:ss.SSS";

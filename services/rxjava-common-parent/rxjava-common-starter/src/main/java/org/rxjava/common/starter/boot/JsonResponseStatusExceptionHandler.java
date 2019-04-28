@@ -1,4 +1,4 @@
-package org.rxjava.service.starter.boot;
+package org.rxjava.common.starter.boot;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

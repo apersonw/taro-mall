@@ -1,6 +1,6 @@
 package org.rxjava.service.link.form;
 
-import form.PageForm;
+import org.rxjava.common.core.form.PageForm;
 import lombok.Data;
 
 /**
