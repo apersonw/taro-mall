@@ -47,6 +47,32 @@ services:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
       CONFIG_HOST: config:8888
+  service-order:
+#    build: ../services/rxjava-service/service-order/target/docker-bin
+    image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-order
+    container_name: "service-order-release"
+    depends_on:
+      - config
+      - center
+      - mongodb
+      - redis
+    environment:
+      DB_HOST: mongodb:27017
+      CENTER_HOST: center:8761
+      CONFIG_HOST: config:8888
+  service-user:
+#    build: ../services/rxjava-service/service-user/target/docker-bin
+    image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-user
+    container_name: "service-user-release"
+    depends_on:
+      - config
+      - center
+      - mongodb
+      - redis
+    environment:
+      DB_HOST: mongodb:27017
+      CENTER_HOST: center:8761
+      CONFIG_HOST: config:8888
   service-goods:
 #    build: ../services/rxjava-service/service-goods/target/docker-bin
     image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-goods
@@ -61,7 +87,7 @@ services:
       CENTER_HOST: center:8761
       CONFIG_HOST: config:8888
   service-link:
-#    build: ../services/rxjava-service/service-goods/target/docker-bin
+#    build: ../services/rxjava-service/service-link/target/docker-bin
     image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-link
     container_name: "service-link-release"
     depends_on:

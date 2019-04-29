@@ -1,9 +1,9 @@
-package org.rxjava.service.user.dashboard;
+package org.rxjava.service.order.dashboard;
 
 import org.rxjava.common.core.annotation.Login;
-import org.rxjava.service.user.entity.User;
-import org.rxjava.service.user.form.UserPageForm;
-import org.rxjava.service.user.service.UserService;
+import org.rxjava.service.order.entity.Order;
+import org.rxjava.service.order.form.OrderPageForm;
+import org.rxjava.service.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,20 +19,20 @@ import javax.validation.Valid;
  */
 @RequestMapping("admin")
 @RestController
-public class AdminUserController {
+public class AdminOrderController {
 
     @Autowired
-    private UserService userService;
+    private OrderService orderService;
 
     /**
-     * 查询用户分页
+     * 查询订单分页
      */
     @Login(false)
-    @GetMapping("userPage")
-    public Mono<Page<User>> getPage(
-            @Valid UserPageForm form
+    @GetMapping("orderPage")
+    public Mono<Page<Order>> getPage(
+            @Valid OrderPageForm form
     ) {
-        return userService
+        return orderService
                 .findPage(form, PageRequest.of(form.getPage(), form.getPageSize()));
     }
 }

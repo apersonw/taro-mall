@@ -53,7 +53,7 @@ export default [
           {
             path: '/member/userList',
             name: 'userList',
-            component: './Member/TableList',
+            component: './Member/UserTableList',
           },
         ],
       },
@@ -131,7 +131,7 @@ export default [
           {
             path: '/order/orderList',
             name: 'orderList',
-            component: './Order/TableList',
+            component: './Order/OrderTableList',
           },
         ],
       },

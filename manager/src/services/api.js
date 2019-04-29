@@ -9,6 +9,14 @@ export async function queryActivities() {
   return request('/server/aliapi/activities');
 }
 
+export async function queryOrder(params) {
+  return request(`/api/order/admin/orderPage?${stringify(params)}`);
+}
+
+export async function queryUser(params) {
+  return request(`/api/user/admin/userPage?${stringify(params)}`);
+}
+
 export async function queryBrand(params) {
   return request(`/api/goods/admin/brandPage?${stringify(params)}`);
 }

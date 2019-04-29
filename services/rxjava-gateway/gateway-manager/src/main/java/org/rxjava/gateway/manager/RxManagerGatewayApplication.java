@@ -33,6 +33,7 @@ public class RxManagerGatewayApplication {
                 .route(r -> r.path("/goods/admin/**").filters(p -> p.stripPrefix(1)).uri("lb://service-goods/"))
                 .route(r -> r.path("/manager/admin/**").filters(p -> p.stripPrefix(1)).uri("lb://service-manager/"))
                 .route(r -> r.path("/user/admin/**").filters(p -> p.stripPrefix(1)).uri("lb://service-user/"))
+                .route(r -> r.path("/order/admin/**").filters(p -> p.stripPrefix(1)).uri("lb://service-order/"))
                 .route(r -> r.path("/link/admin/**").filters(p -> p.stripPrefix(1)).uri("lb://service-link/"))
                 .build();
     }
