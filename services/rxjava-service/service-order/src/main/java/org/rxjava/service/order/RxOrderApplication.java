@@ -20,6 +20,6 @@ public class RxOrderApplication {
 
     @GetMapping("/")
     public Mono<String> system() {
-        return Mono.just("用户服务正常");
+        return Mono.just("订单服务正常");
     }
 }

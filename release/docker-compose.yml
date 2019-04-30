@@ -2,16 +2,32 @@ version: "3.7"
 
 services:
   client:
-    image: registry.cn-shanghai.aliyuncs.com/taro-mall/client
+    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/client:latest"
     container_name: "client-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.30'
+          memory: 512M
+        reservations:
+          cpus: '0.10'
+          memory: 128M
     depends_on:
       - gateway-client
     ports:
       - 80:80
     restart: always
   manager:
-    image: registry.cn-shanghai.aliyuncs.com/taro-mall/manager
+    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/manager:latest"
     container_name: "manager-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.30'
+          memory: 512M
+        reservations:
+          cpus: '0.10'
+          memory: 128M
     depends_on:
       - gateway-manager
     ports:
@@ -19,8 +35,16 @@ services:
     restart: always
   gateway-client:
 #    build: ../services/rxjava-gateway/gateway-client/target/docker-bin
-    image: registry.cn-shanghai.aliyuncs.com/taro-mall/gateway-client
+    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/gateway-client:latest"
     container_name: "gateway-client-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.40'
+          memory: 512M
+        reservations:
+          cpus: '0.20'
+          memory: 256M
     depends_on:
       - center
       - config
@@ -32,10 +56,19 @@ services:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
       CONFIG_HOST: config:8888
+    restart: always
   gateway-manager:
 #    build: ../services/rxjava-gateway/gateway-client/target/docker-bin
-    image: registry.cn-shanghai.aliyuncs.com/taro-mall/gateway-manager
+    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/gateway-manager:latest"
     container_name: "gateway-manager-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.40'
+          memory: 512M
+        reservations:
+          cpus: '0.20'
+          memory: 256M
     depends_on:
       - center
       - config
@@ -47,10 +80,19 @@ services:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
       CONFIG_HOST: config:8888
+    restart: always
   service-order:
 #    build: ../services/rxjava-service/service-order/target/docker-bin
-    image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-order
+    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/service-order:latest"
     container_name: "service-order-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.40'
+          memory: 512M
+        reservations:
+          cpus: '0.20'
+          memory: 256M
     depends_on:
       - config
       - center
@@ -60,10 +102,19 @@ services:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
       CONFIG_HOST: config:8888
+    restart: always
   service-user:
 #    build: ../services/rxjava-service/service-user/target/docker-bin
-    image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-user
+    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/service-user:latest"
     container_name: "service-user-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.40'
+          memory: 512M
+        reservations:
+          cpus: '0.20'
+          memory: 256M
     depends_on:
       - config
       - center
@@ -73,10 +124,19 @@ services:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
       CONFIG_HOST: config:8888
+    restart: always
   service-goods:
 #    build: ../services/rxjava-service/service-goods/target/docker-bin
-    image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-goods
+    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/service-goods:latest"
     container_name: "service-goods-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.40'
+          memory: 512M
+        reservations:
+          cpus: '0.20'
+          memory: 256M
     depends_on:
       - config
       - center
@@ -86,10 +146,19 @@ services:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
       CONFIG_HOST: config:8888
+    restart: always
   service-link:
 #    build: ../services/rxjava-service/service-link/target/docker-bin
-    image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-link
+    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/service-link:latest"
     container_name: "service-link-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.40'
+          memory: 512M
+        reservations:
+          cpus: '0.20'
+          memory: 256M
     depends_on:
       - config
       - center
@@ -99,10 +168,19 @@ services:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
       CONFIG_HOST: config:8888
+    restart: always
   center:
 #    build: ../services/center/target/docker-bin
-    image: registry.cn-shanghai.aliyuncs.com/taro-mall/center
+    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/center:latest"
     container_name: "center-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.40'
+          memory: 512M
+        reservations:
+          cpus: '0.20'
+          memory: 256M
     depends_on:
       - config
     environment:
@@ -111,17 +189,35 @@ services:
       - 8761
     ports:
       - 8761:8761
+    restart: always
   config:
 #    build: ../services/config/target/docker-bin
-    image: registry.cn-shanghai.aliyuncs.com/taro-mall/config
+    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/config:latest"
     container_name: "config-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.40'
+          memory: 512M
+        reservations:
+          cpus: '0.20'
+          memory: 256M
     expose:
       - 8888
     ports:
       - 8888:8888
+    restart: always
   mongodb:
     image: 'registry.cn-shanghai.aliyuncs.com/taro-mall/mongo:3.7.3-jessie'
     container_name: "mongodb-release"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.30'
+          memory: 512M
+        reservations:
+          cpus: '0.20'
+          memory: 128M
     expose:
       - 27017
     ports:
@@ -129,6 +225,14 @@ services:
     restart: always
   redis:
     image: 'registry.cn-shanghai.aliyuncs.com/taro-mall/redis:4.0.4-alpine'
+    deploy:
+      resources:
+        limits:
+          cpus: '0.30'
+          memory: 512M
+        reservations:
+          cpus: '0.10'
+          memory: 128M
     container_name: "redis-release"
     expose:
       - 6379
