@@ -15,7 +15,7 @@ service_pay_tag=registry.cn-shanghai.aliyuncs.com/taro-mall/service-pay:latest
 
 if test "$1" == "y";
 then
-    docker build ./rxjava-service/service-goods/target/docker-bin/ -t ${service_pay_tag}
+    docker build ./rxjava-service/service-pay/target/docker-bin/ -t ${service_pay_tag}
 else
     docker build ./target/docker-bin/ -t ${service_pay_tag}
 fi

@@ -15,7 +15,7 @@ service_user_tag=registry.cn-shanghai.aliyuncs.com/taro-mall/service-user:latest
 
 if test "$1" == "y";
 then
-    docker build ./rxjava-service/service-goods/target/docker-bin/ -t ${service_user_tag}
+    docker build ./rxjava-service/service-user/target/docker-bin/ -t ${service_user_tag}
 else
     docker build ./target/docker-bin/ -t ${service_user_tag}
 fi

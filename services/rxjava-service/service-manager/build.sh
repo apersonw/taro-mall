@@ -15,7 +15,7 @@ service_manager_tag=registry.cn-shanghai.aliyuncs.com/taro-mall/service-manager:
 
 if test "$1" == "y";
 then
-    docker build ./rxjava-service/service-goods/target/docker-bin/ -t ${service_manager_tag}
+    docker build ./rxjava-service/service-manager/target/docker-bin/ -t ${service_manager_tag}
 else
     docker build ./target/docker-bin/ -t ${service_manager_tag}
 fi

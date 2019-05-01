@@ -15,7 +15,7 @@ service_order_tag=registry.cn-shanghai.aliyuncs.com/taro-mall/service-order:late
 
 if test "$1" == "y";
 then
-    docker build ./rxjava-service/service-goods/target/docker-bin/ -t ${service_order_tag}
+    docker build ./rxjava-service/service-order/target/docker-bin/ -t ${service_order_tag}
 else
     docker build ./target/docker-bin/ -t ${service_order_tag}
 fi
