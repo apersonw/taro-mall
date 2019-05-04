@@ -1,19 +1,59 @@
 .goods {
   display: flex;
   flex-direction: column;
-  width: 375px;
+  width: 100%;
   height: 554px;
+  background-color: white;
+  padding-bottom: 53px;
+  overflow: hidden;
+
+  .thumb{
+    width: 100%;
+    height: 100%;
+  }
 
   .name {
+    padding: 0 15px;
   }
 
   .bottom {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-    .left{
+    .left {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 15px;
+
+      .symbol{
+        font-size: 18px;
+        color: #D13333;
+      }
+
+      .price {
+        font-size: 22px;
+        color: #D13333;
+      }
+
+      .purchase {
+        border: 1px solid #C53B3E;
+        font-size: 18px;
+        color: #C53B3E;
+        padding: 4px 13px;
+        margin-left: 5px;
+      }
+    }
+
+    .similar {
+      border: 1px solid #BDBDBD;
+      padding: 12px 22px;
+      font-size: 18px;
+      color: #686868;
+      margin-right: 24px;
     }
   }
 }

@@ -3,6 +3,8 @@ package org.rxjava.service.goods.model;
 import lombok.Data;
 import org.rxjava.common.core.entity.Resource;
 
+import java.util.List;
+
 /**
  * @author happy 2019-03-23 00:19
  */
@@ -21,4 +23,8 @@ public class GoodsModel {
      * 售价
      */
     private int coverPrice;
+    /**
+     * 商品Skus列表
+     */
+    private List<SkuModel> skus;
 }

@@ -10,3 +10,9 @@ spring:
       server:
         native:
           searchLocations: classpath:/dev
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          bus-refresh

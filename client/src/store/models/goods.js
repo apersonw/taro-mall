@@ -18,6 +18,7 @@ export default {
     * fetchList({ payload }, { all, call, put, select }) {
       try {
         console.log('fetchList', payload);
+        yield call(fixedBody);
         yield call(Taro.showLoading, { title: '加载中', mask: true });
         if (!payload.page) {
           payload.page = 0;
@@ -50,6 +51,7 @@ export default {
         throw new Error(e);
       } finally {
         yield call(Taro.hideLoading);
+        yield call(looseBody);
       }
     },
   },

@@ -7,30 +7,15 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.30'
-          memory: 256M
+          cpus: '0.50'
+          memory: 512M
         reservations:
-          cpus: '0.10'
+          cpus: '0.20'
           memory: 128M
     depends_on:
       - gateway-client
     ports:
       - 80:80
-  manager:
-    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/manager:latest"
-    container_name: "manager-release"
-    deploy:
-      resources:
-        limits:
-          cpus: '0.30'
-          memory: 256M
-        reservations:
-          cpus: '0.10'
-          memory: 128M
-    depends_on:
-      - gateway-manager
-    ports:
-      - 81:80
   gateway-client:
     #    build: ../services/rxjava-gateway/gateway-client/target/docker-bin
     image: "registry.cn-shanghai.aliyuncs.com/taro-mall/gateway-client:latest"
@@ -38,75 +23,14 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.30'
-          memory: 256M
+          cpus: '0.50'
+          memory: 512M
         reservations:
-          cpus: '0.10'
+          cpus: '0.20'
           memory: 128M
     depends_on:
       - center
       - config
-    environment:
-      DB_HOST: mongodb:27017
-      CENTER_HOST: center:8761
-      CONFIG_HOST: config:8888
-  gateway-manager:
-    #    build: ../services/rxjava-gateway/gateway-client/target/docker-bin
-    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/gateway-manager:latest"
-    container_name: "gateway-manager-release"
-    deploy:
-      resources:
-        limits:
-          cpus: '0.30'
-          memory: 256M
-        reservations:
-          cpus: '0.10'
-          memory: 128M
-    depends_on:
-      - center
-      - config
-    environment:
-      DB_HOST: mongodb:27017
-      CENTER_HOST: center:8761
-      CONFIG_HOST: config:8888
-  service-order:
-    #    build: ../services/rxjava-service/service-order/target/docker-bin
-    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/service-order:latest"
-    container_name: "service-order-release"
-    deploy:
-      resources:
-        limits:
-          cpus: '0.30'
-          memory: 256M
-        reservations:
-          cpus: '0.10'
-          memory: 128M
-    depends_on:
-      - config
-      - center
-      - mongodb
-      - redis
-    environment:
-      DB_HOST: mongodb:27017
-      CENTER_HOST: center:8761
-      CONFIG_HOST: config:8888
-  service-user:
-    #    build: ../services/rxjava-service/service-user/target/docker-bin
-    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/service-user:latest"
-    container_name: "service-user-release"
-    deploy:
-      resources:
-        limits:
-          cpus: '0.30'
-          memory: 256M
-        reservations:
-          cpus: '0.10'
-          memory: 128M
-    depends_on:
-      - config
-      - center
-      - mongodb
-      - redis
     environment:
       DB_HOST: mongodb:27017
       CENTER_HOST: center:8761
@@ -118,31 +42,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.30'
-          memory: 256M
+          cpus: '0.50'
+          memory: 512M
         reservations:
-          cpus: '0.10'
-          memory: 128M
-    depends_on:
-      - config
-      - center
-      - mongodb
-      - redis
-    environment:
-      DB_HOST: mongodb:27017
-      CENTER_HOST: center:8761
-      CONFIG_HOST: config:8888
-  service-link:
-    #    build: ../services/rxjava-service/service-link/target/docker-bin
-    image: "registry.cn-shanghai.aliyuncs.com/taro-mall/service-link:latest"
-    container_name: "service-link-release"
-    deploy:
-      resources:
-        limits:
-          cpus: '0.30'
-          memory: 256M
-        reservations:
-          cpus: '0.10'
+          cpus: '0.20'
           memory: 128M
     depends_on:
       - config
@@ -160,10 +63,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.30'
-          memory: 256M
+          cpus: '0.50'
+          memory: 512M
         reservations:
-          cpus: '0.10'
+          cpus: '0.20'
           memory: 128M
     depends_on:
       - config
@@ -178,31 +81,33 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.30'
-          memory: 256M
+          cpus: '0.50'
+          memory: 512M
         reservations:
-          cpus: '0.10'
+          cpus: '0.20'
           memory: 128M
     restart: always
   mongodb:
     image: 'registry.cn-shanghai.aliyuncs.com/taro-mall/mongo:3.7.3-jessie'
     container_name: "mongodb-release"
+    ports:
+      - 27017:27017
     deploy:
       resources:
         limits:
-          cpus: '0.30'
-          memory: 256M
+          cpus: '0.50'
+          memory: 512M
         reservations:
-          cpus: '0.10'
+          cpus: '0.20'
           memory: 128M
   redis:
     image: 'registry.cn-shanghai.aliyuncs.com/taro-mall/redis:4.0.4-alpine'
     deploy:
       resources:
         limits:
-          cpus: '0.30'
-          memory: 256M
+          cpus: '0.50'
+          memory: 512M
         reservations:
-          cpus: '0.10'
+          cpus: '0.20'
           memory: 128M
     container_name: "redis-release"

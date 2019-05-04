@@ -3,6 +3,7 @@
   display: flex;
   background-color: white; //此颜色一般跟content中的背景色一致
   font-size: 26px;
+  overflow: hidden;
 
   .scrollArea { //滚动条出现的区域，此处为全屏(淘宝京东这些滚动条都是全屏)
     position: relative;

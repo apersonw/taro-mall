@@ -143,7 +143,6 @@ class Index extends Component {
 
     return (
       <View className={styles.container} >
-        <FixedHeader fixedScroll={fixedHeaderStyle} />
         <ScrollView
           style='height: 100vh;'
           onScrollToLower={this.onLoadMore}
@@ -151,6 +150,7 @@ class Index extends Component {
           scrollY
           onScroll={this.onScroll}
         >
+          <FixedHeader fixedScroll={fixedHeaderStyle} />
           <View className={styles.content} >
             <BannerSwiper id="indexBanner" imgs={swiperImgs} />
             <Category items={categoryItems} />
@@ -187,11 +187,15 @@ class Index extends Component {
               <View className={styles.recommendLineRight} />
             </View >
             <View className={styles.recommendGoodsList} >
-              {(goodsList || []).map((item) => (<GoodsItem key={item.id} item={item} />))}
+              {(goodsList || []).map((item) => (
+                <View className={styles.goodsItem} >
+                  <GoodsItem key={item.id} item={item} />
+                </View >
+              ))}
             </View >
           </View >
+          <TabBar />
         </ScrollView >
-        <TabBar />
       </View >
     );
   }

@@ -44,6 +44,7 @@ public class GoodsController {
     public Mono<GoodsModel> getByGoodsId(
             @PathVariable String goodsId
     ) {
-        return Mono.empty();
+        return goodsService
+                .findGoods(goodsId);
     }
 }
