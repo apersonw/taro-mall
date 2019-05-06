@@ -44,10 +44,9 @@ import GoodsItem from '../../components/goods/GoodsItem';
 import { Tab } from '../../../../../../interest/interest-admin/src/components/Login';
 import TabBar from '../../components/TabBar';
 
-@h5PageWrapper
 @connect(({ goods, loading }) => ({
   goodsList: goods.goodsList,
-  params: goods.params
+  params: goods.params,
 }))
 class Index extends Component {
 
@@ -142,61 +141,59 @@ class Index extends Component {
     </View >;
 
     return (
-      <View className={styles.container} >
-        <ScrollView
-          style='height: 100vh;'
-          onScrollToLower={this.onLoadMore}
-          lowerThreshold={300}
-          scrollY
-          onScroll={this.onScroll}
-        >
-          <FixedHeader fixedScroll={fixedHeaderStyle} />
-          <View className={styles.content} >
-            <BannerSwiper id="indexBanner" imgs={swiperImgs} />
-            <Category items={categoryItems} />
-            {newUserOwn}
-            {spike}
-            {/*东家小院*/}
-            <CustomImage height={90} src={courtyardTitleImg} />
-            <View className={styles.courtyardBox} >
-              <View className={styles.row} >
-                {(courtyardList || []).slice(0, 2).map((item, index) => (
-                  <TwoGrid item={item} key={index} />
-                ))}
-              </View >
-              <View className={styles.row} >
-                {(courtyardList || []).slice(2, 6).map((item, index) => (
-                  <OneGrid item={item} key={index} />
-                ))}
-              </View >
+      <ScrollView
+        style='height: 100vh;'
+        onScrollToLower={this.onLoadMore}
+        lowerThreshold={300}
+        scrollY
+        onScroll={this.onScroll}
+      >
+        <FixedHeader fixedScroll={fixedHeaderStyle} />
+        <View className={styles.content} >
+          <BannerSwiper id="indexBanner" imgs={swiperImgs} />
+          <Category items={categoryItems} />
+          {newUserOwn}
+          {spike}
+          {/*东家小院*/}
+          <CustomImage height={90} src={courtyardTitleImg} />
+          <View className={styles.courtyardBox} >
+            <View className={styles.row} >
+              {(courtyardList || []).slice(0, 2).map((item, index) => (
+                <TwoGrid item={item} key={index} />
+              ))}
             </View >
-            {/*每日逛*/}
-            <CustomImage height={90} src={everydayTitleImg} />
-            <View className={styles.everydayBox} >
-              <View className={styles.row} >
-                {(everydayList || []).map((item, index) => (
-                  <OneGrid item={item} key={index} />
-                ))}
-              </View >
-            </View >
-            {/*  推荐列表*/}
-            <View className={styles.recommendTitle} >
-              <View className={styles.recommendLineLeft} />
-              <CustomImage width={26} height={26} src={upImg} />
-              <View className={styles.rightText} >为您推荐</View >
-              <View className={styles.recommendLineRight} />
-            </View >
-            <View className={styles.recommendGoodsList} >
-              {(goodsList || []).map((item) => (
-                <View className={styles.goodsItem} >
-                  <GoodsItem key={item.id} item={item} />
-                </View >
+            <View className={styles.row} >
+              {(courtyardList || []).slice(2, 6).map((item, index) => (
+                <OneGrid item={item} key={index} />
               ))}
             </View >
           </View >
-          <TabBar />
-        </ScrollView >
-      </View >
+          {/*每日逛*/}
+          <CustomImage height={90} src={everydayTitleImg} />
+          <View className={styles.everydayBox} >
+            <View className={styles.row} >
+              {(everydayList || []).map((item, index) => (
+                <OneGrid item={item} key={index} />
+              ))}
+            </View >
+          </View >
+          {/*  推荐列表*/}
+          <View className={styles.recommendTitle} >
+            <View className={styles.recommendLineLeft} />
+            <CustomImage width={26} height={26} src={upImg} />
+            <View className={styles.rightText} >为您推荐</View >
+            <View className={styles.recommendLineRight} />
+          </View >
+          <View className={styles.recommendGoodsList} >
+            {(goodsList || []).map((item) => (
+              <View className={styles.goodsItem} >
+                <GoodsItem key={item.id} item={item} />
+              </View >
+            ))}
+          </View >
+        </View >
+        <TabBar />
+      </ScrollView >
     );
   }
 }

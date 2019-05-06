@@ -1,18 +1,8 @@
-#app, .taro_router,
-.taro_page {
+//此处设置整体页面属性
+html body #app, .taro_router, .taro_page {
   display: flex;
-  min-height: 100%;
-  min-width: 100%;
+  flex: 1;
   font-family: PingFangSC-Regular, serif;
   overflow: hidden;
-}
-
-html, body {
-  overflow: hidden;
-  height: 100%;
-}
-
-.taro__toast div {
-  position: absolute !important;
-  touch-action: none;
+  font-size: 24px;
 }

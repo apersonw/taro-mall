@@ -16,9 +16,7 @@ import reactor.core.publisher.Mono;
 @RestController
 public class RxGoodsApplication {
     public static void main(String[] args) {
-
-//        ApplicationUtils.loadClass(System.getProperty("user.dir"), "base-lib", "lib");
-//        new SpringApplicationBuilder(RxGoodsApplication.class).web(WebApplicationType.REACTIVE).run(args);
+        new SpringApplicationBuilder(RxGoodsApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
 
     @Login(false)

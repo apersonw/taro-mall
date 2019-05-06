@@ -1,170 +1,166 @@
-.container {
-  //font-size: 70px;
-  overflow: hidden;
+.spikeBox {
+  margin-top: 25px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
 
-  .spikeBox {
-    margin-top: 25px;
-    padding: 0 10px;
-    display: flex;
-    flex-direction: column;
-
-    .spikeFirstRow {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      .spikeRowLeft {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-
-        .spikeJd {
-          font-family: PingFangSC-Semibold, serif;
-          font-size: 32px;
-          color: #CF2E2E;
-          letter-spacing: 0;
-        }
-
-        .spikeClock {
-          margin-left: 14px;
-          font-family: PingFangSC-Semibold, serif;
-          font-size: 24px;
-          color: #27272A;
-          letter-spacing: 0;
-        }
-
-        .spikeCountDown {
-          margin-left: 5px;
-          display: flex;
-          flex-direction: row;
-          font-family: PingFangSC-Semibold, serif;
-          font-size: 24px;
-          color: #27272A;
-
-          .spikeCountDownText {
-            border: 1px solid #eeeeee;
-            letter-spacing: 3px;
-            margin: 0 5px;
-          }
-        }
-      }
-    }
-
-    .spikeSecendRow {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      .spikeRowLeft {
-        font-family: PingFangSC-Semibold, serif;
-        font-size: 24px;
-        color: #D13333;
-        letter-spacing: 0;
-        margin-right: 10px;
-      }
-    }
-
-    .spikeScroll {
-      overflow: hidden;
-
-      .goodsList {
-        margin-top: 24px;
-        display: flex;
-        flex-direction: row;
-        flex-flow: nowrap;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        list-style: none;
-        -webkit-overflow-scrolling: touch;
-        height: 100%;
-        /*纵向超出部分将会隐藏，即滚动条部分被挤出可视区域*/
-        padding-bottom: 25px;
-        margin-bottom: -15px;
-      }
-    }
-  }
-
-  .newUserOwnBox {
+  .spikeFirstRow {
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
-    justify-content: space-evenly;
-  }
+    justify-content: space-between;
 
-  .courtyardBox {
-    display: flex;
-    flex-direction: column;
-
-    .row {
+    .spikeRowLeft {
       display: flex;
       flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      .spikeJd {
+        font-family: PingFangSC-Semibold, serif;
+        font-size: 32px;
+        color: #CF2E2E;
+        letter-spacing: 0;
+      }
+
+      .spikeClock {
+        margin-left: 14px;
+        font-family: PingFangSC-Semibold, serif;
+        font-size: 24px;
+        color: #27272A;
+        letter-spacing: 0;
+      }
+
+      .spikeCountDown {
+        margin-left: 5px;
+        display: flex;
+        flex-direction: row;
+        font-family: PingFangSC-Semibold, serif;
+        font-size: 24px;
+        color: #27272A;
+
+        .spikeCountDownText {
+          border: 1px solid #eeeeee;
+          letter-spacing: 3px;
+          margin: 0 5px;
+        }
+      }
     }
   }
 
-  .everydayBox {
+  .spikeSecendRow {
     display: flex;
-    flex-direction: column;
-
-    .row {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  }
-
-  .recommendTitle {
-    padding: 28px 10px;
-    color: #848689;
-    font-size: 28px;
-    background-color: #F0F1F4;
-    display: flex;
-    justify-content: center;
     flex-direction: row;
     align-items: center;
 
-    .recommendLineLeft {
-      border: 1px solid #848689;
-      width: 250px;
+    .spikeRowLeft {
+      font-family: PingFangSC-Semibold, serif;
+      font-size: 24px;
+      color: #D13333;
+      letter-spacing: 0;
       margin-right: 10px;
-    }
-
-    .recommendLineRight {
-      border: 1px solid #848689;
-      width: 250px;
-      margin-left: 10px;
-    }
-
-    .rightText {
-      margin-left: 13px;
     }
   }
 
-  .recommendGoodsList {
+  .spikeScroll {
+    overflow: hidden;
+
+    .goodsList {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: row;
+      flex-flow: nowrap;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      list-style: none;
+      -webkit-overflow-scrolling: touch;
+      height: 100%;
+      /*纵向超出部分将会隐藏，即滚动条部分被挤出可视区域*/
+      padding-bottom: 25px;
+      margin-bottom: -15px;
+    }
+  }
+}
+
+.newUserOwnBox {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: space-evenly;
+}
+
+.courtyardBox {
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.everydayBox {
+  display: flex;
+  flex-direction: column;
+
+  .row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background: #F0F1F4;
+  }
+}
 
-    .goodsItem {
-      &:first-child {
-        padding-top: 0;
-      }
-      &:nth-child(2){
-        padding-top: 0;
-      }
+.recommendTitle {
+  padding: 28px 10px;
+  color: #848689;
+  font-size: 28px;
+  background-color: #F0F1F4;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 
-      &:nth-child(odd){
-        padding-left: 0;
-      }
+  .recommendLineLeft {
+    border: 1px solid #848689;
+    width: 250px;
+    margin-right: 10px;
+  }
 
-      &:nth-child(even){
-        padding-right: 0;
-      }
+  .recommendLineRight {
+    border: 1px solid #848689;
+    width: 250px;
+    margin-left: 10px;
+  }
 
-      box-sizing: border-box;
-      width: 375px;
-      padding: 4px 4px 4px 4px;
+  .rightText {
+    margin-left: 13px;
+  }
+}
+
+.recommendGoodsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: #F0F1F4;
+
+  .goodsItem {
+    &:first-child {
+      padding-top: 0;
     }
+
+    &:nth-child(2) {
+      padding-top: 0;
+    }
+
+    &:nth-child(odd) {
+      padding-left: 0;
+    }
+
+    &:nth-child(even) {
+      padding-right: 0;
+    }
+
+    box-sizing: border-box;
+    width: 375px;
+    padding: 4px 4px 4px 4px;
   }
 }
