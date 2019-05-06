@@ -45,9 +45,9 @@ import { Tab } from '../../../../../../interest/interest-admin/src/components/Lo
 import TabBar from '../../components/TabBar';
 
 @h5PageWrapper
-@connect(({ goods }) => ({
+@connect(({ goods, loading }) => ({
   goodsList: goods.goodsList,
-  params: goods.params,
+  params: goods.params
 }))
 class Index extends Component {
 

@@ -6,3 +6,13 @@
   font-family: PingFangSC-Regular, serif;
   overflow: hidden;
 }
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+.taro__toast div {
+  position: absolute !important;
+  touch-action: none;
+}

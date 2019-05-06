@@ -1,6 +1,6 @@
+import Taro from '@tarojs/taro';
 import action from '../../utils/action';
 import request from '../../utils/request';
-import Taro from '@tarojs/taro';
 import removeEmpty from '../../utils/paramsUtils';
 import delay from '../../utils/delay';
 
@@ -18,7 +18,7 @@ export default {
     * fetchList({ payload }, { all, call, put, select }) {
       try {
         console.log('fetchList', payload);
-        yield call(fixedBody);
+        //暂时不用，会出现滚动穿透的问题
         yield call(Taro.showLoading, { title: '加载中', mask: true });
         if (!payload.page) {
           payload.page = 0;
@@ -47,11 +47,10 @@ export default {
         yield put(action('save', { goodsList: newGoodsList, params: newParams }));
       } catch (e) {
         yield call(Taro.hideLoading);
-        yield call(delay, 500);
+        yield call(delay, 200);
         throw new Error(e);
       } finally {
         yield call(Taro.hideLoading);
-        yield call(looseBody);
       }
     },
   },

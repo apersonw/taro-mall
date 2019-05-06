@@ -14,21 +14,22 @@ import java.util.function.Consumer;
 public class RxOrderMain {
     public static void main(String... args) {
         try {
-            Path path = Paths.get("lib");
-            Path basePath = Paths.get("base-lib");
             URLClassLoader cl = (URLClassLoader) ClassLoader.getSystemClassLoader();
-            if (Files.isDirectory(path) && Files.isDirectory(basePath)) {
-                Method addURL = URLClassLoader.class.getDeclaredMethod("addURL", URL.class);
-                addURL.setAccessible(true);
-                Consumer<Path> pathConsumer = p -> {
-                    try {
-                        addURL.invoke(cl, p.toUri().toURL());
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                };
-                Files.newDirectoryStream(path).forEach(pathConsumer);
-                Files.newDirectoryStream(basePath).forEach(pathConsumer);
+            Method addURL = URLClassLoader.class.getDeclaredMethod("addURL", URL.class);
+            addURL.setAccessible(true);
+            String[] strPaths = new String[]{"base-lib", "lib"};
+            for (String strPath : strPaths) {
+                Path path = Paths.get(strPath);
+                if (Files.isDirectory(path)) {
+                    Consumer<Path> pathConsumer = p -> {
+                        try {
+                            addURL.invoke(cl, p.toUri().toURL());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    };
+                    Files.newDirectoryStream(path).forEach(pathConsumer);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

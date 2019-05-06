@@ -1,7 +1,7 @@
 package org.rxjava.service.link.dashboard;
 
 import org.rxjava.common.core.annotation.Login;
-import org.rxjava.service.link.LinkLocationSaveForm;
+import org.rxjava.service.link.form.LinkLocationSaveForm;
 import org.rxjava.service.link.entity.LinkLocation;
 import org.rxjava.service.link.form.LinkLocationPageForm;
 import org.rxjava.service.link.repository.LinkLocationRepository;

@@ -1,4 +1,4 @@
-package org.rxjava.service.link;
+package org.rxjava.service.link.form;
 
 import lombok.Data;
 import org.rxjava.common.core.status.Status;
