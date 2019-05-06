@@ -1,8 +1,11 @@
 //此处设置整体页面属性
 html body #app, .taro_router, .taro_page {
   display: flex;
-  flex: 1;
   font-family: PingFangSC-Regular, serif;
   overflow: hidden;
   font-size: 24px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
 }

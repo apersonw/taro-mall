@@ -5,7 +5,6 @@ import h5PageWrapper from '../../wrapper/h5PageWrapper';
 import styles from './index.module.scss';
 import TabBar from '../../components/TabBar';
 
-@h5PageWrapper
 @connect(() => ({}))
 class Index extends Component {
 

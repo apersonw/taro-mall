@@ -10,7 +10,7 @@ module.exports = {
       port: 10086,
       proxy: {
         '/api': {
-          target: 'http://192.168.2.214:8080',
+          target: 'http://0.0.0.0:8080',
           pathRewrite: { '^/api': '/' },
           secure: false,
         },

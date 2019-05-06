@@ -144,7 +144,6 @@ class Index extends Component {
       <ScrollView
         style='height: 100vh;'
         onScrollToLower={this.onLoadMore}
-        lowerThreshold={300}
         scrollY
         onScroll={this.onScroll}
       >
