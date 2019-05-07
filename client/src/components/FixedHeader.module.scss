@@ -1,5 +1,5 @@
 .fixedHeader { //头部固定
-  position: fixed;
+  position:fixed;
   display: flex;
   left: 0;
   top: 0;
@@ -12,6 +12,7 @@
 
   background-color: transparent;
   transition: .4s;
+  overflow: hidden;
 }
 
 .fixedScrollHeader {

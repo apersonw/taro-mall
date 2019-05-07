@@ -1,7 +1,6 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, ScrollView } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
-import h5PageWrapper from '../../wrapper/h5PageWrapper';
 import styles from './index.module.scss';
 import TabBar from '../../components/TabBar';
 

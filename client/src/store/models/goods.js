@@ -18,6 +18,7 @@ export default {
     * fetchList({ payload }, { all, call, put, select }) {
       try {
         console.log('fetchList', payload);
+        //暂时不用，会出现滚动穿透的问题
         if (!payload.page) {
           payload.page = 0;
         }
@@ -45,6 +46,7 @@ export default {
         yield put(action('save', { goodsList: newGoodsList, params: newParams }));
       } catch (e) {
         throw new Error(e);
+      } finally {
       }
     },
   },

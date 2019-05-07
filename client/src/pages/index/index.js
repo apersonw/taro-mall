@@ -1,9 +1,8 @@
 import Taro, { Component } from '@tarojs/taro';
 import { ScrollView, View } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect, Provider } from '@tarojs/redux';
 import styles from './index.module.scss';
 import action from '../../utils/action';
-import h5PageWrapper from '../../wrapper/h5PageWrapper';
 import CustomImage from '../../components/CustomImage';
 import upImg from '../../assets/index/up.png';
 import banner1 from '../../assets/banner/1.jpg';
@@ -71,8 +70,10 @@ class Index extends Component {
     }
   };
 
+
   onScroll = ({ detail }) => {
     const { scrollTop } = detail;
+
     if (scrollTop > 0) {
       if (!this.state.fixedHeaderStyle) {
         this.setState({
@@ -84,6 +85,10 @@ class Index extends Component {
         fixedHeaderStyle: false,
       });
     }
+  };
+
+  consolog = (e) => {
+    console.log('consolog:' + e);
   };
 
   render() {
@@ -141,15 +146,17 @@ class Index extends Component {
     </View >;
 
     return (
-      <ScrollView
-        style='height: 100vh;'
-        onScrollToLower={this.onLoadMore}
-        scrollY
-        onScroll={this.onScroll}
-      >
+      <View className={styles.container} onTouchMove={this.consolog} >
         <FixedHeader fixedScroll={fixedHeaderStyle} />
-        <View className={styles.content} >
-          <BannerSwiper id="indexBanner" imgs={swiperImgs} />
+        <ScrollView
+          style='min-height: 100vh;-webkit-overflow-scrolling:touch;'
+          onScrollToLower={this.onLoadMore}
+          lowerThreshold={300}
+          scrollY
+          onScroll={this.onScroll}
+          scrollWithAnimation
+        >
+          {/*<BannerSwiper id="indexBanner" imgs={swiperImgs} />*/}
           <Category items={categoryItems} />
           {newUserOwn}
           {spike}
@@ -190,9 +197,9 @@ class Index extends Component {
               </View >
             ))}
           </View >
-        </View >
+        </ScrollView >
         <TabBar />
-      </ScrollView >
+      </View >
     );
   }
 }

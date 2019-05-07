@@ -6,6 +6,8 @@ import Index from "./pages/index";
 import "./app.scss";
 import models from "./store/models";
 import action from "./utils/action";
+import TabBar from './components/TabBar';
+import { ScrollView } from '@tarojs/components';
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
