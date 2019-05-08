@@ -29,9 +29,9 @@ class App extends Component {
 
   config = {
     pages: [
+      "pages/shopcart/index",
       "pages/index/index",
       "pages/category/index",
-      "pages/shopcart/index",
       "pages/mine/index",
     ],
     window: {

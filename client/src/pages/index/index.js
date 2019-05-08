@@ -87,8 +87,9 @@ class Index extends Component {
     }
   };
 
-  consolog = (e) => {
-    console.log('consolog:' + e);
+  stopPropagation = (e) => {
+    console.log(e);
+    e.stopPropagation();//阻止事件冒泡即可
   };
 
   render() {
@@ -146,17 +147,20 @@ class Index extends Component {
     </View >;
 
     return (
-      <View className={styles.container} onTouchMove={this.consolog} >
+      <View className={styles.container}>
         <FixedHeader fixedScroll={fixedHeaderStyle} />
         <ScrollView
-          style='min-height: 100vh;-webkit-overflow-scrolling:touch;'
+          style='height:100vh;-webkit-overflow-scrolling:touch;'
           onScrollToLower={this.onLoadMore}
           lowerThreshold={300}
           scrollY
           onScroll={this.onScroll}
           scrollWithAnimation
+          onClick={this.stopPropagation}
+          onLongPress={this.stopPropagation}
+          onLongClick={this.stopPropagation}
         >
-          {/*<BannerSwiper id="indexBanner" imgs={swiperImgs} />*/}
+          <BannerSwiper id="indexBanner" imgs={swiperImgs} />
           <Category items={categoryItems} />
           {newUserOwn}
           {spike}
