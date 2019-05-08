@@ -1,7 +1,9 @@
 package org.rxjava.service.goods.form;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.hibernate.validator.constraints.Length;
+import org.rxjava.common.core.form.PageForm;
 
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
 /**
  * @author happy 2019-03-23 00:21
  */
-@Data
+@Data()
 public class GoodsListForm {
     /**
      * 类目Id
