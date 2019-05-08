@@ -13,6 +13,7 @@ import org.springframework.web.reactive.HandlerResult;
 import org.springframework.web.reactive.result.method.annotation.RequestMappingHandlerAdapter;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
+import sun.misc.Request;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -41,6 +42,7 @@ public class SecurityRequestMappingHandlerAdapter extends RequestMappingHandlerA
         HandlerMethod handlerMethod = (HandlerMethod) handler;
 
         Login methodAnnotation = handlerMethod.getMethodAnnotation(Login.class);
+        RequestMapping requestMapping = handlerMethod.getMethodAnnotation(RequestMapping.class);
 
         //检查是否需要登陆
         if (methodAnnotation == null || methodAnnotation.value()) {

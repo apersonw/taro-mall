@@ -1,6 +1,7 @@
 package org.rxjava.service.manager.entity;
 
 import lombok.Data;
+import org.rxjava.service.manager.ManagerAuthStatus;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -46,6 +47,10 @@ public class ManagerAuth {
      * 密码凭证（站内的保存密码，站外的不保存或保存token）
      */
     private String credential;
+    /**
+     * 状态
+     */
+    private String status = ManagerAuthStatus.INIT.name();
     /**
      * 创建日期
      */

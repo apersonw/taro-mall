@@ -16,6 +16,7 @@
         <module>rxjava-common-core</module>
         <module>rxjava-common-starter</module>
         <module>rxjava-common-bus</module>
+        <module>rxjava-common-test</module>
     </modules>
     <dependencies>
         <dependency>

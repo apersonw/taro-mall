@@ -34,6 +34,7 @@
         <guava.version>27.0-jre</guava.version>
         <javassist.version>3.23.1-GA</javassist.version>
         <paranamer.version>2.8</paranamer.version>
+        <fast-classpath-scanner.version>2.18.1</fast-classpath-scanner.version>
         <commons-collections4.version>4.2</commons-collections4.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
 

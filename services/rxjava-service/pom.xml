@@ -31,5 +31,16 @@
             <artifactId>rxjava-service-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.rxjava</groupId>
+            <artifactId>rxjava-common-test</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.rxjava.apikit</groupId>
+            <artifactId>rxjava-apikit-tool</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>

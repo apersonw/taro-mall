@@ -11,6 +11,8 @@ import org.rxjava.service.manager.type.IdentityType;
 import org.rxjava.service.starter.boot.LoginInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -70,11 +72,22 @@ public class ManagerController {
     /**
      * 查询管理员基本信息
      */
-    @GetMapping("manager/info")
+    @GetMapping("manager")
     public Mono<Manager> getManager(
             LoginInfo loginInfo
     ) {
         return managerRepository.findById(loginInfo.getUserId());
+    }
+
+    /**
+     * 查询管理员分页
+     */
+    @GetMapping("managers")
+    public Mono<Page<Manager>> getManagerPage(
+            @Valid ManagerPageForm form
+    ) {
+        return managerRepository
+                .findPage(PageRequest.of(form.getPage(), form.getPageSize()), form);
     }
 
     /**
@@ -109,7 +122,7 @@ public class ManagerController {
     /**
      * 给角色分配权限
      */
-    @PostMapping("manager/role/permission")
+    @PostMapping("manager/role/permissions")
     public Mono<Void> savePermissionToRole(
             @Valid PermissionToRoleForm form
     ) {
