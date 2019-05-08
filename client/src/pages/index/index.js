@@ -87,11 +87,6 @@ class Index extends Component {
     }
   };
 
-  stopPropagation = (e) => {
-    console.log(e);
-    e.stopPropagation();//阻止事件冒泡即可
-  };
-
   render() {
     const { goodsList = [] } = this.props;
     const { fixedHeaderStyle } = this.state;
@@ -156,9 +151,6 @@ class Index extends Component {
           scrollY
           onScroll={this.onScroll}
           scrollWithAnimation
-          onClick={this.stopPropagation}
-          onLongPress={this.stopPropagation}
-          onLongClick={this.stopPropagation}
         >
           <BannerSwiper id="indexBanner" imgs={swiperImgs} />
           <Category items={categoryItems} />
