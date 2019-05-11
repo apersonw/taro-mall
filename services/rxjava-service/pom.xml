@@ -40,7 +40,6 @@
         <dependency>
             <groupId>org.rxjava.apikit</groupId>
             <artifactId>rxjava-apikit-tool</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>
