@@ -14,7 +14,6 @@
         <module>rxjava-gateway-starter</module>
         <module>rxjava-service-starter</module>
         <module>rxjava-common-core</module>
-        <module>rxjava-common-starter</module>
         <module>rxjava-common-bus</module>
     </modules>
     <dependencies>

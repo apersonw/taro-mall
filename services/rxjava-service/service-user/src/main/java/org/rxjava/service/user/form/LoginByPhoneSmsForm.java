@@ -1,6 +1,8 @@
 package org.rxjava.service.user.form;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
@@ -9,7 +11,8 @@ import javax.validation.constraints.NotEmpty;
 /**
  * @author happy 2019-04-15 22:59
  */
-@Data
+@Getter
+@Setter
 public class LoginByPhoneSmsForm {
     /**
      * 手机号

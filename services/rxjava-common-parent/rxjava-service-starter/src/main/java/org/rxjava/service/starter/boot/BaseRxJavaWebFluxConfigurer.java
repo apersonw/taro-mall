@@ -1,4 +1,4 @@
-package org.rxjava.common.starter;
+package org.rxjava.service.starter.boot;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -14,15 +14,9 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import org.rxjava.common.core.utils.JsonUtils;
-import org.rxjava.common.starter.boot.RxjavaDelegatingWebFluxConfiguration;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
-import org.springframework.core.Ordered;
-import org.springframework.data.mongodb.config.EnableMongoAuditing;
+import org.springframework.core.ReactiveAdapterRegistry;
 import org.springframework.data.redis.connection.ReactiveRedisConnectionFactory;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
@@ -30,6 +24,7 @@ import org.springframework.http.codec.ServerCodecConfigurer;
 import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.http.codec.json.Jackson2JsonEncoder;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
+import org.springframework.web.reactive.result.method.annotation.ArgumentResolverConfigurer;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -37,15 +32,9 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 /**
- * @author happy 2019-04-09 01:32
- * 通用自动配置starter
+ * @author happy 2019-05-13 01:30
  */
-@Configuration
-@Import({RxjavaDelegatingWebFluxConfiguration.class})
-@EnableDiscoveryClient
-@EnableMongoAuditing
-@AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
-public class RxJavaCommonAutoConfiguration implements WebFluxConfigurer {
+public abstract class BaseRxJavaWebFluxConfigurer implements WebFluxConfigurer {
     private static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
     private static final String DATE_FORMAT = "yyyy-MM-dd";
     private static final String TIME_FORMAT = "HH:mm:ss.SSS";
@@ -120,5 +109,23 @@ public class RxJavaCommonAutoConfiguration implements WebFluxConfigurer {
     public void configureHttpMessageCodecs(ServerCodecConfigurer configurer) {
         configurer.defaultCodecs().jackson2JsonEncoder(jackson2JsonEncoder(objectMapper()));
         configurer.defaultCodecs().jackson2JsonDecoder(jackson2JsonDecoder(objectMapper()));
+    }
+
+    @Bean
+    public ReactiveAdapterRegistry customWebFluxAdapterRegistry() {
+        return new ReactiveAdapterRegistry();
+    }
+
+    /**
+     * 注入登陆信息参数解析器
+     */
+    @Bean
+    public LoginInfoArgumentResolver loginInfoArgumentResolver() {
+        return new LoginInfoArgumentResolver(customWebFluxAdapterRegistry());
+    }
+
+    @Override
+    public void configureArgumentResolvers(ArgumentResolverConfigurer configurer) {
+        configurer.addCustomResolver(loginInfoArgumentResolver());
     }
 }

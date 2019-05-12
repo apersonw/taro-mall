@@ -39,4 +39,9 @@ public class RxClientGatewayApplication {
                 .route(r -> r.path("/pay/**").filters(p -> p.stripPrefix(1)).uri("lb://service-pay"))
                 .build();
     }
+
+    @Bean
+    public TokenFilter tokenFilter() {
+        return new TokenFilter();
+    }
 }

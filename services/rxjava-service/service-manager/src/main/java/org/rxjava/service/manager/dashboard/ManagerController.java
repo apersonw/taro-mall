@@ -8,7 +8,7 @@ import org.rxjava.service.manager.entity.*;
 import org.rxjava.service.manager.form.*;
 import org.rxjava.service.manager.repository.*;
 import org.rxjava.service.manager.type.IdentityType;
-import org.rxjava.service.starter.boot.LoginInfo;
+import org.rxjava.common.core.entity.LoginInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

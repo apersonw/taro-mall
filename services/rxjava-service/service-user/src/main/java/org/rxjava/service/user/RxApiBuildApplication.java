@@ -5,7 +5,6 @@ import org.rxjava.apikit.tool.generator.impl.JavaClientApiGenerator;
 import org.rxjava.apikit.tool.generator.impl.JavaScriptApiGenerator;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.WebApplicationType;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 import java.io.File;
@@ -13,7 +12,6 @@ import java.io.File;
 /**
  * @author happy
  */
-@SpringBootApplication
 public class RxApiBuildApplication implements CommandLineRunner {
     /**
      * 构建api

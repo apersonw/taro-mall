@@ -17,7 +17,7 @@
         </dependency>
         <dependency>
             <groupId>org.rxjava</groupId>
-            <artifactId>rxjava-common-starter</artifactId>
+            <artifactId>rxjava-common-core</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

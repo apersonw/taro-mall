@@ -1,7 +1,7 @@
 package org.rxjava.test.user;
 
 import org.junit.Test;
-import org.rxjava.test.user.client.UserApi;
+import org.rxjava.test.user.http.client.UserApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import reactor.core.publisher.Mono;
 
@@ -14,8 +14,8 @@ public class TestApplication extends TestBase {
     private UserApi userApi;
 
     @Test
-    public void testUser() {
-        Mono<String> stringMono = userApi.getCurrentUser();
+    public void testSystem() {
+        Mono<String> stringMono = userApi.system();
         String block = stringMono.block();
         System.out.println(block);
     }

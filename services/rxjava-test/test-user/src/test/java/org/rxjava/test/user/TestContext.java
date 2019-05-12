@@ -1,6 +1,6 @@
 package org.rxjava.test.user;
 
-import org.rxjava.test.user.client.UserApi;
+import org.rxjava.test.user.http.client.UserApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.ConversionService;
@@ -29,7 +29,7 @@ public class TestContext {
     @Bean
     public UserApi userApi(ConversionService conversionService) {
         WebClient.Builder builder = WebClient.builder();
-        ReactiveHttpClientAdapter clientAdapter = ReactiveHttpClientAdapter.build(conversionService, builder, "service-user");
+        ReactiveHttpClientAdapter clientAdapter = ReactiveHttpClientAdapter.build(conversionService, builder, "127.0.0.1:8081");
         return new UserApi(clientAdapter);
     }
 }
