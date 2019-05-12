@@ -1,11 +1,10 @@
-package org.rxjava.test.user.entity;
+package org.rxjava.test.user.http.entity;
 
 import lombok.Getter;
 import lombok.Setter;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.AbstractMap.SimpleImmutableEntry;
-import org.rxjava.test.user.entity.Resource;
 
 @Getter
 @Setter

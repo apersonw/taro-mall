@@ -40,4 +40,10 @@ public class UserController {
         log.info(loginInfo);
         return Mono.just("赵六");
     }
+
+    @Login(false)
+    @GetMapping("/")
+    public Mono<String> system() {
+        return Mono.just("用户服务正常");
+    }
 }

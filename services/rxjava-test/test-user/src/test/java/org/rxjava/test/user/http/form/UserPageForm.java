@@ -1,14 +1,14 @@
-package org.rxjava.test.user.form;
+package org.rxjava.test.user.http.form;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
+import java.util.AbstractMap.SimpleImmutableEntry;
 
 @Getter
 @Setter
-public class UserPageForm {
+public class UserPageForm extends PageForm {
 
 	public List<Entry<String, Object>> encode(String $parent, List<Entry<String, Object>> $list) {
 		return $list;

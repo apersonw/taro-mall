@@ -1,4 +1,4 @@
-package org.rxjava.test.user.domain;
+package org.rxjava.test.user.http.form;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,12 +8,16 @@ import java.util.AbstractMap.SimpleImmutableEntry;
 
 @Getter
 @Setter
-public class Page<T> {
+public class PageForm {
 
-	private long totalElements;
-	private int totalPages;
+	private int page;
+	private int pageSize;
 
 	public List<Entry<String, Object>> encode(String $parent, List<Entry<String, Object>> $list) {
-		throw new RuntimeException("不支持泛型");
+
+		$list.add(new SimpleImmutableEntry<>($parent + "page", page));
+
+		$list.add(new SimpleImmutableEntry<>($parent + "pageSize", pageSize));
+		return $list;
 	}
 }

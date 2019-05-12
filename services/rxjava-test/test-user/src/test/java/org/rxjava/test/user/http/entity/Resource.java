@@ -1,4 +1,4 @@
-package org.rxjava.test.user.entity;
+package org.rxjava.test.user.http.entity;
 
 import lombok.Getter;
 import lombok.Setter;

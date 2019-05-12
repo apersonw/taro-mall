@@ -1,6 +1,5 @@
 package org.rxjava.service.user.form;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.rxjava.common.core.form.PageForm;

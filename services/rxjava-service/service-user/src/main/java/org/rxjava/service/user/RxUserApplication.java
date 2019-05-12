@@ -17,10 +17,4 @@ public class RxUserApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(RxUserApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
-
-    @Login(false)
-    @GetMapping("/")
-    public Mono<String> system() {
-        return Mono.just("用户服务正常");
-    }
 }

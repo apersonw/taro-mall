@@ -1,4 +1,4 @@
-package org.rxjava.test.user.client;
+package org.rxjava.test.user.http.client;
 
 import reactor.core.publisher.Mono;
 
