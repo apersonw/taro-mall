@@ -1,4 +1,4 @@
-package org.rxjava.test.user.http.dashboard;
+package org.rxjava.api.user.dashboard;
 
 import reactor.core.publisher.Mono;
 
@@ -8,9 +8,9 @@ import java.util.concurrent.Future;
 
 import org.rxjava.apikit.client.*;
 
-import org.rxjava.test.user.http.entity.User;
-import org.rxjava.test.user.http.form.UserPageForm;
-import org.rxjava.test.user.http.domain.Page;
+import org.rxjava.api.user.entity.User;
+import org.rxjava.api.user.form.UserPageForm;
+import org.rxjava.api.user.domain.Page;
 
 public class AdminUserApi {
 	private ClientAdapter clientAdapter;

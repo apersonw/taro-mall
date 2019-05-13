@@ -1,4 +1,4 @@
-package org.rxjava.test.user.http.domain;
+package org.rxjava.api.user.domain;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package org.rxjava.test.user.http.client;
+package org.rxjava.api.user.client;
 
 import reactor.core.publisher.Mono;
 
@@ -8,7 +8,7 @@ import java.util.concurrent.Future;
 
 import org.rxjava.apikit.client.*;
 
-import org.rxjava.test.user.http.form.LoginByPhoneSmsForm;
+import org.rxjava.api.user.form.LoginByPhoneSmsForm;
 
 public class UserApi {
 	private ClientAdapter clientAdapter;

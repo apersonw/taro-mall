@@ -8,5 +8,8 @@ import lombok.Data;
  */
 @Data
 public class LoginInfo {
+    /**
+     * 用户Id（用户则代表userId，管理员代表为managerId）
+     */
     private String userId;
 }

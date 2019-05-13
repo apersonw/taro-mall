@@ -1,4 +1,4 @@
-package org.rxjava.test.user.http.form;
+package org.rxjava.api.user.form;
 
 import lombok.Getter;
 import lombok.Setter;

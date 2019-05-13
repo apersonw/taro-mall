@@ -11,7 +11,8 @@
     <artifactId>rxjava-test</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>test-user</module>
+        <module>service-user-api</module>
+        <module>gateway-client-test</module>
     </modules>
     <dependencies>
         <dependency>
@@ -21,6 +22,10 @@
         <dependency>
             <groupId>org.rxjava.apikit</groupId>
             <artifactId>rxjava-apikit-tool</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
 </project>

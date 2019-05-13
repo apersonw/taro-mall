@@ -1,15 +1,13 @@
-package org.rxjava.test.user;
+package org.rxjava.api.user;
 
 import org.junit.Before;
 import org.junit.runner.RunWith;
-import org.rxjava.test.user.http.client.UserApi;
-import org.rxjava.test.user.http.form.LoginByPhoneSmsForm;
+import org.rxjava.api.user.client.UserApi;
+import org.rxjava.api.user.form.LoginByPhoneSmsForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
-import reactor.core.publisher.Mono;
 
 import java.util.Map;
 
@@ -20,7 +18,7 @@ import java.util.Map;
 @RunWith(SpringRunner.class)
 public class TestBase {
     @Autowired
-    private UserApi userApi;
+    protected UserApi userApi;
     @Autowired
     protected ApplicationContext applicationContext;
 

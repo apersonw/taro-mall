@@ -1,4 +1,4 @@
-package org.rxjava.test.user;
+package org.rxjava.api.user;
 
 import lombok.Data;
 import org.rxjava.apikit.client.ClientAdapter;

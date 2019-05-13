@@ -1,6 +1,6 @@
-package org.rxjava.test.user;
+package org.rxjava.api.user;
 
-import org.rxjava.test.user.http.client.UserApi;
+import org.rxjava.api.user.client.UserApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.ConversionService;
