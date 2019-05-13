@@ -8,6 +8,6 @@
         <artifactId>rxjava-test</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>test-user</artifactId>
+    <artifactId>service-user-api</artifactId>
     <packaging>jar</packaging>
 </project>
