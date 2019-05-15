@@ -7,6 +7,7 @@ import org.rxjava.common.core.annotation.Login;
 import org.rxjava.common.core.entity.LoginInfo;
 import org.rxjava.common.core.exception.LoginRuntimeException;
 import org.rxjava.common.core.utils.JsonUtils;
+import org.springframework.http.server.PathContainer;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.method.HandlerMethod;
@@ -41,13 +42,20 @@ public class SecurityRequestMappingHandlerAdapter extends RequestMappingHandlerA
     public Mono<HandlerResult> handle(ServerWebExchange exchange, Object handler) {
         HandlerMethod handlerMethod = (HandlerMethod) handler;
 
+        ServerHttpRequest request = exchange.getRequest();
+        PathContainer path = request.getPath().pathWithinApplication();
+        String pathValue = path.value();
+        //微服务接口不走登陆检查
+        if (pathValue.startsWith("/serve")) {
+            return super.handle(exchange, handler);
+        }
+
         Login methodAnnotation = handlerMethod.getMethodAnnotation(Login.class);
         RequestMapping requestMapping = handlerMethod.getMethodAnnotation(RequestMapping.class);
 
         //检查是否需要登陆
         if (methodAnnotation == null || methodAnnotation.value()) {
 
-            ServerHttpRequest request = exchange.getRequest();
             String loginInfoJson = request.getHeaders().getFirst(LOGIN_INFO);
             LoginInfo loginInfo = parseLoginJson(loginInfoJson);
 

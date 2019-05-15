@@ -3,9 +3,6 @@ package org.rxjava.service.user.entity;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.mongodb.core.index.CompoundIndex;
-import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,19 +11,12 @@ import java.time.LocalDateTime;
 import static org.springframework.data.mongodb.core.index.IndexDirection.DESCENDING;
 
 /**
- * @author happy 2019-04-22 20:11
- * 用户授权信息表
+ * @author happy 2019-05-15 22:07
+ * 登陆日志记录
  */
 @Data
 @Document
-@CompoundIndexes(
-        @CompoundIndex(
-                name = "identityType_identifier",
-                unique = true,
-                def = "{'identityType':1,'identifier':1}"
-        )
-)
-public class UserAuth {
+public class LoginLog {
     @Id
     private String id;
     /**
@@ -51,9 +41,4 @@ public class UserAuth {
     @CreatedDate
     @Indexed(direction = DESCENDING)
     private LocalDateTime createDate;
-    /**
-     * 更新日期
-     */
-    @LastModifiedDate
-    private LocalDateTime updateDate;
 }
