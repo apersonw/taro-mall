@@ -1,5 +1,6 @@
 package org.rxjava.service.goods.client;
 
+import org.rxjava.api.user.serve.ServeUserApi;
 import org.rxjava.common.core.annotation.Login;
 import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.model.GoodsModel;
@@ -21,6 +22,8 @@ import javax.validation.Valid;
 public class GoodsController {
     @Autowired
     private GoodsService goodsService;
+    @Autowired
+    private ServeUserApi serveUserApi;
 
     /**
      * 商品列表

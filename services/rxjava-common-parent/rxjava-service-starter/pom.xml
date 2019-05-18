@@ -17,5 +17,9 @@
             <artifactId>rxjava-common-core</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.rxjava.apikit</groupId>
+            <artifactId>rxjava-apikit-core</artifactId>
+        </dependency>
     </dependencies>
 </project>

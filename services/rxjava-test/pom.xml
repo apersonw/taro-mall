@@ -11,8 +11,6 @@
     <artifactId>rxjava-test</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>service-user-api</module>
-        <module>gateway-client-test</module>
     </modules>
     <dependencies>
         <dependency>

@@ -10,6 +10,18 @@
     </parent>
     <artifactId>service-goods</artifactId>
     <packaging>jar</packaging>
+    <properties>
+        <module.name>goods</module.name>
+        <module.Name>Goods</module.Name>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.rxjava.apis</groupId>
+            <artifactId>rxjava-apis-user-serve</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
     <profiles>
         <profile>
             <id>release</id>

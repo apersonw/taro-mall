@@ -31,33 +31,55 @@
             <artifactId>rxjava-service-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.rxjava</groupId>
-            <artifactId>rxjava-common-test</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.rxjava.apikit</groupId>
-            <artifactId>rxjava-apikit-tool</artifactId>
-        </dependency>
     </dependencies>
-
     <build>
-        <finalName>service-docker</finalName>
         <plugins>
             <plugin>
                 <groupId>org.rxjava.apikit</groupId>
                 <artifactId>rxjava-apikit-maven-plugin</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
                 <configuration>
-                    <rootPackage>org.rxjava.service.${module.name}.client</rootPackage>
-                    <tasks>
-                        <task implementation="org.rxjava.apikit.plugin.bean.JavaClientTask">
-                            <outPath>${project.basedir}/src/test/java/</outPath>
-                            <rootPackage>org.rxjava.api.${module.name}.client</rootPackage>
-                        </task>
-                    </tasks>
+                    <groups>
+                        <group implementation="org.rxjava.apikit.plugin.bean.Group">
+                            <rootPackage>org.rxjava.service.${module.name}.client</rootPackage>
+                            <tasks>
+                                <task implementation="org.rxjava.apikit.plugin.bean.GitTask">
+                                    <url>git@github.com:apersonw/rxjava-apis.git</url>
+                                    <outPath>${module.name}/java/rxjava-apis-${module.name}-client/src/main/java</outPath>
+                                    <deleteUris>org</deleteUris>
+                                    <task implementation="org.rxjava.apikit.plugin.bean.JavaClientTask">
+                                        <rootPackage>org.rxjava.api.${module.name}.client</rootPackage>
+                                    </task>
+                                </task>
+                            </tasks>
+                        </group>
+                        <group implementation="org.rxjava.apikit.plugin.bean.Group">
+                            <rootPackage>org.rxjava.service.${module.name}.dashboard</rootPackage>
+                            <tasks>
+                                <task implementation="org.rxjava.apikit.plugin.bean.GitTask">
+                                    <url>git@github.com:apersonw/rxjava-apis.git</url>
+                                    <outPath>${module.name}/java/rxjava-apis-${module.name}-dashboard/src/main/java</outPath>
+                                    <deleteUris>org</deleteUris>
+                                    <task implementation="org.rxjava.apikit.plugin.bean.JavaClientTask">
+                                        <rootPackage>org.rxjava.api.${module.name}.dashboard</rootPackage>
+                                    </task>
+                                </task>
+                            </tasks>
+                        </group>
+                        <group implementation="org.rxjava.apikit.plugin.bean.Group">
+                            <rootPackage>org.rxjava.service.${module.name}.serve</rootPackage>
+                            <tasks>
+                                <task implementation="org.rxjava.apikit.plugin.bean.GitTask">
+                                    <url>git@github.com:apersonw/rxjava-apis.git</url>
+                                    <outPath>${module.name}/java/rxjava-apis-${module.name}-serve/src/main/java</outPath>
+                                    <deleteUris>org</deleteUris>
+                                    <task implementation="org.rxjava.apikit.plugin.bean.JavaClientTask">
+                                        <rootPackage>org.rxjava.api.${module.name}.serve</rootPackage>
+                                    </task>
+                                </task>
+                            </tasks>
+                        </group>
+                    </groups>
                 </configuration>
             </plugin>
         </plugins>
