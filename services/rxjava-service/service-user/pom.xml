@@ -9,6 +9,10 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>service-user</artifactId>
+    <properties>
+        <module.name>user</module.name>
+        <module.Name>User</module.Name>
+    </properties>
     <packaging>jar</packaging>
     <profiles>
         <profile>

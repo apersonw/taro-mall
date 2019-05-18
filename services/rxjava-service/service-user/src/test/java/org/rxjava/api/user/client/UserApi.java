@@ -8,9 +8,9 @@ import java.util.concurrent.Future;
 
 import org.rxjava.apikit.client.*;
 
-import org.rxjava.api.user.form.LoginByPhoneSmsForm;
-import org.rxjava.api.user.form.UserSaveForm;
-import org.rxjava.api.user.model.UserModel;
+import org.rxjava.api.user.client.form.LoginByPhoneSmsForm;
+import org.rxjava.api.user.client.form.UserSaveForm;
+import org.rxjava.api.user.client.model.UserModel;
 
 public class UserApi {
 	private ClientAdapter clientAdapter;

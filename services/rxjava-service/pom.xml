@@ -42,4 +42,24 @@
             <artifactId>rxjava-apikit-tool</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>service-docker</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.rxjava.apikit</groupId>
+                <artifactId>rxjava-apikit-maven-plugin</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <configuration>
+                    <rootPackage>org.rxjava.service.${module.name}.client</rootPackage>
+                    <tasks>
+                        <task implementation="org.rxjava.apikit.plugin.bean.JavaClientTask">
+                            <outPath>${project.basedir}/src/test/java/</outPath>
+                            <rootPackage>org.rxjava.api.${module.name}.client</rootPackage>
+                        </task>
+                    </tasks>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
