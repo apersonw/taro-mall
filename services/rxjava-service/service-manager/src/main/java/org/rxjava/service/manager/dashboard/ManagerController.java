@@ -76,7 +76,9 @@ public class ManagerController {
     public Mono<Manager> getManager(
             LoginInfo loginInfo
     ) {
-        return managerRepository.findById(loginInfo.getUserId());
+        return managerRepository
+                .findById(loginInfo.getUserId())
+                .switchIfEmpty(ErrorMessageException.mono("用户不存在"));
     }
 
     /**

@@ -22,8 +22,6 @@ import javax.validation.Valid;
 public class GoodsController {
     @Autowired
     private GoodsService goodsService;
-    @Autowired
-    private ServeUserApi serveUserApi;
 
     /**
      * 商品列表

@@ -14,6 +14,7 @@ import java.util.List;
  */
 @Data
 public class GoodsCreateForm {
+    private String id;
     /**
      * 商品名称
      */

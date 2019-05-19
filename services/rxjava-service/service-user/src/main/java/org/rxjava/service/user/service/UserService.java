@@ -3,6 +3,7 @@ package org.rxjava.service.user.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.rxjava.common.core.entity.LoginInfo;
 import org.rxjava.common.core.exception.ErrorMessageException;
+import org.rxjava.common.core.exception.LoginRuntimeException;
 import org.rxjava.service.user.entity.User;
 import org.rxjava.service.user.form.UserPageForm;
 import org.rxjava.service.user.repository.UserRepository;
@@ -36,7 +37,7 @@ public class UserService {
         return reactiveRedisTemplate
                 .opsForValue()
                 .get(token)
-                .switchIfEmpty(ErrorMessageException.mono("登陆信息不存在"))
+                .switchIfEmpty(Mono.error(new LoginRuntimeException("登陆信息不存在")))
                 .map(loginInfoStr -> {
                     LoginInfo loginInfo;
                     try {

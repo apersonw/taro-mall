@@ -23,15 +23,15 @@ public class ServeUserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("logininfo/{token}")
-    public Mono<LoginInfo> getByToken(
+    @GetMapping("token/{token}/logininfo")
+    public Mono<LoginInfo> tokenToLoginInfo(
             @PathVariable String token
     ) {
         return userService.getLoginInfoByToken(token);
     }
 
     @GetMapping("token/{token}/user")
-    public Mono<User> getUserByToken(
+    public Mono<User> tokenToUser(
             @PathVariable String token
     ) {
         return userService.getLoginInfoByToken(token)

@@ -10,4 +10,10 @@
     </parent>
     <artifactId>rxjava-common-core</artifactId>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.rxjava.apikit</groupId>
+            <artifactId>rxjava-apikit-core</artifactId>
+        </dependency>
+    </dependencies>
 </project>

@@ -16,6 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.codec.HttpMessageWriter;
 import org.springframework.http.server.RequestPath;
 import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
 import org.springframework.validation.BindingResult;
@@ -107,10 +108,12 @@ public class JsonResponseStatusExceptionHandler extends ResponseStatusExceptionH
         errorMessage.setStatus(status.value());
         errorMessage.setTimestamp(LocalDateTime.now());
 
-
         errorMessage.setPath(request.getPath().pathWithinApplication().value());
 
         ErrorMessageUtils.handlerI18n(errorMessage, messageAccessor);
+
+        ServerHttpResponse response = exchange.getResponse();
+        response.setStatusCode(status);
         return errorMessage;
     }
 

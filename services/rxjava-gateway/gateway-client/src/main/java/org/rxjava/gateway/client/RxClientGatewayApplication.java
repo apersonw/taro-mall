@@ -1,5 +1,9 @@
 package org.rxjava.gateway.client;
 
+import org.rxjava.api.user.serve.ServeUserApi;
+import org.rxjava.apikit.client.ClientAdapter;
+import org.rxjava.common.core.api.ReactiveHttpClientAdapter;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -9,9 +13,11 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.data.mongodb.core.aggregation.MatchOperation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 /**
@@ -41,7 +47,26 @@ public class RxClientGatewayApplication {
     }
 
     @Bean
-    public TokenFilter tokenFilter() {
-        return new TokenFilter();
+    @Qualifier("userClientAdapter")
+    public ClientAdapter userClientAdapter(
+            @Qualifier("webFluxConversionService")
+                    ConversionService conversionService,
+            WebClient.Builder webClientBuilder
+    ) {
+        return ReactiveHttpClientAdapter.build(
+                conversionService, webClientBuilder, "service-user"
+        );
+    }
+
+    @Bean
+    public ServeUserApi serveUserApi(@Qualifier("userClientAdapter") ClientAdapter clientAdapter) {
+        ServeUserApi serveUserApi = new ServeUserApi();
+        serveUserApi.setclientAdapter(clientAdapter);
+        return serveUserApi;
+    }
+
+    @Bean
+    public TokenFilter tokenFilter(ServeUserApi serveUserApi) {
+        return new TokenFilter(serveUserApi);
     }
 }

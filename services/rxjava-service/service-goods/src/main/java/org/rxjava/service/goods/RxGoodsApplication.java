@@ -3,7 +3,7 @@ package org.rxjava.service.goods;
 import org.rxjava.api.user.serve.ServeUserApi;
 import org.rxjava.apikit.client.ClientAdapter;
 import org.rxjava.common.core.annotation.Login;
-import org.rxjava.service.starter.ReactiveHttpClientAdapter;
+import org.rxjava.common.core.api.ReactiveHttpClientAdapter;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

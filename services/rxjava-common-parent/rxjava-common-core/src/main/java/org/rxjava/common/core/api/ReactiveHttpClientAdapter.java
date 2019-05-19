@@ -1,4 +1,4 @@
-package org.rxjava.service.starter;
+package org.rxjava.common.core.api;
 
 import lombok.Data;
 import org.apache.logging.log4j.LogManager;
