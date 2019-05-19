@@ -2,23 +2,15 @@ package org.rxjava.gateway.client;
 
 import org.apache.commons.lang3.StringUtils;
 import org.rxjava.api.user.serve.ServeUserApi;
-import org.rxjava.common.core.annotation.Login;
-import org.rxjava.common.core.entity.LoginInfo;
-import org.rxjava.common.core.exception.ErrorMessageException;
-import org.rxjava.common.core.exception.LoginRuntimeException;
 import org.rxjava.common.core.utils.JsonUtils;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
-import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
-import reactor.core.publisher.MonoOperator;
-import reactor.core.scheduler.Schedulers;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -63,7 +55,7 @@ public class TokenFilter implements GlobalFilter, Ordered {
                                 return chain.filter(build);
                             }
                     )
-                    .onErrorResume(WebClientResponseException.class, Mono::error);
+                    .onErrorResume(WebClientResponseException.class, e -> chain.filter(exchange));
         }
         return chain.filter(exchange);
     }
