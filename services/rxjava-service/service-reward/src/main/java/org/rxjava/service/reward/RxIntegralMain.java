@@ -1,4 +1,4 @@
-package org.rxjava.service.integral;
+package org.rxjava.service.reward;
 
 import java.lang.reflect.Method;
 import java.net.URL;
