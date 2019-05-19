@@ -27,7 +27,6 @@ public class AdminOrderController {
     /**
      * 查询订单分页
      */
-    @Login(false)
     @GetMapping("orderPage")
     public Mono<Page<Order>> getPage(
             @Valid OrderPageForm form

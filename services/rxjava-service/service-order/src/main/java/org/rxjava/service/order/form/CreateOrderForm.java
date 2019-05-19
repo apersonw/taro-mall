@@ -15,8 +15,13 @@ public class CreateOrderForm {
     @NotEmpty(message = "商品Id不能为空")
     private String goodsId;
     /**
-     * 用户Id
+     * 商铺Id
      */
-    @NotEmpty(message = "用户Id不能为空")
-    private String userId;
+    @NotEmpty(message = "商铺Id不能为空")
+    private String shopId;
+    /**
+     * 订单总价
+     */
+    @NotEmpty(message = "订单总价不能为空")
+    private int totalPrice;
 }

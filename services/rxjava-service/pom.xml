@@ -13,12 +13,10 @@
     <modules>
         <module>service-user</module>
         <module>service-manager</module>
-        <module>service-pay</module>
         <module>service-order</module>
         <module>service-goods</module>
-        <module>service-integral</module>
-        <module>service-coupon</module>
-        <module>service-appraisal</module>
+        <module>service-reward</module>
+        <module>service-vipcard</module>
     </modules>
     <dependencies>
         <dependency>
