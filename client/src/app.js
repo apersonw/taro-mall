@@ -33,6 +33,7 @@ class App extends Component {
       "pages/index/index",
       "pages/category/index",
       "pages/mine/index",
+      "pages/token/login",
     ],
     window: {
       backgroundTextStyle: "light",

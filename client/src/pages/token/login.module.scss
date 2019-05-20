@@ -1,0 +1,161 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 60px;
+  padding-right: 60px;
+
+  .account {
+    margin-top: 96px;
+  }
+
+  .passwordBox {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    .password {
+      margin-top: 45px;
+      font-size: 28px;
+
+      &::placeholder {
+        font-size: 28px;
+      }
+    }
+
+    .forgetPasswordBox {
+      position: absolute;
+      right: 0;
+      top: 40px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .forgetPassword {
+        margin-left: 22px;
+        padding-left: 22px;
+        border-left: 1px solid #979797;
+        font-family: PingFangSC-Medium, serif;
+        font-size: 28px;
+        color: #212121;
+      }
+    }
+
+  }
+
+
+  input {
+    height: 44px;
+    font-size: 28px;
+    padding-bottom: 23px;
+    border-bottom: solid 1px #EEEEEF;
+  }
+
+  input::placeholder {
+    font-family: PingFangSC-Medium, serif;
+    font-size: 28px;
+    color: #999999;
+  }
+
+  .loginButton {
+    background-image: linear-gradient(-90deg, #FAB2B2 0%, #FEC8B9 100%);
+    border-radius: 50px;
+    border: unset;
+    padding: 0;
+    margin-top: 90px;
+    font-family: PingFangSC-Semibold, serif;
+    font-size: 30px;
+    color: #FFFFFF;
+    height: 100px;
+  }
+
+  .oneKeyLogin {
+    margin-top: 20px;
+    border: 2px solid #FF2B07;
+    border-radius: 50px;
+    background: white;
+
+    font-family: PingFangSC-Semibold, serif;
+    font-size: 30px;
+    color: #F00000;
+    height: 100px;
+  }
+
+  .otherButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 42px;
+    font-family: PingFangSC-Semibold, serif;
+    font-size: 28px;
+    color: #999999;
+  }
+
+  .otherLoginMethod {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: PingFangSC-Semibold, serif;
+    font-size: 24px;
+    color: #CDCDCD;
+    margin-top: 152px;
+    width: 100%;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background: #EFEFF0;
+      content: "";
+      height: 2px;
+      width: 35%;
+    }
+
+    &:after {
+      position: absolute;
+      background: #EFEFF0;
+      top: 50%;
+      right: 0;
+      content: "";
+      height: 2px;
+      width: 35%;
+    }
+  }
+
+  .qqOrWeixinBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+    .qqBox{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 35px;
+    }
+    .weixinBox{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 35px;
+    }
+    .qqWeixinText{
+      margin-top: 10px;
+    }
+  }
+
+  .protocolBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 62px;
+    font-family: PingFangSC-Semibold, serif;
+    font-size: 28px;
+    color: #BFBFBF;
+    .protocol{
+      color: #409DFF;
+    }
+  }
+}

@@ -2,3 +2,8 @@ html, body {
   font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, Helvetica, Microsoft YaHei, Arial, serif;
   font-size: 20px;
 }
+
+//删除按钮外部样式
+button{
+  outline-width: 0 !important;
+}

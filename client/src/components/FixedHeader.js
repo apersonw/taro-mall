@@ -18,7 +18,7 @@ class FixedHeader extends Component {
           <CustomImage className={styles.searchIcon} width={40} height={30} src={searchIcon} />
           <Input className={styles.searchInput} placeholder="潮流电子特惠" />
         </View >
-        <View className={styles.loginBtn} >登陆</View >
+        <View className={styles.loginBtn} onClick={()=>Taro.navigateTo({url:'/pages/token/login'})}>登陆</View >
       </View >
     );
   }
