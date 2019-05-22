@@ -10,11 +10,13 @@ import org.rxjava.common.core.annotation.Login;
 import org.rxjava.common.core.entity.LoginInfo;
 import org.rxjava.common.core.exception.ErrorMessageException;
 import org.rxjava.common.core.utils.UUIDUtils;
+import org.rxjava.service.user.entity.LoginLog;
 import org.rxjava.service.user.entity.User;
 import org.rxjava.service.user.entity.UserAuth;
 import org.rxjava.service.user.form.LoginByPhoneSmsForm;
 import org.rxjava.service.user.form.UserSaveForm;
 import org.rxjava.service.user.model.UserModel;
+import org.rxjava.service.user.repository.LoginLogRepository;
 import org.rxjava.service.user.repository.UserAuthRepository;
 import org.rxjava.service.user.repository.UserRepository;
 import org.rxjava.service.user.serve.ServeUserController;
@@ -47,6 +49,8 @@ public class UserController {
     private ReactiveRedisTemplate<String, String> reactiveRedisTemplate;
     @Autowired
     private ObjectMapper objectMapper;
+    @Autowired
+    private LoginLogRepository loginLogRepository;
 
     /**
      * 手机验证码登陆(若手机号不存在则创建手机类型账号)
@@ -79,7 +83,16 @@ public class UserController {
                     return reactiveRedisTemplate
                             .opsForValue()
                             .set(token, loginInfoStr, Duration.ofMinutes(120))
-                            .map(b -> token);
+                            .map(b -> token)
+                            .doOnSuccess(tk -> {
+                                //保存登陆日志信息
+                                LoginLog loginLog = new LoginLog();
+                                loginLog.setIdentityType(userAuth.getIdentityType());
+                                loginLog.setIdentifier(form.getPhone());
+                                loginLog.setUserId(userAuth.getUserId());
+                                loginLog.setToken(tk);
+                                loginLogRepository.save(loginLog).subscribe();
+                            });
                 });
     }
 

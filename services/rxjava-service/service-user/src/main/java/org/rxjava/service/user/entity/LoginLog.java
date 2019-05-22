@@ -32,9 +32,9 @@ public class LoginLog {
      */
     private String identifier;
     /**
-     * 密码凭证（站内的保存密码，站外的不保存）
+     * token
      */
-    private String credential;
+    private String token;
     /**
      * 创建日期
      */
