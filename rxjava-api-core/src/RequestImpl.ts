@@ -22,4 +22,9 @@ class RequestImpl implements Request {
   }
 }
 
+let requestImpl = new RequestImpl();
+requestImpl.init(<RequestParamsType>{ method: 'GET', serviceId: 'user', formVars: {}, url: 'hello' });
+console.log(requestImpl);
+
+
 export default RequestImpl;

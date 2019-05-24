@@ -1,7 +1,5 @@
 declare class AbstractApi {
-  name: string;
-
-  constructor(name: string);
+  constructor();
 
   request<T>(serviceId: string, method: string, url: string, pathVars: object, formVars: object): Promise<T>;
 }
