@@ -1,0 +1,36 @@
+{
+  "name": "rxjava-api-core",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/apersonw/rxjava-api-core.git"
+  },
+  "keywords": [
+    "request",
+    "api",
+    "apikit",
+    "rxjava"
+  ],
+  "author": "happy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apersonw/rxjava-api-core/issues"
+  },
+  "homepage": "https://github.com/apersonw/rxjava-api-core#readme",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "lodash": "^4.17.11"
+  }
+}

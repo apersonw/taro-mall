@@ -1,0 +1,8 @@
+dist/
+.temp/
+.rn_temp/
+node_modules/
+.idea/workspace.xml
+.idea/
+
+.DS_Store
