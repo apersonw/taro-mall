@@ -69,6 +69,7 @@ $ cd services/xxx | 启动java项目
 │   ├── category.jpg
 │   └── index.jpg
 ├── run.sh                    #启动项目运行脚本
+├── rxjava-api-core           #api request服务核心包
 └── services                  #微服务项目组
     ├── service-goods         #商品微服务
     │   ├── pom.xml
