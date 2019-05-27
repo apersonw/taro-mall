@@ -6,6 +6,7 @@ import Index from "./pages/index";
 import "./app.scss";
 import models from "./store/models";
 import action from "./utils/action";
+import Context from './Context';
 import TabBar from './components/TabBar';
 import { ScrollView } from '@tarojs/components';
 
@@ -14,6 +15,8 @@ import { ScrollView } from '@tarojs/components';
 // if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
 //   require('nerv-devtools')
 // }
+
+Context.init();
 
 const app = dva.createApp({
   initialState: {},
@@ -24,6 +27,8 @@ const app = dva.createApp({
 });
 
 const store = app.getStore();
+
+Context.setStore(store);
 
 class App extends Component {
 

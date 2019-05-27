@@ -1,0 +1,14 @@
+{
+  "name": "demo-apis",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "happy",
+  "license": "ISC",
+  "dependencies": {
+    "rxjava-api-core": "^1.0.6"
+  }
+}

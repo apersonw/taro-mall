@@ -1,9 +1,9 @@
 import {get} from 'https';
+// import {get} from 'http';
 
 class Demo {
   constructor() {
-    console.log('hello');
-    get('https://www.baidu.com/', (res) => {
+    get('https://qy-h5-dev.billbear.cn/', (res) => {
       console.log('状态码:', res.statusCode);
       console.log('请求头:', res.headers);
 
@@ -14,7 +14,6 @@ class Demo {
     }).on('error', (e) => {
       console.error(e);
     });
-    console.log('cli');
   }
 }
 
