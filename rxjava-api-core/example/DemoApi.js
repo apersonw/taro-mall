@@ -4,7 +4,6 @@ class DemoApi extends AbstractApi {
   test = () => {
     return super._request('test', 'GET', 'testFlux/instant');
   };
-
 }
 
 export { DemoApi };

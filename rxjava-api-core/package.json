@@ -1,6 +1,6 @@
 {
   "name": "rxjava-api-core",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "lib/index.js",
   "files": [
@@ -38,8 +38,5 @@
     "lodash": "^4.17.11",
     "ts-node": "^8.2.0",
     "typescript": "^3.4.5"
-  },
-  "dependencies": {
-    "xmlhttprequest": "^1.8.0"
   }
 }

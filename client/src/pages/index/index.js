@@ -59,6 +59,7 @@ class Index extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
+    dispatch(action('user/fetch'));
     dispatch(action('goods/fetchList', { page: 0, pageSize: 10 }));
   }
 
@@ -142,7 +143,7 @@ class Index extends Component {
     </View >;
 
     return (
-      <View className={styles.container}>
+      <View className={styles.container} >
         <FixedHeader fixedScroll={fixedHeaderStyle} />
         <ScrollView
           style='height:100vh;-webkit-overflow-scrolling:touch;'
