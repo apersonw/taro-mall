@@ -9,7 +9,7 @@
   "author": "happy",
   "license": "ISC",
   "dependencies": {
-    "rxjava-api-core": "^1.0.6"
+    "rxjava-api-core": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^12.0.2",

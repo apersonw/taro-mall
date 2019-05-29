@@ -1,5 +1,4 @@
 import action from "../../utils/action";
-import {TestApi} from 'rxjava-apis-example-client';
 
 export default {
   namespace: "user",
@@ -7,7 +6,7 @@ export default {
   effects: {
     * fetch({ payload }, { all, call, put }) {
       console.log("查询用户信息");
-      yield call(TestApi.testewwPath, 'hello');
+      // yield call(TestApi.testewwPath, 'hello');
     }
   },
   reducers: {

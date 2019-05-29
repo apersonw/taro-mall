@@ -1,10 +1,14 @@
 {
   "name": "rxjava-api-core",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "description": "",
   "main": "lib/index.js",
   "files": [
-    "lib"
+    "lib",
+    "src",
+    "package.json",
+    ".eslintignore",
+    ".eslintrc"
   ],
   "scripts": {
     "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir lib"
@@ -34,7 +38,7 @@
     "@types/node": "^12.0.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
     "lodash": "^4.17.11",
     "ts-node": "^8.2.0",
     "typescript": "^3.4.5"
