@@ -1,27 +1,17 @@
 {
   "name": "rxjava-api-core",
-  "version": "1.0.10",
+  "version": "1.0.14",
   "description": "",
   "main": "lib/index.js",
-  "files": [
-    "lib",
-    "src",
-    "package.json",
-    ".eslintignore",
-    ".eslintrc"
-  ],
   "scripts": {
-    "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir lib"
+    "prepublish": "./node_modules/.bin/babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/apersonw/rxjava-api-core.git"
   },
   "keywords": [
-    "request",
-    "api",
-    "apikit",
-    "rxjava"
+    "api"
   ],
   "author": "happy",
   "license": "ISC",
@@ -29,18 +19,12 @@
     "url": "https://github.com/apersonw/rxjava-api-core/issues"
   },
   "homepage": "https://github.com/apersonw/rxjava-api-core#readme",
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
   "devDependencies": {
-    "@types/node": "^12.0.2",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "lodash": "^4.17.11",
-    "ts-node": "^8.2.0",
-    "typescript": "^3.4.5"
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4"
   }
 }
