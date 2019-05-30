@@ -33,13 +33,13 @@
 		"@tarojs/taro-weapp": "1.3.0-beta.2",
 		"dva-core": "^1.6.0-beta.3",
 		"dva-loading": "^2.0.6",
-    "redux": "^4.0.0",
+		"redux": "^4.0.0",
 		"nervjs": "^1.3.9",
 		"nerv-devtools": "^1.3.9",
 		"redux-logger": "^3.0.6",
 		"redux-thunk": "^2.3.0",
-    "rxjava-api-core": "^1.1.0",
-    "rxjava-apis-example-client": "^1.0.41"
+		"rxjava-api-core": "latest",
+		"rxjava-apis-example-client": "latest"
 	},
 	"devDependencies": {
 		"@types/react": "^16.4.8",

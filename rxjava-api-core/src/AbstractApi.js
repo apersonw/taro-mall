@@ -11,7 +11,6 @@ class AbstractApi {
    * @returns {Promise<any>} Promise返回值
    */
   _request(serviceId, method, url, pathVars, formVars) {
-    console.log('AbstractApi _request');
     return HttpUtils.request(serviceId, method, url, pathVars, formVars);
   };
 }
