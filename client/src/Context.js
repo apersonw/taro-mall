@@ -1,5 +1,5 @@
-import { HttpUtils } from 'rxjava-api-core';
 import RequestImpl from './utils/RequestImpl';
+import { HttpUtils } from 'rxjava-api-core';
 
 export default {
   init() {
