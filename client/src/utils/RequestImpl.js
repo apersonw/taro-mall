@@ -64,25 +64,22 @@ class RequestImpl {
       url,
       data: formVars,
       method,
-      dataType: 'text',
-      responseType: 'text',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'authorization': Config.token,
-        'Accept-Language': 'zh-CN',
+        'authorization': Config.token || Taro.getStorageSync('token'),
       },
     };
     return Taro
       .request(option)
       .then((res) => {
         const { statusCode, data: errorData } = res;
-        console.log(`路径：${url},状态码：${statusCode},数据：`, errorData);
         if (statusCode >= 200 && statusCode < 300) {
           return res.data;
         } else if (statusCode === 401) {
           throw new Error('401');
         } else {
-          throw new Error(`网络请求错误，状态码${statusCode}`);
+          console.log(errorData);
+          throw new Error(errorData);
         }
       });
   }

@@ -13,6 +13,7 @@ export default {
       const data = yield call(UserApi.loginByPhoneSms, { phone, sms });
       Config.token = data;
       Taro.setStorageSync('token', data);
+      yield call(Taro.navigateTo, { url: '/pages/index/index' });
     },
   },
   reducers: {

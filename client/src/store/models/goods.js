@@ -36,8 +36,9 @@ export default {
           newParams = { ...params, ...removeEmpty(payload) };
         }
 
-        const goodsList = yield call(GoodsApi.getList, newParams.page, newParams.pageSize, { ...newParams });
-        if (goodsList && goodsList.length) {
+        let goodsList = yield call(GoodsApi.getList, newParams.page, newParams.pageSize, { ...newParams });
+
+        if (goodsList&&goodsList.length) {
           newParams.hasMore = true;
           newParams.page = newParams.page + 1;
         } else {

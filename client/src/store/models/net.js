@@ -3,7 +3,7 @@ import Taro from '@tarojs/taro';
 function toast(msg) {
   Taro.showToast({
     icon: 'none',
-    title: msg + '',
+    title: msg,
   });
 }
 
@@ -15,7 +15,8 @@ export default {
       if (e.message === '401') {
         yield call(Taro.redirectTo, { url: '/pages/token/login' });
       } else {
-        toast(e.message || '网络请求错误:' + e.status);
+        //解析传递过来的错误数据信息
+        toast('服务器错误');
       }
     },
   },
