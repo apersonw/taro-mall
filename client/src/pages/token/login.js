@@ -19,23 +19,28 @@ class Login extends Component {
     navigationBarTitleText: '登陆',
   };
 
-  componentDidMount() {
+  onInputParam = (key, e) => {
+    this.setState({ [key]: e.detail.value });
+  };
+
+  onClickLogin = () => {
+    let { identifier, credential } = this.state;
     const { dispatch } = this.props;
-    dispatch(action('goods/fetchList', { page: 0, pageSize: 10 }));
-  }
+    dispatch(action('user/loginByPhoneSms', { phone: identifier, sms: credential }));
+  };
 
   render() {
     return (
       <View className={styles.container} >
-        <Input className={styles.account} placeholder='用户名/邮箱/已验证手机' />
+        <Input onInput={this.onInputParam.bind(this, 'identifier')} className={styles.account} placeholder='用户名/邮箱/已验证手机' />
         <View className={styles.passwordBox} >
-          <Input className={styles.password} placeholder='请输入密码' />
+          <Input password onInput={this.onInputParam.bind(this, 'credential')} className={styles.password} placeholder='请输入密码' />
           <View className={styles.forgetPasswordBox} >
             <CustomImage width={32} height={9} src={forgetPasswordLeftImg} />
             <View className={styles.forgetPassword} >忘记密码</View >
           </View >
         </View >
-        <Button className={styles.loginButton} onClick={() => console.log('登陆事件')} >登陆</Button >
+        <Button className={styles.loginButton} onClick={this.onClickLogin} >登陆</Button >
         <Button className={styles.oneKeyLogin} >一键登录</Button >
         <View className={styles.otherButton} >
           <View >短信验证码登陆</View >

@@ -1,13 +1,18 @@
-// import TestApi from '../../TestApi';
-import TestApi from 'rxjava-apis-example-client/TestApi';
+import UserApi from 'rxjava-apis-user-client/UserApi';
+import Taro from '@tarojs/taro';
+import Config from '../../Config';
 
 export default {
   namespace: 'user',
   state: {},
   effects: {
     * fetch({ payload }, { all, call, put }) {
-      console.log(TestApi.testPath);
-      yield call(TestApi.testPath,"aasdfasdf");
+      yield call(UserApi.getCurrentUser);
+    },
+    * loginByPhoneSms({ payload: { phone, sms } }, { all, call, put }) {
+      const data = yield call(UserApi.loginByPhoneSms, { phone, sms });
+      Config.token = data;
+      Taro.setStorageSync('token', data);
     },
   },
   reducers: {

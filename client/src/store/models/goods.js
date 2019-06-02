@@ -1,4 +1,5 @@
 import Taro from '@tarojs/taro';
+import GoodsApi from 'rxjava-apis-goods-client/GoodsApi';
 import action from '../../utils/action';
 import request from '../../utils/request';
 import removeEmpty from '../../utils/paramsUtils';
@@ -35,7 +36,7 @@ export default {
           newParams = { ...params, ...removeEmpty(payload) };
         }
 
-        const goodsList = yield call(request.get, `goods/goodsList/${newParams.page}-${newParams.pageSize}`, { ...newParams }) || [];
+        const goodsList = yield call(GoodsApi.getList, newParams.page, newParams.pageSize, { ...newParams });
         if (goodsList && goodsList.length) {
           newParams.hasMore = true;
           newParams.page = newParams.page + 1;

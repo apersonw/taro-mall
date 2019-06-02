@@ -22,7 +22,7 @@ const app = dva.createApp({
   initialState: {},
   models: models,
   onError(e, dispatch) {
-    dispatch(action("sys/error", e));
+    dispatch(action("net/error", e));
   }
 });
 
@@ -34,8 +34,8 @@ class App extends Component {
 
   config = {
     pages: [
-      "pages/shopcart/index",
       "pages/index/index",
+      "pages/shopcart/index",
       "pages/category/index",
       "pages/mine/index",
       "pages/token/login",
