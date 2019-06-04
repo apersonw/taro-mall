@@ -17,10 +17,4 @@ public class RxLinkApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(RxLinkApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
-
-    @Login(false)
-    @GetMapping("/")
-    public Mono<String> system() {
-        return Mono.just("链接服务正常");
-    }
 }

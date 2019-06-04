@@ -8,6 +8,10 @@
         <artifactId>rxjava-gateway</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+    <properties>
+        <module.name>client</module.name>
+        <module.Name>Client</module.Name>
+    </properties>
     <artifactId>gateway-client</artifactId>
     <packaging>jar</packaging>
 

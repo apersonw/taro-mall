@@ -22,11 +22,6 @@ public class RxManagerGatewayApplication {
         new SpringApplicationBuilder(RxManagerGatewayApplication.class).web(WebApplicationType.REACTIVE).run(args);
     }
 
-    @GetMapping("/")
-    public Mono<String> system() {
-        return Mono.just("管理网关正常");
-    }
-
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()

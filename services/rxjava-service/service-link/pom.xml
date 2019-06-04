@@ -8,6 +8,10 @@
         <artifactId>rxjava-service</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+    <properties>
+        <module.name>link</module.name>
+        <module.Name>Link</module.Name>
+    </properties>
     <artifactId>service-link</artifactId>
     <packaging>jar</packaging>
     <profiles>

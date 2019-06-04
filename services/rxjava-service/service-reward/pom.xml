@@ -8,6 +8,10 @@
         <artifactId>rxjava-service</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+    <properties>
+        <module.name>reward</module.name>
+        <module.Name>Reward</module.Name>
+    </properties>
     <artifactId>service-reward</artifactId>
     <packaging>jar</packaging>
     <profiles>

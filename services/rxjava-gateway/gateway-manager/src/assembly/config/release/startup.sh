@@ -1,3 +1,2 @@
 #!/bin/sh
-java $JAVA_OPTIONS -cp ./classes org.rxjava.gateway.manager.RxManagerGatewayMain
-
+java $JAVA_OPTIONS -cp ./classes org.rxjava.gateway.${module.name}.Rx${module.Name}GatewayMain

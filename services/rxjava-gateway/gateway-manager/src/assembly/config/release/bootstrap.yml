@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gateway-manager
+    name: gateway-${module.name}
   cloud:
     config:
       #      label: master #指明远程仓库的分支
