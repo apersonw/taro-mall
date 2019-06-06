@@ -39,7 +39,6 @@
 		"redux-logger": "^3.0.6",
 		"redux-thunk": "^2.3.0",
 		"rxjava-api-core": "latest",
-		"rxjava-apis-example-client": "latest",
 		"rxjava-apis-user-client": "latest",
 		"rxjava-apis-goods-client": "latest"
 	},
