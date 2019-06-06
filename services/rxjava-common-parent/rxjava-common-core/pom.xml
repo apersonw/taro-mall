@@ -12,8 +12,9 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>org.rxjava.apikit</groupId>
+            <groupId>org.rxjava</groupId>
             <artifactId>rxjava-apikit-core</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>

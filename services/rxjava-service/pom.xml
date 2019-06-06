@@ -33,9 +33,9 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.rxjava.apikit</groupId>
+                <groupId>org.rxjava</groupId>
                 <artifactId>rxjava-apikit-maven-plugin</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${project.version}</version>
                 <configuration>
                     <groups>
                         <group implementation="org.rxjava.apikit.plugin.bean.Group">

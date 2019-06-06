@@ -100,11 +100,6 @@
                 <optional>true</optional>
             </dependency>
             <dependency>
-                <groupId>org.rxjava</groupId>
-                <artifactId>entity</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
@@ -120,12 +115,12 @@
                 <version>${lombok.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.rxjava.apikit</groupId>
+                <groupId>org.rxjava</groupId>
                 <artifactId>rxjava-apikit-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.rxjava.apikit</groupId>
+                <groupId>org.rxjava</groupId>
                 <artifactId>rxjava-apikit-tool</artifactId>
                 <version>${project.version}</version>
             </dependency>
