@@ -1,4 +1,10 @@
 ### 一、Services模块说明
+- center：注册中心
+- config：配置中心
+- rxjava-gateway：网关
+- rxjava-service：微服务些
+
+### 二、package命名说明
 - form包：输入对象
 - model包：输出对象
 - entity包：数据库对象
