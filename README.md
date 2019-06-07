@@ -4,17 +4,13 @@
 
 ### rxjava-apis项目地址：https://github.com/apersonw/rxjava-apis.git (已发布npmjs)
 ### rxjava项目地址：https://github.com/apersonw/rxjava.git (已发布maven)
-### 一、整体启动说明（启动要求：Docker, Yarn, Maven）
-#### （项目启动后会自动编译并打包docker启动整个完整项目，包括前端H5，管理后台H5，微服务RestFul接口模块）
-#### （项目整体第一次启动因为下载依赖较多，速度非常慢，可选择单独模块启动，也可能未及时更新脚本，导致项目无法启动）
+### 一、项目启动需求
+#### 服务端：
+- kubernetes：安装方法详见 https://github.com/apersonw/taro-mall/issues/8
+- 服务发现采用的k8s，配置采用configMap，说明详见：[Spring-cloud-kubernetes](https://cloud.spring.io/spring-cloud-static/spring-cloud-kubernetes/2.1.0.RC1/)
 
-```bash
-# clone
-$ git clone https://github.com/apersonw/taro-mall.git
-
-# run
-$ cd taro-mall | ./run.sh
-```
+#### 客户端
+- nodejs: 8.0以上
 
 ### 二、单独模块启动说明
 
