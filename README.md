@@ -10,6 +10,7 @@
 - 服务发现采用的k8s，配置采用configMap，说明详见：[Spring-cloud-kubernetes](https://cloud.spring.io/spring-cloud-static/spring-cloud-kubernetes/2.1.0.RC1/)
 - 每个模块都是单独的模块，单一模块启动无法联动方法接口无法调用
 - 单一模块启动请保证本机安装的有mongodb、rabbitmq、redis，否则会启动报错无法连接
+- 每个模块下均有build.sh，可自行修改发布到自己的镜像仓库，然后修改k8s中的deployment.yaml，发布到集群
 
 #### 客户端
 - nodejs: v10.15.2
