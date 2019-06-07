@@ -4,13 +4,13 @@
 
 ### rxjava-apis项目地址：https://github.com/apersonw/rxjava-apis.git (已发布npmjs)
 ### rxjava项目地址：https://github.com/apersonw/rxjava.git (已发布maven)
-### 一、项目启动需求
+### 一、项目使用说明
 #### 服务端：
-- kubernetes：安装方法详见 https://github.com/apersonw/taro-mall/issues/8
+- kubernetes1.14.2：安装方法详见 https://github.com/apersonw/taro-mall/issues/8
 - 服务发现采用的k8s，配置采用configMap，说明详见：[Spring-cloud-kubernetes](https://cloud.spring.io/spring-cloud-static/spring-cloud-kubernetes/2.1.0.RC1/)
 
 #### 客户端
-- nodejs: 8.0以上
+- nodejs: v10.15.2
 
 ### 二、单独模块启动说明
 
