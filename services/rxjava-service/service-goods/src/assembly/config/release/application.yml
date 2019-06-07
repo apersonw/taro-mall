@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: service-${module.name}
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: service-${module.name}
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    listener:
+      simple:
+        concurrency: 10
+        max-concurrency: 10
+        prefetch: 1
+        default-requeue-rejected: true
+        auto-startup: true

@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: common-application
+data:
+  application.yaml: |-
+    spring:
+      data:
+        mongodb:
+          uri: mongodb://common:27017
+      rabbitmq:
+        host: common
+        port: 5672
+        username: admin
+        password: admin
+        listener:
+          simple:
+            concurrency: 10
+            max-concurrency: 10
+            prefetch: 1
+            default-requeue-rejected: true
+            auto-startup: true
+          template:
+            retry:
+              enabled: true
+              initial-interval: 1000
+              max-attempts: 3
+              max-interval: 10000
+              multiplier: 1.0

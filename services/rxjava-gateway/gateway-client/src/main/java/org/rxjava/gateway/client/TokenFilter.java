@@ -1,13 +1,12 @@
 package org.rxjava.gateway.client;
 
 import org.apache.commons.lang3.StringUtils;
-import org.rxjava.api.user.serve.ServeUserApi;
+import org.rxjava.api.user.inner.InnerUserApi;
 import org.rxjava.common.core.utils.JsonUtils;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.http.server.reactive.ServerHttpRequest;
-import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
@@ -20,9 +19,9 @@ import java.net.URLEncoder;
  */
 public class TokenFilter implements GlobalFilter, Ordered {
     private static final String AUTHORIZATION = "authorization";
-    private ServeUserApi serveUserApi;
+    private InnerUserApi serveUserApi;
 
-    public TokenFilter(ServeUserApi serveUserApi) {
+    public TokenFilter(InnerUserApi serveUserApi) {
         this.serveUserApi = serveUserApi;
     }
 

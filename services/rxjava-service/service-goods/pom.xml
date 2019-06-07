@@ -18,7 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>org.rxjava.apis</groupId>
-            <artifactId>rxjava-apis-user-serve</artifactId>
+            <artifactId>rxjava-apis-user-inner</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

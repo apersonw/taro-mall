@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-goods
+  labels:
+    app: service-goods
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: service-goods
+      labels:
+        app: service-goods
+    spec:
+      containers:
+        - name: mongo
+          image: registry.cn-beijing.aliyuncs.com/rxjava/mongo:3.7.3-jessie
+          imagePullPolicy: IfNotPresent
+        - name: redis
+          image: registry.cn-beijing.aliyuncs.com/rxjava/redis:4.0.4-alpine
+          imagePullPolicy: IfNotPresent
+        - name: rabbitmq
+          image: registry.cn-beijing.aliyuncs.com/rxjava/rabbitmq:3.7.5-management
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: RABBITMQ_DEFAULT_USER
+              value: admin
+            - name: RABBITMQ_DEFAULT_PASS
+              value: admin
+        - name: service-goods
+          image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-goods:latest
+          imagePullPolicy: Always
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: service-goods
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-goods
+spec:
+  selector:
+    app: service-goods
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  type: LoadBalancer

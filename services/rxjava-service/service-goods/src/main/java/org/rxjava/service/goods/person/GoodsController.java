@@ -1,5 +1,7 @@
 package org.rxjava.service.goods.person;
 
+import org.rxjava.api.user.inner.InnerUserApi;
+import org.rxjava.api.user.inner.entity.User;
 import org.rxjava.common.core.annotation.Login;
 import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.model.GoodsModel;
@@ -21,6 +23,14 @@ import javax.validation.Valid;
 public class GoodsController {
     @Autowired
     private GoodsService goodsService;
+    @Autowired
+    private InnerUserApi innerUserApi;
+
+    @Login(false)
+    @GetMapping("testInnerUserApi")
+    public Mono<User> testInnerUserApi() {
+        return innerUserApi.tokenToUser("hello");
+    }
 
     /**
      * 商品列表
