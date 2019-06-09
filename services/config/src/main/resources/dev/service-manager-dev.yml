@@ -1,8 +1,0 @@
-server:
-  port: 8086
-spring:
-  data:
-    mongodb:
-      database: service-manager
-  redis:
-    database: 6

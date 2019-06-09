@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-order
+  labels:
+    app: service-order
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: service-order
+      labels:
+        app: service-order
+    spec:
+      containers:
+        - name: service-order
+          image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-order:latest
+          imagePullPolicy: Always
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: service-order
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-order
+spec:
+  selector:
+    app: service-order
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  type: NodePort

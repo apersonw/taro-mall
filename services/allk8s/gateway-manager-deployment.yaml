@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-manager
+  labels:
+    app: gateway-manager
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: gateway-manager
+      labels:
+        app: gateway-manager
+    spec:
+      containers:
+        - name: gateway-manager
+          image: registry.cn-shanghai.aliyuncs.com/taro-mall/gateway-manager:latest
+          imagePullPolicy: Always
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: gateway-manager
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-manager
+spec:
+  selector:
+    app: gateway-manager
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gateway-manager
+spec:
+  rules:
+    - host: manager.example.com
+      http:
+        paths:
+          - backend:
+              serviceName: gateway-manager
+              servicePort: 80

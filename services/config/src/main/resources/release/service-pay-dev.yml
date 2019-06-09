@@ -1,6 +1,0 @@
-spring:
-  data:
-    mongodb:
-      database: service-pay
-  redis:
-    database: 2

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-reward
+  labels:
+    app: service-reward
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: service-reward
+      labels:
+        app: service-reward
+    spec:
+      containers:
+        - name: service-reward
+          image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-reward:latest
+          imagePullPolicy: Always
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: service-reward
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-reward
+spec:
+  selector:
+    app: service-reward
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  type: NodePort

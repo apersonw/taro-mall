@@ -1,6 +1,0 @@
-spring:
-  data:
-    mongodb:
-      database: service-manager
-  redis:
-    database: 5

@@ -1,8 +1,0 @@
-server:
-  port: 8082
-spring:
-  data:
-    mongodb:
-      database: service-goods
-  redis:
-    database: 1

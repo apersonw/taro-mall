@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-link
+  labels:
+    app: service-link
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: service-link
+      labels:
+        app: service-link
+    spec:
+      containers:
+        - name: service-link
+          image: registry.cn-shanghai.aliyuncs.com/taro-mall/service-link:latest
+          imagePullPolicy: Always
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: service-link
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-link
+spec:
+  selector:
+    app: service-link
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  type: NodePort

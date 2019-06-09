@@ -1,8 +1,6 @@
 ### 一、Services模块说明
-- center：注册中心
-- config：配置中心
-- rxjava-gateway：网关
-- rxjava-service：微服务些
+- gateway-*：网关
+- service-*：微服务些
 
 ### 二、package命名说明
 - form包：输入对象

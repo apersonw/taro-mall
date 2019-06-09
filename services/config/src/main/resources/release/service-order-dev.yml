@@ -1,6 +1,0 @@
-spring:
-  data:
-    mongodb:
-      database: service-order
-  redis:
-    database: 4

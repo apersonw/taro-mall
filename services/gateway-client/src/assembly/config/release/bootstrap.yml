@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: gateway-${module.name}
+  cloud:
+    kubernetes:
+      config:
+        sources:
+        - name: common-configmap
+          namespace: default
+  data:
+    mongodb:
+      database: gateway-${module.name}

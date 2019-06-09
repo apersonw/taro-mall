@@ -1,8 +1,0 @@
-server:
-  port: 8083
-spring:
-  data:
-    mongodb:
-      database: service-pay
-  redis:
-    database: 2
