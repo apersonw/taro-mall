@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client
+  labels:
+    app: client
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: client
+      labels:
+        app: client
+    spec:
+      containers:
+        - name: client
+          image: registry.cn-shanghai.aliyuncs.com/taro-mall/client:latest
+          imagePullPolicy: Always
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: client
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client
+spec:
+  selector:
+    app: client
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+  type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: client
+spec:
+  rules:
+    - host: client.example.com
+      http:
+        paths:
+          - backend:
+              serviceName: client
+              servicePort: 80

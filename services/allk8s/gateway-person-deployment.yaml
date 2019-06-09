@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-person
+  labels:
+    app: gateway-person
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: gateway-person
+      labels:
+        app: gateway-person
+    spec:
+      containers:
+        - name: gateway-person
+          image: registry.cn-shanghai.aliyuncs.com/taro-mall/gateway-person:latest
+          imagePullPolicy: Always
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: gateway-person
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-person
+spec:
+  selector:
+    app: gateway-person
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gateway-person
+spec:
+  rules:
+    - host: person.example.com
+      http:
+        paths:
+          - backend:
+              serviceName: gateway-person
+              servicePort: 80
