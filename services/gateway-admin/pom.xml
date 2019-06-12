@@ -15,6 +15,17 @@
     <artifactId>gateway-admin</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.rxjava.apis</groupId>
+            <artifactId>rxjava-apis-user-inner</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
     <profiles>
         <profile>
             <id>release</id>

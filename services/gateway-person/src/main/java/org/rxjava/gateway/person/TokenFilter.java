@@ -19,10 +19,10 @@ import java.net.URLEncoder;
  */
 public class TokenFilter implements GlobalFilter, Ordered {
     private static final String AUTHORIZATION = "authorization";
-    private InnerUserApi serveUserApi;
+    private InnerUserApi innerUserApi;
 
-    public TokenFilter(InnerUserApi serveUserApi) {
-        this.serveUserApi = serveUserApi;
+    public TokenFilter(InnerUserApi innerUserApi) {
+        this.innerUserApi = innerUserApi;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class TokenFilter implements GlobalFilter, Ordered {
 
         if (StringUtils.isNotEmpty(token)) {
 
-            return serveUserApi.tokenToLoginInfo(token)
+            return innerUserApi.tokenToLoginInfo(token)
                     .map(loginInfo -> {
                         String loginInfoJson;
                         try {
