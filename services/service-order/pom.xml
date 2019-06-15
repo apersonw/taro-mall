@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.rxjava</groupId>
-        <artifactId>rxjava-service-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <artifactId>rxjava-service</artifactId>
+        <version>1.0.3</version>
     </parent>
     <properties>
         <module.name>order</module.name>

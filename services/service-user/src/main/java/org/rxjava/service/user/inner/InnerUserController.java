@@ -13,21 +13,29 @@ import reactor.core.publisher.Mono;
 
 /**
  * @author happy 2019-05-15 22:22
- * 用户服务接口(仅供微服务彼此间调用)
+ * 用户内部接口
  */
-@RequestMapping("serve")
 @RestController
+@RequestMapping("inner")
 public class InnerUserController {
     @Autowired
     private UserService userService;
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * token换取loginInfo，不做空异常抛出
+     */
     @GetMapping("token/{token}/logininfo")
     public Mono<LoginInfo> tokenToLoginInfo(
             @PathVariable String token
     ) {
-        return userService.getLoginInfoByToken(token);
+        LoginInfo loginInfo = new LoginInfo();
+        loginInfo.setUserAuthId("userAuthId");
+        loginInfo.setIdentityType("identityType");
+        loginInfo.setUserId("userId");
+        return Mono.just(loginInfo);
+//        return userService.getLoginInfoByToken(token);
     }
 
     @GetMapping("token/{token}/user")

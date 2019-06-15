@@ -1,16 +1,14 @@
 package org.rxjava.gateway.admin;
 
+import org.rxjava.api.user.inner.InnerUserApi;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.authorization.AuthorizationDecision;
 import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
-import org.springframework.web.reactive.result.method.annotation.RequestMappingHandlerAdapter;
 import reactor.core.publisher.Mono;
 
 /**
@@ -20,8 +18,11 @@ import reactor.core.publisher.Mono;
 @EnableReactiveMethodSecurity
 public class WebSecurityConfig {
 
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
     @Bean
-    public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
+    public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http, InnerUserApi innerUserApi) {
         return http
                 //配置异常处理Runner
                 .exceptionHandling()
@@ -45,11 +46,13 @@ public class WebSecurityConfig {
                 .formLogin().disable()
                 //配置http基本身份认证
                 .httpBasic().disable()
+                //设置鉴权管理器
+                .authenticationManager(authenticationManager)
                 //配置授权匹配
                 .authorizeExchange()
                 //OPTIONS请求均通过
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()
-                .matchers(new TokenServerWebExchangeMatcher()).permitAll()
+                .matchers(new TokenServerWebExchangeMatcher(innerUserApi)).permitAll()
                 //其他所有路径均需要授权
                 .anyExchange().authenticated().and()
                 .build();

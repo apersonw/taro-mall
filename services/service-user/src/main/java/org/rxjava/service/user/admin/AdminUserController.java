@@ -27,7 +27,6 @@ public class AdminUserController {
     /**
      * 查询用户分页
      */
-    @Login(false)
     @GetMapping("userPage")
     public Mono<Page<User>> getPage(
             @Valid UserPageForm form

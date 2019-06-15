@@ -37,7 +37,6 @@ public class UserService {
         return reactiveRedisTemplate
                 .opsForValue()
                 .get(token)
-                .switchIfEmpty(Mono.error(new LoginRuntimeException("登陆信息不存在")))
                 .map(loginInfoStr -> {
                     LoginInfo loginInfo;
                     try {

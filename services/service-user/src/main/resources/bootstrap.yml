@@ -17,3 +17,14 @@ spring:
         prefetch: 1
         default-requeue-rejected: true
         auto-startup: true
+  boot:
+    admin:
+      client:
+        url: http://localhost:8769
+server:
+  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
