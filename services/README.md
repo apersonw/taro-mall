@@ -2,6 +2,7 @@
 
 #### 模块迁移说明
 - service-user模块已迁移到新地址：https://github.com/apersonw/rxjava-service-user.git
+- gateway-person模块已迁移到新地址：https://github.com/apersonw/rxjava-gateway-person.git
 
 - gateway-*：网关
 - service-*：微服务些
