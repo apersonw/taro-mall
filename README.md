@@ -1,9 +1,9 @@
 #### 如果你觉得还行，请给个star，感谢你的支持🙏
 ## QQ交流群：828300414，加群答案：taro-jd
-# 一个电商项目从设计至最终成品的架构，包括设计/前端/管理后台/后端/k8s集群架构
+# 一个电商项目从设计至最终成品的架构，包括设计/前端/管理后台/后端/k8s集群架构（持续开发中......）
 
-### rxjava-apis项目地址：https://github.com/apersonw/rxjava-apis.git (已发布npmjs)
-### rxjava项目地址：https://github.com/apersonw/rxjava.git (已发布maven)
+### rxjava-apis项目地址：https://github.com/apersonw/rxjava-apis.git (已发布npmjs正式版)
+### rxjava项目地址：https://github.com/apersonw/rxjava.git (已发布maven正式版)
 ### 一、项目使用说明
 #### 服务端：
 - kubernetes1.14.2：安装方法详见 https://github.com/apersonw/taro-mall/issues/8
