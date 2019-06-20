@@ -1,34 +1,44 @@
 import Taro from '@tarojs/taro';
+import isEmpty from 'lodash/isEmpty';
 import Config from '../Config';
+import startsWith from 'lodash/startsWith';
+import endsWith from 'lodash/endsWith';
 
 const URL_PATTERN = /{([^}]+?)}/g;
 
-function encodeDate(obj, prefix) {
-  let str = [], p;
-  if (isArray(obj)) {
-    obj.forEach(function(v, p) {
-      let k = prefix ? prefix + '[' + p + ']' : p;
-      if (isObject(v) && (!(v instanceof Date))) {
-        str.push(encodeDate(v, k));
-      } else {
-        str.push(encodeURIComponent(k) + '=' + encodeValue(v));
-      }
-    });
+function ofValue(data) {
+  if (isEmpty(data)) {
+    return null;
+  } else if (startsWith(data, '{') && endsWith(data, '}')) {
+    return JSON.parse(data);
+  } else if (startsWith(data, '[') && endsWith(data, ']')) {
+    return JSON.parse(data);
   } else {
-    for (p in obj) {
-      if (obj.hasOwnProperty(p)) {
-        let k = prefix ? prefix + '.' + p : p, v = obj[p];
-        if (undefined !== v) {
-          if (isObject(v) && (!(v instanceof Date))) {
-            str.push(encodeDate(v, k));
-          } else {
-            str.push(encodeURIComponent(k) + '=' + encodeValue(v));
-          }
-        }
-      }
+    if ('true'.endsWith(data)) {
+      return true;
     }
+    if ('false'.endsWith(data)) {
+      return true;
+    }
+
+    const isNumber = /^\d+$/.test(data);
+    if (!isNumber) return data;
+    try {
+      let intv = parseInt(data);
+      if (!isNaN(intv)) {
+        return intv;
+      }
+    } catch (e) {
+    }
+    try {
+      let number = parseFloat(data);
+      if (!isNaN(number)) {
+        return number;
+      }
+    } catch (e) {
+    }
+    return data;
   }
-  return str.join('&');
 }
 
 
@@ -60,28 +70,30 @@ class RequestImpl {
 
     url = Config.urlPrefix + serviceId + '/' + url;
     console.log('formVars', formVars);
-    const option = {
-      url,
-      data: formVars,
-      method,
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'authorization': Config.token || Taro.getStorageSync('token'),
-      },
-    };
-    return Taro
-      .request(option)
-      .then((res) => {
-        const { statusCode, data: errorData } = res;
-        if (statusCode >= 200 && statusCode < 300) {
-          return res.data;
-        } else if (statusCode === 401) {
-          throw new Error('401');
-        } else {
-          console.log(errorData);
-          throw new Error(errorData);
-        }
-      });
+    const token = Config.token;
+    return new Promise((resolve, reject) => {
+      Taro
+        .request({
+          url,
+          data: formVars,
+          method,
+          dataType: 'text',
+          responseType: 'text',
+          header: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': Config.token || Taro.getStorageSync('token'),
+          },
+          success: (res) => {
+            const { statusCode, data } = res;
+            if (statusCode >= 200 && statusCode < 300) {
+              const value = ofValue(data);
+              resolve(value);
+            } else {
+              reject({ status: '401' });
+            }
+          },
+        });
+    });
   }
 }
 
