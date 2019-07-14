@@ -118,7 +118,7 @@ $ cd services/xxx | 启动java项目
 
 **1、首页展示** 
 
-![输入图片说明](./readmeImg/index.jpg)
+![输入图片说明](<img src="./readmeImg/index.jpg" width="375px"/>)
 <img src="./readmeImg/index.jpg" width="375px"/>
 
 **2、分类展示**
