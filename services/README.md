@@ -17,4 +17,4 @@
 - service包：服务类
 - repository包：实体对象操作类
 - type包：type枚举类型
-- status包：状态枚举类型w
+- status包：状态枚举类型
