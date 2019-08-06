@@ -7,22 +7,15 @@ import "./app.scss";
 import models from "./store/models";
 import action from "./utils/action";
 import Context from './Context';
-import TabBar from './components/TabBar';
-import { ScrollView } from '@tarojs/components';
 
-// 如果需要在 h5 环境中开启 React Devtools
-// 取消以下注释：
-// if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
-//   require('nerv-devtools')
-// }
-
+//初始化上下文
 Context.init();
 
 const app = dva.createApp({
   initialState: {},
   models: models,
   onError(e, dispatch) {
-    dispatch(action("net/error", e));
+    dispatch(action("net/error", e));//错误处理均放于此model解决
   }
 });
 

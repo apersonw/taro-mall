@@ -5,31 +5,16 @@ import styles from './index.module.scss';
 import action from '@/utils/action';
 import CustomImage from '@/components/CustomImage';
 import upImg from '@/assets/index/up.png';
-import banner1 from '@/assets/banner/1.jpg';
-import banner2 from '@/assets/banner/2.jpg';
-import banner3 from '@/assets/banner/3.jpg';
-import banner4 from '@/assets/banner/4.jpg';
-import banner5 from '@/assets/banner/5.jpg';
-import banner6 from '@/assets/banner/6.jpg';
-import banner7 from '@/assets/banner/7.jpg';
-import shopImg from '@/assets/index/category/shop@2x.png';
-import worldImg from '@/assets/index/category/world@2x.png';
-import clothesImg from '@/assets/index/category/clothes@2x.png';
-import freshImg from '@/assets/index/category/fresh@2x.png';
-import rechargeImg from '@/assets/index/category/recharge@2x.png';
-import allImg from '@/assets/index/category/all@2x.png';
-import moneyImg from '@/assets/index/category/money@2x.png';
-import couponImg from '@/assets/index/category/coupon@2x.png';
-import timeImg from '@/assets/index/category/time@2x.png';
-import buyImg from '@/assets/index/category/buy@2x.png';
+import swiperImgs from '@/mock/index/banner';
+import categoryItems from '@/mock/index/category';
 import packageImg from '@/assets/index/newuser/package@2x.png';
 import channelImg from '@/assets/index/newuser/channel@2x.png';
 import exclusiveImg from '@/assets/index/newuser/exclusive@2x.png';
 import moreImg from '@/assets/index/spike/more@2x.png';
 //data
-import spikeGoodsList from './mock.json';
-import courtyardList from './courtyard.json';
-import everydayList from './everyday.json';
+import spikeGoodsList from '@/mock/index/mock.json';
+import courtyardList from '@/mock/index/courtyard.json';
+import everydayList from '@/mock/index/everyday.json';
 //components
 import GoodsSpike from '@/components/GoodsSpike';
 import BannerSwiper from '@/components/BannerSwiper';
@@ -58,15 +43,15 @@ class Index extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(action('user/fetch'));
-    dispatch(action('goods/fetchList', { page: 0, pageSize: 10 }));
+    // dispatch(action('user/fetch'));
+    // dispatch(action('goods/fetchList', { page: 0, pageSize: 10 }));
   }
 
   onLoadMore = () => {
     const { dispatch, params } = this.props;
     const { page = 0, hasMore } = params;
     if (hasMore) {
-      dispatch(action('goods/fetchList', { page }));
+      // dispatch(action('goods/fetchList', { page }));
     }
   };
 
@@ -90,23 +75,6 @@ class Index extends Component {
   render() {
     const { goodsList = [] } = this.props;
     const { fixedHeaderStyle } = this.state;
-
-    //幻灯片
-    const swiperImgs = [banner1, banner2, banner3, banner4, banner5, banner6, banner7];
-
-
-    const categoryItems = [
-      { text: '京东超市', img: shopImg },
-      { text: '海囤全球', img: worldImg },
-      { text: '京东服饰', img: clothesImg },
-      { text: '京东生鲜', img: freshImg },
-      { text: '京东到家', img: timeImg },
-      { text: '充值缴费', img: rechargeImg },
-      { text: '9.9元拼', img: buyImg },
-      { text: '领劵', img: couponImg },
-      { text: '赚钱', img: moneyImg },
-      { text: '全部', img: allImg },
-    ];
 
     const newUserOwn = <View className={styles.newUserOwnBox} >
       <CustomImage width={343} height={214} src={packageImg} />

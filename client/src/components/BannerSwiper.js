@@ -3,6 +3,9 @@ import { Swiper, SwiperItem } from '@tarojs/components';
 import CustomImage from './CustomImage';
 import styles from './BannerSwiper.module.scss';
 
+/**
+ * 首页Banner幻灯片
+ */
 class BannerSwiper extends Component {
   render() {
     const { imgs = [] } = this.props;

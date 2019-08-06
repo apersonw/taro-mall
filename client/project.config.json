@@ -1,7 +1,7 @@
 {
 	"miniprogramRoot": "dist/",
 	"projectname": "client",
-	"description": "仿京东商城",
+	"description": "客户端",
 	"appid": "wx9966d711576d2639",
 	"setting": {
 		"urlCheck": false,

@@ -10,6 +10,7 @@ module.exports = {
       '@/components': path.resolve(__dirname, '..', 'src/components'),
       '@/containers': path.resolve(__dirname, '..', 'src/containers'),
       '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+      '@/mock': path.resolve(__dirname, '..', 'src/mock'),
       '@/package': path.resolve(__dirname, '..', 'package.json'),
       '@/project': path.resolve(__dirname, '..', 'project.config.json'),
     },
