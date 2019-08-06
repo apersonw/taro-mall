@@ -48,7 +48,7 @@ export default [
       {
         path: '/member',
         name: 'member',
-        icon: 'table',
+        icon: 'user',
         routes: [
           {
             path: '/member/userList',
@@ -61,7 +61,7 @@ export default [
       {
         path: '/link',
         name: 'link',
-        icon: 'table',
+        icon: 'link',
         routes: [
           {
             path: '/link/linkList',
@@ -74,7 +74,7 @@ export default [
       {
         path: '/vipCard',
         name: 'vipCard',
-        icon: 'table',
+        icon: 'iconziyuan',
         routes: [
           {
             path: '/vipCard/vipCardList',
@@ -97,7 +97,7 @@ export default [
       {
         path: '/goods',
         name: 'goods',
-        icon: 'table',
+        icon: 'iconshangpin',
         routes: [
           {
             path: '/goods/goodsList',
@@ -126,7 +126,7 @@ export default [
       {
         path: '/order',
         name: 'order',
-        icon: 'table',
+        icon: 'icondingdan',
         routes: [
           {
             path: '/order/orderList',
@@ -139,7 +139,7 @@ export default [
       {
         path: '/shop',
         name: 'shop',
-        icon: 'table',
+        icon: 'icondianpu',
         routes: [
           {
             path: '/shop/shopList',
@@ -152,7 +152,7 @@ export default [
       {
         path: '/theme',
         name: 'theme',
-        icon: 'table',
+        icon: 'iconzhuti',
         routes: [
           {
             path: '/theme/themeList',
@@ -165,7 +165,7 @@ export default [
       {
         path: '/spike',
         name: 'spike',
-        icon: 'table',
+        icon: 'iconmiaosha',
         routes: [
           {
             path: '/spike/spikeList',
@@ -178,7 +178,7 @@ export default [
       {
         path: '/recommend',
         name: 'recommend',
-        icon: 'table',
+        icon: 'icontuijian',
         routes: [
           {
             path: '/recommend/recommendList',

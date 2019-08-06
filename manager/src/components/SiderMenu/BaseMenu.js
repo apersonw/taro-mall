@@ -17,10 +17,12 @@ const { SubMenu } = Menu;
 //   icon: <Icon type="setting" />,
 const getIcon = icon => {
   if (typeof icon === 'string') {
+    console.log(icon);
     if (isUrl(icon)) {
       return <Icon component={() => <img src={icon} alt="icon" className={styles.icon} />} />;
     }
-    if (icon.startsWith('icon-')) {
+
+    if (icon.startsWith('icon')) {
       return <IconFont type={icon} />;
     }
     return <Icon type={icon} />;
