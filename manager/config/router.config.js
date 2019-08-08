@@ -48,7 +48,7 @@ export default [
       {
         path: '/scrapyd',
         name: 'scrapyd',
-        icon: 'user',
+        icon: 'iconpachong',
         routes: [
           {
             path: '/scrapyd/projectList',
@@ -59,6 +59,11 @@ export default [
             path: '/scrapyd/spiderList',
             name: 'spiderList',
             component: './Scrapyd/SpiderTableList',
+          },
+          {
+            path: '/scrapyd/jobList',
+            name: 'jobList',
+            component: './Scrapyd/JobTableList',
           },
         ],
       },

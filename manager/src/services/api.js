@@ -9,6 +9,10 @@ export async function querySpiders(params) {
   return request(`/scrapyd/api/listspiders.json?${stringify(params)}`);
 }
 
+export async function queryJobs(params) {
+  return request(`/scrapyd/api/listjobs.json?${stringify(params)}`);
+}
+
 export async function queryProjectNotice() {
   return request('/server/aliapi/project/notice');
 }

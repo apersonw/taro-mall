@@ -1,7 +1,7 @@
 /**
  * 爬虫模块
  */
-import { queryProjects, querySpiders } from '../services/api';
+import { queryJobs, queryProjects, querySpiders } from '../services/api';
 import action from '../utils/action';
 
 export default {
@@ -12,29 +12,27 @@ export default {
     *projects({ payload }, { call, put }) {
       const { status, projects = [] } = yield call(queryProjects);
       if (status === 'ok') {
-        yield put(action('saveProjects', projects));
+        yield put(action('save', { projects }));
       }
     },
     //爬虫列表
     *spiders({ payload }, { call, put }) {
       const { status, spiders = [] } = yield call(querySpiders, { project: 'article' });
       if (status === 'ok') {
-        yield put(action('saveSpiders', spiders));
+        yield put(action('save', { spiders }));
+      }
+    },
+    //爬虫列表
+    *jobs({ payload }, { call, put }) {
+      const { status, runing = [], finished = [], pending = [] } = yield call(queryJobs);
+      if (status === 'ok') {
+        yield put(action('save', { runing, finished, pending }));
       }
     },
   },
   reducers: {
-    saveProjects(state, action) {
-      return {
-        ...state,
-        projects: action.payload,
-      };
-    },
-    saveSpiders(state, action) {
-      return {
-        ...state,
-        spiders: action.payload,
-      };
+    save(state, { payload }) {
+      return { ...state, ...payload };
     },
   },
 };

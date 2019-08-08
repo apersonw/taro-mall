@@ -12,6 +12,7 @@ export default {
   'menu.scrapyd': '爬虫管理',
   'menu.scrapyd.projectList': '项目列表',
   'menu.scrapyd.spiderList': '爬虫列表',
+  'menu.scrapyd.jobList': '任务列表',
   'menu.link': '链接管理',
   'menu.link.linkList': '链接列表',
   'menu.vipCard': '会员管理',

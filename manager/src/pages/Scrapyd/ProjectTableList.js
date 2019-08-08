@@ -4,8 +4,8 @@ import { Card, Form } from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import action from '../../utils/action';
 
-@connect(({ loading }) => ({
-  loading: loading.models.pages,
+@connect(({ scrapyd }) => ({
+  ...scrapyd,
 }))
 @Form.create()
 class ProjectTableList extends PureComponent {
@@ -15,9 +15,15 @@ class ProjectTableList extends PureComponent {
   }
 
   render() {
+    const { projects = [] } = this.props;
+    console.log(projects);
     return (
       <PageHeaderWrapper title="项目列表">
-        <Card bordered={false} />
+        <Card bordered={false}>
+          {projects.map(project => (
+            <div>{project}</div>
+          ))}
+        </Card>
       </PageHeaderWrapper>
     );
   }
