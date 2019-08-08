@@ -44,6 +44,19 @@ export default [
           },
         ],
       },
+      //爬虫管理
+      {
+        path: '/scrapyd',
+        name: 'scrapyd',
+        icon: 'user',
+        routes: [
+          {
+            path: '/scrapyd/projectList',
+            name: 'projectList',
+            component: './Scrapyd/ProjectTableList',
+          },
+        ],
+      },
       //用户管理
       {
         path: '/member',

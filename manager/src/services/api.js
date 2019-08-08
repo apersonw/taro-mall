@@ -1,6 +1,10 @@
 import { stringify } from 'qs';
 import request from '@/utils/request';
 
+export async function queryProjects() {
+  return request('/scrapyd/api/listprojects.json');
+}
+
 export async function queryProjectNotice() {
   return request('/server/aliapi/project/notice');
 }

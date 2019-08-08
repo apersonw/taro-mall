@@ -9,6 +9,8 @@ export default {
   'menu.dashboard.workplace': '工作台',
   'menu.member': '用户管理',
   'menu.member.userList': '用户列表',
+  'menu.scrapyd': '爬虫管理',
+  'menu.scrapyd.projectList': '项目列表',
   'menu.link': '链接管理',
   'menu.link.linkList': '链接列表',
   'menu.vipCard': '会员管理',

@@ -86,6 +86,11 @@ export default {
       changeOrigin: true,
       pathRewrite: { '^/api/': '' },
     },
+    '/scrapyd/api/': {
+      target: 'http://rxjava.top:6800/',
+      changeOrigin: true,
+      pathRewrite: { '^/scrapyd/api/': '' },
+    },
   },
   ignoreMomentLocale: true,
   lessLoaderOptions: {
