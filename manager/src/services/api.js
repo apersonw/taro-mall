@@ -5,6 +5,10 @@ export async function queryProjects() {
   return request('/scrapyd/api/listprojects.json');
 }
 
+export async function querySpiders(params) {
+  return request(`/scrapyd/api/listspiders.json?${stringify(params)}`);
+}
+
 export async function queryProjectNotice() {
   return request('/server/aliapi/project/notice');
 }

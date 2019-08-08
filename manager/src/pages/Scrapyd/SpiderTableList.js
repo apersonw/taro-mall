@@ -8,19 +8,19 @@ import action from '../../utils/action';
   loading: loading.models.pages,
 }))
 @Form.create()
-class ProjectTableList extends PureComponent {
+class SpiderTableList extends PureComponent {
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(action('scrapyd/projects'));
+    dispatch(action('scrapyd/spiders'));
   }
 
   render() {
     return (
-      <PageHeaderWrapper title="项目列表">
+      <PageHeaderWrapper title="爬虫列表">
         <Card bordered={false} />
       </PageHeaderWrapper>
     );
   }
 }
 
-export default ProjectTableList;
+export default SpiderTableList;

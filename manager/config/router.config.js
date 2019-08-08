@@ -55,6 +55,11 @@ export default [
             name: 'projectList',
             component: './Scrapyd/ProjectTableList',
           },
+          {
+            path: '/scrapyd/spiderList',
+            name: 'spiderList',
+            component: './Scrapyd/SpiderTableList',
+          },
         ],
       },
       //用户管理
