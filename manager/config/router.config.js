@@ -80,6 +80,29 @@ export default [
           },
         ],
       },
+      //权限管理
+      {
+        path: '/permission',
+        name: 'permission',
+        icon: 'user',
+        routes: [
+          {
+            path: '/permission/managerList',
+            name: 'managerList',
+            component: './Permission/ManagerTableList',
+          },
+          {
+            path: '/permission/roleList',
+            name: 'roleList',
+            component: './Permission/RoleTableList',
+          },
+          {
+            path: '/permission/permissionList',
+            name: 'permissionList',
+            component: './Permission/PermissionTableList',
+          },
+        ],
+      },
       //资源管理
       {
         path: '/link',
