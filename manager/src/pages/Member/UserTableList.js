@@ -5,19 +5,12 @@ import { Avatar, Button, Card, Divider, Dropdown, Form, Icon, List, Menu } from 
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import styles from './UserTableList.less';
 import moment from 'moment';
-import fetchPage from '../../utils/fetchPage';
 
 /* eslint react/no-multi-comp:0 */
-@connect(({ pages, pagination, loading }) => ({
-  linkLocations: pages['users'],
-  pagination: pagination['users'],
-  loading: loading.models.pages,
-}))
+@connect(({}) => ({}))
 @Form.create()
 class UserTableList extends PureComponent {
-  componentDidMount() {
-    fetchPage('user', { page: 1 });
-  }
+  componentDidMount() {}
 
   render() {
     const { users, loading, pagination } = this.props;
@@ -77,9 +70,7 @@ class UserTableList extends PureComponent {
                   <MoreBtn current={item} />,
                 ]}
               >
-                <List.Item.Meta
-                  title={item.name}
-                />
+                <List.Item.Meta title={item.name} />
                 <ListContent data={item} />
               </List.Item>
             )}

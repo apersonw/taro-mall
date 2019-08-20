@@ -21,26 +21,6 @@ export async function queryActivities() {
   return request('/server/aliapi/activities');
 }
 
-export async function queryOrder(params) {
-  return request(`/api/order/admin/orderPage?${stringify(params)}`);
-}
-
-export async function queryUser(params) {
-  return request(`/api/user/admin/userPage?${stringify(params)}`);
-}
-
-export async function queryBrand(params) {
-  return request(`/api/goods/admin/brandPage?${stringify(params)}`);
-}
-
-export async function queryCategory(params) {
-  return request(`/api/goods/admin/categoryPage?${stringify(params)}`);
-}
-
-export async function queryGoods(params) {
-  return request(`/api/goods/admin/goodsPage?${stringify(params)}`);
-}
-
 export async function queryRule(params) {
   return request(`/server/aliapi/rule?${stringify(params)}`);
 }

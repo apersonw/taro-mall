@@ -4,51 +4,44 @@ import { Button, Card, Dropdown, Form, Icon, List, Menu } from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import styles from './CategoryTableList.less';
 import moment from 'moment';
-import fetchPage from '../../utils/fetchPage';
 
 /* eslint react/no-multi-comp:0 */
-@connect(({ pages, pagination, loading }) => ({
-  categories: pages['categories'],
-  pagination: pagination['categories'],
-  loading: loading.models.pages,
-}))
+@connect(({}) => ({}))
 @Form.create()
 class CategoryTableList extends PureComponent {
-  componentDidMount() {
-    fetchPage('category', { page: 1 });
-  }
+  componentDidMount() {}
 
   render() {
     const { categories, loading, pagination } = this.props;
-    const ListContent = ({ data: { createDate,parentId, status } }) => (
-      <div className={styles.listContent} >
-        <div className={styles.listContentItem} >
-          <span >上级Id</span >
-          <p >{parentId}</p >
-        </div >
-        <div className={styles.listContentItem} >
-          <span >创建日期</span >
-          <p >{moment(createDate).format('YYYY-MM-DD HH:mm')}</p >
-        </div >
-      </div >
+    const ListContent = ({ data: { createDate, parentId, status } }) => (
+      <div className={styles.listContent}>
+        <div className={styles.listContentItem}>
+          <span>上级Id</span>
+          <p>{parentId}</p>
+        </div>
+        <div className={styles.listContentItem}>
+          <span>创建日期</span>
+          <p>{moment(createDate).format('YYYY-MM-DD HH:mm')}</p>
+        </div>
+      </div>
     );
     const MoreBtn = props => (
       <Dropdown
         overlay={
-          <Menu onClick={({ key }) => editAndDelete(key, props.current)} >
-            <Menu.Item key="edit" >编辑</Menu.Item >
-            <Menu.Item key="delete" >删除</Menu.Item >
-          </Menu >
+          <Menu onClick={({ key }) => editAndDelete(key, props.current)}>
+            <Menu.Item key="edit">编辑</Menu.Item>
+            <Menu.Item key="delete">删除</Menu.Item>
+          </Menu>
         }
       >
-        <a >
+        <a>
           更多 <Icon type="down" />
-        </a >
-      </Dropdown >
+        </a>
+      </Dropdown>
     );
     return (
-      <PageHeaderWrapper title="分类列表" >
-        <Card bordered={false} >
+      <PageHeaderWrapper title="分类列表">
+        <Card bordered={false}>
           <Button
             type="dashed"
             style={{ width: '100%', marginBottom: 8 }}
@@ -56,7 +49,7 @@ class CategoryTableList extends PureComponent {
             // onClick={() => router.push('/goods/goodsSaveForm')}
           >
             添加
-          </Button >
+          </Button>
           <List
             size="large"
             rowKey="id"
@@ -76,7 +69,7 @@ class CategoryTableList extends PureComponent {
                     }}
                   >
                     编辑
-                  </a >,
+                  </a>,
                   <MoreBtn current={item} />,
                 ]}
               >
@@ -85,11 +78,11 @@ class CategoryTableList extends PureComponent {
                   title={item.name}
                 />
                 <ListContent data={item} />
-              </List.Item >
+              </List.Item>
             )}
           />
-        </Card >
-      </PageHeaderWrapper >
+        </Card>
+      </PageHeaderWrapper>
     );
   }
 }

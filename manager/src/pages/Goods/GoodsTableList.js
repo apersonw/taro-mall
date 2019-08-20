@@ -5,19 +5,12 @@ import { Avatar, Button, Card, Divider, Dropdown, Form, Icon, List, Menu } from 
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import styles from './GoodsTableList.less';
 import moment from 'moment';
-import fetchPage from '../../utils/fetchPage';
 
 /* eslint react/no-multi-comp:0 */
-@connect(({ pages, pagination, loading }) => ({
-  goodsList: pages['goodsList'],
-  pagination: pagination['goodsList'],
-  loading: loading.models.pages,
-}))
+@connect(({}) => ({}))
 @Form.create()
 class GoodsTableList extends PureComponent {
-  componentDidMount() {
-    fetchPage('goods', { page: 1 });
-  }
+  componentDidMount() {}
 
   render() {
     const { goodsList, loading, pagination } = this.props;
