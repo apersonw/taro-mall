@@ -1,4 +1,4 @@
-import path from "path";
+const path = require('path');
 
 const config = {
   projectName: 'client',
@@ -22,7 +22,7 @@ const config = {
       plugins: [
         'transform-decorators-legacy',
         'transform-class-properties',
-        'transform-object-rest-spread'
+        'transform-object-rest-spread',
       ]
     }
   },

@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   env: {
     NODE_ENV: '"development"',
   },
@@ -11,7 +11,7 @@ export default {
       proxy: {
         '/api': {
           target: 'http://0.0.0.0:8080',
-          pathRewrite: { '^/api': '/' },
+          pathRewrite: {'^/api': '/'},
           secure: false,
         },
       },
