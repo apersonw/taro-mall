@@ -6,19 +6,19 @@ export default {
   namespace: 'user',
   state: {},
   effects: {
-    * fetch({ payload }, { all, call, put }) {
+    * fetch({_}, {call}) {
       yield call(UserApi.getCurrentUser);
     },
-    * loginByPhoneSms({ payload: { phone, sms } }, { all, call, put }) {
-      const data = yield call(UserApi.loginByPhoneSms, { phone, sms });
+    * loginByPhoneSms({payload: {phone, sms}}, {call}) {
+      const data = yield call(UserApi.loginByPhoneSms, {phone, sms});
       Config.token = data;
       Taro.setStorageSync('token', data);
-      yield call(Taro.navigateTo, { url: '/pages/index/index' });
+      yield call(Taro.navigateTo, {url: '/pages/index/index'});
     },
   },
   reducers: {
-    save(state, { payload }) {
-      return { ...state, ...payload };
+    save(state, {payload}) {
+      return {...state, ...payload};
     },
   },
 };

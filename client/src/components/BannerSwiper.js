@@ -20,7 +20,7 @@ class BannerSwiper extends Component {
         autoplay
       >
         {imgs.map((img, index) => (
-          <SwiperItem style="width:100% !importment;" key={index} >
+          <SwiperItem style='width:100% !importment;' key={index} >
             <CustomImage height={366} src={img} />
           </SwiperItem >
         ))}

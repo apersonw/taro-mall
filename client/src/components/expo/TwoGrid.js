@@ -1,4 +1,4 @@
-import { Component } from '@tarojs/taro';
+import Taro,{ Component } from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import styles from './TwoGrid.module.scss';
 import CustomImage from '../CustomImage';

@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro';
+import { View } from '@tarojs/components';
 import CustomImage from './CustomImage';
 import styles from './TabBar.module.scss';
-import { View } from '@tarojs/components';
 import indexUnSelectImg from '../assets/tabbar/indexUn@2x.png';
 import categoryUnSelectImg from '../assets/tabbar/categoryUn@2x.png';
 import shopcartUnSelectImg from '../assets/tabbar/shopcartUn@2x.png';

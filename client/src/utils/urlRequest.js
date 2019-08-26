@@ -1,6 +1,4 @@
 import Taro from '@tarojs/taro';
-import { CURRENT_VIPCARD_ID } from '@/localStorage/keys';
-import Config from '@/Config';
 
 let baseUrl = '/api/';
 

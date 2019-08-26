@@ -1,7 +1,7 @@
-import { Component } from '@tarojs/taro';
+import Taro, { Component } from '@tarojs/taro';
+import { View } from '@tarojs/components';
 import CustomImage from './CustomImage';
 import styles from './GoodsSpike.module.scss';
-import { View } from '@tarojs/components';
 
 class GoodsSpike extends Component {
   render() {

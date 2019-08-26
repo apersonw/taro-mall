@@ -1,8 +1,8 @@
 import Taro from '@tarojs/taro';
-import isEmpty from 'lodash/isEmpty';
-import Config from '../Config';
 import startsWith from 'lodash/startsWith';
+import isEmpty from 'lodash/isEmpty';
 import endsWith from 'lodash/endsWith';
+import Config from '../Config';
 
 const URL_PATTERN = /{([^}]+?)}/g;
 
@@ -32,7 +32,7 @@ function ofValue(data) {
     }
     try {
       let number = parseFloat(data);
-      if (!isNaN(number)) {
+      if (!isNan(number)) {
         return number;
       }
     } catch (e) {

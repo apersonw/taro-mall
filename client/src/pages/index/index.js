@@ -1,8 +1,6 @@
 import Taro, { Component } from '@tarojs/taro';
 import { ScrollView, View } from '@tarojs/components';
-import { connect, Provider } from '@tarojs/redux';
-import styles from './index.module.scss';
-import action from '@/utils/action';
+import { connect } from '@tarojs/redux';
 import CustomImage from '@/components/CustomImage';
 import upImg from '@/assets/index/up.png';
 import swiperImgs from '@/mock/index/banner';
@@ -26,8 +24,9 @@ import everydayTitleImg from '@/assets/index/everyday/title@2x.png';
 import OneGrid from '@/components/expo/OneGrid';
 import GoodsItem from '@/components/goods/GoodsItem';
 import TabBar from '@/components/TabBar';
+import styles from './index.module.scss';
 
-@connect(({ goods, loading }) => ({
+@connect(({ goods, }) => ({
   goodsList: goods.goodsList,
   params: goods.params,
 }))
@@ -37,21 +36,19 @@ class Index extends Component {
     fixedHeaderStyle: false,
   };
 
-  config = {
-    navigationBarTitleText: '首页',
-  };
-
   componentDidMount() {
-    const { dispatch } = this.props;
     // dispatch(action('user/fetch'));
     // dispatch(action('goods/fetchList', { page: 0, pageSize: 10 }));
   }
 
+  config = {
+    navigationBarTitleText: '首页',
+  };
+
   onLoadMore = () => {
-    const { dispatch, params } = this.props;
-    const { page = 0, hasMore } = params;
+    const { params } = this.props;
+    const { hasMore } = params;
     if (hasMore) {
-      // dispatch(action('goods/fetchList', { page }));
     }
   };
 
@@ -120,7 +117,7 @@ class Index extends Component {
           onScroll={this.onScroll}
           scrollWithAnimation
         >
-          <BannerSwiper id="indexBanner" imgs={swiperImgs} />
+          <BannerSwiper imgs={swiperImgs} />
           <Category items={categoryItems} />
           {newUserOwn}
           {spike}
@@ -155,8 +152,8 @@ class Index extends Component {
             <View className={styles.recommendLineRight} />
           </View >
           <View className={styles.recommendGoodsList} >
-            {(goodsList || []).map((item) => (
-              <View className={styles.goodsItem} >
+            {(goodsList || []).map((item,index) => (
+              <View  key={index} className={styles.goodsItem} >
                 <GoodsItem key={item.id} item={item} />
               </View >
             ))}

@@ -3,15 +3,11 @@
 	"projectname": "client",
 	"description": "客户端",
 	"appid": "wx9966d711576d2639",
-	"setting": {
-		"urlCheck": false,
-		"es6": false,
-		"postcss": false,
-		"minified": false,
-		"newFeature": true,
-		"autoAudits": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.6.4",
-	"condition": {}
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+	"compileType": "miniprogram"
 }

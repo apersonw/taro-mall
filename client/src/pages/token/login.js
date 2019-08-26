@@ -1,4 +1,4 @@
-import { Component } from '@tarojs/taro';
+import Taro,{ Component } from '@tarojs/taro';
 import { Button, Input, View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import styles from './login.module.scss';
@@ -12,7 +12,6 @@ import weixinImg from '../../assets/token/login/weixin.png';
 class Login extends Component {
 
   state = {
-    fixedHeaderStyle: false,
   };
 
   config = {

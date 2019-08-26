@@ -1,9 +1,7 @@
 import Taro from '@tarojs/taro';
 import GoodsApi from 'rxjava-apis-goods-client/GoodsApi';
 import action from '../../utils/action';
-import request from '../../utils/request';
 import removeEmpty from '../../utils/paramsUtils';
-import delay from '../../utils/delay';
 
 export default {
   namespace: 'goods',
@@ -16,7 +14,7 @@ export default {
     goodsList: [],
   },
   effects: {
-    * fetchList({ payload }, { all, call, put, select }) {
+    * fetchList({ payload }, { call, put, select }) {
       try {
         console.log('fetchList', payload);
         //暂时不用，会出现滚动穿透的问题

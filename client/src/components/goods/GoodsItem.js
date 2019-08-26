@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro';
+import { View } from '@tarojs/components';
 import CustomImage from '../CustomImage';
 import styles from './GoodsItem.module.scss';
-import { View } from '@tarojs/components';
 
 class GoodsItem extends Component {
   render() {
