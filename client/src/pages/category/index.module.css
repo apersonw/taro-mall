@@ -1,21 +1,19 @@
 .container {
   display: flex;
   flex-direction: row;
-  overflow-y: hidden;
-}
+  overflow-y: hidden; }
 
 .firstCategory {
   width: 174px;
   background-color: #F8F8F8;
   height: calc(100vh - 90px);
   padding-bottom: 90px;
-  overflow: hidden;
-
-  .categoryBox {
+  overflow: hidden; }
+  .firstCategory .categoryBox {
     height: 94px;
     line-height: 94px;
     text-align: center;
     overflow-y: hidden;
-    font-size: 26px;
-  }
-}
+    font-size: 26px; }
+
+/*# sourceMappingURL=index.module.css.map */

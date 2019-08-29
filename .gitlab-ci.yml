@@ -1,0 +1,10 @@
+stages:
+  - build
+
+dev_build:
+  image: node:latest
+  tags:
+    - docker
+  stage: build
+  script:
+    - pwd
