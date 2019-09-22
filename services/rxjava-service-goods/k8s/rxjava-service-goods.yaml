@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rxjava-service-goods
+  labels:
+    app: rxjava-service-goods
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: rxjava-service-goods
+      labels:
+        app: rxjava-service-goods
+    spec:
+      containers:
+        - name: rxjava-service-goods
+          image: registry.cn-shanghai.aliyuncs.com/taro-mall/rxjava-service-goods:latest
+          imagePullPolicy: Always
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: rxjava-service-goods
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rxjava-service-goods
+spec:
+  selector:
+    app: rxjava-service-goods
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+  type: NodePort

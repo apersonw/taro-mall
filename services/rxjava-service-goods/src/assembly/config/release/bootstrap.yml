@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: rxjava-${module.type}-${module.name}
+  cloud:
+    kubernetes:
+      config:
+        sources:
+        - name: common-configmap
+          namespace: default
+  data:
+    mongodb:
+      database: rxjava-${module.type}-${module.name}
