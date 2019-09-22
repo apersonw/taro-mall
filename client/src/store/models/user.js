@@ -6,7 +6,7 @@ export default {
   namespace: 'user',
   state: {},
   effects: {
-    * fetch({_}, {call}) {
+    * fetch(_, {call}) {
       yield call(UserApi.getCurrentUser);
     },
     * loginByPhoneSms({payload: {phone, sms}}, {call}) {
