@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  client:
+    build: ./client/
+    container_name: "client"
+    depends_on:
+      - rxjava-service-goods
+    ports:
+      - 8000:80
+    restart: always
+  rxjava-service-goods:
+    build: ./services/rxjava-service/service-goods/target/docker-bin/
+    container_name: "rxjava-service-goods"
+    depends_on:
+      - mongodb
+    environment:
+      DB_HOST: mongodb:27017
+  mongodb:
+    image: 'registry.cn-shanghai.aliyuncs.com/taro-mall/mongo:3.7.3-jessie'
+    container_name: "mongodb"
+    ports:
+      - 27017:27017
+    restart: always
