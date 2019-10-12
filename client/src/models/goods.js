@@ -1,7 +1,7 @@
 import Taro from '@tarojs/taro';
 import GoodsApi from 'rxjava-apis-goods-client/GoodsApi';
-import action from '../../utils/action';
-import removeEmpty from '../../utils/paramsUtils';
+import action from '../utils/action';
+import removeEmpty from '../utils/paramsUtils';
 
 export default {
   namespace: 'goods',

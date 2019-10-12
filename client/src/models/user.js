@@ -1,6 +1,6 @@
 import UserApi from 'rxjava-apis-user-client/UserApi';
 import Taro from '@tarojs/taro';
-import Config from '../../Config';
+import Config from '../Config';
 
 export default {
   namespace: 'user',

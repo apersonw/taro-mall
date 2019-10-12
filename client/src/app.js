@@ -1,10 +1,10 @@
 import "@tarojs/async-await";
 import Taro, { Component } from "@tarojs/taro";
 import { Provider } from "@tarojs/redux";
-import dva from "./store/dva";
+import dva from "./utils/dva";
 import Index from "./pages/index";
 import "./app.scss";
-import models from "./store/models";
+import models from "./models";
 import action from "./utils/action";
 import Context from './Context';
 
