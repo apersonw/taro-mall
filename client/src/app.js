@@ -1,5 +1,5 @@
-import "@tarojs/async-await";
 import Taro, { Component } from "@tarojs/taro";
+import "@tarojs/async-await";
 import { Provider } from "@tarojs/redux";
 import dva from "./utils/dva";
 import Index from "./pages/index";
@@ -19,7 +19,7 @@ const app = dva.createApp({
   }
 });
 
-const store = app.getStore();
+let store = app.getStore();
 
 Context.setStore(store);
 
@@ -28,10 +28,12 @@ class App extends Component {
   config = {
     pages: [
       "pages/index/index",
-      "pages/shopcart/index",
       "pages/category/index",
-      "pages/mine/index",
-      "pages/token/login",
+      "pages/shopcart/index",
+      "pages/account/index",
+      "pages/login/index",
+      "pages/goodsDetail/index",
+      "pages/searchGoodsList/index",
     ],
     window: {
       backgroundTextStyle: "light",
@@ -43,12 +45,12 @@ class App extends Component {
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render() {
+  render () {
     return (
-      <Provider store={store} >
-        <Index />
-      </Provider >
-    );
+        <Provider store={store}>
+          <Index />
+        </Provider>
+    )
   }
 }
 

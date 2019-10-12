@@ -1,7 +1,7 @@
 import Taro,{ Component } from '@tarojs/taro';
 import { Button, Input, View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
-import styles from './login.module.scss';
+import styles from './index.module.scss';
 import action from '../../utils/action';
 import CustomImage from '../../components/CustomImage';
 import forgetPasswordLeftImg from '../../assets/token/login/forgetPasswordLeft.png';
@@ -9,7 +9,7 @@ import qqImg from '../../assets/token/login/qq.png';
 import weixinImg from '../../assets/token/login/weixin.png';
 
 @connect(({}) => ({}))
-class Login extends Component {
+class Index extends Component {
 
   state = {
   };
@@ -65,4 +65,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Index;
