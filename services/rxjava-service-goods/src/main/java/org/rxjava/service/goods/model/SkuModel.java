@@ -1,8 +1,8 @@
 package org.rxjava.service.goods.model;
 
-import io.lettuce.core.KeyValue;
 import lombok.Data;
 import org.rxjava.common.core.entity.Image;
+import org.rxjava.common.core.entity.KeyValue;
 
 import java.util.List;
 

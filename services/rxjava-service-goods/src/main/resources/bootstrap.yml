@@ -1,10 +1,10 @@
 spring:
   application:
-    name: service-goods
+    name: rxjava-service-goods
   data:
     mongodb:
       uri: mongodb://127.0.0.1:27017
-      database: service-goods
+      database: rxjava-service-goods
   rabbitmq:
     host: 127.0.0.1
     port: 5672
@@ -17,5 +17,11 @@ spring:
         prefetch: 1
         default-requeue-rejected: true
         auto-startup: true
+  cloud:
+    kubernetes:
+      config:
+        enabled: false
+      discovery:
+        enabled: false
 server:
   port: 8082

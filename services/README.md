@@ -1,11 +1,10 @@
 ### 一、Services模块说明
 
 #### 模块迁移说明
-- service-user模块已迁移到新地址：https://github.com/apersonw/rxjava-service-user.git
-- gateway-person模块已迁移到新地址：https://github.com/apersonw/rxjava-gateway-person.git
 
-- gateway-*：网关
-- service-*：微服务些
+此处暂时仅做演示所用，单独项目可访问以下地址
+
+- rxjava-service-goods项目git地址：https://github.com/apersonw/rxjava-service-goods
 
 ### 二、package命名说明
 - form包：输入对象

@@ -12,6 +12,7 @@ import javax.validation.Valid;
 
 /**
  * @author happy 2019-03-25 23:03
+ * 品牌
  */
 @RestController
 public class BrandController {

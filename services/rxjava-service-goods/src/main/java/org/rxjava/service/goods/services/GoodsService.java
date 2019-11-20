@@ -1,11 +1,13 @@
 package org.rxjava.service.goods.services;
 
+import org.rxjava.common.core.entity.KeyValue;
 import org.rxjava.service.goods.entity.Goods;
 import org.rxjava.service.goods.entity.Sku;
 import org.rxjava.service.goods.form.GoodsCreateForm;
 import org.rxjava.service.goods.form.GoodsListForm;
 import org.rxjava.service.goods.form.GoodsPageForm;
 import org.rxjava.service.goods.model.GoodsModel;
+import org.rxjava.service.goods.model.SkuAndGroupModel;
 import org.rxjava.service.goods.model.SkuModel;
 import org.rxjava.service.goods.repository.GoodsRepository;
 import org.rxjava.service.goods.repository.SkuRepository;
@@ -16,6 +18,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.*;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.*;
 
 /**
  * @author happy 2019-03-23 00:16
@@ -70,10 +77,35 @@ public class GoodsService {
         return model;
     }
 
-    private Flux<SkuModel> findSkus(String goodsId) {
+    public Mono<SkuAndGroupModel> findSkuAndGroup(String goodsId) {
         return skuRepository
                 .findByGoodsId(goodsId)
-                .map(this::transformSku);
+                .map(this::transformSku)
+                .collectList()
+                .map(goodsSkuModels -> {
+                    SkuAndGroupModel skuAndGroupModel = new SkuAndGroupModel();
+                    skuAndGroupModel.setSkuList(goodsSkuModels);
+
+                    //分组sku属性列表
+                    Map<String, Set<String>> collect = goodsSkuModels
+                            .stream()
+                            .map(SkuModel::getParams)
+                            .flatMap(Collection::stream)
+                            .collect(groupingBy(KeyValue::getKey, mapping(KeyValue::getValue, toSet())));
+
+                    List<KeyValue<String, List<String>>> skuParamGroups = new ArrayList<>();
+
+                    for (String key : collect.keySet()) {
+                        KeyValue<String, List<String>> skuParamGroup = new KeyValue<>();
+                        skuParamGroup.setKey(key);
+                        skuParamGroup.setValue(new ArrayList<>(collect.get(key)));
+                        skuParamGroups.add(skuParamGroup);
+                    }
+
+                    skuAndGroupModel.setSkuGroupList(skuParamGroups);
+
+                    return skuAndGroupModel;
+                });
     }
 
     private SkuModel transformSku(Sku sku) {
@@ -85,5 +117,9 @@ public class GoodsService {
     public Mono<Void> deleteByGoodsId(String goodsId) {
         return goodsRepository
                 .deleteById(goodsId);
+    }
+
+    public Mono<String> buyGoods(String goodsId, String skuId) {
+        return null;
     }
 }
