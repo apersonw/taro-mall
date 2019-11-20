@@ -120,3 +120,8 @@ $ cd services/xxx | 启动java项目
 **2、分类展示**
 
 <img src="./readmeImg/category.jpg" width="375px"/>
+
+### 七、后端模块说明
+
+- 平台：指被场景依赖的服务，如用户服务，订单服务
+- 场景：指终端服务，不会被其他服务所依赖
