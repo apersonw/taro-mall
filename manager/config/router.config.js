@@ -67,6 +67,19 @@ export default [
           },
         ],
       },
+      //Demo演示
+      {
+        path: '/demo',
+        name: 'demo',
+        icon: 'iconpachong',
+        routes: [
+          {
+            path: '/demo/demoForm',
+            name: 'demoForm',
+            component: './Demo/Demo',
+          },
+        ],
+      },
       //用户管理
       {
         path: '/member',

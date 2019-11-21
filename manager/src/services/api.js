@@ -55,6 +55,13 @@ export async function updateRule(params = {}) {
   });
 }
 
+export async function queryGoods(params) {
+  return request('/server/aliapi/forms', {
+    method: 'POST',
+    body: params,
+  });
+}
+
 export async function fakeSubmitForm(params) {
   return request('/server/aliapi/forms', {
     method: 'POST',
