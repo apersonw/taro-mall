@@ -20,5 +20,9 @@
 
   .tabBarImgBox {
     background: transparent;
+    //点击透明效果
+    &:active{
+      opacity: 0.7;
+    }
   }
 }

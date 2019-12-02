@@ -110,7 +110,7 @@ class Index extends Component {
       <View className={styles.container} >
         <FixedHeader fixedScroll={fixedHeaderStyle} />
         <ScrollView
-          style='height:100vh;-webkit-overflow-scrolling:touch;'
+          className={styles.scrollView}
           onScrollToLower={this.onLoadMore}
           lowerThreshold={300}
           scrollY
