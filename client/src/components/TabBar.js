@@ -12,6 +12,7 @@ import shopcartSelectImg from '../assets/tabbar/shopcart@2x.png';
 import mineSelectImg from '../assets/tabbar/mine@2x.png';
 
 class TabBar extends Component {
+
   render() {
     const { path } = this.$router;
     const indexImg = (path === '/pages/index/index' ? indexSelectImg : indexUnSelectImg);
@@ -20,10 +21,10 @@ class TabBar extends Component {
     const mineImg = (path === '/pages/mine/index' ? mineSelectImg : mineUnSelectImg);
     return (
       <View className={[styles.toolBar, styles.tabBar]} >
-        <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/index/index' })} className={styles.tabBarImgBox} width={48} height={75} src={indexImg} />
-        <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/category/index' })} className={styles.tabBarImgBox} width={48} height={75} src={categoryImg} />
-        <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/shopcart/index' })} className={styles.tabBarImgBox} width={72} height={75} src={shopcartImg} />
-        <CustomImage onClick={Taro.navigateTo.bind(this, { url: '/pages/mine/index' })} className={styles.tabBarImgBox} width={48} height={75} src={mineImg} />
+        <CustomImage onClick={Taro.redirectTo.bind(this, { url: '/pages/index/index' })} className={styles.tabBarImgBox} width={48} height={75} src={indexImg} />
+        <CustomImage onClick={Taro.redirectTo.bind(this, { url: '/pages/category/index' })} className={styles.tabBarImgBox} width={48} height={75} src={categoryImg} />
+        <CustomImage onClick={Taro.redirectTo.bind(this, { url: '/pages/shopcart/index' })} className={styles.tabBarImgBox} width={72} height={75} src={shopcartImg} />
+        <CustomImage onClick={Taro.redirectTo.bind(this, { url: '/pages/mine/index' })} className={styles.tabBarImgBox} width={48} height={75} src={mineImg} />
       </View >
     );
   }
