@@ -2,20 +2,32 @@
   display: flex;
   flex-direction: row;
   overflow-y: hidden;
+  min-height: 100%;
+  height: 100%;
 }
 
 .firstCategory {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   width: 174px;
   background-color: #F8F8F8;
-  height: calc(100vh - 90px);
+  min-height: 100%;
+  height: 100%;
   padding-bottom: 90px;
-  overflow: hidden;
 
   .categoryBox {
     height: 94px;
     line-height: 94px;
     text-align: center;
-    overflow-y: hidden;
     font-size: 26px;
   }
+}
+
+.contentView{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  flex: 1;
+  padding-bottom: 90px;
 }

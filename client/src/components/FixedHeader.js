@@ -10,7 +10,10 @@ class FixedHeader extends Component {
   render() {
     const {fixedScroll = false} = this.props;
     return (
-      <View className={[styles.fixedHeader, fixedScroll ? styles.fixedScrollHeader : '']} >
+      <View className={[styles.fixedHeader, fixedScroll ? styles.fixedScrollHeader : '']} onTouchMove={event => {
+        event.preventDefault();
+        event.stopPropagation();
+      }} >
         <CustomImage width={40} height={32} src={categoryIcon} />
         <View className={styles.searchBox} >
           <CustomImage className={styles.iconImg} width={50} height={30} src={icon} />
