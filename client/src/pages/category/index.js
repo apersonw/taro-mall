@@ -14,11 +14,17 @@ class Index extends Component {
 
   render() {
     return (
-      <View className={styles.container} >
-        <ScrollView scrollY className={styles.firstCategory} >
+      <View className={styles.container}>
+        <ScrollView
+          scrollY
+          className={styles.firstCategory}
+        >
           {menuList.map((menu, index) => <View key={index} className={styles.categoryBox} >{menu}</View >)}
         </ScrollView >
-        <ScrollView scrollY className={styles.contentView}>
+        <ScrollView
+          scrollY
+          className={styles.contentView}
+        >
           <View >手机</View >
           <View >手机</View >
           <View >手机</View >

@@ -20,10 +20,7 @@ class TabBar extends Component {
     const shopcartImg = (path === '/pages/shopcart/index' ? shopcartSelectImg : shopcartUnSelectImg);
     const mineImg = (path === '/pages/mine/index' ? mineSelectImg : mineUnSelectImg);
     return (
-      <View className={[styles.toolBar, styles.tabBar]} onTouchMove={event => {
-        event.preventDefault();
-        event.stopPropagation();
-      }}>
+      <View className={[styles.toolBar, styles.tabBar]}>
         <CustomImage onClick={Taro.redirectTo.bind(this, { url: '/pages/index/index' })} className={styles.tabBarImgBox} width={48} height={75} src={indexImg} />
         <CustomImage onClick={Taro.redirectTo.bind(this, { url: '/pages/category/index' })} className={styles.tabBarImgBox} width={48} height={75} src={categoryImg} />
         <CustomImage onClick={Taro.redirectTo.bind(this, { url: '/pages/shopcart/index' })} className={styles.tabBarImgBox} width={72} height={75} src={shopcartImg} />
