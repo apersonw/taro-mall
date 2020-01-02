@@ -35,7 +35,6 @@ function () {
      * @returns {Promise<any>} Promise返回值
      */
     value: function _request(serviceId, method, url, pathVars, formVars) {
-      console.log('AbstractApi _request');
       return _HttpUtils.default.request(serviceId, method, url, pathVars, formVars);
     }
   }]);
