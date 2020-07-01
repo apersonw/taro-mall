@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { View, Button, Text } from '@tarojs/components'
 import { connect } from 'react-redux'
 
-import { add, minus, asyncAdd } from '../../actions/counter'
-
 import './index.scss'
 
 // #region 书写注意
@@ -42,7 +40,6 @@ interface Index {
   counter
 }), (dispatch) => ({
   add () {
-    dispatch(add())
   }
 }))
 class Index extends Component {
