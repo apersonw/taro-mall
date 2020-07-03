@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import { View, Button, Text } from '@tarojs/components'
-import { connect } from 'react-redux'
+import React from 'react'
+import {Text, View} from '@tarojs/components'
+import {useDispatch} from 'react-redux'
 
 import './index.scss'
+import action from "../../utils/action";
 
 // #region 书写注意
 //
@@ -14,53 +15,13 @@ import './index.scss'
 //
 // #endregion
 
-type PageStateProps = {
-  counter: {
-    num: number
-  }
+export default function (props) {
+  console.log(props);
+  const dispatch = useDispatch();
+  console.log(dispatch)
+  return (
+    <View className='index'>
+      <View><Text onClick={()=>dispatch(action('net/error',{message:'401'}))}>Hello, World</Text></View>
+    </View>
+  )
 }
-
-type PageDispatchProps = {
-  add: () => void
-  dec: () => void
-  asyncAdd: () => any
-}
-
-type PageOwnProps = {}
-
-type PageState = {}
-
-type IProps = PageStateProps & PageDispatchProps & PageOwnProps
-
-interface Index {
-  props: IProps;
-}
-
-@connect(({ counter }) => ({
-  counter
-}), (dispatch) => ({
-  add () {
-  }
-}))
-class Index extends Component {
-  componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
-  }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
-    return (
-      <View className='index'>
-        <View><Text>Hello, World</Text></View>
-      </View>
-    )
-  }
-}
-
-export default Index
-
