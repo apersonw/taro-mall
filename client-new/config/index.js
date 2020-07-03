@@ -1,3 +1,4 @@
+const path = require('path');
 const config = {
   projectName: 'client-new',
   date: '2020-7-1',
@@ -19,6 +20,13 @@ const config = {
     }
   },
   framework: 'react',
+  alias: {
+    '@/assets': path.resolve(__dirname, '..', 'src/assets'),
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+    '@/package': path.resolve(__dirname, '..', 'package.json'),
+    '@/project': path.resolve(__dirname, '..', 'project.config.json'),
+  },
   mini: {
     postcss: {
       pxtransform: {
