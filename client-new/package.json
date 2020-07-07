@@ -46,8 +46,8 @@
     "@tarojs/react": "3.0.2",
     "react": "^16.10.0",
     "rxjava-api-core": "^1.1.0",
-    "dva-core": "1.6.0-beta.7",
-    "dva-loading": "2.1.0-beta.2"
+    "dva-core": "2.0.2",
+    "dva-loading": "2.0.6"
   },
   "devDependencies": {
     "@tarojs/cli": "3.0.2",

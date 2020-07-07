@@ -13,7 +13,7 @@
     "noUnusedParameters": true,
     "strictNullChecks": true,
     "sourceMap": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
     "rootDir": ".",
     "jsx": "react",
     "jsxFactory": "React.createElement",
@@ -23,7 +23,11 @@
       "node_modules/@types",
       "global.d.ts"
     ],
-    "paths": {"@/*": ["./*"]}
+    "paths": {
+      "@/assets/": [
+        "./src/assets/"
+      ]
+    }
   },
   "exclude": [
     "node_modules",
