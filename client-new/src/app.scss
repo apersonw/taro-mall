@@ -1,0 +1,22 @@
+body {
+  background-color: #2eabff;
+}
+
+html,body{
+  user-select: none;
+  height: 100%;
+  width: 100%;
+}
+
+taro-tabbar {
+  position: fixed !important;
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  z-index: 31;
+}
+
+div{
+  display: block;
+}

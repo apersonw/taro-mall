@@ -11,9 +11,9 @@ export default {
     navigationBarTextStyle: 'black'
   },
   tabBar: {
-    color: '#bbc0ca',
-    selectedColor: '1f83e1',
-    backgroundColor: '#feffff',
+    color: 'black',
+    selectedColor: '#d81e06',
+    backgroundColor: '#ffffff',
     borderStyle: 'white',
     list:[{
       pagePath: 'pages/index/index',
@@ -23,8 +23,8 @@ export default {
     },{
       pagePath: 'pages/account/index',
       text: '个人中心',
-      iconPath: './assets/tabbar/indexUn@2x.png',
-      selectedIconPath: './assets/tabbar/index@2x.png'
+      iconPath: './assets/tabbar/mineUn@2x.png',
+      selectedIconPath: './assets/tabbar/mine@2x.png'
     }]
   }
 }
