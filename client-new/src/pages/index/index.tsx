@@ -8,7 +8,6 @@ import './index.scss'
 export default function (props) {
   console.log(props);
   const dispatch = useDispatch();
-  console.log(dispatch)
   return (
     <View className='index'>
       <FixedHeader />
