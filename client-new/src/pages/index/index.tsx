@@ -1,8 +1,8 @@
 import React from 'react'
-import {Text, View} from '@tarojs/components'
+import { Text, View } from '@tarojs/components'
 import action from '@/utils/action';
 import FixedHeader from "@/components/FixedHeader";
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import './index.scss'
 
 export default function (props) {
