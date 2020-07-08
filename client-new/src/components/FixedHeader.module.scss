@@ -1,0 +1,62 @@
+.fixedHeader { //头部固定
+  position:fixed;
+  display: flex;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 90px;
+  //background-color: #ffa270;
+  padding: 0 30px;
+  align-items: center;
+
+  background-color: transparent;
+  transition: .4s;
+  overflow: hidden;
+}
+
+.fixedScrollHeader {
+  background-color: #e43130;
+  transition: .4s;
+}
+
+.searchBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  width: 544px;
+  height: 60px;
+
+  .iconImg {
+    margin-left: 28px;
+  }
+
+  .vLine {
+    margin-left: 12px;
+    background: #DCDCDC;
+    border: 1px solid #DCDCDC;
+    height: 30px;
+  }
+
+  .searchInput {
+    margin-left: 12px;
+    font-family: PingFangSC-Regular, serif;
+    font-size: 24px;
+    color: #747474;
+    margin-right: 28px;
+  }
+
+  .searchIcon {
+    margin-left: 12px;
+  }
+}
+
+.loginBtn {
+  margin-left: 20px;
+  font-family: PingFangSC-Regular, serif;
+  font-size: 30px;
+  color: #FFFFFF;
+}
