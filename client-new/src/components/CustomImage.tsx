@@ -1,9 +1,9 @@
-import {Image} from '@tarojs/components'
 import React from "react"
+import {Image} from '@tarojs/components'
 
 export default function CustomImage(props) {
-  const {src} = props
+  const {src,className} = props
   return (
-    <Image src={src} />
+    <Image className={className} src={src} />
   )
 }

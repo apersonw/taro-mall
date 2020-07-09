@@ -1,3 +1,8 @@
+.fixedHeaderImg{
+  width: 40px;
+  height: 30px;
+}
+
 .fixedHeader { //头部固定
   position:fixed;
   display: flex;
@@ -6,10 +11,8 @@
   z-index: 1000;
   width: 100%;
   height: 90px;
-  //background-color: #ffa270;
   padding: 0 30px;
   align-items: center;
-
   background-color: transparent;
   transition: .4s;
   overflow: hidden;
@@ -32,6 +35,8 @@
 
   .iconImg {
     margin-left: 28px;
+    width: 40px;
+    height: 30px;
   }
 
   .vLine {
@@ -51,6 +56,8 @@
 
   .searchIcon {
     margin-left: 12px;
+    width: 40px;
+    height: 30px;
   }
 }
 
