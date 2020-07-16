@@ -1,5 +1,5 @@
 import React from 'react';
-import Redirect from 'umi/redirect';
+import { Redirect } from 'umi';
 import { connect } from 'dva';
 import pathToRegexp from 'path-to-regexp';
 import Authorized from '@/utils/Authorized';
@@ -32,20 +32,13 @@ const getRouteAuthority = (path: string, routeData: Route[]) => {
 
 const AuthComponent: React.FC<AuthComponentProps> = ({
   children,
-  route = {
-    routes: [],
-  },
-  location = {
-    pathname: '',
-  },
   user,
 }) => {
   const { currentUser } = user;
-  const { routes = [] } = route;
   const isLogin = currentUser && currentUser.name;
   return (
     <Authorized
-      authority={getRouteAuthority(location.pathname, routes) || ''}
+      authority={getRouteAuthority(location.pathname, []) || ''}
       noMatch={isLogin ? <Redirect to="/exception/403" /> : <Redirect to="/user/login" />}
     >
       {children}

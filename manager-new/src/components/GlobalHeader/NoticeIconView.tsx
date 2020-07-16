@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Tag, message } from 'antd';
 import { connect } from 'dva';
-import { formatMessage } from 'umi-plugin-react/locale';
+import { formatMessage } from 'umi';
 import groupBy from 'lodash/groupBy';
 import moment from 'moment';
 
