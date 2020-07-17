@@ -31,13 +31,23 @@
     "test:component": "umi test ./src/components",
     "tsc": "tsc"
   },
-  "husky": { "hooks": { "pre-commit": "npm run lint-staged" } },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
-    "**/*.{js,jsx,tsx,ts,less,md,json}": ["prettier --write"]
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 10"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
   "dependencies": {
     "@ant-design/icons": "^4.0.0",
     "@ant-design/pro-layout": "^6.0.0",
@@ -46,11 +56,13 @@
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
     "moment": "^2.25.3",
+    "numeral": "^2.0.6",
     "omit.js": "^2.0.2",
     "qs": "^6.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet-async": "^1.0.4",
+    "react-router": "^4.3.1",
     "umi": "^3.1.2",
     "umi-request": "^1.0.8",
     "use-merge-value": "^1.0.1"
@@ -88,5 +100,7 @@
     "puppeteer-core": "^4.0.1",
     "stylelint": "^13.0.0"
   },
-  "engines": { "node": ">=10.0.0" }
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }
