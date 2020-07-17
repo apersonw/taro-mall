@@ -1,0 +1,1 @@
+{"version":3,"file":"access.js","sourceRoot":"","sources":["access.ts"],"names":[],"mappings":";;AAAA,gBAAgB;AAChB,SAAwB,MAAM,CAAC,YAA2D;IAChF,IAAA,WAAW,GAAK,CAAA,YAAY,IAAI,EAAE,CAAA,YAAvB,CAAwB;IAC3C,OAAO;QACL,QAAQ,EAAE,WAAW,IAAI,WAAW,CAAC,MAAM,KAAK,OAAO;KACxD,CAAC;AACJ,CAAC;AALD,4BAKC"}

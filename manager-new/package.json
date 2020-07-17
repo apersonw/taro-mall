@@ -27,30 +27,40 @@
     "test:component": "umi test ./src/components",
     "ui": "umi ui"
   },
-  "husky": { "hooks": { "pre-commit": "npm run lint-staged" } },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
-    "**/*.{js,jsx,tsx,ts,less,md,json}": ["prettier --write", "git add"],
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write",
+      "git add"
+    ],
     "**/*.{js,jsx}": "npm run lint-staged:js",
     "**/*.{js,ts,tsx}": "npm run lint-staged:js"
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 10"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
   "dependencies": {
     "@ant-design/pro-layout": "^6.2.4",
     "@antv/data-set": "^0.11.4",
     "antd": "^4.4.2",
     "classnames": "^2.2.6",
+    "dayjs": "^1.8.29",
     "dva": "^2.6.0-beta.20",
     "lodash": "^4.17.19",
-    "dayjs": "^1.8.29",
     "omit.js": "^2.0.2",
     "path-to-regexp": "^6.1.0",
     "qs": "^6.9.4",
     "react": "^16.13.1",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0",
-    "redux": "^4.0.5"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@ant-design/pro-cli": "^1.0.22",
@@ -64,6 +74,10 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.0.0",
     "@umijs/fabric": "^2.2.2",
+    "@umijs/plugin-blocks": "^2.2.1",
+    "@umijs/preset-ant-design-pro": "^1.2.2",
+    "@umijs/preset-react": "^1.5.17",
+    "@umijs/preset-ui": "^2.2.2",
     "chalk": "^4.1.0",
     "check-prettier": "^1.0.3",
     "cross-env": "^7.0.2",
@@ -83,11 +97,14 @@
     "prettier": "^2.0.5",
     "pro-download": "^1.0.1",
     "stylelint": "^13.6.1",
-    "umi": "^3.2.10",
-    "@umijs/preset-react": "^1.5.17"
+    "umi": "^3.2.10"
   },
-  "optionalDependencies": { "puppeteer": "^5.1.0" },
-  "engines": { "node": ">=10.0.0" },
+  "optionalDependencies": {
+    "puppeteer": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "checkFiles": [
     "src/**/*.js*",
     "src/**/*.ts*",

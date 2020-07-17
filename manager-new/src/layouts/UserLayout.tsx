@@ -1,9 +1,8 @@
 import { DefaultFooter, MenuDataItem, getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Helmet } from 'react-helmet';
-import { Link } from 'umi';
+import { Link, formatMessage } from 'umi';
 import React from 'react';
 import { connect } from 'dva';
-import { formatMessage } from 'umi';
 
 import SelectLang from '@/components/SelectLang';
 import { ConnectProps, ConnectState } from '@/models/connect';
@@ -14,7 +13,7 @@ export interface UserLayoutProps extends ConnectProps {
   breadcrumbNameMap: { [path: string]: MenuDataItem };
 }
 
-const UserLayout: React.SFC<UserLayoutProps> = props => {
+const UserLayout: React.FunctionComponent<UserLayoutProps> = props => {
   const {
     route = {
       routes: [],
