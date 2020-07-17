@@ -38,12 +38,6 @@ export default defineConfig({
           path: '/user/login',
           component: './user/login',
         },
-        {
-          name: '个人中心',
-          icon: 'smile',
-          path: '/user/accountcenter',
-          component: './user/AccountCenter',
-        },
       ],
     },
     {
@@ -66,6 +60,24 @@ export default defineConfig({
           component: './Welcome',
         },
       ],
+    },
+    {
+      path: '/accountcenter',
+      icon: 'smile',
+      name: '个人中心',
+      component: './AccountCenter',
+    },
+    {
+      name: '搜索列表（项目）',
+      icon: 'smile',
+      path: '/listsearchprojects',
+      component: './ListSearchProjects',
+    },
+    {
+      name: '标准列表',
+      icon: 'smile',
+      path: '/listbasiclist',
+      component: './ListBasicList',
     },
     {
       name: 'list.table-list',
