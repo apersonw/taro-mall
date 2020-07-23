@@ -71,7 +71,7 @@ const handleRemove = async (selectedRows: TableListItem[]) => {
   }
 };
 
-const TableList: React.FC<{}> = () => {
+const TableList: React.FC = () => {
   const [createModalVisible, handleModalVisible] = useState<boolean>(false);
   const [updateModalVisible, handleUpdateModalVisible] = useState<boolean>(false);
   const [stepFormValues, setStepFormValues] = useState({});

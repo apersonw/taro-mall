@@ -30,6 +30,11 @@ export default defineConfig({
   // umi routes: https://umijs.org/docs/routing
   routes: [
     {
+      name: 'test',
+      path: '/test',
+      component: './Test',
+    },
+    {
       path: '/user',
       layout: false,
       routes: [

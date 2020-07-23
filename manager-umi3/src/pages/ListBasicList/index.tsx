@@ -30,7 +30,7 @@ const { Search } = Input;
 
 interface ListBasicListProps {
   listBasicList: StateType;
-  dispatch: Dispatch<any>;
+  dispatch: Dispatch;
   loading: boolean;
 }
 
