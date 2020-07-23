@@ -1,25 +1,5 @@
-import React, { useEffect, useState } from 'react';
-
-interface PersonObj {
-  name?: string
-  height?: string
-  mass?: string
-}
-
-const usePerson = (personId: string): [boolean, PersonObj] => {
-  const [loading, setLoading] = useState(true);
-  const [person, setPerson] = useState<PersonObj>({});
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://swapi.co/api/people/${personId}/`)
-      .then(response => response.json())
-      .then(data => {
-        setPerson(data);
-        setLoading(false);
-      });
-  }, [personId]);
-  return [loading, person];
-};
+import React, { useState } from 'react';
+import usePerson from '@/hooks/userPerson';
 
 const Person = ({ personId }: any) => {
   const [loading, person] = usePerson(personId);

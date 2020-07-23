@@ -69,17 +69,17 @@ export default defineConfig({
     {
       path: '/accountcenter',
       icon: 'smile',
-      name: '个人中心',
+      name: 'accountcenter',
       component: './AccountCenter',
     },
     {
-      name: '搜索列表（项目）',
+      name: 'listsearchprojects',
       icon: 'smile',
       path: '/listsearchprojects',
       component: './ListSearchProjects',
     },
     {
-      name: '标准列表',
+      name: 'listbasiclist',
       icon: 'smile',
       path: '/listbasiclist',
       component: './ListBasicList',
